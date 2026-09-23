@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Week 5 · Software Project Framing</title>
+  <meta name="description" content="Instructor-controlled Week 5 assessment-session deck for Software Project Framing and post-assessment reflection." />
+  <style>
+    @font-face{font-family:'Nebula Sans';src:local('Nebula Sans Book'),local('NebulaSans-Book');font-weight:400}@font-face{font-family:'Nebula Sans';src:local('Nebula Sans Semibold'),local('NebulaSans-Semibold');font-weight:600}
+    :root{color-scheme:light;--font:'Nebula Sans','Avenir Next','Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--ink:#16263f;--accent:#244d9d;--accent-ink:#eaf0fb;--teach:#f6f8fc;--work:#f0e8da;--gate:#1b3462;--quiet:color-mix(in srgb,var(--ink) 60%,transparent);--rule:color-mix(in srgb,var(--ink) 22%,transparent);--rail:clamp(54px,5vw,86px);--gutter:clamp(26px,4.4vw,80px);--notes-w:0px}*{box-sizing:border-box}html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--teach)}body{margin:0;font-family:var(--font);color:var(--ink);display:grid;grid-template-columns:1fr var(--notes-w)}body.notes-open{--notes-w:min(31rem,36vw)}button{font:inherit;color:inherit}:focus-visible{outline:3px solid var(--accent);outline-offset:4px}main{container-type:inline-size;min-width:0}.rail{position:fixed;inset:0 auto 0 0;width:var(--rail);z-index:15;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;pointer-events:none}.rail p{margin:0;writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(12px,.92vw,16px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}.rail .sep{opacity:.55;padding:.8em}.rail .course{opacity:.72}.rail-progress{position:absolute;left:50%;bottom:16px;width:38px;height:38px;transform:translateX(-50%)}.rail-progress .track,.rail-progress .fill{fill:none;stroke:currentColor;stroke-width:2.5}.rail-progress .track{opacity:.28}.rail-progress .fill{stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;transform:rotate(-90deg);transform-origin:20px 20px}.rail-progress text{fill:currentColor;font:700 10px var(--font);text-anchor:middle;dominant-baseline:middle}
+    .slide{position:relative;min-height:100svh;display:flex;padding:clamp(30px,5vh,58px) var(--gutter) clamp(30px,5vh,58px) calc(var(--rail) + var(--gutter));scroll-snap-align:start;scroll-snap-stop:always;background:var(--teach);overflow:hidden}.slide[data-mode=work]{background:var(--work)}.slide[data-mode=gate]{background:var(--gate);color:var(--accent-ink);--quiet:color-mix(in srgb,var(--accent-ink) 68%,transparent);--rule:color-mix(in srgb,var(--accent-ink) 30%,transparent);--accent:#9dbcf2}.face{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}.content{width:100%;max-width:min(100%,1240px);margin:auto}.mode{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:0 0 clamp(20px,3.4vh,40px);font-size:clamp(11px,.78cqi,13px);letter-spacing:.11em;text-transform:uppercase;font-weight:600}.mode b{padding:5px 9px;border:1.5px solid currentColor}.slide[data-mode=teach] .mode b{color:var(--accent)}.slide[data-mode=work] .mode b{background:var(--accent);color:var(--accent-ink)}.slide[data-mode=gate] .mode b{background:var(--accent-ink);color:var(--gate)}.mode span,.lead{color:var(--quiet)}.eyebrow{margin:0 0 clamp(14px,2.4vh,26px);font-size:clamp(13px,1.02cqi,16px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}h1,h2{margin:0 0 clamp(18px,3vh,34px);font-weight:500;line-height:1.02;letter-spacing:-.032em;text-wrap:balance}h1{font-size:clamp(42px,5.4cqi,94px);max-width:17ch}h2{font-size:clamp(34px,4.2cqi,70px);max-width:20ch}h3{margin:0 0 10px;font-size:clamp(20px,1.95cqi,32px)}p{margin:0 0 clamp(12px,1.8vh,20px);font-size:clamp(19px,1.8cqi,30px);line-height:1.38;max-width:48ch}.instruction{margin-top:clamp(20px,3.4vh,38px);padding-top:clamp(14px,2.2vh,22px);border-top:1px solid var(--rule);font-size:clamp(17px,1.4cqi,23px);max-width:54ch}.cards,.trio,.chain{display:grid;gap:clamp(12px,1.5vw,22px);margin-top:clamp(18px,3vh,34px)}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.trio{grid-template-columns:repeat(3,minmax(0,1fr))}.cards>div,.trio>div{border:1px solid var(--rule);padding:clamp(16px,2.2vw,28px)}.cards p,.trio p{font-size:clamp(16px,1.25cqi,21px)}.chain{grid-template-columns:repeat(4,minmax(0,1fr))}.chain div{border-top:4px solid var(--accent);padding:14px 10px}.chain strong{display:block;font-size:clamp(18px,1.45cqi,25px);margin-bottom:8px}.chain span{font-size:clamp(15px,1.1cqi,19px);line-height:1.3}.sn{display:none}
+    .notes{position:fixed;inset:0 0 0 auto;width:var(--notes-w);background:#fff;border-left:1px solid #ccd3df;z-index:30;overflow:auto;visibility:hidden}.notes-open .notes{visibility:visible}.notes-body{padding:48px 30px 80px}.notes h2{font-size:28px}.notes h3{font-size:17px;margin-top:24px}.notes p{font-size:16px;line-height:1.45}.n-loc,.n-time{color:#53627a}.fn{border-top:2px solid #244d9d;margin-top:28px;padding-top:10px}.close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:30px}.bar-zone{position:fixed;z-index:40;right:14px;bottom:10px;padding-top:32px}.bar{display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.94);border:1px solid #cbd3df;border-radius:8px;padding:6px;opacity:.15}.bar-zone:hover .bar,.bar:focus-within{opacity:1}.bar button{border:0;background:#edf1f7;padding:8px 10px;border-radius:5px}.pos{font-size:13px;padding:0 7px}.view-notes main,.view-notes .rail{display:none}.view-notes{display:block}.view-notes .notes{width:100%;visibility:visible}
+    @media screen and (max-width:800px){:root{--rail:0px}.rail{display:none}.slide{padding:28px 22px}.cards,.trio,.chain{grid-template-columns:1fr}body.notes-open{--notes-w:100vw}.bar #open-notes-window{display:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}@media print{@page{size:A4 portrait;margin:10mm}html,body{display:block;background:#fff}.rail,.notes,.bar-zone,.fn{display:none!important}.slide{display:block;min-height:0;page-break-after:always;padding:8mm;background:#fff!important;color:#16263f!important}.face{min-height:110mm}.sn{display:block;border-top:1px solid #777;padding-top:6mm;margin-top:6mm}.sn h3{font-size:13pt}.sn p{font-size:10.5pt}h1{font-size:36pt}h2{font-size:30pt}p{font-size:16pt}}
+  @media print{.slide{--quiet:#53627a;--accent:#244d9d;--rule:#b9c1ce}.slide[data-mode=gate]{--quiet:#53627a;--accent:#244d9d;--accent-ink:#16263f}.slide[data-mode=gate] .mode b{background:#fff;color:#16263f}.lead{color:#53627a}}
+
+@media print{.slide[data-mode="gate"]{--quiet:#53627a;--accent:#244d9d;--accent-ink:#16263f}.slide[data-mode="gate"] .lead,.slide[data-mode="gate"] .eyebrow{color:#244d9d}.fn{display:none!important}}
+</style>
+</head>
+<body data-mode="gate">
+  <aside class="rail" id="rail" aria-hidden="true"><p><span class="course">Software Engineering</span><span class="sep">·</span><span>Week 05</span><span class="sep">·</span><span id="rail-seg">Settle</span></p><svg class="rail-progress" viewBox="0 0 40 40"><circle class="track" cx="20" cy="20" r="15.9"/><circle class="fill" id="rail-progress" cx="20" cy="20" r="15.9" pathLength="100"/><text id="rail-current" x="20" y="20">1</text></svg></aside>
+  <main>
+    <section class="slide" data-mode="gate" data-seg="Settle" data-min="10" data-block="Block 1" data-target="0:10"><div class="face"><div class="content"><p class="mode"><b>Pause</b><span>10 min · access check</span></p><p class="eyebrow">Software Project Framing</p><h1>Settle. Check access. Ask process questions.</h1><p class="lead">The assessment starts only after the conditions are clear.</p></div></div><div class="sn"><h3>Textbook study</h3><p>Revisit sessions 3-4 and practice feedback; no new reading. Printed pages in Sommerville (2016), 10th edition, Global Edition. See the <a href="../../reading-guide.md#session-5---software-project-framing">session 5 reading guide</a> for the study question and optional selections.</p><h3>Before the start</h3><p>Open only the resources confirmed for the sitting. Check the submission route and raise access or process problems now.</p><div class="fn"><h3>Say · rehearsal script</h3><p>Today begins with the individual Software Project Framing assessment. <strong>We will settle access and process before starting</strong>. Keep the assessment materials closed until I release them. I will read the confirmed conditions and explain how to report a technical problem. <em class="pause">[Pause for access checks.]</em></p><p>Please ask now if the instructions or submission route are unclear. <strong>I can clarify the process, but I cannot advise you on your answer</strong>. Everyone must receive the same process information.</p><h3>Delivery guidance · not spoken</h3><h3>Use the confirmed script</h3><p>State the permitted resources, timing, word range, academic-integrity conditions, accessibility arrangements, and failure procedure exactly as institutionally confirmed.</p><h3>Boundary</h3><p>Do not interpret the scenario, define a student’s requirement, or preview marking decisions.</p><h3>Current dependency</h3><p>These operational rules remain unvalidated. Replace no placeholder with an assumption during rehearsal.</p></div></div></section>
+    <section class="slide" data-mode="work" data-seg="Assessment" data-min="60" data-block="Block 1" data-target="1:10"><div class="face"><div class="content"><p class="mode"><b>Your turn</b><span>60 min · individual assessment</span></p><p class="eyebrow">Software Project Framing · 10%</p><h1>Turn uncertainty into an actionable project frame</h1><p class="lead">Read, plan, write, review, submit.</p></div></div><div class="sn"><h3>During the assessment</h3><p>Work independently from the supplied scenario, brief, response route, and any explicitly permitted resource. Ordinary submission is included in the time.</p><div class="fn"><h3>Say · rehearsal script</h3><p>You may begin. <strong>Work independently from the released assessment materials</strong>. The announced time includes reading, writing, checking, and ordinary submission. Use the stop time and permitted resources I have just confirmed. <em class="pause">[Start the agreed timer.]</em></p><p>If you encounter an access or submission problem, <strong>report it through the announced procedure immediately</strong>. I will handle that consistently without commenting on the content of your work.</p><h3>Delivery guidance · not spoken</h3><h3>Neutral time calls</h3><p>Use only the calls fixed by the assessment procedure. The current draft recommends reading, planning, writing, then review and submission, but this must follow confirmed conditions.</p><h3>Response boundary</h3><p>Answer technical and process questions consistently. Do not confirm whether content is correct, complete, or appropriately scoped.</p><h3>Observation</h3><p>Log recurring process ambiguity without helping the current student solve it.</p></div></div></section>
+    <section class="slide" data-mode="gate" data-seg="Protected close" data-min="20" data-block="Block 1" data-target="1:30"><div class="face"><div class="content"><p class="mode"><b>Pause</b><span>20 min · protected close</span></p><p class="eyebrow">Writing has closed</p><h1>Technical-failure handling is not extra writing time</h1><p class="lead">Follow the logged procedure, then decompress quietly.</p></div></div><div class="sn"><h3>After ordinary submission closes</h3><p>Ordinary writing has closed. Follow any approved individual timing arrangement. Report submission or access failure through the stated route.</p><div class="fn"><h3>Say · rehearsal script</h3><p>Ordinary assessment time has ended. <strong>Stop writing and editing now</strong>. If you have an approved individual arrangement, follow the stop time given for that arrangement. <em class="pause">[Pause and check the room.]</em></p><p>This period is for reported technical failures and quiet decompression. <strong>It is not additional writing time</strong>. Please keep your answer private while other arrangements may still be in progress.</p><h3>Delivery guidance · not spoken</h3><h3>Equity boundary</h3><p>Apply the confirmed technical-failure and extra-time process. Do not improvise an undeclared extension.</p><h3>Security</h3><p>Do not discuss answers while any student may still be working under an approved arrangement or contingency.</p><h3>Fallback</h3><p>Use only the pre-agreed offline or paper route. Record who was affected and what evidence was preserved.</p></div></div></section>
+    <section class="slide" data-mode="gate" data-seg="Break" data-min="30" data-block="Break" data-target="0:30"><div class="face"><div class="content"><p class="mode"><b>Pause</b><span>30 min · 11:30–12:00</span></p><p class="eyebrow">Institutional break</p><h1>Step away from the assessment</h1><p class="lead">Do not compare answers.</p></div></div><div class="sn"><h3>Protected break</h3><p>Keep assessment content private. The second half begins with process reflection, not answer review.</p><div class="fn"><h3>Say · rehearsal script</h3><p>We will take the institutional break and return at noon. <strong>Keep assessment content private</strong>. Someone may still be completing an authorised sitting. <em class="pause">[Pause; secure the materials before leaving.]</em></p><h3>Delivery guidance · not spoken</h3><h3>Before restarting</h3><p>Confirm whether anyone is still working under an approved arrangement. If so, use the asynchronous second-half route and reveal no assessment content.</p></div></div></section>
+    <section class="slide" data-mode="gate" data-seg="Reset" data-min="5" data-block="Block 2" data-target="0:05"><div class="face"><div class="content"><p class="mode"><b>Pause</b><span>5 min</span></p><p class="eyebrow">A different kind of evidence</p><h2>Reflect on the process, not the answer</h2><p class="lead">Keep details of the scenario and your response private.</p></div></div><div class="sn"><h3>Post-assessment boundary</h3><p>The reflection is private and non-graded; any optional collection uses the announced anonymous route. It asks where decisions consumed time, not what answer was correct.</p><div class="fn"><h3>Say · rehearsal script</h3><p>The next activity is ungraded. <strong>We will reflect on the process without comparing answers</strong>. Use the reflection page to consider where your attention went, and leave out scenario details. <em class="pause">[Allow a quiet reset.]</em></p><h3>Delivery guidance · not spoken</h3><h3>Say</h3><p>“We are not marking in public and we are not reverse-engineering a model answer. We are noticing what the work demanded.”</p><h3>Contingency</h3><p>If any student is still working, provide this reflection later through an accessible private route.</p></div></div></section>
+    <section class="slide" data-mode="work" data-seg="Process reflection" data-min="25" data-block="Block 2" data-target="0:30"><div class="face"><div class="content"><p class="mode"><b>Your turn</b><span>25 min · private reflection</span></p><p class="eyebrow">Decision load</p><h2>Where did reasoning, not terminology, consume time?</h2><div class="trio"><div><h3>Frame</h3><p>Problem, people, objective, scope.</p></div><div><h3>Specify</h3><p>Behaviour, quality, acceptance.</p></div><div><h3>Preserve</h3><p>Ambiguity, conflict, assumption, risk.</p></div></div><p class="instruction">Name one decision that slowed you and what evidence would have helped.</p></div></div><div class="sn"><h3>Keep it non-graded</h3><p>Do not reproduce your assessment response. Reflect on how you allocated attention and where uncertainty was hardest to manage.</p><div class="fn"><h3>Say · rehearsal script</h3><p>Think back to one point where making a decision took longer than you expected. <strong>Name the kind of decision and what made it difficult</strong>, without reproducing your assessment response. You can write privately; you do not have to discuss it. <em class="pause">[Give quiet writing time.]</em></p><p>Then identify one habit you want to retain or change. <strong>Make it something you can do next time</strong>, such as leaving time to reread the brief. If you contribute to the shared reflection, share only a process label, not your answer.</p><h3>Delivery guidance · not spoken</h3><h3>Collection</h3><p>Use an anonymous route if available. Explain the limits of anonymity honestly.</p><h3>Listen for</h3><p>Repeated process friction, resource ambiguity, or timing pressure. Do not diagnose attainment from this reflection.</p><h3>Transition</h3><p>Close the assessment phase before introducing portfolio choices.</p></div></div></section>
+    <section class="slide" data-mode="teach" data-seg="Portfolio choices" data-min="10" data-block="Block 2" data-target="0:40"><div class="face"><div class="content"><p class="mode"><b>Explanation</b></p><p class="eyebrow">The larger portfolio</p><h2>Your project context needs enough evidence to support the whole chain</h2><p class="lead">Today you choose a direction. You do not commit to a complete architecture.</p></div></div><div class="sn"><h3>Available routes</h3><p>Students may extend the assessed scenario, use a supplied portfolio option, or seek advance tutor approval for an equivalent project, subject to the accepted assessment wording.</p><div class="fn"><h3>Say · rehearsal script</h3><p>We now turn to the portfolio. <strong>Choose a context that can support connected engineering decisions</strong>. You may extend the assessed scenario, use the supplied Campus Event option, or seek advance tutor approval for an equivalent project. The route descriptions are on page 2.</p><p>This is a tentative choice, not a promise to build a complete application. <strong>A project title is only the starting point</strong>. Look for a bounded problem, people whose needs matter, and evidence you can inspect. <em class="pause">[Pause for reading.]</em></p><h3>Delivery guidance · not spoken</h3><h3>Boundary</h3><p>Do not imply that the Week 5 response is automatically portfolio-ready or that one route earns higher marks.</p><h3>Dependency</h3><p>Use only scenario options and equivalence guidance that have been approved for release.</p></div></div></section>
+    <section class="slide" data-mode="work" data-seg="Project seed" data-min="20" data-block="Block 2" data-target="1:00"><div class="face"><div class="content"><p class="mode"><b>Your turn</b><span>20 min · on your own</span></p><p class="eyebrow">Non-graded seed card</p><div class="chain"><div><strong>Context</strong><span>What situation?</span></div><div><strong>People</strong><span>Who is affected?</span></div><div><strong>Decision</strong><span>What engineering choice?</span></div><div><strong>Evidence</strong><span>What could support it?</span></div></div><p class="instruction">Choose a tentative route and write one question that must be answered before you invest further.</p></div></div><div class="sn"><h3>Seed, not mini-portfolio</h3><p>The card helps choose a workable context. It is not assessed and should remain small enough to change.</p><div class="fn"><h3>Say · rehearsal script</h3><p>Use the seed card to make your tentative choice concrete. <strong>Write a bounded decision and the evidence it would need</strong>. Include the situation, people affected, intended outcome, and one exclusion. <em class="pause">[Allow individual writing.]</em></p><p>Where you do not have evidence, write a question. <strong>Keep assumptions visible</strong>; do not invent research or user agreement to make the seed look finished. The card is yours to revise.</p><h3>Delivery guidance · not spoken</h3><h3>Listen for</h3><p>A topic label without a project decision, or a project too broad to support specific evidence.</p><h3>Rescue</h3><p>“What decision would another engineer need to make in this context?”</p></div></div></section>
+    <section class="slide" data-mode="work" data-seg="Seed check" data-min="5" data-block="Block 2" data-target="1:05"><div class="face"><div class="content"><p class="mode"><b>Your turn</b><span>5 min · pairs or private check</span></p><p class="eyebrow">Keep it workable</p><h2>Is there a bounded decision and plausible evidence?</h2><p class="instruction">Mark one reason to continue and one question to resolve.</p></div></div><div class="sn"><h3>Participation choice</h3><p>You may share only the project seed, not your assessment answer. A private self-check is equally valid.</p><div class="fn"><h3>Say · rehearsal script</h3><p>Read your seed once as someone who has not heard your explanation. <strong>Can that reader find a decision and plausible evidence?</strong> Mark one reason to continue and one question to resolve. You may exchange the seed with a partner or work privately. <em class="pause">[Allow the check.]</em></p><h3>Delivery guidance · not spoken</h3><h3>Boundary</h3><p>Keep discussion on feasibility and evidence. Do not invite peer comparison of the assessed memo.</p><h3>Transition</h3><p>Use the unresolved seed question to open the design preview.</p></div></div></section>
+    <section class="slide" data-mode="work" data-seg="Design preview" data-min="15" data-block="Block 2" data-target="1:20"><div class="face"><div class="content"><p class="mode"><b>Your turn</b><span>15 min · low-stakes preview</span></p><p class="eyebrow">What follows a project frame?</p><h2>Which responsibility or boundary question now appears?</h2><p class="instruction">Write one design question. Do not draw a complete architecture.</p></div></div><div class="sn"><h3>Looking ahead</h3><p>Week 6 moves from requirements into responsibilities, boundaries, and purposeful models. A good frame creates design questions rather than eliminating judgement.</p><div class="fn"><h3>Say · rehearsal script</h3><p>Choose one responsibility or boundary question raised by your seed. <strong>Ask what must be decided before choosing a technology</strong>. For example, who needs to own an outcome, or which information needs to remain consistent? This is a question for Week 6, not a complete architecture today. <em class="pause">[Pause for writing.]</em></p><h3>Delivery guidance · not spoken</h3><h3>Listen for</h3><p>Tool choices presented as the first design question. Ask what responsibility, information, or change pressure the choice addresses.</p><h3>Rescue</h3><p>“Who or what should be responsible for this behaviour, and what must it know?”</p></div></div></section>
+    <section class="slide" data-mode="work" data-seg="Close" data-min="8" data-block="Block 2" data-target="1:28"><div class="face"><div class="content"><p class="mode"><b>Your turn</b><span>8 min · on your own</span></p><p class="eyebrow">Process and confidence check</p><h2>What support do you need for the next engineering decision?</h2><p class="instruction">Record one process issue, one confidence point, and one next question.</p></div></div><div class="sn"><h3>Do not predict the mark</h3><p>This check helps plan support. It is not a request to estimate performance or disclose assessment content.</p><div class="fn"><h3>Say · rehearsal script</h3><p>On the final page, record one process issue, one point of confidence, and your next question. <strong>Separate a learning question from a rule that needs confirmation</strong>. You do not need to estimate a mark or share your assessment answer. <em class="pause">[Give quiet time.]</em></p><h3>Delivery guidance · not spoken</h3><h3>Listen for later</h3><p>Access or instruction problems that require operational follow-up, and recurring uncertainty about moving from requirements to design.</p><h3>Say</h3><p>“The assessment is complete. The next step is not to guess a mark. It is to make the next question visible.”</p></div></div></section>
+    <section class="slide" data-mode="gate" data-seg="Contingency" data-min="2" data-block="Block 2" data-target="1:30"><div class="face"><div class="content"><p class="mode"><b>Pause</b><span>2 min</span></p><p class="eyebrow">Spare time</p><h1>Keep the seed card and your next question</h1></div></div><div class="sn"><h3>Before leaving</h3><p>Confirm that the required assessment submission is complete through the stated route. Keep the non-graded seed card for later portfolio planning.</p><div class="fn"><h3>Say · rehearsal script</h3><p>Keep your seed card for portfolio planning. <strong>Take one unresolved question forward</strong>. Share only the process check through the route I have confirmed; the seed is not a new assessed submission. <em class="pause">[Check that students know what to keep.]</em></p><h3>Delivery guidance · not spoken</h3><h3>Cut order</h3><p>In Block 2, shorten pair exchange and design preview first. Preserve the process reflection and private close. Never recover time by shortening the assessment or changing its conditions.</p><h3>Fallback</h3><p>If post-assessment participation is unsafe or inequitable because students are still working, move all Block 2 activities to the approved asynchronous route.</p><h3>Teach-aloud close</h3><p>Rehearse the conditions script, start and stop language, technical-failure response, privacy boundary, and transition out of assessment. Record ambiguity, timing, and any phrase that could be heard as content coaching.</p></div></div></section>
+  </main>
+  <aside class="notes" id="notes" aria-label="Notes about this slide" aria-hidden="true"><button class="close" id="close-notes">×</button><div class="notes-body"><p class="n-loc" id="n-loc"></p><h2 id="n-title"></h2><div id="n-body"></div></div></aside>
+  <div class="bar-zone"><nav class="bar" aria-label="Deck controls"><button id="prev">←</button><button id="next">→</button><span class="pos" id="pos">1/12</span><button id="emph" hidden>Cue</button><button id="notes-btn">Notes</button><button id="open-notes-window">Notes tab</button></nav></div>
+  <script>
+    (() => {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+      const slides = [...document.querySelectorAll('.slide')];
+      const railSeg = document.querySelector('#rail-seg');
+      const railFill = document.querySelector('#rail-progress');
+      const railCurrent = document.querySelector('#rail-current');
+      const pos = document.querySelector('#pos');
+      const emph = document.querySelector('#emph');
+      const panel = document.querySelector('#notes');
+      const nLoc = document.querySelector('#n-loc');
+      const nTitle = document.querySelector('#n-title');
+      const nBody = document.querySelector('#n-body');
+      const notesView = new URLSearchParams(location.search).get('view') === 'notes';
+      let i = 0;
+      let lock = 0;
+      let shown = -1;
+
+      slides.forEach((slide) => {
+        const fn = slide.querySelector('.sn > .fn');
+        if (!fn) return;
+        const timing = document.createElement('p');
+        timing.className = 'n-time';
+        timing.textContent = `${slide.dataset.min} min · ${slide.dataset.block} · to ${slide.dataset.target}`;
+        fn.append(timing);
+      });
+
+      const channel = 'BroadcastChannel' in self ? new BroadcastChannel('week-05-deck') : null;
+      let quiet = false;
+      const send = (message) => {
+        if (channel && !quiet) channel.postMessage(message);
+      };
+      const setCue = (on) => document.body.classList.toggle('cued', on);
+      const sync = () => {
+        const slide = slides[i];
+        if (i !== shown) {
+          shown = i;
+          setCue(false);
+        }
+        pos.textContent = `${i + 1}/${slides.length}`;
+        document.body.dataset.mode = slide.dataset.mode;
+        railSeg.textContent = slide.dataset.seg;
+        railFill.style.strokeDashoffset = (100 - ((i + 1) / slides.length) * 100).toFixed(1);
+        railCurrent.textContent = String(i + 1);
+        emph.hidden = !slide.querySelector('[data-cue]');
+        const modeWord = { teach: 'Explanation', work: 'Your turn', gate: 'Pause' }[slide.dataset.mode];
+        nLoc.textContent = `Week 05 · ${slide.dataset.seg} · ${modeWord}`;
+        nTitle.textContent = slide.querySelector('h1, h2')?.textContent.trim() || '';
+        nBody.innerHTML = slide.querySelector('.sn')?.innerHTML || '';
+        document.title = `${i + 1}/${slides.length} · ${slide.dataset.seg} · Week 5`;
+      };
+      const go = (next) => {
+        i = Math.max(0, Math.min(slides.length - 1, next));
+        lock = performance.now() + 700;
+        if (!notesView) {
+          const behavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+          slides[i].scrollIntoView({ behavior, block: 'start' });
+        }
+        sync();
+        send({ t: 'go', i });
+      };
+      const io = new IntersectionObserver((entries) => {
+        if (performance.now() < lock) return;
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        i = slides.indexOf(visible.target);
+        sync();
+      }, { threshold: [0.5, 0.75] });
+      slides.forEach((slide) => io.observe(slide));
+
+      const setNotes = (open) => {
+        document.body.classList.toggle('notes-open', open);
+        panel.setAttribute('aria-hidden', String(!open));
+      };
+      const toggleCue = () => {
+        if (!slides[i].querySelector('[data-cue]')) return;
+        const on = document.body.classList.toggle('cued');
+        send({ t: 'cue', on });
+      };
+      if (channel) {
+        channel.onmessage = ({ data }) => {
+          quiet = true;
+          if (data.t === 'go' && data.i !== i) go(data.i);
+          else if (data.t === 'cue') setCue(data.on);
+          else if (data.t === 'hello' && !notesView) channel.postMessage({ t: 'state', i, on: document.body.classList.contains('cued') });
+          else if (data.t === 'state' && notesView) {
+            if (data.i !== i) go(data.i);
+            setCue(data.on);
+          }
+          quiet = false;
+        };
+        if (notesView) channel.postMessage({ t: 'hello' });
+        else channel.postMessage({ t: 'go', i: 0 });
+      }
+
+      document.querySelector('#open-notes-window').onclick = () => {
+        const url = new URL(location.href);
+        url.searchParams.set('view', 'notes');
+        window.open(url, 'week-05-notes');
+      };
+      if (notesView) {
+        document.body.classList.add('view-notes', 'notes-open');
+        panel.setAttribute('aria-hidden', 'false');
+      }
+      document.querySelector('#prev').onclick = () => go(i - 1);
+      document.querySelector('#next').onclick = () => go(i + 1);
+      document.querySelector('#notes-btn').onclick = () => setNotes(!document.body.classList.contains('notes-open'));
+      document.querySelector('#close-notes').onclick = () => setNotes(false);
+      emph.onclick = toggleCue;
+      addEventListener('keydown', (event) => {
+        if (['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName)) return;
+        const key = event.key.toLowerCase();
+        if (event.key === 'Escape') setNotes(false);
+        else if (key === 'n') {
+          event.preventDefault();
+          setNotes(!document.body.classList.contains('notes-open'));
+        } else if (key === 'e') {
+          event.preventDefault();
+          toggleCue();
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          go(0);
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          go(slides.length - 1);
+        } else if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(event.key) || (event.key === ' ' && !event.shiftKey)) {
+          event.preventDefault();
+          go(i + 1);
+        } else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(event.key) || (event.key === ' ' && event.shiftKey)) {
+          event.preventDefault();
+          go(i - 1);
+        }
+      });
+      sync();
+    })();
+  </script>
+</body>
+</html>

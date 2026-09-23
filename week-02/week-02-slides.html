@@ -1,0 +1,2221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Week 2 · Organising work under uncertainty</title>
+    <meta
+      name="description"
+      content="Student-facing session deck for Week 2 of Software Engineering: lifecycle choices, feedback, dependencies, and risk."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46.6173665 25.140518'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-40.000000, -80.000000)' fill='%23244d9d'%3E%3Cg transform='translate(40.000000, 80.000000)'%3E%3Cpath d='M38.7936107,15.2573604 C36.1528467,15.2573604 34.0047626,17.4054445 34.0047626,20.0462084 C34.0047626,22.6869724 36.1528467,24.8350565 38.7936107,24.8350565 C41.4343746,24.8350565 43.5824587,22.6869724 43.5824587,20.0462084 C43.4839228,17.4152981 41.3358387,15.2573604 38.7936107,15.2573604 Z M38.7936107,22.3026821 C37.5224967,22.3026821 36.5469906,21.327176 36.5469906,20.056062 C36.5469906,18.7849481 37.5224967,17.809442 38.7936107,17.809442 C40.0647247,17.809442 41.0402308,18.7849481 41.0402308,20.056062 C41.0402308,21.2187865 39.9661887,22.3026821 38.7936107,22.3026821 Z' %3E%3C/path%3E%3Cpath d='M14.8395168,13.7004921 C14.8395168,11.9366983 13.3713309,10.4783659 11.6173906,10.4783659 C9.75506085,10.4783659 8.39526449,11.9465519 8.39526449,13.7004921 C8.39526449,15.4544323 9.86345042,17.0211542 11.6173906,17.0211542 C13.3713309,17.0211542 14.8395168,15.5529683 14.8395168,13.7004921' %3E%3C/path%3E%3Cpath d='M22.7618087,16.1441841 C22.9588806,15.36575 23.0574166,14.5774622 23.0574166,13.7004921 L21.9833745,13.1092763 C21.9833745,12.7151324 21.8848385,12.4293781 21.8848385,12.0352342 L22.7618087,11.2568001 C22.5647367,10.4783659 22.3676648,9.69007819 21.9833745,8.91164404 L20.8107965,8.81310807 C20.6137245,8.51750017 20.4166526,8.13320989 20.2195807,7.83760199 L20.7122605,6.76355993 C20.2195807,6.08366175 19.7367544,5.49244594 19.1455386,4.9997661 L18.0714966,5.39390998 C17.7758887,5.19683804 17.4802808,4.90123013 17.1945264,4.71401179 L17.2930624,3.54143377 C16.6131642,3.1472899 15.8248765,2.76299962 15.0464423,2.56592769 L14.1694722,3.44289781 C13.7753284,3.34436184 13.489574,3.24582587 13.0954302,3.24582587 L12.7012863,2.17178382 C11.9228522,2.07324785 11.1345644,2.07324785 10.2575943,2.17178382 L9.86345042,3.24582587 C9.46930654,3.34436184 9.18355224,3.34436184 8.78940836,3.44289781 L8.01097421,2.76299962 C7.23254006,3.05860753 6.54278829,3.35421543 5.76435414,3.73850571 L5.86289011,4.91108373 C5.5672822,5.10815567 5.2716743,5.3052276 4.98591999,5.59098191 L3.91187794,5.19683804 C3.32066213,5.68951788 2.73929992,6.36941606 2.24662007,6.96063187 L2.83783588,8.03467392 C2.64076395,8.33028183 2.44369201,8.62588973 2.24662007,9.01018001 L1.07404205,9.10871598 C0.778434149,9.78861416 0.482826244,10.5769019 0.295607905,11.3553361 L1.17257802,12.1337702 C1.07404205,12.5279141 1.07404205,12.8136684 1.07404205,13.2078123 L-2.80056066e-15,13.7990281 C-2.80056066e-15,14.5774622 0.0985359682,15.36575 0.295607905,16.2427201 L1.46818593,16.439792 C1.56672189,16.8339359 1.66525786,17.1196902 1.76379383,17.5138341 L0.985359682,18.4893401 C1.28096759,19.1692383 1.66525786,19.9575261 2.1579377,20.5388883 L3.42905169,20.3418163 C3.62612363,20.6374243 3.92173153,20.9330322 4.10894987,21.1202505 L3.91187794,22.2928285 C4.50309375,22.7855084 5.18299193,23.2683346 5.86289011,23.6624785 L6.83839619,22.9825803 C7.1340041,23.1796522 7.51829437,23.2781882 7.81390228,23.4752601 L8.01097421,24.6478382 C8.78940836,24.9434461 9.57769611,25.041982 10.3561303,25.140518 L11.0360284,24.1650119 C11.4301723,24.1650119 11.7159266,24.1650119 12.1100705,24.1650119 L12.7899687,25.140518 C13.5684028,25.041982 14.3566906,24.8449101 15.1351247,24.6478382 L15.3321966,23.4752601 C15.6278046,23.3767242 16.0120948,23.1796522 16.3077027,22.9825803 L17.2832088,23.6624785 C17.963107,23.2683346 18.6528588,22.7855084 19.234221,22.1942926 L18.9386131,21.0217145 C19.234221,20.7261066 19.4312929,20.5290347 19.6185113,20.2432804 L20.7910893,20.4403523 C21.2837691,19.7604541 21.6680594,19.0707024 21.9636673,18.3908042 L21.2837691,17.5138341 C21.3823051,17.2182262 21.4808411,16.8339359 21.579377,16.439792 L22.7618087,16.1441841 Z M11.5188547,20.2432804 C7.90258465,20.2432804 4.9662128,17.3069085 4.9662128,13.6906385 C4.9662128,10.0743685 7.90258465,7.13799661 11.5188547,7.13799661 C15.1351247,7.13799661 18.0714966,10.0743685 18.0714966,13.6906385 C18.0714966,17.3069085 15.1351247,20.2432804 11.5188547,20.2432804 Z' %3E%3C/path%3E%3Cpath d='M22.7618087,3.91587045 C20.6137245,4.01440642 19.5396825,2.15207662 19.5396825,2.15207662 C19.4411465,1.95500469 19.0470027,1.85646872 18.8597843,1.95500469 C18.6627124,2.05354065 18.5641764,2.44768453 18.6627124,2.63490287 C18.7612483,2.73343883 20.1308983,5.07859488 22.8701982,4.98005891 C23.1658061,4.98005891 23.3628781,4.684451 23.3628781,4.48737907 C23.2446349,4.11294239 23.0574166,3.91587045 22.7618087,3.91587045' %3E%3C/path%3E%3Cpath d='M46.6173665,17.8981243 L46.6173665,17.8981243 L46.6173665,12.7151324 L46.6173665,3.1374363 C46.6173665,2.45753812 46.0261507,1.76778635 45.2477166,1.76778635 L43.8780666,1.76778635 L43.8780666,7.63067645 C43.8780666,7.92628436 43.6809947,8.12335629 43.3853868,8.12335629 C43.0897789,8.12335629 42.892707,7.92628436 42.892707,7.63067645 L42.892707,1.76778635 L40.7446228,1.76778635 L40.7446228,7.63067645 C40.7446228,7.92628436 40.5475509,8.12335629 40.251943,8.12335629 C39.9563351,8.12335629 39.7592632,7.92628436 39.7592632,7.63067645 L39.7592632,1.76778635 L37.6111791,1.76778635 L37.6111791,7.63067645 C37.6111791,7.92628436 37.4141071,8.12335629 37.1184992,8.12335629 C36.8228913,8.12335629 36.6258194,7.92628436 36.6258194,7.63067645 L36.6258194,1.76778635 L34.4777353,1.76778635 L34.4777353,7.63067645 C34.4777353,7.92628436 34.2806633,8.12335629 33.9850554,8.12335629 C33.6894475,8.12335629 33.4923756,7.92628436 33.4923756,7.63067645 L33.4923756,1.76778635 L28.9991354,1.76778635 C28.3192373,1.76778635 27.6294855,2.35900216 27.6294855,3.1374363 L27.6294855,5.08844847 L25.8656916,1.57071441 L26.9397337,0.9794986 C27.2353416,0.880962632 27.3338776,0.585354728 27.1368056,0.29960042 C27.0382697,0.00399251533 26.7426618,-0.0945434529 26.4569075,0.102528484 L23.2347813,1.76778635 C22.9391734,1.86632231 22.8406374,2.16193022 23.0377094,2.44768453 C23.1362453,2.74329243 23.4318532,2.8418284 23.7176075,2.64475646 L24.7916496,2.05354065 L26.9397337,6.16249053 L21.1753796,6.16249053 L21.1753796,6.16249053 C21.1753796,6.2610265 21.2739155,6.2610265 21.2739155,6.35956246 L21.6680594,6.8522423 C21.6680594,6.8522423 21.2739155,7.63067645 21.0768436,7.92628436 L21.0768436,7.92628436 C21.3724515,7.92628436 22.3479576,8.02482033 22.3479576,8.02482033 L22.6435655,8.61603613 C23.0377094,9.49300625 23.3234637,10.281294 23.4219996,11.1582641 L23.5205356,11.7494799 C23.5205356,11.7494799 22.7421015,12.3406957 22.5450295,12.5279141 C22.8406374,12.62645 23.7176075,13.1191299 23.7176075,13.1191299 L23.7176075,13.7103457 C23.7176075,14.5873158 23.6190716,15.4741395 23.4219996,16.3511096 L23.3234637,16.9423254 C23.3234637,16.9423254 22.4464936,17.1393974 22.0523497,17.2379334 C22.2494216,17.5335413 22.8307838,18.2134394 22.8307838,18.2134394 L22.5351759,18.8046552 C22.43664,18.9031912 22.43664,19.1002632 22.43664,19.1987991 L33.1869141,19.1987991 C33.482522,16.5580352 35.5320701,14.508487 38.5669779,14.508487 C41.5033498,14.508487 43.7499699,16.4594992 44.1441137,19.1987991 L45.2181558,19.1987991 L45.2181558,19.1987991 C46.0261507,19.1692383 46.6173665,18.5878761 46.6173665,17.8981243' %3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A" />
+    <style>
+      /* ============================================================
+   Week 2 session deck and handout source.
+
+   The projected slide faces and student review notes are student
+   facing. Facilitator notes remain in this instructor-controlled
+   HTML for rehearsal and delivery, but are excluded from print.
+   Distribute the generated student PDF, not this source file.
+
+   Typeface: Nebula Sans. The @font-face rules resolve through
+   local(), so the family renders where it is installed and
+   falls back cleanly elsewhere. Embed woff2 before teaching
+   from an unfamiliar machine.
+   ============================================================ */
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Light'),
+          local('NebulaSans-Light'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Light.otf)
+            format('opentype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Book'),
+          local('NebulaSans-Book'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Book.otf)
+            format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Medium'),
+          local('NebulaSans-Medium'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Medium.otf)
+            format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Semibold'),
+          local('NebulaSans-Semibold'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Semibold.otf)
+            format('opentype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Bold'),
+          local('NebulaSans-Bold'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Bold.otf)
+            format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        color-scheme: light;
+        --font:
+          'Nebula Sans', 'Avenir Next', 'Source Sans 3', 'Source Sans Pro',
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+        --ink: #16263f;
+        --accent: #244d9d;
+        --accent-ink: #eaf0fb;
+
+        /* Three grounds, and only three. */
+        --ground-teach: #f6f8fc; /* cool near-white : explanation */
+        --ground-work: #f0e8da; /* warm sand       : your turn   */
+        --ground-gate: #1b3462; /* deep navy       : pause       */
+        --ground: var(--ground-teach);
+
+        --rule: color-mix(in srgb, var(--ink) 22%, transparent);
+        --quiet: color-mix(in srgb, var(--ink) 58%, transparent);
+
+        /* The rail thickens with the display and disappears when there
+     is no room for it. It is fixed, so viewport units are right. */
+        --rail: clamp(54px, 5vw, 86px);
+        --gutter: clamp(26px, 4.4vw, 80px);
+        --measure: 1240px;
+        --notes-w: 0px;
+      }
+      @media (max-width: 640px) {
+        :root {
+          --rail: 0px;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        background: var(--ground-teach);
+      }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        color: var(--ink);
+        background: var(--ground);
+        display: grid;
+        grid-template-columns: 1fr var(--notes-w);
+        transition:
+          grid-template-columns 220ms ease,
+          background 320ms ease;
+      }
+      body.notes-open {
+        --notes-w: min(31rem, 36vw);
+      }
+      body[data-mode='work'] {
+        --ground: var(--ground-work);
+      }
+      body[data-mode='gate'] {
+        --ground: var(--ground-gate);
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 0.18em;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      /* main is the sizing container: opening the notes reflows and
+   rescales the slide instead of covering it. */
+      main {
+        container-type: inline-size;
+        container-name: deck;
+        min-width: 0;
+      }
+
+      /* ============================================================
+   THE FIXED LOCATION RAIL
+   One element for the whole deck. Only the last field changes,
+   and it cross-fades as you move between segments.
+   ============================================================ */
+      .rail {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: var(--rail);
+        z-index: 15;
+        background: var(--accent);
+        color: var(--accent-ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 320ms ease,
+          color 320ms ease;
+        pointer-events: none;
+      }
+      body[data-mode='gate'] .rail {
+        background: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+      @media (max-width: 640px) {
+        .rail {
+          display: none;
+        }
+      }
+      .rail p {
+        margin: 0;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: clamp(12px, 0.92vw, 16px);
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        max-height: calc(100svh - 4rem);
+        overflow: hidden;
+      }
+      .rail .sep {
+        opacity: 0.55;
+        padding: 0.9em;
+      }
+      .rail .course {
+        opacity: 0.72;
+      }
+      .rail .seg {
+        font-weight: 700;
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease;
+        display: inline-block;
+      }
+      .rail.swap .seg {
+        opacity: 0;
+        transform: translateY(-0.5em);
+      }
+      .rail-logo {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 28px;
+        height: 28px;
+      }
+      /* deck progress: a compact ring with the current slide number */
+      .rail-progress {
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        width: 38px;
+        height: 38px;
+        transform: translateX(-50%);
+        overflow: visible;
+      }
+      .rail-progress .track,
+      .rail-progress .fill {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.5;
+      }
+      .rail-progress .track {
+        opacity: 0.28;
+      }
+      .rail-progress .fill {
+        stroke-linecap: round;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transform: rotate(-90deg);
+        transform-origin: 20px 20px;
+        transition: stroke-dashoffset 320ms ease;
+      }
+      .rail-progress text {
+        fill: currentColor;
+        font-family: var(--font);
+        font-size: 10px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        letter-spacing: 0;
+      }
+
+      /* ============================================================
+   SLIDE
+   ============================================================ */
+      .slide {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        padding: clamp(30px, 5vh, 58px) var(--gutter) clamp(30px, 5vh, 58px)
+          calc(var(--rail) + var(--gutter));
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        background: var(--ground-teach);
+        overflow: hidden;
+      }
+      .slide[data-mode='work'] {
+        background: var(--ground-work);
+      }
+      .slide[data-mode='gate'] {
+        background: var(--ground-gate);
+        color: var(--accent-ink);
+        --rule: color-mix(in srgb, var(--accent-ink) 30%, transparent);
+        --quiet: color-mix(in srgb, var(--accent-ink) 66%, transparent);
+        --accent: #9dbcf2;
+      }
+
+      /* The face holds everything projected. Its column is centred in
+   the usable width, so the slide reads as balanced rather than
+   left-hugging. Text stays left aligned for reading. */
+      .face {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .content,
+      .map {
+        width: 100%;
+        max-width: min(100%, var(--measure));
+        margin-inline: auto;
+      }
+
+      .mode {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        max-width: none;
+        margin: 0 0 clamp(20px, 3.4vh, 40px);
+        font-size: clamp(11px, 0.78cqi, 13px);
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .mode b {
+        padding: 5px 9px;
+        border: 1.5px solid currentColor;
+        font-weight: 700;
+      }
+      .slide[data-mode='teach'] .mode b {
+        color: var(--accent);
+      }
+      .slide[data-mode='work'] .mode b {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+      }
+      .slide[data-mode='gate'] .mode b {
+        background: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+      .mode span {
+        color: var(--quiet);
+        font-weight: 500;
+      }
+
+      /* --- type scale: one family, five sizes -------------------- */
+      .eyebrow {
+        margin: 0 0 clamp(14px, 2.4vh, 26px);
+        font-size: clamp(13px, 1.02cqi, 16px);
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      h1,
+      h2 {
+        margin: 0 0 clamp(18px, 3vh, 34px);
+        font-weight: 500;
+        line-height: 1.02;
+        letter-spacing: -0.032em;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(42px, 5.4cqi, 94px);
+        max-width: 17ch;
+      }
+      h2 {
+        font-size: clamp(34px, 4.2cqi, 70px);
+        max-width: 19ch;
+      }
+      h3 {
+        margin: 0 0 10px;
+        font-size: clamp(20px, 1.95cqi, 32px);
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.015em;
+      }
+      p {
+        margin: 0 0 clamp(12px, 1.8vh, 20px);
+        font-size: clamp(19px, 1.8cqi, 30px);
+        line-height: 1.38;
+        max-width: 46ch;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      .lead {
+        color: var(--quiet);
+      }
+      .instruction {
+        margin-top: clamp(20px, 3.4vh, 38px);
+        padding-top: clamp(14px, 2.2vh, 22px);
+        border-top: 1px solid var(--rule);
+        font-size: clamp(17px, 1.4cqi, 23px);
+        max-width: 52ch;
+      }
+
+      /* --- emphasis: three marks, one of them deferred ----------- */
+      .key {
+        font-weight: 600;
+        box-shadow: inset 0 -0.14em 0
+          color-mix(in srgb, var(--accent) 46%, transparent);
+        transition: box-shadow 180ms ease;
+      }
+      mark {
+        background: color-mix(in srgb, var(--accent) 15%, transparent);
+        color: inherit;
+        box-shadow: inset 0 -0.1em 0
+          color-mix(in srgb, var(--accent) 55%, transparent);
+        padding: 0 0.12em;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        transition:
+          background 180ms ease,
+          box-shadow 180ms ease;
+      }
+      .dim {
+        color: var(--quiet);
+      }
+      /* A deferred mark is completely invisible until cued, not merely unshaded.
+   Weight and padding are neutralised too, or the sentence still points at
+   its own answer before the room has reasoned about it. */
+      [data-cue] {
+        box-shadow: none;
+        background: transparent;
+        font-weight: inherit;
+        padding: 0;
+      }
+      body.cued .key[data-cue] {
+        font-weight: 600;
+        box-shadow: inset 0 -0.14em 0
+          color-mix(in srgb, var(--accent) 46%, transparent);
+      }
+      body.cued mark[data-cue] {
+        background: color-mix(in srgb, var(--accent) 15%, transparent);
+        box-shadow: inset 0 -0.1em 0
+          color-mix(in srgb, var(--accent) 55%, transparent);
+        padding: 0 0.12em;
+      }
+
+      /* --- layouts ---------------------------------------------- */
+      .split {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(24px, 4.2cqi, 72px);
+        align-items: center;
+      }
+      .split h2 {
+        font-size: clamp(32px, 3.8cqi, 60px);
+      }
+      figure {
+        margin: 0;
+      }
+      figure img {
+        display: block;
+        width: 100%;
+        height: min(54vh, 600px);
+        object-fit: contain;
+      }
+      figcaption {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.45;
+        color: var(--quiet);
+        max-width: 52ch;
+      }
+
+      .pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(24px, 4cqi, 68px);
+        margin-top: clamp(16px, 2.6vh, 30px);
+      }
+      .pair > div {
+        padding-top: clamp(12px, 1.8vh, 20px);
+        border-top: 2.5px solid var(--accent);
+      }
+      .pair .label {
+        margin: 0 0 10px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .pair p {
+        font-size: clamp(17px, 1.6cqi, 26px);
+        max-width: 36ch;
+      }
+
+      /* A contrast pair whose two words ARE the teaching: programming vs software
+   engineering, established vs still unknown, verification vs validation.
+   The word is the heading; everything under it is support. */
+      .terms > div {
+        border-top-width: 3.5px;
+      }
+      .term {
+        margin: 0 0 clamp(10px, 1.7vh, 20px);
+        max-width: none;
+        font-size: clamp(26px, 3.1cqi, 52px);
+        font-weight: 400;
+        line-height: 1.06;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .terms h3 {
+        font-size: clamp(19px, 1.75cqi, 29px);
+      }
+      .terms p {
+        font-size: clamp(17px, 1.6cqi, 26px);
+        max-width: 34ch;
+      }
+      .terms h3 + p {
+        font-size: clamp(15px, 1.4cqi, 22px);
+        color: var(--quiet);
+      }
+      /* when the terms carry the weight, the slide's own heading steps back */
+      .slide:has(.terms) h2:not(.term) {
+        font-size: clamp(28px, 3.1cqi, 50px);
+      }
+
+      .trio {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: clamp(16px, 2.6vh, 30px);
+        background: var(--rule);
+        border: 1px solid var(--rule);
+      }
+      .trio > div {
+        padding: clamp(16px, 2.2cqi, 30px);
+        min-height: 10rem;
+        background: var(--ground-teach);
+      }
+      .slide[data-mode='work'] .trio > div {
+        background: var(--ground-work);
+      }
+      .slide[data-mode='gate'] .trio > div {
+        background: var(--ground-gate);
+      }
+      .trio b {
+        display: block;
+        margin-bottom: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .trio span {
+        display: block;
+        font-size: clamp(18px, 1.6cqi, 27px);
+        line-height: 1.16;
+        font-weight: 500;
+      }
+
+      .steps {
+        list-style: none;
+        margin: clamp(16px, 2.6vh, 30px) 0 0;
+        padding: 0;
+        counter-reset: s;
+        max-width: 56ch;
+      }
+      .steps li {
+        counter-increment: s;
+        display: grid;
+        grid-template-columns: 2.4rem 1fr;
+        gap: 14px;
+        align-items: baseline;
+        padding: clamp(8px, 1.3vh, 14px) 0;
+        border-bottom: 1px solid var(--rule);
+        font-size: clamp(18px, 1.6cqi, 27px);
+        line-height: 1.32;
+      }
+      .steps li::before {
+        content: counter(s, decimal-leading-zero);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.07em;
+      }
+
+      .chain {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 10px;
+        margin: clamp(18px, 3vh, 34px) 0 0;
+        padding: 0;
+        font-size: clamp(15px, 1.35cqi, 22px);
+        font-weight: 500;
+      }
+      .chain li:not(:last-child)::after {
+        content: '→';
+        margin-left: 10px;
+        color: var(--accent);
+      }
+
+      .break-word {
+        font-size: clamp(84px, 13.5cqi, 240px);
+        font-weight: 300;
+        letter-spacing: -0.045em;
+        line-height: 0.9;
+        max-width: none;
+      }
+
+      /* ============================================================
+   CONNECTED DECISIONS
+   The sentence is the teaching; the strip is only its picture.
+   One accent, two states. Never an eight-colour code.
+   ============================================================ */
+      .slide:has(.map) .face {
+        padding-bottom: 0;
+      }
+      .map {
+        margin-top: clamp(20px, 3.4vh, 40px);
+        padding-top: clamp(16px, 2.4vh, 26px);
+        border-top: 1px solid var(--rule);
+      }
+      .map-head {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin: 0 0 14px;
+        max-width: none;
+        font-size: clamp(11px, 0.82cqi, 13px);
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .map-claim {
+        margin: 0 0 clamp(14px, 2vh, 22px);
+        max-width: 64ch;
+        font-weight: 500;
+        font-size: clamp(17px, 1.55cqi, 26px);
+        line-height: 1.34;
+        color: var(--accent);
+      }
+      .map ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .map li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        line-height: 1;
+        white-space: nowrap;
+        font-size: clamp(14px, 1.22cqi, 19px);
+        color: var(--quiet);
+      }
+      .map li span {
+        padding: 9px 12px;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+      }
+      .map li:not(:last-child)::after {
+        content: '';
+        width: 16px;
+        height: 1px;
+        background: var(--rule);
+      }
+      .map li.on {
+        color: var(--ink);
+      }
+      .map li.on span {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+        font-weight: 600;
+      }
+      .map li.on::after {
+        background: color-mix(in srgb, var(--accent) 60%, transparent);
+        height: 1.5px;
+      }
+      .slide[data-mode='gate'] .map li.on span {
+        background: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+
+      /* On the slide that introduces it, the map is not a footnote. It is the
+   content, so it is sized as such and every stage reads at full strength. */
+      .map--intro {
+        border-top-width: 2px;
+      }
+      .map--intro .map-head {
+        font-size: clamp(12px, 0.92cqi, 15px);
+        margin-bottom: 20px;
+      }
+      .map--intro ol {
+        gap: 10px 12px;
+      }
+      .map--intro li {
+        font-size: clamp(17px, 1.6cqi, 27px);
+        color: var(--ink);
+      }
+      .map--intro li span {
+        padding: 13px 17px;
+      }
+      .map--intro li:not(:last-child)::after {
+        width: 22px;
+      }
+      .slide:has(.map--intro) h2 {
+        font-size: clamp(30px, 3.4cqi, 54px);
+      }
+
+      /* ============================================================
+   NOTES: a real column that pushes, never an overlay.
+   Student review notes come first. Facilitator notes follow in a
+   visibly separate section and never enter the student PDF.
+   ============================================================ */
+      .sn {
+        display: none;
+      }
+      .notes {
+        grid-column: 2;
+        position: sticky;
+        top: 0;
+        height: 100svh;
+        overflow: auto;
+        background: #fffdf9;
+        border-left: 1px solid var(--rule);
+        color: var(--ink);
+        padding: 26px 26px 40px;
+        min-width: 0;
+      }
+      body:not(.notes-open) .notes {
+        display: none;
+      }
+      .notes h2 {
+        font-size: 19px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.25;
+        margin: 0 0 4px;
+        max-width: none;
+      }
+      .n-loc {
+        margin: 0 0 18px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes h3 {
+        margin: 20px 0 5px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes p,
+      .notes li {
+        font-size: 14.5px;
+        line-height: 1.52;
+        max-width: none;
+        margin: 0 0 8px;
+      }
+      .notes ul {
+        margin: 0 0 8px;
+        padding-left: 1.1rem;
+      }
+      .notes #n-body::before,
+      .notes .fn::before {
+        display: block;
+        margin: 0 0 14px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes #n-body::before {
+        content: 'Student review notes';
+      }
+      .notes .fn {
+        margin-top: 28px;
+        padding: 20px 0 0;
+        border-top: 2px solid var(--accent);
+      }
+      .notes .fn::before {
+        content: 'Facilitator notes';
+        color: #8a3f28;
+      }
+      .notes .fn strong { font-weight: 700; color: var(--ink); }
+      .notes .fn .pause { color: var(--muted, #596678); font-size: .9em; }
+      .notes .fn .facilitator-question {
+        padding: 16px 18px;
+        background: var(--ground-work);
+        border-left: 3px solid var(--accent);
+      }
+      .notes .fn .facilitator-question p { margin: 0; }
+      .notes .fn .facilitator-question p + p { margin-top: 10px; }
+      .notes .fn .response-guidance {
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid var(--rule);
+      }
+      .notes .fn .response-label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: #596678;
+      }
+      .notes .fn .question-label {
+        display: block;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 4px 7px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+      .notes .close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--rule);
+        background: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+        line-height: 1;
+      }
+      .notes-body {
+        padding-right: 34px;
+      }
+      .n-cue {
+        margin: 0 0 16px;
+        padding: 10px 13px;
+        border-left: 3px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, transparent);
+        font-size: 13.5px;
+        line-height: 1.45;
+        font-weight: 500;
+      }
+      .n-cue b {
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .sn .n-time,
+      .notes .n-time {
+        margin-top: 26px;
+        padding-top: 12px;
+        border-top: 1px solid var(--rule);
+        font-size: 11.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--quiet);
+      }
+      .n-time span + span::before {
+        content: '·';
+        padding: 0 0.6em;
+        opacity: 0.6;
+      }
+
+      /* ============================================================
+   CONTROLS: present, but out of the way until wanted.
+   ============================================================ */
+      .bar-zone {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 30;
+        padding: 42px 70px 20px 20px;
+        opacity: 0;
+        transition: opacity 180ms ease;
+      }
+      .bar-zone:hover,
+      .bar-zone:focus-within {
+        opacity: 1;
+      }
+      @media (hover: none) {
+        .bar-zone {
+          opacity: 1;
+        }
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        padding: 5px;
+        border-radius: 999px;
+        background: rgba(22, 38, 63, 0.9);
+        color: #fff;
+        box-shadow: 0 12px 40px rgba(22, 38, 63, 0.22);
+        backdrop-filter: blur(10px);
+      }
+      .bar button {
+        min-width: 38px;
+        height: 38px;
+        padding: 0 12px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .bar button:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+      .bar .pos {
+        font-variant-numeric: tabular-nums;
+        font-size: 12px;
+        opacity: 0.72;
+        padding: 0 8px;
+      }
+
+      /* ============================================================
+   NOTES TAB (?view=notes)
+   A second tab showing only the notes. It follows the presenting
+   tab over a BroadcastChannel and can drive it in return.
+   ============================================================ */
+      body.view-notes {
+        grid-template-columns: 1fr;
+      }
+      body.view-notes main,
+      body.view-notes .rail {
+        display: none;
+      }
+      body.view-notes .notes {
+        grid-column: 1;
+        position: static;
+        height: 100svh;
+        border-left: 0;
+        padding: 34px 30px 90px;
+      }
+      body.view-notes .notes .close {
+        display: none;
+      }
+      body.view-notes .notes-body {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding-right: 0;
+      }
+      body.view-notes .notes h2 {
+        font-size: 26px;
+      }
+      body.view-notes .n-loc {
+        font-size: 12px;
+      }
+      body.view-notes .notes h3 {
+        font-size: 12px;
+        margin-top: 26px;
+      }
+      body.view-notes .notes p,
+      body.view-notes .notes li {
+        font-size: 17px;
+        line-height: 1.55;
+      }
+      body.view-notes .n-cue {
+        font-size: 15.5px;
+      }
+      body.view-notes .bar-zone {
+        opacity: 1;
+      }
+      .sync-off {
+        position: fixed;
+        left: 20px;
+        top: 18px;
+        z-index: 31;
+        max-width: 26rem;
+        padding: 11px 14px;
+        border-left: 3px solid #b4552f;
+        background: #fdf1e7;
+        color: #5a3a25;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      @media screen and (max-width: 900px) {
+        body.notes-open {
+          --notes-w: 0px;
+        }
+        body.notes-open .notes {
+          position: fixed;
+          inset: 0 0 0 auto;
+          width: min(31rem, 92vw);
+          z-index: 40;
+          grid-column: 1;
+          box-shadow: -16px 0 50px rgba(22, 38, 63, 0.2);
+        }
+        .split,
+        .pair,
+        .trio {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        figure img {
+          height: 34vh;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+
+      /* ============================================================
+   PRINT: slide and its notes together on one page.
+   Portrait: slide above, notes below. Landscape: side by side.
+   Grounds are dropped to white; the mode word still names the
+   moment, so nothing is lost and the handout stays readable.
+   ============================================================ */
+      /* One printed form: A4 portrait, slide on the top half and its notes on the
+   bottom half, so plain Cmd-P is the whole story. The page size is declared
+   rather than read from the dialog: Chrome evaluates `orientation` and
+   `width` in print against the viewport, not the page box, so CSS cannot
+   detect it. `vh` does resolve against the page box, so the height is right
+   once the size is named. */
+      @page {
+        size: A4 portrait;
+        margin: 11mm;
+      }
+      @media print {
+        html {
+          scroll-snap-type: none;
+          background: #fff;
+        }
+        body {
+          display: block;
+          background: #fff;
+          color: #000;
+          --notes-w: 0px;
+        }
+        main {
+          container-type: normal;
+        }
+        .rail,
+        .bar-zone,
+        .notes {
+          display: none !important;
+        }
+
+        .slide {
+          display: grid;
+          gap: 7mm;
+          min-height: 0;
+          padding: 0;
+          overflow: visible;
+          background: #fff !important;
+          color: #000;
+          break-after: page;
+          break-inside: avoid;
+        }
+        .slide:last-child {
+          break-after: auto;
+        }
+        .slide[data-mode='gate'] {
+          color: #000;
+          --accent: #244d9d;
+          --quiet: #555;
+          --rule: #bbb;
+        }
+
+        .face {
+          border: 0.5pt solid #9aa4b2;
+          padding: 9mm;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .content,
+        .map {
+          max-width: none;
+        }
+
+        .mode b {
+          color: #000 !important;
+          background: transparent !important;
+          border-color: #000 !important;
+        }
+        .mode span {
+          color: #444;
+        }
+        h1 {
+          font-size: 24pt;
+          max-width: 22ch;
+        }
+        h2 {
+          font-size: 19pt;
+          max-width: 24ch;
+        }
+        h3 {
+          font-size: 12pt;
+        }
+        p {
+          font-size: 10.5pt;
+          max-width: 60ch;
+        }
+        .eyebrow {
+          font-size: 8pt;
+        }
+        .break-word {
+          font-size: 44pt;
+        }
+        .instruction {
+          font-size: 10pt;
+        }
+        .pair p,
+        .trio span,
+        .steps li,
+        .chain {
+          font-size: 10pt;
+        }
+        figure img {
+          height: 52mm;
+        }
+        .map {
+          margin-top: 5mm;
+          padding-top: 3mm;
+        }
+        .map-claim {
+          font-size: 10pt;
+          color: #244d9d;
+        }
+        .map li {
+          font-size: 7.5pt;
+        }
+        .map li.on span {
+          background: #244d9d !important;
+          color: #fff !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        /* Only student review notes print. Facilitator notes stay private in the
+     instructor-controlled HTML used for rehearsal and delivery. */
+        .sn {
+          display: block;
+          font-size: 9pt;
+          line-height: 1.42;
+          overflow: hidden;
+        }
+        .fn {
+          display: none !important;
+        }
+        .sn h3 {
+          margin: 0 0 2mm;
+          font-size: 7.5pt;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #244d9d;
+        }
+        .sn h3 + * {
+          margin-top: 0;
+        }
+        .sn * + h3 {
+          margin-top: 4mm;
+        }
+        .sn p,
+        .sn li {
+          font-size: 9pt;
+          line-height: 1.42;
+          margin: 0 0 2mm;
+          max-width: none;
+        }
+        .sn ul {
+          margin: 0 0 2mm;
+          padding-left: 4mm;
+        }
+        .n-cue {
+          display: none;
+        }
+        .key[data-cue] {
+          font-weight: 600;
+          box-shadow: inset 0 -0.14em 0
+            color-mix(in srgb, var(--accent) 46%, transparent);
+        }
+        mark,
+        mark[data-cue] {
+          background: color-mix(in srgb, var(--accent) 15%, transparent);
+          box-shadow: inset 0 -0.1em 0
+            color-mix(in srgb, var(--accent) 55%, transparent);
+          padding: 0 0.12em;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .sn .n-time {
+          margin-top: 4mm;
+          padding-top: 2mm;
+          border-top: 0.5pt solid #bbb;
+          font-size: 7.5pt;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #555;
+        }
+        .sn::before {
+          content: 'Review notes';
+          display: block;
+          margin-bottom: 3mm;
+          padding-bottom: 1.5mm;
+          border-bottom: 0.5pt solid #9aa4b2;
+          font-size: 7.5pt;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #555;
+        }
+      }
+      @media print {
+        .slide {
+          grid-template-rows: 1fr 1fr;
+          height: 98vh;
+        }
+      }
+    </style>
+  </head>
+  <body data-mode="teach">
+    <div class="rail" id="rail" aria-hidden="true">
+      <svg class="rail-logo" viewBox="0 0 46.6173665 25.140518">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g
+            transform="translate(-40.000000, -80.000000)"
+            fill="#FFFFFF"
+            fill-rule="nonzero"
+          >
+            <g transform="translate(40.000000, 80.000000)">
+              <path
+                d="M38.7936107,15.2573604 C36.1528467,15.2573604 34.0047626,17.4054445 34.0047626,20.0462084 C34.0047626,22.6869724 36.1528467,24.8350565 38.7936107,24.8350565 C41.4343746,24.8350565 43.5824587,22.6869724 43.5824587,20.0462084 C43.4839228,17.4152981 41.3358387,15.2573604 38.7936107,15.2573604 Z M38.7936107,22.3026821 C37.5224967,22.3026821 36.5469906,21.327176 36.5469906,20.056062 C36.5469906,18.7849481 37.5224967,17.809442 38.7936107,17.809442 C40.0647247,17.809442 41.0402308,18.7849481 41.0402308,20.056062 C41.0402308,21.2187865 39.9661887,22.3026821 38.7936107,22.3026821 Z"
+              />
+              <path
+                d="M14.8395168,13.7004921 C14.8395168,11.9366983 13.3713309,10.4783659 11.6173906,10.4783659 C9.75506085,10.4783659 8.39526449,11.9465519 8.39526449,13.7004921 C8.39526449,15.4544323 9.86345042,17.0211542 11.6173906,17.0211542 C13.3713309,17.0211542 14.8395168,15.5529683 14.8395168,13.7004921"
+              />
+              <path
+                d="M22.7618087,16.1441841 C22.9588806,15.36575 23.0574166,14.5774622 23.0574166,13.7004921 L21.9833745,13.1092763 C21.9833745,12.7151324 21.8848385,12.4293781 21.8848385,12.0352342 L22.7618087,11.2568001 C22.5647367,10.4783659 22.3676648,9.69007819 21.9833745,8.91164404 L20.8107965,8.81310807 C20.6137245,8.51750017 20.4166526,8.13320989 20.2195807,7.83760199 L20.7122605,6.76355993 C20.2195807,6.08366175 19.7367544,5.49244594 19.1455386,4.9997661 L18.0714966,5.39390998 C17.7758887,5.19683804 17.4802808,4.90123013 17.1945264,4.71401179 L17.2930624,3.54143377 C16.6131642,3.1472899 15.8248765,2.76299962 15.0464423,2.56592769 L14.1694722,3.44289781 C13.7753284,3.34436184 13.489574,3.24582587 13.0954302,3.24582587 L12.7012863,2.17178382 C11.9228522,2.07324785 11.1345644,2.07324785 10.2575943,2.17178382 L9.86345042,3.24582587 C9.46930654,3.34436184 9.18355224,3.34436184 8.78940836,3.44289781 L8.01097421,2.76299962 C7.23254006,3.05860753 6.54278829,3.35421543 5.76435414,3.73850571 L5.86289011,4.91108373 C5.5672822,5.10815567 5.2716743,5.3052276 4.98591999,5.59098191 L3.91187794,5.19683804 C3.32066213,5.68951788 2.73929992,6.36941606 2.24662007,6.96063187 L2.83783588,8.03467392 C2.64076395,8.33028183 2.44369201,8.62588973 2.24662007,9.01018001 L1.07404205,9.10871598 C0.778434149,9.78861416 0.482826244,10.5769019 0.295607905,11.3553361 L1.17257802,12.1337702 C1.07404205,12.5279141 1.07404205,12.8136684 1.07404205,13.2078123 L-2.80056066e-15,13.7990281 C-2.80056066e-15,14.5774622 0.0985359682,15.36575 0.295607905,16.2427201 L1.46818593,16.439792 C1.56672189,16.8339359 1.66525786,17.1196902 1.76379383,17.5138341 L0.985359682,18.4893401 C1.28096759,19.1692383 1.66525786,19.9575261 2.1579377,20.5388883 L3.42905169,20.3418163 C3.62612363,20.6374243 3.92173153,20.9330322 4.10894987,21.1202505 L3.91187794,22.2928285 C4.50309375,22.7855084 5.18299193,23.2683346 5.86289011,23.6624785 L6.83839619,22.9825803 C7.1340041,23.1796522 7.51829437,23.2781882 7.81390228,23.4752601 L8.01097421,24.6478382 C8.78940836,24.9434461 9.57769611,25.041982 10.3561303,25.140518 L11.0360284,24.1650119 C11.4301723,24.1650119 11.7159266,24.1650119 12.1100705,24.1650119 L12.7899687,25.140518 C13.5684028,25.041982 14.3566906,24.8449101 15.1351247,24.6478382 L15.3321966,23.4752601 C15.6278046,23.3767242 16.0120948,23.1796522 16.3077027,22.9825803 L17.2832088,23.6624785 C17.963107,23.2683346 18.6528588,22.7855084 19.234221,22.1942926 L18.9386131,21.0217145 C19.234221,20.7261066 19.4312929,20.5290347 19.6185113,20.2432804 L20.7910893,20.4403523 C21.2837691,19.7604541 21.6680594,19.0707024 21.9636673,18.3908042 L21.2837691,17.5138341 C21.3823051,17.2182262 21.4808411,16.8339359 21.579377,16.439792 L22.7618087,16.1441841 Z M11.5188547,20.2432804 C7.90258465,20.2432804 4.9662128,17.3069085 4.9662128,13.6906385 C4.9662128,10.0743685 7.90258465,7.13799661 11.5188547,7.13799661 C15.1351247,7.13799661 18.0714966,10.0743685 18.0714966,13.6906385 C18.0714966,17.3069085 15.1351247,20.2432804 11.5188547,20.2432804 Z"
+              />
+              <path
+                d="M22.7618087,3.91587045 C20.6137245,4.01440642 19.5396825,2.15207662 19.5396825,2.15207662 C19.4411465,1.95500469 19.0470027,1.85646872 18.8597843,1.95500469 C18.6627124,2.05354065 18.5641764,2.44768453 18.6627124,2.63490287 C18.7612483,2.73343883 20.1308983,5.07859488 22.8701982,4.98005891 C23.1658061,4.98005891 23.3628781,4.684451 23.3628781,4.48737907 C23.2446349,4.11294239 23.0574166,3.91587045 22.7618087,3.91587045"
+              />
+              <path
+                d="M46.6173665,17.8981243 L46.6173665,17.8981243 L46.6173665,12.7151324 L46.6173665,3.1374363 C46.6173665,2.45753812 46.0261507,1.76778635 45.2477166,1.76778635 L43.8780666,1.76778635 L43.8780666,7.63067645 C43.8780666,7.92628436 43.6809947,8.12335629 43.3853868,8.12335629 C43.0897789,8.12335629 42.892707,7.92628436 42.892707,7.63067645 L42.892707,1.76778635 L40.7446228,1.76778635 L40.7446228,7.63067645 C40.7446228,7.92628436 40.5475509,8.12335629 40.251943,8.12335629 C39.9563351,8.12335629 39.7592632,7.92628436 39.7592632,7.63067645 L39.7592632,1.76778635 L37.6111791,1.76778635 L37.6111791,7.63067645 C37.6111791,7.92628436 37.4141071,8.12335629 37.1184992,8.12335629 C36.8228913,8.12335629 36.6258194,7.92628436 36.6258194,7.63067645 L36.6258194,1.76778635 L34.4777353,1.76778635 L34.4777353,7.63067645 C34.4777353,7.92628436 34.2806633,8.12335629 33.9850554,8.12335629 C33.6894475,8.12335629 33.4923756,7.92628436 33.4923756,7.63067645 L33.4923756,1.76778635 L28.9991354,1.76778635 C28.3192373,1.76778635 27.6294855,2.35900216 27.6294855,3.1374363 L27.6294855,5.08844847 L25.8656916,1.57071441 L26.9397337,0.9794986 C27.2353416,0.880962632 27.3338776,0.585354728 27.1368056,0.29960042 C27.0382697,0.00399251533 26.7426618,-0.0945434529 26.4569075,0.102528484 L23.2347813,1.76778635 C22.9391734,1.86632231 22.8406374,2.16193022 23.0377094,2.44768453 C23.1362453,2.74329243 23.4318532,2.8418284 23.7176075,2.64475646 L24.7916496,2.05354065 L26.9397337,6.16249053 L21.1753796,6.16249053 L21.1753796,6.16249053 C21.1753796,6.2610265 21.2739155,6.2610265 21.2739155,6.35956246 L21.6680594,6.8522423 C21.6680594,6.8522423 21.2739155,7.63067645 21.0768436,7.92628436 L21.0768436,7.92628436 C21.3724515,7.92628436 22.3479576,8.02482033 22.3479576,8.02482033 L22.6435655,8.61603613 C23.0377094,9.49300625 23.3234637,10.281294 23.4219996,11.1582641 L23.5205356,11.7494799 C23.5205356,11.7494799 22.7421015,12.3406957 22.5450295,12.5279141 C22.8406374,12.62645 23.7176075,13.1191299 23.7176075,13.1191299 L23.7176075,13.7103457 C23.7176075,14.5873158 23.6190716,15.4741395 23.4219996,16.3511096 L23.3234637,16.9423254 C23.3234637,16.9423254 22.4464936,17.1393974 22.0523497,17.2379334 C22.2494216,17.5335413 22.8307838,18.2134394 22.8307838,18.2134394 L22.5351759,18.8046552 C22.43664,18.9031912 22.43664,19.1002632 22.43664,19.1987991 L33.1869141,19.1987991 C33.482522,16.5580352 35.5320701,14.508487 38.5669779,14.508487 C41.5033498,14.508487 43.7499699,16.4594992 44.1441137,19.1987991 L45.2181558,19.1987991 L45.2181558,19.1987991 C46.0261507,19.1692383 46.6173665,18.5878761 46.6173665,17.8981243"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <p>
+        <span class="course">Software Engineering</span
+        ><span class="sep">·</span>Week 02<span class="sep">·</span
+        ><span class="seg" id="rail-seg">Arrival</span>
+      </p>
+      <svg class="rail-progress" viewBox="0 0 40 40">
+        <circle class="track" cx="20" cy="20" r="16" pathLength="100"></circle>
+        <circle
+          class="fill"
+          id="rail-progress"
+          cx="20"
+          cy="20"
+          r="16"
+          pathLength="100"
+        ></circle>
+        <text id="rail-current" x="20" y="20">1</text>
+      </svg>
+    </div>
+
+    <main id="deck">
+      <!-- ============================ BLOCK 1 ============================ -->
+
+      <!-- 01 -->
+      <section class="slide" data-mode="teach" data-seg="Arrival" data-min="4" data-block="Block 1" data-target="0:04">
+        <div class="face"><div class="content">
+          <p class="eyebrow">Software Engineering · Week 2</p>
+          <h1>Organising work under uncertainty</h1>
+          <p class="lead">Have Part A and somewhere to write ready. Keep the case unread for now.</p>
+        </div></div>
+        <div class="sn"><h3>Textbook study</h3><p>§2.3, pp. 61-64. Printed pages in Sommerville (2016), 10th edition, Global Edition. See the <a href="../../reading-guide.md#session-2---organising-work-under-uncertainty">session 2 reading guide</a> for the study question and optional selections.</p>
+          <h3>Today’s question</h3><p>Does more planning always reduce risk?</p>
+          <h3>Do now</h3><p>Have Part A ready. First revisit Week 1; on slide 4, answer the planning question in the first box on page 01. Read the case only when invited after the first break. Last week’s worksheet is not required.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Open the materials and settle the room.</strong></p>
+            <h3>Say · rehearsal script</h3>
+<p><strong>Today we will decide how to organise work when important things are still unknown.</strong> Please take Part A and have somewhere to make a short note. Keep the case unread for now. We will first recall last week, then answer the planning question in the box at the top of page 01.</p>
+<p><strong>After the first break, we will read the case and make a recommendation.</strong> A new request will then test that recommendation. In the final hour, you will compare routes and write your own decision. You do not need last week’s worksheet. <em class="pause">[Check access and settle the room; move on early if everyone is ready.]</em></p>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Up to four minutes for arrival, paper access and orientation. Move on early if ready; keep any saved time for the choice exercise.</p>
+<h3>Before showing this</h3><p><strong>Name the confirmed distribution route aloud.</strong> Check that the context sheet and writing surface are available. Keep a paper or local-file fallback ready once those routes are chosen.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 02 -->
+      <section class="slide" data-mode="teach" data-seg="Week 1 connection" data-min="3" data-block="Block 1" data-target="0:07">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">The launch decision continues</p>
+          <h2>What did the demonstration establish?</h2>
+          <div class="trio"><div><h3>We saw</h3><p>A reservation succeed under the conditions shown.</p></div><div><h3>Still uncertain</h3><p>Whether other important booking situations worked.</p></div><div><h3>Today’s shift</h3><p>When could we obtain evidence before committing?</p></div></div>
+        </div></div>
+        <div class="sn">
+          <h3>Connection to Week 1</h3><p>Last week separated what the demonstration established from what remained uncertain. This week asks how a team organises work while those uncertainties still matter.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Move from judging evidence to organising when it arrives.</strong></p>
+            <h3>Say · rehearsal script</h3>
+<p><strong>Last week’s demonstration showed a successful reservation under the conditions shown.</strong> That was useful evidence, but it did not establish that every important booking situation worked. Later evidence made us reconsider how much confidence the team should place in the launch. You do not need to remember every incident detail.</p>
+<p><strong>This week we ask when the team could have obtained useful evidence while it could still change its decision.</strong> The organising choices include what to agree early, what to try and revise, and what useful capability to deliver first. Writing a more detailed plan does not by itself answer an unchecked question.</p>
+<p><strong>On the next slide, name one source of earlier feedback and the launch decision it could influence.</strong> This is a short look back at Week 1. The separate question about planning comes afterwards, on Part A page 01. <em class="pause">[Pause for recognition; do not restart the incident investigation.]</em></p>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes for the recap, the shift to feedback timing and the explicit handoff. No separate recall round.</p>
+<h3>Listen for</h3><p><strong>Students may remember failure details.</strong> Acknowledge them briefly, then return to the timing of feedback rather than replaying the incident.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 03 -->
+      <section class="slide" data-mode="work" data-seg="Earlier feedback" data-min="6" data-block="Block 1" data-target="0:13">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>6 min · think, then compare</span></p>
+          <p class="eyebrow">Look back to Week 1 · Campus Event</p>
+          <h2>Where could earlier feedback have changed the launch decision?</h2>
+          <p class="instruction">Earlier evidence from ___ could help the team decide whether to ___.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Participation</h3><p>Write one example first. Then compare with one person near you. You may keep your answer private and listen during the comparison.</p>
+          <h3>Scope</h3><p>A feedback source could be a user, a technical check, an operational rehearsal, or another relevant source. State which decision the feedback would inform.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Connect one feedback source to a decision.</strong></p>
+            <h3>Say · rehearsal script</h3>
+<p><strong>Think back to Week 1 and connect one source of evidence to a decision it could influence.</strong> Use your own notes for this short answer; save the Part A box for the planning question on the next slide. A source might be a user, a technical check, or a rehearsal of how the service would operate.</p>
+<p><strong>Write your example first, then compare it with someone nearby.</strong> Say what the source would help the team learn and what the team could still change. You do not need to prove what would certainly have happened; explain what the feedback could inform. <em class="pause">[Two minutes individually, two in pairs, then two for at most two contributions and synthesis.]</em></p>
+<p><strong>Earlier feedback is useful when it arrives before a decision it can change.</strong> We will use that connection throughout today’s recommendation. Now turn to the first box on Part A page 01 for your initial position on planning.</p>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes writing, two comparing, two for contributions and synthesis.</p>
+<h3>After attempts · possible response</h3><p>Last week, a student saw no confirmation, pressed Reserve again, and ended up with two reservations. <strong>Before launch, the team could have tested that retry situation and checked the resulting bookings.</strong> If it produced duplicates, that evidence could have led them to postpone launch while they investigated and corrected the behaviour.</p><p><strong>A specific check supplies evidence that can change a decision.</strong> Say “could”: this proposes an earlier check, not a claim that it would certainly have prevented the incident or proved the whole service reliable.</p><h3>Facilitation</h3><p><strong>Take at most two examples.</strong> If answers stop at “test earlier” or “ask users”, use the follow-up below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which decision could that evidence change?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It could change whether we approve Monday’s launch. If a retry creates two reservations, we need to investigate and correct that behaviour before approving it.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>After the successful demonstration, what did the team approve, and which booking situations were still untested in the evidence we had?</strong></p><div class="response-guidance"><span class="response-label">Direct answer · not spoken</span><p><strong>They approved the Monday launch.</strong> The evidence did not establish reliable outcomes when a student retried after no confirmation or when requests competed for the last place.</p></div></div><div class="facilitator-question"><span class="question-label">Follow-up question</span><p class="question-text"><strong>What would you have wanted to find out before approving that?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> Accept a specific retry check, a competing-request check, or clarification of acceptable booking outcomes with the organiser followed by a relevant check. Connect the proposed evidence to the launch decision.</p></div></div><h3>Cut</h3><p><strong>If the opening runs long, take one example and move on.</strong> Protect the context reading and recommendation work.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 04 -->
+      <section class="slide" data-mode="work" data-seg="Opening position" data-min="4" data-block="Block 1" data-target="0:17">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>4 min · write on your own</span></p>
+          <p class="eyebrow">Your initial position on planning · Part A page 01</p>
+          <h1>Does more planning always reduce risk?</h1>
+          <p class="instruction">Choose yes, no, or it depends. Give one reason. Keep the sentence.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Why keep it</h3><p>Write this in the opening box on Part A page 01, before reading the case below. You will return to this sentence after making a lifecycle recommendation. The purpose is to make any change in your reasoning visible.</p>
+          <h3>If you are unsure</h3><p>“It depends” needs a condition. Name what it depends on, even provisionally.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Preserve an initial position before introducing method names.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <div class="facilitator-question"><span class="question-label">Ask individually</span><p class="question-text"><strong>Does more planning always reduce risk?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>On Part A page 01, before reading the case below, write your current answer and one reason. Yes, no, or it depends are all possible starting positions. If you choose “it depends”, say what you think it depends on.</p>
+            <p><strong>Keep this sentence as it is.</strong> At the end, you can see whether the work has changed your view or simply made it more precise. You do not need a method name yet. <em class="pause">[Give the writing time; do not supply the answer during silence.]</em></p>
+
+            <p><strong>After writing, set Part A aside until the case-reading slide after the first break.</strong> Keep your sentence as written; this is a starting position we will revisit, not an answer to correct now.</p></div></div>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute for instructions, two for individual writing, one to preserve the sentence and set Part A aside.</p>
+<h3>Teach-aloud discipline</h3><p><strong>Do not define the methods first.</strong> Give students time to express a working position in ordinary language.</p><h3>Listen for</h3><p><strong>Planning treated as automatically safe, or agility treated as automatically fast.</strong> Keep both as positions to test rather than correcting them immediately.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 05 -->
+      <section class="slide" data-mode="teach" data-seg="Risk and uncertainty" data-min="5" data-block="Block 1" data-target="0:22">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">A working distinction</p>
+          <div class="pair terms">
+            <div><h2 class="term">Uncertainty</h2><p>What the team does not yet know.</p></div>
+            <div><h2 class="term">Risk</h2><p>What may matter if reality differs from the team’s assumptions.</p></div>
+          </div>
+          <p class="instruction">Planning can expose uncertainty. Evidence is often needed to reduce it.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Use these as working terms</h3><p>The distinction helps us ask whether a plan settles an issue, merely records an assumption, or creates a route to obtain evidence.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>A plan makes an assumption visible; evidence helps test it.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Uncertainty is something relevant that we do not yet know; risk concerns what could happen and why it would matter.</strong> Think back to Campus Event before launch. An uncertainty was whether pressing Reserve again after no confirmation would create another reservation. A related risk was that a retry could create duplicate bookings, leaving the organiser with an unreliable reservation list. The uncertainty is the unanswered question; the risk is the possible outcome and its consequence.</p>
+            <p><strong>Planning can identify the assumption, make someone responsible for investigating it, and reserve time to respond.</strong> But the plan cannot make the assumption true. Think of your Week 1 causal strip: separating evidence from assumptions showed which claims still needed checking. From an assumption, we can plan a useful check, decide what its result would let us conclude, and leave time to respond. We may need to inspect, ask, try something, or run a check. That is how planning and evidence work together.</p>
+            <div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Before approving launch, how could we check the assumption that retrying a reservation is safe, and what would we do if the check showed otherwise?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Try reserving again after no confirmation, then inspect the reservation records and remaining-place count. If the retry creates a duplicate, investigate and correct the behaviour before approving launch. A passing result supports the conditions checked, not every possible booking situation.</p></div></div>
+<h3>Delivery guidance · not spoken</h3><h3>If the answer is vague</h3><p>If someone says “test it”, use the first question. If they say “write a better plan”, use the second.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What would you inspect, and which result would change the launch decision?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would inspect the reservation records and remaining-place count after a retry. A duplicate booking would challenge our launch decision.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What new evidence would that plan obtain?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It would obtain evidence about what a retry actually does, rather than assume that a successful single booking proves retrying is safe.”</p></div></div><h3>Time budget</h3><p>Two minutes explaining the example, two for a response and clarification, one for synthesis.</p>
+<h3>Boundary</h3><p><strong>Do not turn this into a formal risk-management taxonomy.</strong> The capability is choosing a proportionate lifecycle, not memorising definitions.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 06 -->
+      <section class="slide" data-mode="teach" data-seg="Three choices" data-min="5" data-block="Block 1" data-target="0:27">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Ways to organise the work</p>
+          <div class="trio">
+            <div><h3>Plan-driven</h3><p>Agree substantial scope and sequence before implementation.</p></div>
+            <div><h3>Iterative</h3><p>Revisit and improve a solution using what each cycle reveals.</p></div>
+            <div><h3>Incremental</h3><p>Deliver useful parts in stages and extend what the system can do.</p></div>
+          </div>
+          <p class="instruction">A real project may combine them.</p>
+        </div></div>
+        <div class="sn">
+          <h3>These are choices, not team identities</h3><p>The useful question is which approach fits a part of the work under its current conditions. Teams often plan some dependencies, iterate on uncertain behaviour, and deliver in increments.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Plan commitments, improve versions, and deliver useful capability.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Plan-driven work establishes substantial scope and sequence early.</strong> It is useful when people need to coordinate dependencies and commitments. The plan may still include reviews and changes; planning does not mean refusing feedback.</p>
+            <p><strong>Iteration means revisiting a solution using evidence.</strong> We try a journey, learn where it is unclear, revise it, and examine it again. We are improving the same solution.</p>
+            <p><strong>An increment adds useful capability.</strong> A connected booking service could be one useful part, with automated reminders added later. A project can plan the commitments, iterate on uncertain behaviour, and deliver useful parts separately. We will look at what makes each choice worthwhile.</p>
+
+            <p><strong>These choices answer different questions and can coexist.</strong> Planning asks which commitments and dependencies to agree early. Iteration asks what to revise after learning. Increments ask which useful capability can become available separately. </p><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Which two of these organising choices are easiest to confuse, and what is the difference between them?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Take one response, then resolve the distinction using the next three slides rather than adding more method names.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Iterative and incremental are easy to confuse. Revising the same booking journey after feedback is iteration; adding a useful reminder capability later is an increment. We could iterate within either increment.”</p></div></div>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes introducing the distinctions, two checking the iteration/increment distinction. Develop the examples on the following slides.</p>
+
+          </div>
+        </div>
+      </section>
+      <!-- 07 -->
+      <section class="slide" data-mode="teach" data-seg="Plan-driven" data-min="6" data-block="Block 1" data-target="0:33">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Plan-driven work</p>
+          <h2>Useful when late change is costly and dependencies are knowable</h2>
+          <p class="lead">The plan coordinates commitments. It also depends on the quality of early information.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Conditions that strengthen the case</h3><p>Stable constraints, expensive rework, external approvals, fixed interfaces, or a dependency order that the team can establish early.</p>
+          <h3>What it may leave exposed</h3><p>If user behaviour or technical feasibility remains uncertain, a detailed plan can preserve a wrong assumption for longer.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Planning earns its place through knowable dependencies and commitments.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>If one piece of work needs an agreed interface or an approval, planning that dependency early avoids preventable rework.</strong> We can agree what has to happen first, who must contribute, and which commitment depends on that evidence.</p>
+            <p><strong>The limitation is the information behind the plan.</strong> A detailed plan can preserve a wrong assumption if nobody checks it until late. So a plan-driven approach still needs evidence at points where important decisions can be reconsidered.</p>
+
+            <p><strong>Imagine two teams building opposite sides of a file exchange.</strong> Agreeing the format early lets them work against the same contract; leaving it vague risks incompatible results. A planned sample-file check can still expose a mistake before either team commits to all the implementation. This is an illustration, not an extra Campus Event fact.</p>
+<div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What would you agree early, and what would you still check?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Take a brief pair discussion and one response. Affirm a specific agreement, then check that students have retained a way to challenge it. Planning earns its place through coordination; it does not make uncertain information reliable.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would agree the file format and field meanings early, then check a sample exchange to see whether both teams interpret them the same way.”</p></div></div>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes explaining, two applying the file-exchange example in pairs, two for a response and synthesis.</p>
+<h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What would make rework especially expensive here?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If both teams build against different interpretations, changing the format later means revising and checking both implementations.”</p></div></div>
+          </div>
+        </div>
+      </section>
+      <!-- 08 -->
+      <section class="slide" data-mode="teach" data-seg="Iterative" data-min="6" data-block="Block 1" data-target="0:39">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Iterative work</p>
+          <h2>Useful when feedback can improve the same solution</h2>
+          <p class="lead">Each cycle should answer a useful question, not merely repeat activity.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Conditions that strengthen the case</h3><p>Uncertain user behaviour, a design that needs refinement, or technical assumptions that can be tested in bounded cycles.</p>
+          <h3>What it may leave exposed</h3><p>Repeated refinement can consume time without delivering usable capability if the team has no stopping rule or learning question.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>An iteration needs a question and a decision it can change.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Suppose people cannot tell whether a reservation succeeded.</strong> We can examine the journey, investigate the problem, revise it, and review it again. Each cycle should answer a useful question, such as whether the outcome is now clear and correct.</p>
+            <p><strong>Users can help us judge whether the message makes sense; technical checks help establish whether the booking behaviour is correct.</strong> Those sources establish different things. Repeating a demonstration is not enough if the uncertainty concerns a condition the demonstration never exercises.</p>
+
+            <p><strong>A revised confirmation screen can be an iteration without adding a new capability.</strong> Someone tries the same booking journey, their difficulty informs a revision, and another trial checks whether that revision helped. A clearer message still needs to correspond to the actual booking result.</p>
+<div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What evidence would make another revision worthwhile?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Give pairs a minute, then hear one answer. Look for a specific misunderstanding or failed check, not “we do another sprint”. Stop refining when the relevant outcome is sufficiently supported for the decision at hand; more cycles are not automatically better.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If a student still thinks the reservation failed when it actually succeeded, we have a specific misunderstanding to investigate and revise the journey around.”</p></div></div>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes explaining, two considering evidence for revision, two for a response and synthesis.</p>
+<h3>Listen for</h3><p>If students equate iteration with fixing bugs:</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What other evidence could help us improve the same solution?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Watching a student hesitate over unclear wording could show us how to improve the interaction even when no software fault has been found.”</p></div></div>
+          </div>
+        </div>
+      </section>
+      <!-- 09 -->
+      <section class="slide" data-mode="teach" data-seg="Incremental" data-min="6" data-block="Block 1" data-target="0:45">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Incremental work</p>
+          <h2>Useful when a smaller part can provide value and evidence</h2>
+          <p class="lead">An increment changes what the system can usefully do.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Conditions that strengthen the case</h3><p>A valuable subset can operate safely, dependencies allow staged delivery, and early use can inform later scope.</p>
+          <h3>What it may leave exposed</h3><p>A thin increment may avoid the hardest integration or operational risk. “Small” does not automatically mean useful or safe.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>A useful increment works as a connected whole.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>A useful increment changes what someone can actually do.</strong> Finishing booking code is not enough if a student cannot use the connected journey or the organiser cannot trust its result. Integration and relevant checks belong inside the useful increment.</p>
+            <p><strong>We might make reliable booking available before automating reminders, if the operating arrangement supports that choice.</strong> Smaller delivery still needs a safe, useful boundary. Breaking work into pieces does not help if all the difficult connections remain untested until the end.</p>
+
+            <p><strong>Completing a database table alone does not give a student a usable booking service.</strong> A useful increment includes the connected behaviour and operating support its users need. In a separate directory example, a checked read-only directory may be useful before editing exists; the boundary works because users can already find information.</p>
+<div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What can someone now do, and what must already work for that to be useful?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Let pairs answer for the directory, then take one response. Contrast adding editing later with improving the existing search: one extends capability, while the other can refine the same capability. A team may do both.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“People can find information in the directory before editing exists. The read-only route must return usable information and work as a connected service.”</p></div></div>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes explaining, two considering a useful boundary, two for a response and synthesis.</p>
+<h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Could someone use this part meaningfully on its own?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Yes, if people can already find the information they need in the checked directory. A database table by itself would not give them that capability.”</p></div></div>
+          </div>
+        </div>
+      </section>
+      <!-- 10 -->
+      <section class="slide" data-mode="work" data-seg="Name the choice" data-min="12" data-block="Block 1" data-target="0:57">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>12 min · pairs</span></p>
+          <p class="eyebrow">Three short situations</p>
+          <h2>Which organising choice fits each situation best?</h2>
+          <div class="trio"><div><h3>File exchange</h3><p>Two teams share a stable format. Changing it later means rework for both.</p></div><div><h3>Registration</h3><p>Users misunderstand the screen. The helpful revision is still unknown.</p></div><div><h3>Directory</h3><p>A checked read-only directory is useful before editing is available.</p></div></div>
+          <p class="instruction">Name the condition behind each choice. A combination is allowed.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Use the three situations on the slide</h3><p>For each one, name the primary choice and the condition that makes it proportionate. Do not argue from labels alone.</p>
+          <h3>Working alone</h3><p>Choose one situation and write your choice plus one condition.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Choose from the condition, not the method label.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>I will give you three short situations.</strong> For each, discuss the organising choice that seems most useful and name the condition behind it. A combination is allowed. These are separate examples, not extra facts about Campus Event.</p>
+            <p><strong>First: two teams must exchange files through an agreed, stable format, and changing that format later would require both teams to redo their work.</strong> </p><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>Which part of the work would you settle early?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span>
+            <p><strong>Second: users repeatedly misunderstand a registration screen, but nobody yet knows which wording or interaction will help.</strong> </p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would settle the shared format and what its fields mean, because both teams’ work depends on that agreement.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>What would you want to learn before committing to the final version?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span>
+            <p><strong>Third: a service can provide a useful, checked read-only directory before it adds editing.</strong> Users can benefit from the directory without the editing feature. </p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would find out what users misunderstand, try a revision, and check whether it resolves that misunderstanding before committing to the final design.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>How could the team stage delivery?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> <em class="pause">[Read each situation, allow pairs to discuss, then take one reason per situation within twelve minutes.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Deliver the checked read-only directory first, then add editing as a later useful capability.”</p></div></div>
+<h3>After attempts · possible reasoning</h3><p><strong>Stable format: plan the agreement early.</strong> Unclear interaction: iterate using feedback. Useful directory: deliver an increment. Accept combinations with a reason; these are not exclusive labels.</p>
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute setting up, six in pairs across the three situations, four discussing their reasons, one synthesising. If early, deepen one reason rather than add a case.</p>
+<h3>Listen for</h3><p><strong>Students giving a method name without a condition.</strong> Use the follow-up below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What about the situation makes that choice proportionate?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“For the directory, users can benefit before editing exists, so separate delivery has a useful boundary.”</p></div></div><h3>Cut</h3><p><strong>Use two situations if late.</strong> Do not cut the Campus Event reading.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 11 -->
+      <section class="slide" data-mode="gate" data-seg="First block close" data-min="3" data-block="Block 1" data-target="1:00">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Pause</b><span>3 min · until 11:00</span></p>
+          <p class="eyebrow">Carry the distinction forward</p>
+          <h2>Which choice fits the condition?</h2>
+          <p class="lead">After the break, use those choices to judge the Campus Event context.</p>
+        </div></div>
+        <div class="sn"><h3>Before the break</h3><p>Keep the three organising choices available. The case reading begins after the break; there is no task to complete during it.</p><div class="fn">
+          <h3>Anchor · if you lose the thread</h3><p><strong>Close the choice exercise and protect the break.</strong></p>
+          <h3>Say · rehearsal script</h3><p><strong>We have compared choices against conditions.</strong> After the break, we will use that judgement on Campus Event. You do not need to decide the case yet. We resume at 11:15. <em class="pause">[Take one final reason from the exercise if useful; stop at 11:00.]</em></p>
+          <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Up to three minutes to resolve one remaining distinction and close the block. This is flexible margin, not another task. Protect the 11:00 break.</p><h3>Time call</h3><p><strong>End the first block at 11:00.</strong> Keep the full 15-minute break.</p>
+        </div></div>
+      </section>
+      <!-- 12 -->
+      <section class="slide" data-mode="gate" data-seg="First break" data-min="15" data-block="Break 1" data-target="11:00 – 11:15">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Pause</b><span>15 min · 11:00 – 11:15</span></p>
+          <p class="eyebrow">First break</p>
+          <h1 class="break-word">Coffee.</h1>
+          <p class="lead">Back at 11:15 for the Campus Event context.</p>
+        </div></div>
+        <div class="sn"><h3>Back at 11:15</h3><p>The historical lens and Part A follow. Nothing is required during the break.</p><div class="fn">
+          <h3>Anchor · if you lose the thread</h3><p><strong>Protect the full break; the historical lens comes before case reading.</strong></p>
+          <h3>Say · rehearsal script</h3><p><strong>We will resume at 11:15.</strong> There is nothing you need to complete during the break. <em class="pause">[Stop teaching and take the break.]</em></p>
+          <h3>Delivery guidance · not spoken</h3><h3>Before leaving</h3><p><strong>Students already have Part A; ask them to keep the case reading for the return.</strong></p>
+        </div></div>
+      </section>
+
+      <!-- ============================ BLOCK 2 ============================ -->
+
+      <!-- 13 -->
+      <section class="slide" data-mode="teach" data-seg="Historical lens" data-min="5" data-block="Block 2" data-target="0:05">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">1970 · large software systems</p>
+          <h2>Late feedback was already recognised as a serious risk</h2>
+          <p class="lead">Winston Royce described a simple sequential process as risky, then added feedback, early modelling, documentation, testing, and customer involvement.</p>
+        </div></div>
+        <div class="sn">
+          <h3>The historical connection</h3><p>Royce’s paper responded to the difficulty of managing large software systems when problems discovered late forced expensive returns to earlier decisions.</p>
+          <h3>Why it matters today</h3><p>The paper does not give us one timeless method. It shows that lifecycle practices respond to concrete coordination and quality problems.</p>
+          <h3>Source</h3><p><a href="https://blog.marsen.me/assets/royce1970.pdf">Winston W. Royce, “Managing the Development of Large Software Systems”, 1970</a>. Open reprint of the original WESCON paper.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Use history to explain the problem a practice addresses.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>In 1970, Winston Royce discussed the development of large software systems.</strong> His concern included discovering practical limitations late, when testing could send a team back to change earlier design decisions.</p>
+            <p><strong>His response included early modelling and customer involvement alongside planned stages, documentation, and testing.</strong> Feedback and planning were both part of the response. This gives us a historical example of practices addressing a concrete engineering problem.</p>
+            <p><strong>For today, remember the connection: seek evidence before a commitment becomes expensive to change.</strong> You do not need to memorise the date or treat the paper as a universal method. We will apply that connection to our own recommendation.</p>
+
+            <div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Which commitment in a project would become costly to revisit after a late test?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Take one example and connect it to the paper’s concern. The historical contribution is the problem-to-practice link, not a list of dates or the claim that one method always wins.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If we build both sides of an integration around an untested interface, a late integration test could force changes in both. An early sample exchange could reveal that mismatch before the full implementations.”</p></div></div>
+<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes explaining the historical problem and response, two for a commitment example, one connecting it to today’s task.</p>
+<h3>Keep accurate</h3><p><strong>Do not say Royce invented waterfall or advocated a pure one-pass process.</strong> Do not present the paper as the origin of iteration. Use it as one documented response to late discovery and coordination risk.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 14 -->
+      <section class="slide" data-mode="teach" data-seg="Feedback timing" data-min="3" data-block="Block 2" data-target="0:08">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">The practical question</p>
+          <h2>When will the team learn that an important assumption is wrong?</h2>
+          <p class="lead">A lifecycle places feedback before or after different commitments.</p>
+        </div></div>
+        <div class="sn">
+          <h3>A lifecycle recommendation should make this visible</h3><p>Name the decision sequence, the feedback point, and which commitment that feedback can still change.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Locate learning before the commitment it should inform.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>When will the team learn that an important assumption is wrong?</strong> That is a practical question to ask of any lifecycle. The answer should identify a point in the work, some evidence, and something we can still change.</p>
+            <p><strong>More planning may clarify a dependency.</strong> An early trial may resolve a misunderstanding. The useful choice depends on where the uncertainty sits. As you read the case, look for what the team knows, what remains open, and which commitments cannot wait indefinitely.</p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute framing, one for a student to name a commitment, one handing over to Part A.</p>
+<h3>Check</h3><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Which commitment should this feedback arrive before?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Accept a practical commitment, not a method slogan.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Feedback about whether users understand the journey should arrive before we commit to implementing the final interaction.”</p></div></div>
+          </div>
+        </div>
+      </section>
+      <!-- 15 -->
+      <section class="slide" data-mode="work" data-seg="Context reading" data-min="10" data-block="Block 2" data-target="0:18">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>10 min · read on your own</span></p>
+          <p class="eyebrow">Campus Event · Part A</p>
+          <h2>Read the context. Mark conditions that should shape the work.</h2>
+          <p class="instruction">Mark one uncertainty, one dependency, and one constraint. Add a question if the evidence is incomplete.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Read before discussing</h3><p>Use only the evidence in Part A. Mark the conditions that matter to how the team should organise the work.</p>
+          <h3>Access</h3><p>If annotation is difficult, record the three items in a separate note or ask for the alternative format.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Read Part A before recommending a route.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Now read the Part A case: pages 01 and 02 in the workbook.</strong> Mark one uncertainty, one dependency, and one constraint. Record them on page 03, or in your own notes. Add a question if something relevant is not established.</p>
+            <p><strong>Use the facts on the sheet.</strong> You do not need to diagnose the technical fault or invent an estimate. First identify the conditions that should shape the work; then we will decide how to organise it. <em class="pause">[Allow ten minutes for reading and annotation; circulate for access and vocabulary questions.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Ten minutes for reading and annotation, including the brief page instruction. Case reading starts at about 11:23, after the historical lens.</p>
+<h3>Distribution</h3><p><strong>Make Part A available before this slide.</strong> The deck must not reproduce the packet facts.</p><h3>While circulating</h3><p><strong>Clarify vocabulary and the location of evidence.</strong> Do not tell students which lifecycle to choose.</p><h3>Rescue prompts</h3><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>What has to happen before something else can happen?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“We need connected checks of booking, notifications and organiser information before real students rely on the booking outcome, because the separate parts must agree.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Which assumption needs evidence from outside the team?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“We need the organiser and volunteers to help check whether the booking outcome is understandable. Their review would not establish reliability under every condition.”</p></div></div>
+          </div>
+        </div>
+      </section>
+      <!-- 16 -->
+      <section class="slide" data-mode="work" data-seg="Provisional choice" data-min="9" data-block="Block 2" data-target="0:27">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>9 min · write, then compare</span></p>
+          <p class="eyebrow">A provisional recommendation</p>
+          <h2>How should the team organise the work in this context?</h2>
+          <p class="instruction">Choose a primary approach or combination. Link it to two marked conditions.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Provisional means revisable</h3><p>Use Part A only. Your choice should explain why these conditions call for this approach. You will test it against a controlled change once your first answer is preserved.</p>
+          <h3>Keep your own wording</h3><p>You may compare reasons with a neighbour, but preserve your initial recommendation.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Link a provisional organising choice to two case conditions.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Using Part A, write a provisional approach and two conditions supporting it.</strong> You can choose a primary approach or combine them, but explain what would be planned, revised, or delivered separately.</p>
+            <p><strong>Compare your reasons with someone nearby, while preserving your own first route.</strong> A method label by itself does not tell us why the choice fits. Point to a condition on the sheet and explain its consequence for the work. <em class="pause">[Allow writing, then brief comparison; keep the nine-minute window.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Five minutes drafting, three comparing reasons, one preserving the provisional choice.</p>
+<h3>Listen for</h3><p><strong>Method labels standing alone.</strong> </p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which marked condition makes this choice proportionate?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The organiser and volunteers are available weekly, so I would schedule short reviews at those points and use the findings to revise the journey before committing further work.”</p></div></div><h3>Do not resolve yet</h3><p><strong>Accept more than one defensible choice.</strong> The facilitator reference will later provide contrasting routes, but should not be displayed.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 17 -->
+      <section class="slide" data-mode="gate" data-seg="Preserve Part A" data-min="3" data-block="Block 2" data-target="0:30">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Checkpoint</b><span>3 min · before Part B</span></p>
+          <p class="eyebrow">Keep the reasoning visible</p>
+          <h2>Preserve your choice and the conditions behind it</h2>
+          <p class="lead">Part B will test what the recommendation leaves exposed.</p>
+        </div></div>
+        <div class="sn">
+          <h3>Before Part B</h3><p>Make sure your provisional approach and two contextual reasons are visible. Do not polish the wording.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Preserve the recommendation and its reasons before Part B.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Before we open Part B, check that your approach and two supporting conditions are visible.</strong> Do not replace them with a more polished answer. We need to be able to see what your reasoning was before the new request.</p>
+            <p><strong>Now you will decide whether to retain or revise that route.</strong> A revision is useful when you can explain its reason. It is also possible to keep a choice and justify why the change does not overturn it. <em class="pause">[Check completion before starting Part B.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes to check the choice and its two reasons, finish a sentence if needed, and prepare the handout.</p>
+<h3>Handoff</h3><p><strong>Check that students have written a choice and contextual reasons before Part B is introduced.</strong> This is a learning checkpoint, not a protected evidence gate.</p><h3>If behind</h3><p><strong>Use the packet handout time to finish the provisional sentence if needed.</strong> Do not compress the main recommendation activity.</p>
+          </div>
+        </div>
+      </section>
+      <!-- 18 -->
+      <section class="slide" data-mode="teach" data-seg="Part B handoff" data-min="2" data-block="Block 2" data-target="0:32">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Introduce Part B</p>
+          <h2>Keep your first recommendation. Now consider a new request.</h2>
+          <p class="lead">Read Part B next, then decide what the request changes.</p>
+        </div></div>
+        <div class="sn"><h3>Bring forward</h3><p>Your provisional choice, the two conditions behind it, and any question you marked in Part A.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Keep the first route visible while considering the new request.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Keep your original recommendation visible.</strong> The sponsor has added a request. Your job is to decide how to handle it within the conditions already given, and explain whether it changes your approach.</p>
+            <p><strong>We are considering what the new evidence lets us reconsider.</strong> You may retain the route or revise it. Read Part B first, then identify what needs attention before proposing a solution. <em class="pause">[Make Part B available and move to the reading slide.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes to distribute Part B and state the question. Do not give another explanation before students read.</p>
+
+          </div></div>
+      </section>
+      <!-- 19 -->
+      <section class="slide" data-mode="work" data-seg="Controlled change" data-min="8" data-block="Block 2" data-target="0:40">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>8 min · read on your own</span></p>
+          <p class="eyebrow">Campus Event · Part B</p>
+          <h2>What does the change disrupt?</h2>
+          <p class="instruction">Mark one decision, dependency, or assumption that now needs attention.</p>
+        </div></div>
+        <div class="sn"><h3>Stay with the evidence</h3><p>Identify what the change affects. Do not redesign the whole platform or invent missing facts.</p><h3>Then</h3><p>Add one sentence: “This matters to our recommendation because…”</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Identify what changes before proposing implementation.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Read Part B on page 04.</strong> Mark one decision, dependency, or assumption affected by the waiting-list request. Keep Part A nearby: its deadline, team capacity, and unresolved booking work still matter.</p>
+            <p><strong>Write a short note beside the request or in your own notes: “This matters to our recommendation because…” You may defer, explore before deciding, or propose a bounded delivery.</strong> None requires you to invent evidence that the work fits. <em class="pause">[Allow the eight-minute reading and thinking window.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Five minutes reading and marking, three writing what the change affects.</p>
+<h3>While circulating</h3><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Which decision, dependency, or assumption does the request affect?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Name the affected element before proposing a response. Keep implementation detail out unless the sheet requires it.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The request affects scope and depends on trustworthy availability. I would make waiting-list delivery conditional on the effort and reliability evidence rather than assume it fits.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which commitment would be hardest to change if the team discovered this late?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The operating scope promised in the invitations would be hard to change. The sponsor needs evidence before the end-of-week-three decision.”</p></div></div>
+          </div></div>
+      </section>
+      <!-- 20 -->
+      <section class="slide" data-mode="teach" data-seg="Decision lens" data-min="3" data-block="Block 2" data-target="0:43">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Five questions</p>
+          <h2>What should be fixed early, and what should stay revisable?</h2>
+          <ol class="steps"><li>What depends on what?</li><li>Where is feedback needed?</li><li>What can change cheaply?</li><li>Who owns the remaining risk?</li><li>What alternative is rejected?</li></ol>
+        </div></div>
+        <div class="sn"><h3>The recommendation structure</h3><p>Use these questions to construct one route through the work. The output is a justified decision, not a definition of a method.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Make the organising decision inspectable.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>We will now build one recommendation that someone else can inspect.</strong> It needs a sequence, a feedback point, a plausible alternative you reject, and a remaining risk with someone responsible for responding.</p>
+            <p><strong>The output is a short explanation of how to organise the delivery.</strong> It is not a list of implementation steps for the new feature. Include the decisions that could lead you to defer work, as well as work you would do if the evidence supports it.</p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes to explain the output and locate pages 05–06. The next slide supplies the sequence instructions; do not explain every field twice.</p>
+<h3>Boundary</h3><p><strong>Do not ask students to produce a complete project plan.</strong> Five questions organise one lifecycle recommendation.</p>
+          </div></div>
+      </section>
+      <!-- 21 -->
+      <section class="slide" data-mode="work" data-seg="Dependency sequence" data-min="17" data-block="Block 2" data-target="1:00">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>17 min · on your own</span></p>
+          <p class="eyebrow">Build the route</p>
+          <h2>Place the work in a defensible dependency sequence</h2>
+          <p class="instruction">Use a short chain. For each link, explain why it must come before the next.</p>
+        </div></div>
+        <div class="sn"><h3>Keep it bounded</h3><p>Three to five meaningful steps are enough. Use activities or decisions, not every project task.</p><h3>Check each link</h3><p>Write “A before B because…” If there is no reason, the order may be preference rather than dependency.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Explain real dependencies and leave conditional work conditional.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Start individually with three to five activities or decisions.</strong> Use page 05 as a draft, or use blank paper. Later, your team will combine the reasoning into one recommendation; you are not producing two separate reports.</p>
+            <p><strong>For the important links, write “A before B because…”.</strong> Explain what B needs from A. Saying an activity is important explains priority, but does not necessarily explain a dependency. Show overlap if two activities can sensibly proceed together.</p>
+            <p><strong>Keep implementation conditional where feasibility is unknown.</strong> The sequence can include a decision to include or defer work. Use the case’s actual commitment point, and leave room for connected checks before anyone relies on the result. <em class="pause">[One minute for instructions, ten to draft, four to explain a link to a neighbour, and two to revise. Circulate without supplying a preferred route.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute instructing, ten drafting, four explaining a dependency to a neighbour, two revising. Keep the 12:15 break.</p>
+<h3>Purpose before fields</h3><p><strong>Say that the chain reveals where the recommendation commits early and where it leaves room to learn.</strong> Then explain the short format.</p><h3>While circulating</h3><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Is that a real dependency or simply your preferred order?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It is a real dependency: a live waiting-list offer needs trustworthy availability before it can promise a place. But we could explore the offer wording before the booking repair is finished.”</p></div></div><h3>Cut</h3><p><strong>Protect at least nine minutes.</strong> If necessary, reduce later whole-class comparison, not this construction time.</p>
+          </div></div>
+      </section>
+      <!-- 22 -->
+      <section class="slide" data-mode="gate" data-seg="Second break" data-min="15" data-block="Break 2" data-target="12:15 – 12:30">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Pause</b><span>15 min · 12:15 – 12:30</span></p>
+          <p class="eyebrow">Second break</p>
+          <h1 class="break-word">Coffee.</h1>
+          <p class="lead">Keep your Part A choice and the dependency sequence.</p>
+        </div></div>
+        <div class="sn"><h3>Back at 12:30</h3><p>Continue with the feedback point and complete the team recommendation. Nothing is required during the break.</p><div class="fn">
+          <h3>Anchor · if you lose the thread</h3><p><strong>Keep the work visible and protect the full break.</strong></p>
+          <h3>Say · rehearsal script</h3><p><strong>Keep your first answer and the dependency sequence.</strong> We resume at 12:30 to identify feedback that could change the decision and complete your recommendation. There is nothing to do during the break. <em class="pause">[Stop teaching and take the break.]</em></p>
+          <h3>Delivery guidance · not spoken</h3><h3>Before leaving</h3><p><strong>Leave the work accessible for the last block.</strong></p>
+        </div></div>
+      </section>
+
+      <!-- ============================ BLOCK 3 ============================ -->
+
+      <!-- 23 -->
+      <section class="slide" data-mode="work" data-seg="Feedback point" data-min="8" data-block="Block 3" data-target="0:08">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>8 min · on your own</span></p>
+          <p class="eyebrow">Place the learning</p>
+          <h2>Where must feedback arrive while it can still change the route?</h2>
+          <p class="instruction">Add one feedback point, its source, and the decision it can change.</p>
+        </div></div>
+        <div class="sn"><h3>Be specific</h3><p>“Get feedback” is incomplete. Name who or what supplies it, when it arrives, and which decision remains open.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Name evidence that can still change a decision.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Add one feedback point before a commitment.</strong> On page 06, name who or what supplies the evidence, what they examine, and what decision could change as a result.</p>
+            <div class="facilitator-question"><span class="question-label">Ask individually</span><p class="question-text"><strong>Can this source establish what you need to know? If the evidence contradicts your assumption, what work or scope decision changes?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>A user review and a technical check answer different questions. <em class="pause">[Allow individual work; ask students to point to the still-open decision.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The organiser and volunteers can reveal whether an offer is confused with a confirmed reservation. If it is, I would revise the rule or wording before committing to implementation; technical checks are still needed for reliability.”</p></div></div>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute reconnecting to the sequence, five writing, two checking that feedback precedes the commitment.</p>
+<h3>Listen for</h3><p><strong>Feedback placed after the decision it should influence.</strong> Use the question below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which commitment can you still revise when this feedback arrives?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“At the first weekly review, we can still revise the offer rule or recommend deferring the waiting list before the sponsor agrees what the invitations will promise.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Who can reveal whether this assumption matches reality?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The organiser can clarify the offer rule, and volunteers can show whether they understand the offer. Neither source alone establishes reliable booking behaviour.”</p></div></div>
+          </div></div>
+      </section>
+      <!-- 24 -->
+      <section class="slide" data-mode="work" data-seg="Team recommendation" data-min="14" data-block="Block 3" data-target="0:22">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>14 min · teams</span></p>
+          <p class="eyebrow">One visible recommendation</p>
+          <h2>Make the lifecycle choice inspectable</h2>
+          <div class="trio"><div><h3>Sequence</h3><p>What depends on what?</p></div><div><h3>Feedback</h3><p>What can it still change?</p></div><div><h3>Trade-off</h3><p>Rejected route and owned risk.</p></div></div>
+        </div></div>
+        <div class="sn"><h3>Post one team recommendation</h3><p>Include a primary approach or combination, a dependency sequence, one feedback point, one rejected alternative, and one remaining risk with an owner.</p><h3>Individual alternative</h3><p>If team work is not workable, complete the same five parts on your own sheet.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Combine the reasoning into one team recommendation.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Now compare your drafts and produce one team recommendation.</strong> Use one pair of pages 05 and 06, one sheet, or one local document. Everyone keeps their own materials for the individual decision later.</p>
+            <p><strong>Include your approach and reason, the dependency sequence, feedback, rejected alternative, and a risk owner with an action.</strong> A reader should see who monitors the risk, what they do, and when they need to escalate. <em class="pause">[At seven minutes, ask teams to make the recommendation visible; at twelve, check the alternative and owner.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes comparing drafts, eight agreeing and writing one recommendation, four checking the alternative and actionable owner.</p>
+<h3>Board setup</h3><p><strong>Use one sheet or board area per team.</strong> Keep the five required parts visible without turning the task into a presentation-design exercise.</p><h3>Listen for</h3><p><strong>A risk owner written as “the team” without authority or action.</strong> Use the question below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Who notices the risk, who decides, and who responds?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Support can flag confusing outcomes to the delivery lead. The lead arranges investigation and escalates unresolved concerns; the sponsor decides whether scope or online opening must change.”</p></div></div><h3>Time call</h3><p><strong>At seven minutes, ask teams to move from discussion to a visible recommendation.</strong> At twelve minutes, require the rejected alternative and owner.</p>
+          </div></div>
+      </section>
+      <!-- 25 -->
+      <section class="slide" data-mode="work" data-seg="Stress test" data-min="10" data-block="Block 3" data-target="0:32">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>10 min · neighbouring teams</span></p>
+          <p class="eyebrow">Test the exposure</p>
+          <h2>What does this recommendation still leave exposed?</h2>
+          <p class="instruction">Name one credible failure of the route. The team may revise one part.</p>
+        </div></div>
+        <div class="sn"><h3>Check the reasoning, not the poster</h3><p>Look for a dependency treated as optional, feedback that arrives too late, a weak risk owner, or an alternative rejected without a contextual reason.</p><h3>Working alone</h3><p>Argue against your own recommendation for two minutes, then strengthen one part.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Challenge one assumption and allow a reasoned revision.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Exchange your recommendation with a neighbouring team.</strong> Choose one consequential challenge rather than commenting on everything.</p><div class="facilitator-question"><span class="question-label">Ask the other team</span><p class="question-text"><strong>When would this route discover that its key assumption is wrong, and what would already be expensive to change?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span>
+            <p><strong>Record the challenge and one revision or a reason for retaining your choice on page 07.</strong> If working alone, challenge your own route for two minutes, then revise it. <em class="pause">[Allow the exchange and response; keep movement local.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If our route waits until the final demonstration to check the offer journey, we may already have implemented the wrong interpretation. I would move a short organiser and volunteer review earlier.”</p></div></div>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes reading the other recommendation, three framing one challenge, three responding, two recording a revision or a reason to retain.</p>
+<h3>Movement</h3><p><strong>Pair neighbouring teams.</strong> Do not reorganise the whole room.</p><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Suppose the key assumption is wrong. When does this route discover it, and what has already become expensive?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If we only check the connected journey after the invitation decision, we could discover a problem after promising the operating route. I would put that evidence before the sponsor’s decision.”</p></div></div><h3>Boundary</h3><p><strong>Do not turn the check into choosing the one correct method.</strong> The question is what each route exposes.</p>
+          </div></div>
+      </section>
+      <!-- 26 -->
+      <section class="slide" data-mode="teach" data-seg="Compare choices" data-min="8" data-block="Block 3" data-target="0:40">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Two defensible routes</p>
+          <h2>Different choices can be proportionate for different risks</h2>
+          <p class="lead">Compare what each route fixes early, learns early, and leaves exposed.</p>
+        </div></div>
+        <div class="sn"><h3>How to compare</h3><p>A stronger recommendation makes its assumptions and trade-offs visible. Agreement on a method name is less important than the quality of the contextual reason.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Compare the risk each route manages and retains.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Let us examine two different routes and the reasons behind them.</strong> Each team has about a minute to explain one choice: what you commit to, what you learn first, and why that fits a condition in the case. <em class="pause">[Select actual contrasting answers and listen; do not invent a student position.]</em></p>
+            <p><strong>A defensible choice still has a cost.</strong> We need to name the risk each route manages and the risk it retains. Agreement on the method name is less useful than understanding why the teams made different commitments. <em class="pause">[Refer to evidence and reasoning actually present in the two answers.]</em></p>
+<h3>Fallback contrast · only after team attempts</h3><p><strong>Immediate deferral protects repair capacity.</strong> Unknown booking effort and a fixed commitment point justify concentrating on the core; cancelled places may remain unused.</p><p><strong>Bounded exploration buys information.</strong> A small organiser walkthrough may reveal a dependency before design commitment, but it consumes the same team’s time. Include delivery only if effort and connected checks fit before the sponsor’s week-three decision; otherwise defer.</p>
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two one-minute team explanations, four minutes comparing evidence and retained risks, two for synthesis.</p>
+<h3>Choose contrasts</h3><p><strong>Select two visible recommendations with genuinely different placements of commitment or feedback.</strong> Give each team about one minute to explain one choice.</p><h3>Synthesis</h3><p><strong>Name the condition that makes each route defensible and the risk it retains.</strong> Avoid announcing a universal winner.</p><h3>If the room is quiet</h3><p><strong>Compare the recommendations yourself using only their visible sequence, feedback point, and owned risk.</strong></p>
+          </div></div>
+      </section>
+      <!-- 27 -->
+      <section class="slide" data-mode="work" data-seg="Complete the trade-off" data-min="7" data-block="Block 3" data-target="0:47">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>7 min · teams</span></p>
+          <p class="eyebrow">Refine after the challenge</p>
+          <h2>Does your trade-off still hold after the challenge?</h2>
+          <p class="instruction">Revise or retain your rejected alternative and risk owner. Explain why.</p>
+        </div></div>
+        <div class="sn"><h3>Rejected alternative</h3><p>State the strongest plausible alternative and why it fits this context less well. Avoid dismissing it with a method stereotype.</p><h3>Risk owner</h3><p>Name a role with enough information and authority to monitor the risk or respond to it.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Reject a plausible route and assign an actionable response.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Revisit the trade-off you already wrote, using the peer challenge and comparison.</strong> Do not start a second recommendation. Give the strongest plausible alternative a fair hearing, then explain why your chosen route fits this case better. “That method is slow” is too general; use a condition that affects this team.</p>
+            <p><strong>For the remaining risk, match responsibility to authority.</strong> Engineers can investigate and check behaviour; the delivery lead coordinates the work and escalates concerns; the sponsor decides scope. Name the action your owner should take if the risk grows. <em class="pause">[Allow teams to refine the same recommendation.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute identifying the trade-off to revisit, four revising or justifying retention, two checking the owner’s action. This refines the existing answer.</p>
+<h3>Listen for</h3><p><strong>“Waterfall is slow”, “agile is chaotic”, or other slogans.</strong> Use the question below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which condition in this case makes the alternative less proportionate?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Immediate waiting-list delivery is less proportionate because the same small team still faces unknown core repair effort. I would defer it, while recognising that cancelled places might remain unused.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What would make the rejected route attractive in a different context?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Including the waiting list would be more attractive if reliable core behaviour were established and credible effort evidence showed the work fits. Those conditions are not established in this case.”</p></div></div>
+          </div></div>
+      </section>
+      <!-- 28 -->
+      <section class="slide" data-mode="work" data-seg="Individual decision" data-min="7" data-block="Block 3" data-target="0:54">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Your turn</b><span>7 min · on your own</span></p>
+          <p class="eyebrow">Your final position</p>
+          <h2>What lifecycle choice would you recommend, and why?</h2>
+          <p class="instruction">Write the choice, one contextual reason, one risk it retains, and one connection to why a selected practice exists.</p>
+        </div></div>
+        <div class="sn"><h3>Your decision may differ from the team’s</h3><p>State a defensible recommendation in your own words. Your reason should refer to the Campus Event context, not a generic preference.</p><h3>Apply the historical connection</h3><p>In one sentence, connect a selected feedback, coordination, or quality practice to the problem it helps address. This is about the reason for the practice, not recalling a date.</p><h3>Keep the trade-off</h3><p>A credible recommendation can still retain risk. Name it rather than claiming the route removes uncertainty.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Protect seven minutes for an individual contextual judgement.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Work individually now.</strong> Write four short sentences in your own words: your recommendation, a case condition that supports it, a risk it retains, and how one selected practice addresses the historical problem of late discovery. Use page 07 or your own notes.</p>
+            <p><strong>Your answer may differ from your team’s.</strong> Explain the connection rather than recalling the date.</p><div class="facilitator-question"><span class="question-label">Ask individually</span><p class="question-text"><strong>What does the practice help the team find out while it can still change a decision?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> Keep your notes; I will sample a few answers to see what needs clarifying. <em class="pause">[Protect seven minutes, sample in the room, and give one brief correction if needed.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“An early trial can expose a misunderstood offer before implementation commitment. That addresses the historical problem of discovering a limitation only after it has become expensive to change.”</p></div></div>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Seven minutes for individual writing and quiet sampling. Give any whole-class correction in the learning close.</p>
+<h3>Protect the individual check</h3><p><strong>Do not replace this with more report-back.</strong> Sample answers in the room; students retain their notes.</p><h3>Listen for later</h3><p><strong>Whether the recommendation contains a choice, context, retained risk, and an applied connection between one practice and its purpose.</strong> This is the short understanding check.</p>
+          </div></div>
+      </section>
+      <!-- 29 -->
+      <section class="slide" data-mode="teach" data-seg="Close" data-min="4" data-block="Block 3" data-target="0:58">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Explanation</b></p>
+          <p class="eyebrow">Return to your initial position on planning</p>
+          <h2>More planning reduces some risks and can delay evidence about others</h2>
+          <p class="lead">A proportionate lifecycle matches commitment and feedback to the context.</p>
+        </div></div>
+        <div class="sn"><h3>Connection to LO1</h3><p>Lifecycle reasoning means selecting and justifying an approach for the actual uncertainty, dependencies, constraints, feedback needs, and risks in a project.</p><h3>Carry forward</h3><p>Next, stakeholder and requirements work will make some of those uncertainties more precise.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Return to the north star and carry one assumption into Week 3.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>Look back at your planning sentence on Part A page 01.</strong> </p><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What has changed or become more precise in your answer about planning?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> Planning helps us coordinate, reserve time for learning, and make commitments visible. Feedback helps us test assumptions, provided it arrives while we can still act.</p>
+            <p><strong>That brings us back to our purpose: decide how much to plan, what to deliver first, and when to seek feedback.</strong> You can justify different routes if you explain the conditions, dependencies, and remaining risks.</p>
+            <p><strong>Before Week 3, spend about twenty minutes identifying your recommendation’s riskiest assumption, a stakeholder who could help test it, and one question whose answer might change your decision.</strong> Bring those notes. If you do not have the team sheet, use your individual decision or the case. <em class="pause">[Point to the prompt on page 07; no new report is required.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I still think planning helps, but now I would plan checks as well as tasks. A detailed schedule does not settle an assumption; we need evidence early enough to change scope or sequence.”</p></div></div>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes revisiting the planning position and clarifying sampled reasoning, one synthesising, one setting the Week 3 carry-forward.</p>
+
+          </div></div>
+      </section>
+      <!-- 30 -->
+      <section class="slide" data-mode="gate" data-seg="Contingency" data-min="2" data-block="Block 3" data-target="1:00">
+        <div class="face"><div class="content">
+          <p class="mode"><b>Pause</b><span>2 min</span></p>
+          <p class="eyebrow">Spare time</p>
+          <h1>Finish the decision</h1>
+          <p class="lead">Complete your individual recommendation and keep it with your notes.</p>
+        </div></div>
+        <div class="sn"><h3>Use this time for</h3><p>Finishing the individual decision, asking one unresolved question, and keeping the work for Week 3.</p><div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Allow completion and stop without adding content.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><strong>If you need it, use this time to finish your individual decision.</strong> Keep the opening answer and final recommendation with your notes so you can use them next week. <em class="pause">[Use only remaining contingency; answer one unresolved question if time permits.]</em></p>
+            <p><strong>Thank you; we will stop here.</strong> <em class="pause">[Do not add another example. Record actual timing and unresolved delivery issues after the session.]</em></p>
+
+            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Use only remaining margin for completion or one question, then explicitly dismiss. No additional teaching.</p>
+<h3>Cut order</h3><p><strong>First reduce spoken examples and the historical elaboration.</strong> Next shorten whole-class comparison to one contrast. Protect the context reading, dependency sequence, feedback point, team recommendation, and individual decision.</p><h3>Fallback</h3><p><strong>If the shared board fails, each team uses one sheet of paper or a local document.</strong> If group work cannot proceed, students complete the five-part recommendation individually.</p><h3>Teach-aloud stopping point</h3><p><strong>End here and record actual timings, unclear transitions, prompts you had to invent, and any concept that expanded beyond its budget.</strong> Browser timing metadata is a rehearsal hypothesis, not classroom evidence.</p>
+          </div></div>
+      </section>
+    </main>
+
+
+    <aside
+      class="notes"
+      id="notes"
+      aria-label="Notes about this slide"
+      aria-hidden="true"
+    >
+      <button class="close" id="close-notes" aria-label="Close notes">×</button>
+      <div class="notes-body">
+        <p class="n-loc" id="n-loc"></p>
+        <h2 id="n-title"></h2>
+        <div id="n-body"></div>
+      </div>
+    </aside>
+
+    <p class="sync-off" id="sync-off" hidden></p>
+
+    <div class="bar-zone">
+      <nav class="bar" aria-label="Deck controls">
+        <button id="prev" aria-label="Previous slide" title="Previous (←)">
+          ←
+        </button>
+        <button id="next" aria-label="Next slide" title="Next (→ or Space)">
+          →
+        </button>
+        <span class="pos" id="pos">1/30</span>
+        <button id="emph" title="Reveal deferred emphasis (E)" hidden>
+          Cue
+        </button>
+        <button id="notes-btn" title="Notes (N)">Notes</button>
+        <button id="open-notes-window" title="Open the notes in a second tab">
+          Notes tab
+        </button>
+      </nav>
+    </div>
+
+    <script>
+      (() => {
+        if ('scrollRestoration' in history)
+          history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+
+        const slides = [...document.querySelectorAll('.slide')];
+        const rail = document.querySelector('#rail');
+        const railSeg = document.querySelector('#rail-seg');
+        const railFill = document.querySelector('#rail-progress');
+        const railCurrent = document.querySelector('#rail-current');
+        const pos = document.querySelector('#pos');
+        const emph = document.querySelector('#emph');
+        const nLoc = document.querySelector('#n-loc');
+        const nTitle = document.querySelector('#n-title');
+        const nBody = document.querySelector('#n-body');
+        const panel = document.querySelector('#notes');
+        const isNotesView =
+          new URLSearchParams(location.search).get('view') === 'notes';
+        let i = 0,
+          lock = 0,
+          seg = null,
+          shownIndex = -1;
+
+        // Facilitator timing is kept out of the student PDF. Every slide receives
+        // a facilitator section even when timing is its only private prompt.
+        slides.forEach((s) => {
+          const sn = s.querySelector('.sn');
+          if (!sn) return;
+          let fn = sn.querySelector(':scope > .fn');
+          if (!fn) {
+            fn = document.createElement('div');
+            fn.className = 'fn';
+            sn.append(fn);
+          }
+          const t = document.createElement('p');
+          t.className = 'n-time';
+          t.innerHTML = `<span>${s.dataset.min} min</span><span>${s.dataset.block} · to ${s.dataset.target}</span>`;
+          fn.append(t);
+        });
+
+        // a slide holding a deferred emphasis says so in its own notes, so the
+        // cue is visible on the lectern screen but remains out of the student PDF
+        slides.forEach((s) => {
+          if (!s.querySelector('[data-cue]')) return;
+          const fn = s.querySelector('.sn > .fn');
+          if (!fn) return;
+          const n = document.createElement('p');
+          n.className = 'n-cue';
+          n.innerHTML =
+            'This slide holds a <b>deferred emphasis</b>. It shows plain until you press <b>E</b>. Let the room read the sentence first.';
+          fn.prepend(n);
+        });
+
+        const reduced = () =>
+          matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // ---- cross-tab sync ----------------------------------------------------
+        // Present on one screen, keep the notes open on another. Only the slide
+        // index and the emphasis state travel; each tab renders its own view.
+        const channel =
+          'BroadcastChannel' in self
+            ? new BroadcastChannel('week-02-deck')
+            : null;
+        let quiet = false; // suppress echo while applying a remote message
+        const send = (msg) => {
+          if (channel && !quiet) channel.postMessage(msg);
+        };
+
+        // A smooth scroll across several slides passes over the ones in between,
+        // and the observer would report each of them as the current slide. That
+        // would also wipe an emphasis just set. `scrollend` tells us when the
+        // scroll has actually settled; the timeout is only a fallback.
+        const hasScrollEnd = 'onscrollend' in window;
+        if (hasScrollEnd)
+          addEventListener('scrollend', () => {
+            lock = 0;
+          });
+
+        const go = (n) => {
+          i = Math.max(0, Math.min(slides.length - 1, n));
+          const behavior = reduced() ? 'auto' : 'smooth';
+          lock =
+            performance.now() +
+            (behavior === 'smooth' ? (hasScrollEnd ? 8000 : 900) : 0);
+          if (!isNotesView)
+            slides[i].scrollIntoView({ behavior, block: 'start' });
+          sync();
+          send({ t: 'go', i });
+        };
+
+        const sync = () => {
+          const s = slides[i];
+          // a new slide always starts unemphasised, so the cue can be used again
+          if (i !== shownIndex) {
+            shownIndex = i;
+            if (document.body.classList.contains('cued')) {
+              document.body.classList.remove('cued');
+              send({ t: 'cue', on: false });
+            }
+          }
+          pos.textContent = `${i + 1}/${slides.length}`;
+          emph.hidden = !s.querySelector('[data-cue]');
+          document.body.dataset.mode = s.dataset.mode;
+          railFill.style.strokeDashoffset = (
+            100 -
+            ((i + 1) / slides.length) * 100
+          ).toFixed(1);
+          railCurrent.textContent = String(i + 1);
+
+          // cross-fade the segment only when it actually changes
+          if (s.dataset.seg !== seg) {
+            seg = s.dataset.seg;
+            if (reduced()) {
+              railSeg.textContent = seg;
+            } else {
+              rail.classList.add('swap');
+              setTimeout(() => {
+                railSeg.textContent = seg;
+                rail.classList.remove('swap');
+              }, 180);
+            }
+          }
+
+          const modeWord = {
+            teach: 'Explanation',
+            work: 'Your turn',
+            gate: 'Pause',
+          }[s.dataset.mode];
+          nLoc.textContent = `Week 02 · ${s.dataset.seg} · ${modeWord}`;
+          const h = s.querySelector('h1, h2');
+          nTitle.textContent = h ? h.textContent.trim() : '';
+          const sn = s.querySelector('.sn');
+          nBody.innerHTML = sn
+            ? sn.innerHTML
+            : '<p>No notes for this slide.</p>';
+          document.title = `${i + 1}/${slides.length} · ${s.dataset.seg} · Week 2`;
+        };
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            if (performance.now() < lock) return;
+            const v = entries
+              .filter((e) => e.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (!v) return;
+            i = slides.indexOf(v.target);
+            sync();
+          },
+          { threshold: [0.5, 0.75] },
+        );
+        slides.forEach((s) => io.observe(s));
+
+        const setNotes = (open) => {
+          document.body.classList.toggle('notes-open', open);
+          panel.setAttribute('aria-hidden', String(!open));
+          requestAnimationFrame(() =>
+            slides[i].scrollIntoView({ behavior: 'auto', block: 'start' }),
+          );
+        };
+        const toggleCue = () => {
+          const on = document.body.classList.toggle('cued');
+          send({ t: 'cue', on });
+        };
+        const setCue = (on) => document.body.classList.toggle('cued', on);
+
+        if (channel) {
+          channel.onmessage = ({ data }) => {
+            quiet = true;
+            if (data.t === 'go' && data.i !== i) go(data.i);
+            else if (data.t === 'cue') setCue(data.on);
+            else if (data.t === 'hello')
+              channel.postMessage({
+                t: 'state',
+                i,
+                on: document.body.classList.contains('cued'),
+              });
+            else if (data.t === 'state') {
+              if (data.i !== i) go(data.i);
+              setCue(data.on);
+            }
+            quiet = false;
+          };
+          channel.postMessage({ t: 'hello' }); // ask whoever is already open where we are
+        }
+
+        // the notes tab is a second window on the same origin
+        document.querySelector('#open-notes-window').onclick = () => {
+          const url = new URL(location.href);
+          url.searchParams.set('view', 'notes');
+          window.open(url, 'week-02-notes');
+        };
+
+        if (isNotesView) {
+          document.body.classList.add('view-notes', 'notes-open');
+          panel.setAttribute('aria-hidden', 'false');
+          document.querySelector('#notes-btn').hidden = true;
+          document.querySelector('#open-notes-window').hidden = true;
+          if (!channel) {
+            const warn = document.querySelector('#sync-off');
+            warn.hidden = false;
+            warn.textContent =
+              'This tab cannot follow the presenting tab. Cross-tab sync needs a shared origin. Serve the deck over http rather than opening the file directly.';
+          }
+        }
+
+        document.querySelector('#prev').onclick = () => go(i - 1);
+        document.querySelector('#next').onclick = () => go(i + 1);
+        document.querySelector('#notes-btn').onclick = () =>
+          setNotes(!document.body.classList.contains('notes-open'));
+        document.querySelector('#close-notes').onclick = () => setNotes(false);
+        emph.onclick = toggleCue;
+
+        addEventListener('keydown', (e) => {
+          if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName))
+            return;
+          const k = e.key.toLowerCase();
+          if (e.key === 'Escape') {
+            setNotes(false);
+            return;
+          }
+          if (k === 'n') {
+            e.preventDefault();
+            setNotes(!document.body.classList.contains('notes-open'));
+            return;
+          }
+          if (k === 'e') {
+            e.preventDefault();
+            toggleCue();
+            return;
+          }
+          if (e.key === 'Home') {
+            e.preventDefault();
+            go(0);
+            return;
+          }
+          if (e.key === 'End') {
+            e.preventDefault();
+            go(slides.length - 1);
+            return;
+          }
+          if (
+            ['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key) ||
+            (e.key === ' ' && !e.shiftKey)
+          ) {
+            e.preventDefault();
+            go(i + 1);
+            return;
+          }
+          if (
+            ['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key) ||
+            (e.key === ' ' && e.shiftKey)
+          ) {
+            e.preventDefault();
+            go(i - 1);
+          }
+        });
+
+        sync();
+      })();
+    </script>
+  </body>
+</html>

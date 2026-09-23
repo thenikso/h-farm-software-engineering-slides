@@ -1,0 +1,3422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Week 1 · What makes software engineering more than programming?
+    </title>
+    <meta
+      name="description"
+      content="Student-facing session deck for Week 1 of Software Engineering: bounded claims, evidence, and revision."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46.6173665 25.140518'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-40.000000, -80.000000)' fill='%23244d9d'%3E%3Cg transform='translate(40.000000, 80.000000)'%3E%3Cpath d='M38.7936107,15.2573604 C36.1528467,15.2573604 34.0047626,17.4054445 34.0047626,20.0462084 C34.0047626,22.6869724 36.1528467,24.8350565 38.7936107,24.8350565 C41.4343746,24.8350565 43.5824587,22.6869724 43.5824587,20.0462084 C43.4839228,17.4152981 41.3358387,15.2573604 38.7936107,15.2573604 Z M38.7936107,22.3026821 C37.5224967,22.3026821 36.5469906,21.327176 36.5469906,20.056062 C36.5469906,18.7849481 37.5224967,17.809442 38.7936107,17.809442 C40.0647247,17.809442 41.0402308,18.7849481 41.0402308,20.056062 C41.0402308,21.2187865 39.9661887,22.3026821 38.7936107,22.3026821 Z' %3E%3C/path%3E%3Cpath d='M14.8395168,13.7004921 C14.8395168,11.9366983 13.3713309,10.4783659 11.6173906,10.4783659 C9.75506085,10.4783659 8.39526449,11.9465519 8.39526449,13.7004921 C8.39526449,15.4544323 9.86345042,17.0211542 11.6173906,17.0211542 C13.3713309,17.0211542 14.8395168,15.5529683 14.8395168,13.7004921' %3E%3C/path%3E%3Cpath d='M22.7618087,16.1441841 C22.9588806,15.36575 23.0574166,14.5774622 23.0574166,13.7004921 L21.9833745,13.1092763 C21.9833745,12.7151324 21.8848385,12.4293781 21.8848385,12.0352342 L22.7618087,11.2568001 C22.5647367,10.4783659 22.3676648,9.69007819 21.9833745,8.91164404 L20.8107965,8.81310807 C20.6137245,8.51750017 20.4166526,8.13320989 20.2195807,7.83760199 L20.7122605,6.76355993 C20.2195807,6.08366175 19.7367544,5.49244594 19.1455386,4.9997661 L18.0714966,5.39390998 C17.7758887,5.19683804 17.4802808,4.90123013 17.1945264,4.71401179 L17.2930624,3.54143377 C16.6131642,3.1472899 15.8248765,2.76299962 15.0464423,2.56592769 L14.1694722,3.44289781 C13.7753284,3.34436184 13.489574,3.24582587 13.0954302,3.24582587 L12.7012863,2.17178382 C11.9228522,2.07324785 11.1345644,2.07324785 10.2575943,2.17178382 L9.86345042,3.24582587 C9.46930654,3.34436184 9.18355224,3.34436184 8.78940836,3.44289781 L8.01097421,2.76299962 C7.23254006,3.05860753 6.54278829,3.35421543 5.76435414,3.73850571 L5.86289011,4.91108373 C5.5672822,5.10815567 5.2716743,5.3052276 4.98591999,5.59098191 L3.91187794,5.19683804 C3.32066213,5.68951788 2.73929992,6.36941606 2.24662007,6.96063187 L2.83783588,8.03467392 C2.64076395,8.33028183 2.44369201,8.62588973 2.24662007,9.01018001 L1.07404205,9.10871598 C0.778434149,9.78861416 0.482826244,10.5769019 0.295607905,11.3553361 L1.17257802,12.1337702 C1.07404205,12.5279141 1.07404205,12.8136684 1.07404205,13.2078123 L-2.80056066e-15,13.7990281 C-2.80056066e-15,14.5774622 0.0985359682,15.36575 0.295607905,16.2427201 L1.46818593,16.439792 C1.56672189,16.8339359 1.66525786,17.1196902 1.76379383,17.5138341 L0.985359682,18.4893401 C1.28096759,19.1692383 1.66525786,19.9575261 2.1579377,20.5388883 L3.42905169,20.3418163 C3.62612363,20.6374243 3.92173153,20.9330322 4.10894987,21.1202505 L3.91187794,22.2928285 C4.50309375,22.7855084 5.18299193,23.2683346 5.86289011,23.6624785 L6.83839619,22.9825803 C7.1340041,23.1796522 7.51829437,23.2781882 7.81390228,23.4752601 L8.01097421,24.6478382 C8.78940836,24.9434461 9.57769611,25.041982 10.3561303,25.140518 L11.0360284,24.1650119 C11.4301723,24.1650119 11.7159266,24.1650119 12.1100705,24.1650119 L12.7899687,25.140518 C13.5684028,25.041982 14.3566906,24.8449101 15.1351247,24.6478382 L15.3321966,23.4752601 C15.6278046,23.3767242 16.0120948,23.1796522 16.3077027,22.9825803 L17.2832088,23.6624785 C17.963107,23.2683346 18.6528588,22.7855084 19.234221,22.1942926 L18.9386131,21.0217145 C19.234221,20.7261066 19.4312929,20.5290347 19.6185113,20.2432804 L20.7910893,20.4403523 C21.2837691,19.7604541 21.6680594,19.0707024 21.9636673,18.3908042 L21.2837691,17.5138341 C21.3823051,17.2182262 21.4808411,16.8339359 21.579377,16.439792 L22.7618087,16.1441841 Z M11.5188547,20.2432804 C7.90258465,20.2432804 4.9662128,17.3069085 4.9662128,13.6906385 C4.9662128,10.0743685 7.90258465,7.13799661 11.5188547,7.13799661 C15.1351247,7.13799661 18.0714966,10.0743685 18.0714966,13.6906385 C18.0714966,17.3069085 15.1351247,20.2432804 11.5188547,20.2432804 Z' %3E%3C/path%3E%3Cpath d='M22.7618087,3.91587045 C20.6137245,4.01440642 19.5396825,2.15207662 19.5396825,2.15207662 C19.4411465,1.95500469 19.0470027,1.85646872 18.8597843,1.95500469 C18.6627124,2.05354065 18.5641764,2.44768453 18.6627124,2.63490287 C18.7612483,2.73343883 20.1308983,5.07859488 22.8701982,4.98005891 C23.1658061,4.98005891 23.3628781,4.684451 23.3628781,4.48737907 C23.2446349,4.11294239 23.0574166,3.91587045 22.7618087,3.91587045' %3E%3C/path%3E%3Cpath d='M46.6173665,17.8981243 L46.6173665,17.8981243 L46.6173665,12.7151324 L46.6173665,3.1374363 C46.6173665,2.45753812 46.0261507,1.76778635 45.2477166,1.76778635 L43.8780666,1.76778635 L43.8780666,7.63067645 C43.8780666,7.92628436 43.6809947,8.12335629 43.3853868,8.12335629 C43.0897789,8.12335629 42.892707,7.92628436 42.892707,7.63067645 L42.892707,1.76778635 L40.7446228,1.76778635 L40.7446228,7.63067645 C40.7446228,7.92628436 40.5475509,8.12335629 40.251943,8.12335629 C39.9563351,8.12335629 39.7592632,7.92628436 39.7592632,7.63067645 L39.7592632,1.76778635 L37.6111791,1.76778635 L37.6111791,7.63067645 C37.6111791,7.92628436 37.4141071,8.12335629 37.1184992,8.12335629 C36.8228913,8.12335629 36.6258194,7.92628436 36.6258194,7.63067645 L36.6258194,1.76778635 L34.4777353,1.76778635 L34.4777353,7.63067645 C34.4777353,7.92628436 34.2806633,8.12335629 33.9850554,8.12335629 C33.6894475,8.12335629 33.4923756,7.92628436 33.4923756,7.63067645 L33.4923756,1.76778635 L28.9991354,1.76778635 C28.3192373,1.76778635 27.6294855,2.35900216 27.6294855,3.1374363 L27.6294855,5.08844847 L25.8656916,1.57071441 L26.9397337,0.9794986 C27.2353416,0.880962632 27.3338776,0.585354728 27.1368056,0.29960042 C27.0382697,0.00399251533 26.7426618,-0.0945434529 26.4569075,0.102528484 L23.2347813,1.76778635 C22.9391734,1.86632231 22.8406374,2.16193022 23.0377094,2.44768453 C23.1362453,2.74329243 23.4318532,2.8418284 23.7176075,2.64475646 L24.7916496,2.05354065 L26.9397337,6.16249053 L21.1753796,6.16249053 L21.1753796,6.16249053 C21.1753796,6.2610265 21.2739155,6.2610265 21.2739155,6.35956246 L21.6680594,6.8522423 C21.6680594,6.8522423 21.2739155,7.63067645 21.0768436,7.92628436 L21.0768436,7.92628436 C21.3724515,7.92628436 22.3479576,8.02482033 22.3479576,8.02482033 L22.6435655,8.61603613 C23.0377094,9.49300625 23.3234637,10.281294 23.4219996,11.1582641 L23.5205356,11.7494799 C23.5205356,11.7494799 22.7421015,12.3406957 22.5450295,12.5279141 C22.8406374,12.62645 23.7176075,13.1191299 23.7176075,13.1191299 L23.7176075,13.7103457 C23.7176075,14.5873158 23.6190716,15.4741395 23.4219996,16.3511096 L23.3234637,16.9423254 C23.3234637,16.9423254 22.4464936,17.1393974 22.0523497,17.2379334 C22.2494216,17.5335413 22.8307838,18.2134394 22.8307838,18.2134394 L22.5351759,18.8046552 C22.43664,18.9031912 22.43664,19.1002632 22.43664,19.1987991 L33.1869141,19.1987991 C33.482522,16.5580352 35.5320701,14.508487 38.5669779,14.508487 C41.5033498,14.508487 43.7499699,16.4594992 44.1441137,19.1987991 L45.2181558,19.1987991 L45.2181558,19.1987991 C46.0261507,19.1692383 46.6173665,18.5878761 46.6173665,17.8981243' %3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A" />
+    <style>
+      /* ============================================================
+   Week 1 session deck and handout source.
+
+   The projected slide faces and student review notes are student
+   facing. Facilitator notes remain in this instructor-controlled
+   HTML for rehearsal and delivery, but are excluded from print.
+   Distribute the generated student PDF, not this source file.
+
+   Typeface: Nebula Sans. The @font-face rules resolve through
+   local(), so the family renders where it is installed and
+   falls back cleanly elsewhere. Embed woff2 before teaching
+   from an unfamiliar machine.
+   ============================================================ */
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Light'),
+          local('NebulaSans-Light'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Light.otf)
+            format('opentype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Book'),
+          local('NebulaSans-Book'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Book.otf)
+            format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Medium'),
+          local('NebulaSans-Medium'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Medium.otf)
+            format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Semibold'),
+          local('NebulaSans-Semibold'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Semibold.otf)
+            format('opentype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Bold'),
+          local('NebulaSans-Bold'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Bold.otf)
+            format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        color-scheme: light;
+        --font:
+          'Nebula Sans', 'Avenir Next', 'Source Sans 3', 'Source Sans Pro',
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+        --ink: #16263f;
+        --accent: #244d9d;
+        --accent-ink: #eaf0fb;
+
+        /* Three grounds, and only three. */
+        --ground-teach: #f6f8fc; /* cool near-white : explanation */
+        --ground-work: #f0e8da; /* warm sand       : your turn   */
+        --ground-gate: #1b3462; /* deep navy       : pause       */
+        --ground: var(--ground-teach);
+
+        --rule: color-mix(in srgb, var(--ink) 22%, transparent);
+        --quiet: color-mix(in srgb, var(--ink) 58%, transparent);
+
+        /* The rail thickens with the display and disappears when there
+     is no room for it. It is fixed, so viewport units are right. */
+        --rail: clamp(54px, 5vw, 86px);
+        --gutter: clamp(26px, 4.4vw, 80px);
+        --measure: 1240px;
+        --notes-w: 0px;
+      }
+      @media (max-width: 640px) {
+        :root {
+          --rail: 0px;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        background: var(--ground-teach);
+      }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        color: var(--ink);
+        background: var(--ground);
+        display: grid;
+        grid-template-columns: 1fr var(--notes-w);
+        transition:
+          grid-template-columns 220ms ease,
+          background 320ms ease;
+      }
+      body.notes-open {
+        --notes-w: min(31rem, 36vw);
+      }
+      body[data-mode='work'] {
+        --ground: var(--ground-work);
+      }
+      body[data-mode='gate'] {
+        --ground: var(--ground-gate);
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 0.18em;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      /* main is the sizing container: opening the notes reflows and
+   rescales the slide instead of covering it. */
+      main {
+        container-type: inline-size;
+        container-name: deck;
+        min-width: 0;
+      }
+
+      /* ============================================================
+   THE FIXED LOCATION RAIL
+   One element for the whole deck. Only the last field changes,
+   and it cross-fades as you move between segments.
+   ============================================================ */
+      .rail {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: var(--rail);
+        z-index: 15;
+        background: var(--accent);
+        color: var(--accent-ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 320ms ease,
+          color 320ms ease;
+        pointer-events: none;
+      }
+      body[data-mode='gate'] .rail {
+        background: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+      @media (max-width: 640px) {
+        .rail {
+          display: none;
+        }
+      }
+      .rail p {
+        margin: 0;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: clamp(12px, 0.92vw, 16px);
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        max-height: calc(100svh - 4rem);
+        overflow: hidden;
+      }
+      .rail .sep {
+        opacity: 0.55;
+        padding: 0.9em;
+      }
+      .rail .course {
+        opacity: 0.72;
+      }
+      .rail .seg {
+        font-weight: 700;
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease;
+        display: inline-block;
+      }
+      .rail.swap .seg {
+        opacity: 0;
+        transform: translateY(-0.5em);
+      }
+      .rail-logo {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 28px;
+        height: 28px;
+      }
+      /* deck progress: a compact ring with the current slide number */
+      .rail-progress {
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        width: 38px;
+        height: 38px;
+        transform: translateX(-50%);
+        overflow: visible;
+      }
+      .rail-progress .track,
+      .rail-progress .fill {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.5;
+      }
+      .rail-progress .track {
+        opacity: 0.28;
+      }
+      .rail-progress .fill {
+        stroke-linecap: round;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transform: rotate(-90deg);
+        transform-origin: 20px 20px;
+        transition: stroke-dashoffset 320ms ease;
+      }
+      .rail-progress text {
+        fill: currentColor;
+        font-family: var(--font);
+        font-size: 10px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        letter-spacing: 0;
+      }
+
+      /* ============================================================
+   SLIDE
+   ============================================================ */
+      .slide {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        padding: clamp(30px, 5vh, 58px) var(--gutter) clamp(30px, 5vh, 58px)
+          calc(var(--rail) + var(--gutter));
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        background: var(--ground-teach);
+        overflow: hidden;
+      }
+      .slide[data-mode='work'] {
+        background: var(--ground-work);
+      }
+      .slide[data-mode='gate'] {
+        background: var(--ground-gate);
+        color: var(--accent-ink);
+        --rule: color-mix(in srgb, var(--accent-ink) 30%, transparent);
+        --quiet: color-mix(in srgb, var(--accent-ink) 66%, transparent);
+        --accent: #9dbcf2;
+      }
+
+      /* The face holds everything projected. Its column is centred in
+   the usable width, so the slide reads as balanced rather than
+   left-hugging. Text stays left aligned for reading. */
+      .face {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .content,
+      .map {
+        width: 100%;
+        max-width: min(100%, var(--measure));
+        margin-inline: auto;
+      }
+
+      .mode {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        max-width: none;
+        margin: 0 0 clamp(20px, 3.4vh, 40px);
+        font-size: clamp(11px, 0.78cqi, 13px);
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .mode b {
+        padding: 5px 9px;
+        border: 1.5px solid currentColor;
+        font-weight: 700;
+      }
+      .slide[data-mode='teach'] .mode b {
+        color: var(--accent);
+      }
+      .slide[data-mode='work'] .mode b {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+      }
+      .slide[data-mode='gate'] .mode b {
+        background: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+      .mode span {
+        color: var(--quiet);
+        font-weight: 500;
+      }
+      .claim-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: clamp(20px, 3cqi, 44px);
+        margin-bottom: clamp(18px, 3vh, 34px);
+      }
+      .claim-header .mode {
+        margin-bottom: 0;
+      }
+      .claim-reference {
+        width: min(38cqi, 420px);
+        flex: none;
+        margin: 0;
+        padding: clamp(12px, 1.2cqi, 18px);
+        border: 1.5px solid var(--accent);
+        font-size: clamp(15px, 1.22cqi, 19px);
+        line-height: 1.3;
+        font-weight: 500;
+      }
+      .claim-reference::before {
+        content: 'The claim';
+        display: block;
+        margin-bottom: 5px;
+        color: var(--accent);
+        font-size: 0.7em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      @container deck (max-width: 760px) {
+        .claim-header {
+          display: block;
+        }
+        .claim-header .mode {
+          margin-bottom: 12px;
+        }
+        .claim-reference {
+          width: 100%;
+          max-width: 480px;
+        }
+      }
+
+      /* --- type scale: one family, five sizes -------------------- */
+      .eyebrow {
+        margin: 0 0 clamp(14px, 2.4vh, 26px);
+        font-size: clamp(13px, 1.02cqi, 16px);
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      h1,
+      h2 {
+        margin: 0 0 clamp(18px, 3vh, 34px);
+        font-weight: 500;
+        line-height: 1.02;
+        letter-spacing: -0.032em;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(42px, 5.4cqi, 94px);
+        max-width: 17ch;
+      }
+      h2 {
+        font-size: clamp(34px, 4.2cqi, 70px);
+        max-width: 19ch;
+      }
+      h3 {
+        margin: 0 0 10px;
+        font-size: clamp(20px, 1.95cqi, 32px);
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.015em;
+      }
+      p {
+        margin: 0 0 clamp(12px, 1.8vh, 20px);
+        font-size: clamp(19px, 1.8cqi, 30px);
+        line-height: 1.38;
+        max-width: 46ch;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      .lead {
+        color: var(--quiet);
+      }
+      .instruction {
+        margin-top: clamp(20px, 3.4vh, 38px);
+        padding-top: clamp(14px, 2.2vh, 22px);
+        border-top: 1px solid var(--rule);
+        font-size: clamp(17px, 1.4cqi, 23px);
+        max-width: 52ch;
+      }
+      .pause {
+        background-color: var(--accent-ink);
+        padding: 0.1em 0.4em;
+        border-radius: 100vw;
+      }
+
+      /* --- emphasis: three marks, one of them deferred ----------- */
+      .key {
+        font-weight: 600;
+        box-shadow: inset 0 -0.14em 0
+          color-mix(in srgb, var(--accent) 46%, transparent);
+        transition: box-shadow 180ms ease;
+      }
+      mark {
+        background: color-mix(in srgb, var(--accent) 15%, transparent);
+        color: inherit;
+        box-shadow: inset 0 -0.1em 0
+          color-mix(in srgb, var(--accent) 55%, transparent);
+        padding: 0 0.12em;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        transition:
+          background 180ms ease,
+          box-shadow 180ms ease;
+      }
+      .dim {
+        color: var(--quiet);
+      }
+      /* A deferred mark is completely invisible until cued, not merely unshaded.
+   Weight and padding are neutralised too, or the sentence still points at
+   its own answer before the room has reasoned about it. */
+      [data-cue] {
+        box-shadow: none;
+        background: transparent;
+        font-weight: inherit;
+        padding: 0;
+      }
+      body.cued .key[data-cue] {
+        font-weight: 600;
+        box-shadow: inset 0 -0.14em 0
+          color-mix(in srgb, var(--accent) 46%, transparent);
+      }
+      body.cued mark[data-cue] {
+        background: color-mix(in srgb, var(--accent) 15%, transparent);
+        box-shadow: inset 0 -0.1em 0
+          color-mix(in srgb, var(--accent) 55%, transparent);
+        padding: 0 0.12em;
+      }
+
+      /* --- layouts ---------------------------------------------- */
+      .split {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(24px, 4.2cqi, 72px);
+        align-items: center;
+      }
+      .split h2 {
+        font-size: clamp(32px, 3.8cqi, 60px);
+      }
+      figure {
+        margin: 0;
+      }
+      figure img {
+        display: block;
+        width: 100%;
+        height: min(54vh, 600px);
+        object-fit: contain;
+      }
+      figcaption {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.45;
+        color: var(--quiet);
+        max-width: 52ch;
+      }
+
+      .pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(24px, 4cqi, 68px);
+        margin-top: clamp(16px, 2.6vh, 30px);
+      }
+      .pair > div {
+        padding-top: clamp(12px, 1.8vh, 20px);
+        border-top: 2.5px solid var(--accent);
+      }
+      .pair .label {
+        margin: 0 0 10px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .pair p {
+        font-size: clamp(17px, 1.6cqi, 26px);
+        max-width: 36ch;
+      }
+
+      /* A contrast pair whose two words ARE the teaching: programming vs software
+   engineering, established vs still unknown, verification vs validation.
+   The word is the heading; everything under it is support. */
+      .terms > div {
+        border-top-width: 3.5px;
+      }
+      .term {
+        margin: 0 0 clamp(10px, 1.7vh, 20px);
+        max-width: none;
+        font-size: clamp(26px, 3.1cqi, 52px);
+        font-weight: 400;
+        line-height: 1.06;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .terms h3 {
+        font-size: clamp(19px, 1.75cqi, 29px);
+      }
+      .terms p {
+        font-size: clamp(17px, 1.6cqi, 26px);
+        max-width: 34ch;
+      }
+      .terms h3 + p {
+        font-size: clamp(15px, 1.4cqi, 22px);
+        color: var(--quiet);
+      }
+      /* when the terms carry the weight, the slide's own heading steps back */
+      .slide:has(.terms) h2:not(.term) {
+        font-size: clamp(28px, 3.1cqi, 50px);
+      }
+
+      .trio {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: clamp(16px, 2.6vh, 30px);
+        background: var(--rule);
+        border: 1px solid var(--rule);
+      }
+      .trio > div {
+        padding: clamp(16px, 2.2cqi, 30px);
+        min-height: 10rem;
+        background: var(--ground-teach);
+      }
+      .slide[data-mode='work'] .trio > div {
+        background: var(--ground-work);
+      }
+      .slide[data-mode='gate'] .trio > div {
+        background: var(--ground-gate);
+      }
+      .trio b {
+        display: block;
+        margin-bottom: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .trio span {
+        display: block;
+        font-size: clamp(18px, 1.6cqi, 27px);
+        line-height: 1.16;
+        font-weight: 500;
+      }
+
+      /* The worked strip. Same four fields the teams fill, shown once with an
+   example that is deliberately not the Campus Event answer. Four columns,
+   so each cell carries less weight than a .trio and reads as a filled form
+   rather than as three headline ideas. */
+      .trio.strip {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .trio.strip > div {
+        padding: clamp(12px, 1.6cqi, 22px);
+        min-height: 0;
+      }
+      .trio.strip b {
+        margin-bottom: 10px;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+      }
+      .trio.strip span {
+        font-size: clamp(14px, 1.18cqi, 20px);
+        line-height: 1.3;
+        font-weight: 400;
+      }
+      .strip-note {
+        margin: clamp(10px, 1.6vh, 16px) 0 0;
+        max-width: none;
+        font-size: clamp(12px, 1cqi, 16px);
+        color: var(--quiet);
+      }
+      /* Reserve the worked example's space while keeping it unavailable until
+   the instructor cues it. This lets the class understand the task before the
+   model appears, without causing the slide to reflow on reveal. */
+      .worked-strip[data-cue] {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 180ms ease;
+      }
+      body.cued .worked-strip[data-cue] {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .steps {
+        list-style: none;
+        margin: clamp(16px, 2.6vh, 30px) 0 0;
+        padding: 0;
+        counter-reset: s;
+        max-width: 56ch;
+      }
+      .steps li {
+        counter-increment: s;
+        display: grid;
+        grid-template-columns: 2.4rem 1fr;
+        gap: 14px;
+        align-items: baseline;
+        padding: clamp(8px, 1.3vh, 14px) 0;
+        border-bottom: 1px solid var(--rule);
+        font-size: clamp(18px, 1.6cqi, 27px);
+        line-height: 1.32;
+      }
+      .steps li::before {
+        content: counter(s, decimal-leading-zero);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.07em;
+      }
+
+      .chain {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 10px;
+        margin: clamp(18px, 3vh, 34px) 0 0;
+        padding: 0;
+        font-size: clamp(15px, 1.35cqi, 22px);
+        font-weight: 500;
+      }
+      .chain li:not(:last-child)::after {
+        content: '→';
+        margin-left: 10px;
+        color: var(--accent);
+      }
+
+      .break-word {
+        font-size: clamp(84px, 13.5cqi, 240px);
+        font-weight: 300;
+        letter-spacing: -0.045em;
+        line-height: 0.9;
+        max-width: none;
+      }
+
+      /* ============================================================
+   CONNECTED DECISIONS
+   The sentence is the teaching; the strip is only its picture.
+   One accent, two states. Never an eight-colour code.
+   ============================================================ */
+      .slide:has(.map) .face {
+        padding-bottom: 0;
+      }
+      .map {
+        margin-top: clamp(20px, 3.4vh, 40px);
+        padding-top: clamp(16px, 2.4vh, 26px);
+        border-top: 1px solid var(--rule);
+      }
+      .map-head {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin: 0 0 14px;
+        max-width: none;
+        font-size: clamp(11px, 0.82cqi, 13px);
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .map-claim {
+        margin: 0 0 clamp(14px, 2vh, 22px);
+        max-width: 64ch;
+        font-weight: 500;
+        font-size: clamp(17px, 1.55cqi, 26px);
+        line-height: 1.34;
+        color: var(--accent);
+      }
+      .map ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .map li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        line-height: 1;
+        white-space: nowrap;
+        font-size: clamp(14px, 1.22cqi, 19px);
+        color: var(--quiet);
+      }
+      .map li span {
+        padding: 9px 12px;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+      }
+      .map li:not(:last-child)::after {
+        content: '';
+        width: 16px;
+        height: 1px;
+        background: var(--rule);
+      }
+      .map li.on {
+        color: var(--ink);
+      }
+      .map li.on span {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+        font-weight: 600;
+      }
+      .map li.on::after {
+        background: color-mix(in srgb, var(--accent) 60%, transparent);
+        height: 1.5px;
+      }
+      .slide[data-mode='gate'] .map li.on span {
+        background: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+
+      /* On the slide that introduces it, the map is not a footnote. It is the
+   content, so it is sized as such and every stage reads at full strength. */
+      .map--intro {
+        border-top-width: 2px;
+      }
+      .map--intro .map-head {
+        font-size: clamp(12px, 0.92cqi, 15px);
+        margin-bottom: 20px;
+      }
+      .map--intro ol {
+        gap: 10px 12px;
+      }
+      .map--intro li {
+        font-size: clamp(17px, 1.6cqi, 27px);
+        color: var(--ink);
+      }
+      .map--intro li span {
+        padding: 13px 17px;
+      }
+      .map--intro li:not(:last-child)::after {
+        width: 22px;
+      }
+      .slide:has(.map--intro) h2 {
+        font-size: clamp(30px, 3.4cqi, 54px);
+      }
+
+      /* ============================================================
+   NOTES: a real column that pushes, never an overlay.
+   Student review notes come first. Facilitator notes follow in a
+   visibly separate section and never enter the student PDF.
+   ============================================================ */
+      .sn {
+        display: none;
+      }
+      .notes {
+        grid-column: 2;
+        position: sticky;
+        top: 0;
+        height: 100svh;
+        overflow: auto;
+        background: #fffdf9;
+        border-left: 1px solid var(--rule);
+        color: var(--ink);
+        padding: 26px 26px 40px;
+        min-width: 0;
+      }
+      body:not(.notes-open) .notes {
+        display: none;
+      }
+      .notes h2 {
+        font-size: 19px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.25;
+        margin: 0 0 4px;
+        max-width: none;
+      }
+      .n-loc {
+        margin: 0 0 18px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes h3 {
+        margin: 20px 0 5px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes p,
+      .notes li {
+        font-size: 14.5px;
+        line-height: 1.52;
+        max-width: none;
+        margin: 0 0 8px;
+      }
+      .notes ul {
+        margin: 0 0 8px;
+        padding-left: 1.1rem;
+      }
+      .notes #n-body::before,
+      .notes .fn::before {
+        display: block;
+        margin: 0 0 14px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes #n-body::before {
+        content: 'Student review notes';
+      }
+      .notes .fn {
+        margin-top: 28px;
+        padding: 20px 0 0;
+        border-top: 2px solid var(--accent);
+      }
+      .notes .fn::before {
+        content: 'Facilitator notes';
+        color: #8a3f28;
+      }
+      .notes .close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--rule);
+        background: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+        line-height: 1;
+      }
+      .notes-body {
+        padding-right: 34px;
+      }
+      .n-cue {
+        margin: 0 0 16px;
+        padding: 10px 13px;
+        border-left: 3px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, transparent);
+        font-size: 13.5px;
+        line-height: 1.45;
+        font-weight: 500;
+      }
+      .n-cue b {
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .notes .spoken-gist {
+        display: block;
+        margin: 0 0 2px;
+        color: color-mix(in srgb, var(--ink) 48%, transparent);
+        font-size: 0.72em;
+        font-weight: 650;
+        letter-spacing: 0.035em;
+        line-height: 1.25;
+      }
+      .sn .n-time,
+      .notes .n-time {
+        margin-top: 26px;
+        padding-top: 12px;
+        border-top: 1px solid var(--rule);
+        font-size: 11.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--quiet);
+      }
+      .n-time span + span::before {
+        content: '·';
+        padding: 0 0.6em;
+        opacity: 0.6;
+      }
+
+      /* ============================================================
+   CONTROLS: present, but out of the way until wanted.
+   ============================================================ */
+      .bar-zone {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 30;
+        padding: 42px 70px 20px 20px;
+        opacity: 0;
+        transition: opacity 180ms ease;
+      }
+      .bar-zone:hover,
+      .bar-zone:focus-within {
+        opacity: 1;
+      }
+      @media (hover: none) {
+        .bar-zone {
+          opacity: 1;
+        }
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        padding: 5px;
+        border-radius: 999px;
+        background: rgba(22, 38, 63, 0.9);
+        color: #fff;
+        box-shadow: 0 12px 40px rgba(22, 38, 63, 0.22);
+        backdrop-filter: blur(10px);
+      }
+      .bar button {
+        min-width: 38px;
+        height: 38px;
+        padding: 0 12px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .bar button:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+      .bar .pos {
+        font-variant-numeric: tabular-nums;
+        font-size: 12px;
+        opacity: 0.72;
+        padding: 0 8px;
+      }
+
+      /* ============================================================
+   NOTES TAB (?view=notes)
+   A second tab showing only the notes. It follows the presenting
+   tab over a BroadcastChannel and can drive it in return.
+   ============================================================ */
+      body.view-notes {
+        grid-template-columns: 1fr;
+      }
+      body.view-notes main,
+      body.view-notes .rail {
+        display: none;
+      }
+      body.view-notes .notes {
+        grid-column: 1;
+        position: static;
+        height: 100svh;
+        border-left: 0;
+        padding: 34px 30px 90px;
+      }
+      body.view-notes .notes .close {
+        display: none;
+      }
+      body.view-notes .notes-body {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding-right: 0;
+      }
+      body.view-notes .notes h2 {
+        font-size: 26px;
+      }
+      body.view-notes .n-loc {
+        font-size: 12px;
+      }
+      body.view-notes .notes h3 {
+        font-size: 12px;
+        margin-top: 26px;
+      }
+      body.view-notes .notes p,
+      body.view-notes .notes li {
+        font-size: 17px;
+        line-height: 1.55;
+      }
+      body.view-notes .n-cue {
+        font-size: 15.5px;
+      }
+      body.view-notes .bar-zone {
+        opacity: 1;
+      }
+      .sync-off {
+        position: fixed;
+        left: 20px;
+        top: 18px;
+        z-index: 31;
+        max-width: 26rem;
+        padding: 11px 14px;
+        border-left: 3px solid #b4552f;
+        background: #fdf1e7;
+        color: #5a3a25;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      @media screen and (max-width: 900px) {
+        body.notes-open {
+          --notes-w: 0px;
+        }
+        body.notes-open .notes {
+          position: fixed;
+          inset: 0 0 0 auto;
+          width: min(31rem, 92vw);
+          z-index: 40;
+          grid-column: 1;
+          box-shadow: -16px 0 50px rgba(22, 38, 63, 0.2);
+        }
+        .split,
+        .pair,
+        .trio,
+        .trio.strip {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        figure img {
+          height: 34vh;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+
+      /* ============================================================
+   PRINT: slide and its notes together on one page.
+   Portrait: slide above, notes below. Landscape: side by side.
+   Grounds are dropped to white; the mode word still names the
+   moment, so nothing is lost and the handout stays readable.
+   ============================================================ */
+      /* One printed form: A4 portrait, slide on the top half and its notes on the
+   bottom half, so plain Cmd-P is the whole story. The page size is declared
+   rather than read from the dialog: Chrome evaluates `orientation` and
+   `width` in print against the viewport, not the page box, so CSS cannot
+   detect it. `vh` does resolve against the page box, so the height is right
+   once the size is named. */
+      @page {
+        size: A4 portrait;
+        margin: 11mm;
+      }
+      @media print {
+        html {
+          scroll-snap-type: none;
+          background: #fff;
+        }
+        body {
+          display: block;
+          background: #fff;
+          color: #000;
+          --notes-w: 0px;
+        }
+        main {
+          container-type: normal;
+        }
+        .rail,
+        .bar-zone,
+        .notes {
+          display: none !important;
+        }
+
+        .slide {
+          display: grid;
+          gap: 7mm;
+          min-height: 0;
+          padding: 0;
+          overflow: visible;
+          background: #fff !important;
+          color: #000;
+          break-after: page;
+          break-inside: avoid;
+        }
+        .slide:last-child {
+          break-after: auto;
+        }
+        .slide[data-mode='gate'] {
+          --accent: #244d9d;
+          --quiet: #555;
+          --rule: #bbb;
+        }
+
+        .face {
+          border: 0.5pt solid #9aa4b2;
+          padding: 9mm;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .content,
+        .map {
+          max-width: none;
+        }
+
+        .mode b {
+          color: #000 !important;
+          background: transparent !important;
+          border-color: #000 !important;
+        }
+        .mode span {
+          color: #444;
+        }
+        h1 {
+          font-size: 24pt;
+          max-width: 22ch;
+        }
+        h2 {
+          font-size: 19pt;
+          max-width: 24ch;
+        }
+        h3 {
+          font-size: 12pt;
+        }
+        p {
+          font-size: 10.5pt;
+          max-width: 60ch;
+        }
+        .eyebrow {
+          font-size: 8pt;
+        }
+        .break-word {
+          font-size: 44pt;
+        }
+        .instruction {
+          font-size: 10pt;
+        }
+        .pair p,
+        .trio span,
+        .steps li,
+        .chain {
+          font-size: 10pt;
+        }
+        .trio.strip span,
+        .strip-note {
+          font-size: 8.5pt;
+        }
+        .worked-strip[data-cue] {
+          opacity: 1;
+          visibility: visible;
+        }
+        figure img {
+          height: 52mm;
+        }
+        .map {
+          margin-top: 5mm;
+          padding-top: 3mm;
+        }
+        .map-claim {
+          font-size: 10pt;
+          color: #244d9d;
+        }
+        .map li {
+          font-size: 7.5pt;
+        }
+        .map li.on span {
+          background: #244d9d !important;
+          color: #fff !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        /* Only student review notes print. Facilitator notes stay private in the
+     instructor-controlled HTML used for rehearsal and delivery. */
+        .sn {
+          display: block;
+          font-size: 9pt;
+          line-height: 1.42;
+          overflow: hidden;
+        }
+        .fn {
+          display: none !important;
+        }
+        .sn h3 {
+          margin: 0 0 2mm;
+          font-size: 7.5pt;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #244d9d;
+        }
+        .sn h3 + * {
+          margin-top: 0;
+        }
+        .sn * + h3 {
+          margin-top: 4mm;
+        }
+        .sn p,
+        .sn li {
+          font-size: 9pt;
+          line-height: 1.42;
+          margin: 0 0 2mm;
+          max-width: none;
+        }
+        .sn ul {
+          margin: 0 0 2mm;
+          padding-left: 4mm;
+        }
+        .n-cue {
+          display: none;
+        }
+        .key[data-cue] {
+          font-weight: 600;
+          box-shadow: inset 0 -0.14em 0
+            color-mix(in srgb, var(--accent) 46%, transparent);
+        }
+        mark,
+        mark[data-cue] {
+          background: color-mix(in srgb, var(--accent) 15%, transparent);
+          box-shadow: inset 0 -0.1em 0
+            color-mix(in srgb, var(--accent) 55%, transparent);
+          padding: 0 0.12em;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .sn .n-time {
+          margin-top: 4mm;
+          padding-top: 2mm;
+          border-top: 0.5pt solid #bbb;
+          font-size: 7.5pt;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #555;
+        }
+        .sn::before {
+          content: 'Review notes';
+          display: block;
+          margin-bottom: 3mm;
+          padding-bottom: 1.5mm;
+          border-bottom: 0.5pt solid #9aa4b2;
+          font-size: 7.5pt;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #555;
+        }
+      }
+      @media print {
+        .slide {
+          grid-template-rows: 1fr 1fr;
+          height: 98vh;
+        }
+      }
+    </style>
+  </head>
+  <body data-mode="teach">
+    <div class="rail" id="rail" aria-hidden="true">
+      <svg class="rail-logo" viewBox="0 0 46.6173665 25.140518">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g
+            transform="translate(-40.000000, -80.000000)"
+            fill="currentColor"
+            fill-rule="nonzero"
+          >
+            <g transform="translate(40.000000, 80.000000)">
+              <path
+                d="M38.7936107,15.2573604 C36.1528467,15.2573604 34.0047626,17.4054445 34.0047626,20.0462084 C34.0047626,22.6869724 36.1528467,24.8350565 38.7936107,24.8350565 C41.4343746,24.8350565 43.5824587,22.6869724 43.5824587,20.0462084 C43.4839228,17.4152981 41.3358387,15.2573604 38.7936107,15.2573604 Z M38.7936107,22.3026821 C37.5224967,22.3026821 36.5469906,21.327176 36.5469906,20.056062 C36.5469906,18.7849481 37.5224967,17.809442 38.7936107,17.809442 C40.0647247,17.809442 41.0402308,18.7849481 41.0402308,20.056062 C41.0402308,21.2187865 39.9661887,22.3026821 38.7936107,22.3026821 Z"
+              />
+              <path
+                d="M14.8395168,13.7004921 C14.8395168,11.9366983 13.3713309,10.4783659 11.6173906,10.4783659 C9.75506085,10.4783659 8.39526449,11.9465519 8.39526449,13.7004921 C8.39526449,15.4544323 9.86345042,17.0211542 11.6173906,17.0211542 C13.3713309,17.0211542 14.8395168,15.5529683 14.8395168,13.7004921"
+              />
+              <path
+                d="M22.7618087,16.1441841 C22.9588806,15.36575 23.0574166,14.5774622 23.0574166,13.7004921 L21.9833745,13.1092763 C21.9833745,12.7151324 21.8848385,12.4293781 21.8848385,12.0352342 L22.7618087,11.2568001 C22.5647367,10.4783659 22.3676648,9.69007819 21.9833745,8.91164404 L20.8107965,8.81310807 C20.6137245,8.51750017 20.4166526,8.13320989 20.2195807,7.83760199 L20.7122605,6.76355993 C20.2195807,6.08366175 19.7367544,5.49244594 19.1455386,4.9997661 L18.0714966,5.39390998 C17.7758887,5.19683804 17.4802808,4.90123013 17.1945264,4.71401179 L17.2930624,3.54143377 C16.6131642,3.1472899 15.8248765,2.76299962 15.0464423,2.56592769 L14.1694722,3.44289781 C13.7753284,3.34436184 13.489574,3.24582587 13.0954302,3.24582587 L12.7012863,2.17178382 C11.9228522,2.07324785 11.1345644,2.07324785 10.2575943,2.17178382 L9.86345042,3.24582587 C9.46930654,3.34436184 9.18355224,3.34436184 8.78940836,3.44289781 L8.01097421,2.76299962 C7.23254006,3.05860753 6.54278829,3.35421543 5.76435414,3.73850571 L5.86289011,4.91108373 C5.5672822,5.10815567 5.2716743,5.3052276 4.98591999,5.59098191 L3.91187794,5.19683804 C3.32066213,5.68951788 2.73929992,6.36941606 2.24662007,6.96063187 L2.83783588,8.03467392 C2.64076395,8.33028183 2.44369201,8.62588973 2.24662007,9.01018001 L1.07404205,9.10871598 C0.778434149,9.78861416 0.482826244,10.5769019 0.295607905,11.3553361 L1.17257802,12.1337702 C1.07404205,12.5279141 1.07404205,12.8136684 1.07404205,13.2078123 L-2.80056066e-15,13.7990281 C-2.80056066e-15,14.5774622 0.0985359682,15.36575 0.295607905,16.2427201 L1.46818593,16.439792 C1.56672189,16.8339359 1.66525786,17.1196902 1.76379383,17.5138341 L0.985359682,18.4893401 C1.28096759,19.1692383 1.66525786,19.9575261 2.1579377,20.5388883 L3.42905169,20.3418163 C3.62612363,20.6374243 3.92173153,20.9330322 4.10894987,21.1202505 L3.91187794,22.2928285 C4.50309375,22.7855084 5.18299193,23.2683346 5.86289011,23.6624785 L6.83839619,22.9825803 C7.1340041,23.1796522 7.51829437,23.2781882 7.81390228,23.4752601 L8.01097421,24.6478382 C8.78940836,24.9434461 9.57769611,25.041982 10.3561303,25.140518 L11.0360284,24.1650119 C11.4301723,24.1650119 11.7159266,24.1650119 12.1100705,24.1650119 L12.7899687,25.140518 C13.5684028,25.041982 14.3566906,24.8449101 15.1351247,24.6478382 L15.3321966,23.4752601 C15.6278046,23.3767242 16.0120948,23.1796522 16.3077027,22.9825803 L17.2832088,23.6624785 C17.963107,23.2683346 18.6528588,22.7855084 19.234221,22.1942926 L18.9386131,21.0217145 C19.234221,20.7261066 19.4312929,20.5290347 19.6185113,20.2432804 L20.7910893,20.4403523 C21.2837691,19.7604541 21.6680594,19.0707024 21.9636673,18.3908042 L21.2837691,17.5138341 C21.3823051,17.2182262 21.4808411,16.8339359 21.579377,16.439792 L22.7618087,16.1441841 Z M11.5188547,20.2432804 C7.90258465,20.2432804 4.9662128,17.3069085 4.9662128,13.6906385 C4.9662128,10.0743685 7.90258465,7.13799661 11.5188547,7.13799661 C15.1351247,7.13799661 18.0714966,10.0743685 18.0714966,13.6906385 C18.0714966,17.3069085 15.1351247,20.2432804 11.5188547,20.2432804 Z"
+              />
+              <path
+                d="M22.7618087,3.91587045 C20.6137245,4.01440642 19.5396825,2.15207662 19.5396825,2.15207662 C19.4411465,1.95500469 19.0470027,1.85646872 18.8597843,1.95500469 C18.6627124,2.05354065 18.5641764,2.44768453 18.6627124,2.63490287 C18.7612483,2.73343883 20.1308983,5.07859488 22.8701982,4.98005891 C23.1658061,4.98005891 23.3628781,4.684451 23.3628781,4.48737907 C23.2446349,4.11294239 23.0574166,3.91587045 22.7618087,3.91587045"
+              />
+              <path
+                d="M46.6173665,17.8981243 L46.6173665,17.8981243 L46.6173665,12.7151324 L46.6173665,3.1374363 C46.6173665,2.45753812 46.0261507,1.76778635 45.2477166,1.76778635 L43.8780666,1.76778635 L43.8780666,7.63067645 C43.8780666,7.92628436 43.6809947,8.12335629 43.3853868,8.12335629 C43.0897789,8.12335629 42.892707,7.92628436 42.892707,7.63067645 L42.892707,1.76778635 L40.7446228,1.76778635 L40.7446228,7.63067645 C40.7446228,7.92628436 40.5475509,8.12335629 40.251943,8.12335629 C39.9563351,8.12335629 39.7592632,7.92628436 39.7592632,7.63067645 L39.7592632,1.76778635 L37.6111791,1.76778635 L37.6111791,7.63067645 C37.6111791,7.92628436 37.4141071,8.12335629 37.1184992,8.12335629 C36.8228913,8.12335629 36.6258194,7.92628436 36.6258194,7.63067645 L36.6258194,1.76778635 L34.4777353,1.76778635 L34.4777353,7.63067645 C34.4777353,7.92628436 34.2806633,8.12335629 33.9850554,8.12335629 C33.6894475,8.12335629 33.4923756,7.92628436 33.4923756,7.63067645 L33.4923756,1.76778635 L28.9991354,1.76778635 C28.3192373,1.76778635 27.6294855,2.35900216 27.6294855,3.1374363 L27.6294855,5.08844847 L25.8656916,1.57071441 L26.9397337,0.9794986 C27.2353416,0.880962632 27.3338776,0.585354728 27.1368056,0.29960042 C27.0382697,0.00399251533 26.7426618,-0.0945434529 26.4569075,0.102528484 L23.2347813,1.76778635 C22.9391734,1.86632231 22.8406374,2.16193022 23.0377094,2.44768453 C23.1362453,2.74329243 23.4318532,2.8418284 23.7176075,2.64475646 L24.7916496,2.05354065 L26.9397337,6.16249053 L21.1753796,6.16249053 L21.1753796,6.16249053 C21.1753796,6.2610265 21.2739155,6.2610265 21.2739155,6.35956246 L21.6680594,6.8522423 C21.6680594,6.8522423 21.2739155,7.63067645 21.0768436,7.92628436 L21.0768436,7.92628436 C21.3724515,7.92628436 22.3479576,8.02482033 22.3479576,8.02482033 L22.6435655,8.61603613 C23.0377094,9.49300625 23.3234637,10.281294 23.4219996,11.1582641 L23.5205356,11.7494799 C23.5205356,11.7494799 22.7421015,12.3406957 22.5450295,12.5279141 C22.8406374,12.62645 23.7176075,13.1191299 23.7176075,13.1191299 L23.7176075,13.7103457 C23.7176075,14.5873158 23.6190716,15.4741395 23.4219996,16.3511096 L23.3234637,16.9423254 C23.3234637,16.9423254 22.4464936,17.1393974 22.0523497,17.2379334 C22.2494216,17.5335413 22.8307838,18.2134394 22.8307838,18.2134394 L22.5351759,18.8046552 C22.43664,18.9031912 22.43664,19.1002632 22.43664,19.1987991 L33.1869141,19.1987991 C33.482522,16.5580352 35.5320701,14.508487 38.5669779,14.508487 C41.5033498,14.508487 43.7499699,16.4594992 44.1441137,19.1987991 L45.2181558,19.1987991 L45.2181558,19.1987991 C46.0261507,19.1692383 46.6173665,18.5878761 46.6173665,17.8981243"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <p>
+        <span class="course">Software Engineering</span
+        ><span class="sep">·</span>Week 01<span class="sep">·</span
+        ><span class="seg" id="rail-seg">Arrival</span>
+      </p>
+      <svg class="rail-progress" viewBox="0 0 40 40">
+        <circle class="track" cx="20" cy="20" r="16" pathLength="100"></circle>
+        <circle
+          class="fill"
+          id="rail-progress"
+          cx="20"
+          cy="20"
+          r="16"
+          pathLength="100"
+        ></circle>
+        <text id="rail-current" x="20" y="20">1</text>
+      </svg>
+    </div>
+
+    <main id="deck">
+      <!-- ============================ BLOCK 1 ============================ -->
+
+      <!-- 01 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Arrival"
+        data-min="8"
+        data-block="Block 1"
+        data-target="0:08"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="eyebrow">Software Engineering · Week 1</p>
+            <h1>Welcome!</h1>
+            <p class="lead">
+              Settle in and check that you can reach today’s session materials.
+            </p>
+          </div>
+        </div>
+        <div class="sn"><h3>Textbook study</h3><p>§1.1, pp. 19-24. Printed pages in Sommerville (2016), 10th edition, Global Edition. See the <a href="../../reading-guide.md#session-1---engineering-beyond-programming">session 1 reading guide</a> for the study question and optional selections.</p>
+          <h3>What this is for</h3>
+          <p>
+            Making sure everyone can reach today’s materials before the session
+            starts.
+          </p>
+          <h3>Do now</h3>
+          <p>
+            Say something if you cannot open the session materials, or if you
+            need a different seat or format.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Make sure everyone can access and use the materials before beginning.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Good morning, and welcome to Software Engineering. Before we start, let's make sure <strong>everyone can use today's materials</strong>. If you cannot open a file, read what is on the screen, or work comfortably from your seat, please tell me now so we can sort that out. <em class="pause">[Pause]</em></p>
+            <p><em class="pause">[Name and show the confirmed materials location; keep Release 2 inaccessible.]</em> You will receive the material <strong>in stages</strong> today. You only need what I make available at each step. If the main route does not work for you, I have a fallback we can use.</p>
+            <p>We will begin with your own view of what software engineering means. Then we will look at a small example together, before you make a judgement from a packet of evidence. You do not need to arrive with the right terminology. What matters is being willing to <strong>explain what you think and what supports it</strong>. <em class="pause">[Pause for access and seating needs.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Once everyone is settled, we will start with one sentence in your own words.</p>
+            <h3>If the primary route fails · say</h3>
+            <p>We will use the <strong>prepared fallback</strong> so you can take part. <em class="pause">[Provide the prepared alternative; do not promise an untested Canvas route.]</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Opening response"
+        data-min="5"
+        data-block="Block 1"
+        data-target="0:13"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>5 min · write on your own</span>
+            </p>
+            <p class="eyebrow">Your starting point</p>
+            <h1>
+              What does software engineering add to
+              <span class="key">programming</span>, if anything?
+            </h1>
+            <p class="instruction">
+              Write one sentence. <span class="key">Keep it</span> exactly as
+              written. Do not correct it later.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What this is for</h3>
+          <p>
+            Your own working definition, in your own words. This is not a test
+            of prior knowledge, and there is no official sentence to reproduce.
+          </p>
+          <h3>Why keep it</h3>
+          <p>
+            You will come back to this sentence at the end of the session and
+            add what today’s evidence changes. Both versions stay: the change is
+            the point.
+          </p>
+          <h3>If you are unsure</h3>
+          <p>
+            “I am not sure there is a difference” is a legitimate starting
+            position. Write it down.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Keep an honest starting point that students can revisit later.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>In your own words, <strong>what is the difference between programming and software engineering?</strong> Write one sentence. This is your starting position, so please work on your own for now. <em class="pause">[Pause]</em></p>
+            <p>You do not need a formal definition. If your answer is that you are not sure there is a difference, write that. I would rather have <strong>your actual starting point</strong> than a sentence that sounds impressive but means very little to you.</p>
+            <p>Keep this sentence somewhere you can find it again. At the end of the session you will return to it and add what today's work makes you change or notice. <strong>Both versions will stay visible</strong>. We are interested in how your reasoning develops. <em class="pause">[Pause for individual writing; do not sample or correct answers.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Keep that first sentence as it is. I want to give you four short historical moments to help us think about the wider work of engineering.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Engineering history"
+        data-min="1"
+        data-block="Block 1"
+        data-target="0:14"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">1771 · London</p>
+            <h2>Knowledge worth sharing.</h2>
+            <p class="lead">
+              Seven civil engineers meet in a tavern. Individual experience
+              becomes <span class="key">shared practice</span>.
+            </p>
+            <p class="instruction">
+              Engineering knowledge should outlive its author.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The moment</h3>
+          <p>
+            John Smeaton and six colleagues began meeting regularly to exchange
+            what they had each learned in practice, rather than keeping it to
+            themselves.
+          </p>
+          <h3>The point</h3>
+          <p>
+            Your own experience is valuable. Engineering also needs knowledge
+            that other people can examine and use.
+          </p>
+          <h3>Boundary</h3>
+          <p>
+            One British professional milestone, not the birth of engineering
+            worldwide. Dates are context, not something to memorise.
+          </p>
+          <h3>Source</h3>
+          <p>
+            <a href="https://www.smeatonians.org/history"
+              >Smeatonian Society history</a
+            >
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Engineering knowledge becomes more useful when others can examine and reuse it.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>In 1771, <strong>John Smeaton</strong> and six other civil engineers began meeting in London to <strong>exchange what they had learned</strong> in practice. I want to start here because engineering depends on people making their experience <strong>available to others</strong>.</p>
+            <p>If I <strong>discover something</strong> useful but it stays in my head, <em class="pause">[Pause]</em> its value depends on me being there. Once I <strong>explain what I did</strong> and why, someone else can question it, learn from it, and use it in their own work.</p>
+            <p>This is one British professional milestone, not the beginning of engineering worldwide. The useful idea for us is that <strong>engineering knowledge should outlive its author</strong>.</p>
+            <h3>Move on · say</h3>
+            <p>But shared knowledge also needs to change when reality exposes its limits.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Engineering history"
+        data-min="1.5"
+        data-block="Block 1"
+        data-target="0:15:30"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <div class="split">
+              <div>
+                <p class="eyebrow">1940 · Tacoma Narrows</p>
+                <h2>Reality tests our assumptions.</h2>
+                <p class="lead">
+                  The bridge’s behaviour exposed
+                  <span class="key">limits in the understanding</span> of wind
+                  and structure.
+                </p>
+              </div>
+              <figure>
+                <img
+                  src="assets/tacoma-narrows-1940.jpg"
+                  alt="Historical photograph of the Tacoma Narrows suspension bridge collapsing into the water in 1940."
+                />
+                <figcaption>
+                  7 November 1940 · Library of Congress, LC-USZ62-46846
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The point</h3>
+          <p>
+            A model can miss something important about real operating
+            conditions. Engineering knowledge carries the memory of previous
+            failures, and turns it into better designs and better checks.
+          </p>
+          <h3>Keep it accurate</h3>
+          <p>
+            This is not simply forced resonance, and wind-tunnel investigation
+            had already begun before the collapse. No individual “forgot to
+            calculate”.
+          </p>
+          <h3>Sources</h3>
+          <p>
+            <a href="https://www.loc.gov/pictures/item/2006687436/"
+              >Original photograph</a
+            >
+            ·
+            <a href="https://www.wsdot.wa.gov/TNBhistory/bridges-failure.htm"
+              >WSDOT: lessons from failure</a
+            >
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>A model is useful only within the conditions it can account for.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><em class="pause">[Pause]</em> This is the <strong>Tacoma Narrows bridge</strong> in 1940. The important point for today is that the <strong>interaction between wind and the structure</strong> exposed limits in the understanding available. A design exists in a <strong>real environment</strong>, and that environment can reveal behaviour our model has not adequately accounted for.</p>
+            <p>It would be convenient to say that someone simply <strong>forgot a calculation</strong>. That is not a useful account of this event. <strong>Wind-tunnel investigation had already begun</strong> before the collapse, and calling it simply forced resonance also misses the point. We do not need the detailed mechanics for this lesson.</p>
+            <p><em class="pause">[Pause]</em> When we test a system, <strong>we choose conditions</strong>: perhaps one user, one device, or one kind of connection. A successful result tells us something about those conditions. We still need to judge <strong>how far that result supports a claim</strong> about the conditions people will actually encounter.</p>
+            <p>Engineering learns from failures by <strong>improving both its designs and the checks</strong> it uses to judge them.</p>
+            <h3>Move on · say</h3>
+            <p>As software systems grew, those questions became a shared professional concern too.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Engineering history"
+        data-min="1.5"
+        data-block="Block 1"
+        data-target="0:17"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">1968 · NATO conference, Garmisch</p>
+            <h2>
+              Software became a <span class="key">shared responsibility</span>.
+            </h2>
+            <p class="lead">
+              Larger systems brought problems of coordination, reliability,
+              delivery, and maintenance.
+            </p>
+            <p class="instruction">
+              “Software engineering” gave those problems a name and a forum.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The shift</h3>
+          <p>
+            Getting code to run is still essential. Once other people depend on
+            a system, several developers change it, and someone else supports
+            it, running correctly no longer settles whether the whole system
+            serves those people.
+          </p>
+          <h3>Boundary</h3>
+          <p>
+            A landmark conference, not the first software project or a single
+            moment of invention. Programming remains essential engineering work.
+          </p>
+          <h3>Source</h3>
+          <p>
+            <a
+              href="https://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF"
+              >1968 NATO conference report</a
+            >
+            (optional reading).
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Getting code to run is essential; coordinating a dependable system requires wider work.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>The <strong>1968 NATO conference</strong> was a landmark in bringing software engineering problems into a shared professional discussion. Larger systems brought questions about <strong>coordination, reliability, delivery, and maintenance</strong>. This was not the first software project or a single moment when someone invented the whole discipline.</p>
+            <p>Suppose you write a program and understand every part of it. Now <strong>other developers begin changing it</strong>. <em class="pause">[Pause]</em> <strong>People depend on it</strong> for their work. <em class="pause">[Pause]</em> <strong>Someone else has to support it</strong> when you are unavailable. <em class="pause">[Pause]</em> The code still matters enormously, but there are now decisions that no individual piece of code can settle on its own.</p>
+            <p><strong>What are we agreeing to deliver?</strong> How will different changes fit together? <strong>What evidence would give us confidence?</strong> How will the next person understand why something works this way? These questions affect whether the system can <strong>continue serving people over time</strong>.</p>
+            <p>Software engineering gives us a way to <strong>take responsibility for that wider work</strong> while still taking the code seriously.</p>
+            <h3>Move on · say</h3>
+            <p>Apollo gives us a concrete example of preparing a system for difficult operating conditions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Engineering history"
+        data-min="2"
+        data-block="Block 1"
+        data-target="0:19"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <div class="split">
+              <div>
+                <p class="eyebrow">1969 · Apollo</p>
+                <h2>Prepare for imperfect conditions.</h2>
+                <p class="lead">
+                  Under overload,
+                  <span class="key">tested recovery mechanisms</span> kept
+                  critical guidance work going.
+                </p>
+              </div>
+              <figure>
+                <img
+                  src="assets/margaret-hamilton-1969.jpg"
+                  alt="Margaret Hamilton standing beside a tall stack of Apollo flight software listings produced by her and her MIT team in 1969."
+                />
+                <figcaption>
+                  Margaret Hamilton with her team’s software listings · MIT
+                  Instrumentation Laboratory / NASA · 1969
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The point</h3>
+          <p>
+            Confidence came from designed behaviour, from testing, and from
+            people who could interpret what was happening. Engineering includes
+            preparing for conditions that are less than ideal.
+          </p>
+          <h3>Keep it accurate</h3>
+          <p>
+            The photograph shows listings of software developed by Margaret
+            Hamilton <em>and her team</em>. She did not write every listing, and
+            no single person saved the landing. You do not need to recall alarm
+            numbers or scheduler detail.
+          </p>
+          <h3>Sources</h3>
+          <p>
+            <a href="https://science.nasa.gov/people/margaret-hamilton/"
+              >NASA: photograph and team attribution</a
+            >
+            ·
+            <a
+              href="https://www.nasa.gov/wp-content/uploads/static/history/alsj/a11/a11.1201-pa.html"
+              >NASA: alarms and tested restart capability</a
+            >
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Dependability includes preparing useful behaviour for conditions that are less than ideal.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>This is <strong>Margaret Hamilton</strong> beside listings of Apollo flight software developed by <strong>her and her team</strong>. It is a striking image, but the stack is not a measure of quality, and it does not mean she wrote every line herself. It helps us see that this was <strong>substantial, coordinated work</strong>.</p>
+            <p><em class="pause">[Pause]</em> During the Apollo landing, <strong>overload occurred</strong>. <strong>Tested recovery mechanisms</strong> allowed <strong>critical guidance work</strong> to keep going. The point I want you to take away is that confidence did not depend on assuming that every operating condition would be perfect.</p>
+            <p>It is easy to ask whether a system works when everything goes as expected. A further question is <strong>what happens when it cannot do everything</strong> being asked of it. <strong>Which work matters most?</strong> <em class="pause">[Pause]</em> <strong>What behaviour can it preserve?</strong> <em class="pause">[Pause]</em> How will people understand what is happening well enough to respond? <em class="pause">[Pause]</em> Those questions influence design and testing before a difficult situation occurs.</p>
+            <p>The recovery mechanisms mattered, the testing mattered, and <strong>people who could interpret the situation</strong> mattered. <strong>No single person saved the landing</strong>. We do not need alarm numbers or scheduler details to understand that connection.</p>
+            <p>Our systems will be much smaller, but we can still ask <strong>what conditions we have prepared for</strong>, and <strong>what evidence supports our confidence</strong>.</p>
+            <h3>Move on · say</h3>
+            <p>These examples bring us to the distinction between programming and software engineering.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Orientation"
+        data-min="2"
+        data-block="Block 1"
+        data-target="0:21"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">A useful distinction</p>
+            <div class="pair terms">
+              <div>
+                <h2 class="term">Programming</h2>
+                <p>Expresses behaviour in code.</p>
+              </div>
+              <div>
+                <h2 class="term">Software engineering</h2>
+                <p>
+                  Coordinates the <span class="key">wider work</span> needed to
+                  make that behaviour useful, dependable, changeable, and
+                  supportable.
+                </p>
+              </div>
+            </div>
+            <p class="instruction">
+              The distinction is about <span class="key">scope</span>, not
+              status.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What this is not</h3>
+          <p>
+            Not a ranking, and not a list of job titles. Programming is
+            essential technical work <em>inside</em> software engineering.
+          </p>
+          <h3>The wider work</h3>
+          <p>
+            Someone must understand whose problem is being solved, agree what
+            success means, integrate changes, test important conditions, support
+            users, and change the system later.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Programming is essential work within the wider scope of software engineering.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>On this slide, programming means <strong>expressing behaviour in code</strong>. Software engineering includes the wider work that makes that behaviour <strong>useful, dependable, changeable, and supportable</strong>. This is a distinction about <strong>scope, not status</strong>. It is not a ranking of people or a division into impressive and less impressive job titles.</p>
+            <p>Imagine a feature that lets someone <strong>reserve a place at an event</strong>. Writing the code that records a reservation is essential. But first we need to understand <strong>whose problem we are solving</strong> and <strong>what a successful reservation means</strong>. The person booking and the person running the event both need the system to support their work.</p>
+            <p>We also need to <strong>agree the expected behaviour</strong>, bring changes together, and <strong>test important conditions</strong>. Once people use the system, someone must help when they have a problem. Later, <strong>a different developer may need to change it</strong>. That person needs enough understanding to make the change with confidence.</p>
+            <p>These concerns influence the code, and what we learn from the code can make us <strong>revisit earlier decisions</strong>. They belong together. Programming remains essential technical work <strong>inside that wider responsibility</strong>.</p>
+            <p><em class="pause">[Pause]</em> We will practise explaining those connections: <strong>why a decision makes sense</strong>, what supports it, and <strong>what still needs checking</strong>. You do not need to master every part today.</p>
+            <h3>Move on · say</h3>
+            <p>That is the promise of this course: learning to make and justify connected software decisions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Course promise"
+        data-min="2"
+        data-block="Block 1"
+        data-target="0:23"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">What this course practises</p>
+            <h2>
+              Make software decisions
+              <span class="key">visible and defensible</span>.
+            </h2>
+            <p class="lead">
+              Use evidence. State uncertainty. Explain trade-offs. Revise when
+              the situation changes.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What this means for your work</h3>
+          <p>
+            The artefacts you produce are evidence of your reasoning. The goal
+            is not to collect templates. It is to make decisions another person
+            can inspect, question, and improve.
+          </p>
+          <h3>What is expected</h3>
+          <p>
+            You will apply ideas to new contexts and justify your choices. You
+            are not expected to design an expert-level replacement architecture.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Make decisions and their supporting reasoning visible to another person.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>The promise of this course is that you will learn to make software decisions <strong>visible and defensible</strong>. By visible, I mean that another person can see what you decided and how you reached it. By defensible, I mean that you can explain why it makes sense given the evidence and constraints you had. <em class="pause">[Pause]</em></p>
+            <p>There are four things we will keep practising. <strong>Use evidence</strong>: show what supports a claim. <strong>State uncertainty</strong>: make clear what you still do not know. <strong>Explain trade-offs</strong>: say what a choice gains and what it gives up. And <strong>revise when the situation changes</strong>: let new evidence affect your judgement.</p>
+            <p>You will produce things such as written explanations, reviews, and small engineering artefacts. Their value is in the reasoning they make available to someone else. A beautifully completed template can still leave the important decision unexplained. A short, clear account can give a colleague something useful to question and improve.</p>
+            <p>You are not expected to arrive as an expert architect or produce a replacement design for every system we discuss. You are expected to <strong>make a proportionate choice and justify it</strong>. If your view changes, you should be able to explain what changed it. That is a capability we can practise, rather than a quality you either already have or do not have.</p>
+            <h3>Move on · say</h3>
+            <p>Here is the map we will use to locate those decisions across the course.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Course map"
+        data-min="3"
+        data-block="Block 1"
+        data-target="0:26"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">A map, not a checklist</p>
+            <h2>Software decisions <span class="key">connect</span>.</h2>
+            <p class="lead">
+              A decision in one place changes what is needed elsewhere. This is
+              where we will locate our reasoning, all term.
+            </p>
+          </div>
+          <aside
+            class="map map--intro"
+            aria-label="Connected decisions: the whole map"
+          >
+            <p class="map-head">
+              Connected decisions
+            </p>
+            <ol>
+              <li><span>problem</span></li>
+              <li><span>stakeholders</span></li>
+              <li><span>requirements</span></li>
+              <li><span>design</span></li>
+              <li><span>implementation quality</span></li>
+              <li><span>testing</span></li>
+              <li><span>maintenance</span></li>
+              <li><span>risk</span></li>
+            </ol>
+          </aside>
+        </div>
+        <div class="sn">
+          <h3>How to read it</h3>
+          <p>
+            This locates the decisions we will practise across the course. It is
+            <em>not</em> a fixed sequence you must follow, and <em>not</em> a
+            list to memorise today.
+          </p>
+          <h3>Why the links matter</h3>
+          <p>
+            For example: if we describe success too narrowly, we may test too
+            narrowly and miss an important risk. Today we look at one part of
+            that connection: what our evidence allows us to claim.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Use the map to notice connections between decisions, not to memorise eight labels.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>This map brings together the areas of work we will connect during the course: <strong>problem, stakeholders, requirements, design, implementation quality, testing, maintenance, and risk</strong>. You do not need to memorise these labels today. We will return to them when there is a decision that makes the connection useful. <em class="pause">[Pause to look at the map.]</em></p>
+            <p>Imagine that we describe the purpose of a reservation feature as recording a booking. That description shapes what we ask the system to do. It also shapes what we check: we might make a booking and see whether a record appears. The check may be useful, but its usefulness depends on whether we have described success well enough.</p>
+            <p>The people using the system may need more than a record. They need to understand what has been agreed and what they can rely on. If we leave an important need out of our description, we can build and test exactly what we described while still leaving that need unsupported. <strong>An early decision affects the evidence we collect later.</strong></p>
+            <p>The connections also work back in the other direction. A test result might make us reconsider a design. A support problem might show that we misunderstood what someone needed. This is why the map is <strong>not a fixed sequence</strong> that you complete once and never revisit. <em class="pause">[Pause]</em></p>
+            <p>It also helps us explain a decision to someone else. Instead of simply saying that we chose a design because it seemed sensible, we can connect it to a requirement, a person's need, or a risk we were trying to manage. That makes the choice easier to inspect.</p>
+            <p>For today, we will concentrate on one small connection: <strong>what our evidence allows us to claim</strong>. The rest of the map gives that question a home. We will build up the other connections as the course progresses.</p>
+            <h3>Move on · say</h3>
+            <p>The assessments follow that same progression from making a judgement to explaining how your reasoning connects.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Assessment journey"
+        data-min="3"
+        data-block="Block 1"
+        data-target="0:29"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">The assessed journey</p>
+            <h2>Frame → review → connect</h2>
+            <div class="trio">
+              <div>
+                <b>Week 5 · 10%</b
+                ><span>Frame an ambiguous software project.</span>
+              </div>
+              <div>
+                <b>Week 10 · 10%</b><span>Review an engineering proposal.</span>
+              </div>
+              <div>
+                <b>Portfolio · 80%</b
+                ><span>Connect your engineering reasoning.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The structure</h3>
+          <p>
+            Two individual in-class tasks: Software Project Framing in Week 5
+            and Engineering Review in Week 10, each worth 10%. The 3,200-word
+            Software Engineering Portfolio is worth 80%.
+          </p>
+          <h3>Preparation</h3>
+          <p>
+            You will practise the capabilities each task needs the week before
+            you sit it. The detail of each task is unpacked when it becomes
+            useful, not today.
+          </p>
+          <h3>Questions</h3>
+          <p>
+            Ask about anything here. Where a date, policy, or Canvas detail is
+            not yet confirmed, it will be verified rather than guessed.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>The assessment journey moves from framing to reviewing to connected reasoning.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>There are <strong>three parts to the assessed journey</strong>. The first is Software Project Framing, an individual in-class task in Week 5, worth <strong>10%</strong>. The second is Engineering Review, another individual in-class task in Week 10, also worth <strong>10%</strong>. The Software Engineering Portfolio is <strong>3,200 words and worth 80%</strong>. <em class="pause">[Pause]</em></p>
+            <p>The words along the top tell you how those parts connect. First, you frame a software project: you make sense of an ambiguous situation and explain what matters. Later, you review an engineering proposal: you examine decisions and explain how well they are supported. The portfolio asks you to connect your engineering reasoning across the wider work of the course.</p>
+            <p>That progression is why we will spend class time explaining decisions, examining evidence, and revising our work. Those activities practise capabilities you will need in assessment. We will unpack the detail of each task when it becomes useful, rather than trying to carry every instruction in our heads today.</p>
+            <p>You will have <strong>practice for each in-class task in the preceding week</strong>. Use that practice to notice where your reasoning is clear and where another person still has to guess what you mean. The assessment briefs remain the place for the exact requirements; this slide is the overview. <em class="pause">[Pause]</em></p>
+            <p>Is there anything about <strong>this overall structure</strong> that you would like me to clarify before we move on? <em class="pause">[Pause for questions.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Keep that progression in mind. Let us bring the wider idea of software engineering into one working sentence.</p>
+            <h3>If a detail is unconfirmed · say</h3>
+            <p>I need to <strong>verify that detail</strong> before giving you an answer. I will record the question and return to it once it is confirmed.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Synthesis"
+        data-min="3"
+        data-block="Block 1"
+        data-target="0:32"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">A working definition</p>
+            <h2>
+              Programming expresses behaviour in code. Software engineering
+              coordinates the wider work needed to make it useful, dependable,
+              changeable, and supportable: <span class="key"
+                >with other people, under real constraints</span
+              >.
+            </h2>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What to do with this</h3>
+          <p>
+            This is a concise formulation we can test against evidence. You do
+            <em>not</em> need to replace your own sentence with it, and you will
+            not be asked to reproduce it.
+          </p>
+          <h3>The part that matters today</h3>
+          <p>
+            “With other people, under real constraints.” That is the bridge from
+            scale and coordination to the evidence work that follows.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Use the working definition to connect responsibility, constraints, and evidence.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Here is a working formulation we can use today. <strong>Programming expresses behaviour in code. Software engineering coordinates the wider work needed to make it useful, dependable, changeable, and supportable: with other people, under real constraints.</strong> <em class="pause">[Pause to read the slide.]</em></p>
+            <p>You do not need to replace your own opening sentence with this one. Keep yours. This is something we can test against the work we do, rather than a definition you will be asked to reproduce. Its value is in what it helps us notice.</p>
+            <p>The phrase I want to hold on to is <strong>with other people, under real constraints</strong>. When someone else depends on a system, a statement about its readiness can influence what they do next. A colleague might release it, a user might rely on it, or someone supporting it might need to explain its limitations. The way we describe what we know has consequences.</p>
+            <p>Real constraints also mean that we cannot settle every possible question before making any decision. Time is limited, evidence is incomplete, and different people may need different things. We still have to choose what to do next. The <strong>useful skill is to make a judgement</strong> whose confidence and scope match what we actually know. <em class="pause">[Pause]</em></p>
+            <p>That is why <strong>stating an uncertainty is useful engineering work</strong>. It tells the team where a decision still depends on an assumption, and where another check could make a difference. It does not mean that nothing can be decided until every uncertainty disappears.</p>
+            <p>We can start practising this with a very small piece of evidence. We will look at what a colleague observed, the claim they made from it, and how far that claim can reasonably go. You already have enough everyday reasoning to take part; the terminology can come afterwards.</p>
+            <h3>Move on · say</h3>
+            <p>Imagine you are part of a software team, checking a colleague’s recommendation about a password-reset feature.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Password reset"
+        data-min="2"
+        data-block="Block 1"
+        data-target="0:34"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">One demonstration</p>
+            <h1>
+              “The password-reset email arrived in the
+              <mark data-cue>instructor’s test account</mark>, so
+              <span class="key" data-cue>password reset is ready</span>.”
+            </h1>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The situation</h3>
+          <p>
+            You are on a software team. A colleague has just tried the
+            password-reset feature and is recommending that it is ready. This
+            sentence is <em>all</em> the evidence you have.
+          </p>
+          <h3>The conditions</h3>
+          <p>
+            One test account. One email arrived. Nothing here tells you whether
+            the link worked.
+          </p>
+          <h3>What you are being asked</h3>
+          <p>
+            Not to find a hidden bug. Only to check how far this claim can
+            reasonably go.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Give students the teammate role and the exact evidence before asking for judgement.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>You are on a software team. A colleague has tried the password-reset feature and is recommending that it is ready. You are helping the team decide <strong>what that recommendation is supported by</strong>. This is not an exercise in catching a colleague out. It is part of making a decision together.</p>
+            <p>Here is the whole statement: <strong>“The password-reset email arrived in the instructor's test account, so password reset is ready.”</strong> <em class="pause">[Pause for everyone to read the full sentence; then reveal the emphasis cue.]</em></p>
+            <p>That sentence is all the evidence you have. Please do not add an imagined test report or assume that someone must have checked the rest. Equally, do not assume the feature is broken. Your job is to reason from <strong>what has actually been supplied</strong>.</p>
+            <p>The word “ready” matters because another person could act on it. Before the team relies on that word, it needs to understand what the demonstration tells us and what remains open. You can respect the colleague's work while still checking the scope of the recommendation. <em class="pause">[Pause]</em></p>
+            <p>We will take this one step at a time. Start with the evidence in the sentence, then consider the claim being made from it. You do not need to name a technical defect, design a new test suite, or know how the feature is implemented.</p>
+            <h3>Move on · say</h3>
+            <p>What does that evidence establish, and what important thing does it not establish?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Required question"
+        data-min="16"
+        data-block="Block 1"
+        data-target="0:50"
+      >
+        <div class="face">
+          <div class="content">
+            <div class="claim-header">
+              <p class="mode">
+                <b>Your turn</b><span>think first, then offer one answer</span>
+              </p>
+              <p class="claim-reference">“The password-reset email arrived in the instructor’s test account, so password reset is ready.”</p>
+            </div>
+            <p class="eyebrow">Evidence before terminology</p>
+            <h1>
+              What does that evidence <span class="key">establish</span>, and
+              what important thing does it
+              <span class="key">not</span> establish?
+            </h1>
+            <p class="instruction">
+              Think first. Then offer one bounded answer.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What it does not need</h3>
+          <p>
+            You do not need to invent a defect. “This might be broken” is a
+            guess; “we do not know whether this holds for other providers” is an
+            unknown. The second is what is wanted.
+          </p>
+          <h3>Why the pause matters</h3>
+          <p>
+            The question asks you to separate what was observed from what would
+            still need evidence. Quiet thinking time is part of the task.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Hear one bounded observation and one important unknown before modelling the distinction.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Take a quiet moment to separate <strong>what happened</strong> from <strong>what is being claimed</strong>. Look at the exact words, including the conditions under which the demonstration happened. <em class="pause">[Pause for individual thinking.]</em></p>
+            <p>Who can offer one bounded answer: what does the evidence establish, or what important thing does it not establish? <em class="pause">[Listen to two or three answers; allow thinking time between them.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Let us make the boundary between the observation and the wider claim explicit.</p>
+            <h3>If the room is quiet · say</h3>
+            <p>Look just at the sentence. <strong>Which words tell us what happened, and for whom?</strong> <em class="pause">[Pause for a response.]</em></p>
+            <h3>If an answer invents a defect · say</h3>
+            <p>That is a possible explanation, but <strong>what evidence establishes it here</strong>? Could you express it as something we still do not know? <em class="pause">[Pause]</em></p>
+            <h3>If an answer says only “it works” · say</h3>
+            <p>Can you make <strong>“it works” more precise</strong>? What exactly did the demonstration show? <em class="pause">[Pause]</em></p>
+            <h3>When the distinction is present · act</h3>
+            <p><em class="pause">[Move on once there is one observation and one useful unknown. The 16-minute allocation includes flexible thinking/access margin; carry unused margin forward rather than adding questions.]</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Model the boundary"
+        data-min="3"
+        data-block="Block 1"
+        data-target="0:53"
+      >
+        <div class="face">
+          <div class="content">
+            <div class="claim-header">
+              <p class="mode"><b>Explanation</b></p>
+              <p class="claim-reference">“The password-reset email arrived in the instructor’s test account, so password reset is ready.”</p>
+            </div>
+            <p class="eyebrow">A bounded claim</p>
+            <h2>Evidence supports a <span class="key">limited</span> claim.</h2>
+            <div class="pair terms">
+              <div>
+                <h2 class="term">Established</h2>
+                <h3>An email arrived.</h3>
+                <p>
+                  The demonstrated account received an email under the stated
+                  test condition.
+                </p>
+              </div>
+              <div>
+                <h2 class="term">Still unknown</h2>
+                <h3>Can users recover access?</h3>
+                <p>
+                  Whether intended users can recover access reliably, in
+                  realistic contexts, including when something goes wrong.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The principle</h3>
+          <p>
+            A passing demonstration is evidence that the demonstrated path
+            worked under the stated conditions. It is not proof that the system
+            is ready for intended users in realistic conditions.
+          </p>
+          <h3>A demonstration is not worthless</h3>
+          <p>
+            It established something real for one path. Bounded evidence is
+            still evidence.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>An email arriving is real evidence, but its scope does not establish complete account recovery.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p><em class="pause">[Briefly restate one observation and one unknown actually heard. If no usable response was given, say: “Let me model one way to make this distinction.”]</em></p>
+            <p>Let us separate <strong>what is established</strong> from <strong>what remains unknown</strong>. The observation supplied is that an email arrived in the instructor's test account. That is a real result. It gives us a bounded statement we can make with confidence. <em class="pause">[Pause]</em></p>
+            <p>Now compare that with “password reset is ready”. A person using password reset is trying to recover access to an account. The sentence does not tell us whether the link worked, whether the person could complete the process, or whether the feature would serve intended users in their conditions. Those are <strong>unanswered questions</strong>, not defects we have discovered.</p>
+            <p>Notice that we have not thrown the demonstration away. There is a difference between saying “this establishes nothing” and saying “this establishes something narrower than the claim”. The email arriving is useful evidence. We lose precision if we dismiss it, just as we lose precision if we let it stand for the whole recovery process.</p>
+            <p>The next move depends on the decision the team needs to make. If it wants to claim that an email reached this test account, the observation supports that. If it wants to claim that users can recover access, it needs evidence about that wider outcome. <strong>The size of the claim changes the evidence required.</strong> <em class="pause">[Pause]</em></p>
+            <p>Other assumptions might concern timely delivery, intended users being able to use the link, or support when something goes wrong. We have not observed those conditions here. We should name them as assumptions or unknowns rather than quietly treating them as established.</p>
+            <p>A useful team statement therefore keeps both parts visible: <strong>what passed, and what still needs checking</strong>. It gives another person a sounder basis for choosing the next check or deciding how far to rely on the result.</p>
+            <h3>Move on · say</h3>
+            <p>There are two useful terms for the questions we have just separated.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Name the distinction"
+        data-min="3"
+        data-block="Block 1"
+        data-target="0:56"
+      >
+        <div class="face">
+          <div class="content">
+            <div class="claim-header">
+              <p class="mode"><b>Explanation</b></p>
+              <p class="claim-reference">“The password-reset email arrived in the instructor’s test account, so password reset is ready.”</p>
+            </div>
+            <p class="eyebrow">Same evidence, two questions</p>
+            <div class="pair terms">
+              <div>
+                <h2 class="term">Verification</h2>
+                <p>
+                  Did the demonstrated behaviour match the
+                  <span class="key">stated condition</span>?
+                </p>
+              </div>
+              <div>
+                <h2 class="term">Validation</h2>
+                <p>
+                  Can intended users reliably achieve the
+                  <span class="key">intended outcome</span> in realistic
+                  conditions?
+                </p>
+              </div>
+            </div>
+            <p class="instruction">
+              Meeting a stated condition and meeting the user’s real need are
+              related, but <span class="key">not identical</span>.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What these words are for</h3>
+          <p>
+            Two labels for two useful questions you have already been asking.
+            You are not being asked to reproduce definitions today.
+          </p>
+          <h3>Applied to our example</h3>
+          <p>
+            An email arriving in the test account supports the
+            <em>stated condition</em>. That is verification evidence. Whether
+            an intended user can actually recover access is the
+            <em>validation</em> question, and it remains unanswered.
+          </p>
+          <h3>Do not over-read it</h3>
+          <p>
+            This example introduces the two questions. It does not mean
+            verification is always a small test, or validation is simply more
+            tests.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Verification concerns stated conditions; validation concerns intended use and needs.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>We can now name two questions that sit behind the distinction. <strong>Verification</strong> asks whether something meets the stated requirements or conditions. <strong>Validation</strong> asks whether it serves the intended use and the needs of the people who will rely on it. <em class="pause">[Pause]</em></p>
+            <p>In our example, an email arriving in the test account gives us evidence about a stated condition: the message reached that account. That is verification evidence for that condition. It does not establish that every requirement for the feature has been met, because we have not been given evidence about every requirement.</p>
+            <p>The validation question is whether <strong>an intended user can actually recover access</strong>. To answer it, we would need evidence that addresses that outcome and its relevant conditions. The observation in our sentence does not answer it, even though it is part of something that could support the wider judgement.</p>
+            <p>The distinction is about <strong>the question the evidence addresses</strong>. It is not a rule that verification means a tiny test and validation means a large number of tests. Collecting more results only helps if those results address what we need to know. Repeating the same narrow check does not automatically answer a different question. <em class="pause">[Pause]</em></p>
+            <p>This also helps us communicate within a team. If someone says that a feature has been checked, we can ask what was checked and what conclusion that supports. We may discover that the team agrees about the result but has been using it to answer different questions.</p>
+            <p>For today, you do not need to reproduce definitions. Keep the practical habit: <strong>what condition did this evidence establish, and does that settle the intended use?</strong> If it does not, state the remaining question clearly. That gives the team something concrete to investigate rather than a vague feeling of confidence or doubt.</p>
+            <h3>Move on · say</h3>
+            <p>We can carry that into the activity as one simple habit: keep a claim no larger than its evidence.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Bounded check"
+        data-min="2"
+        data-block="Block 1"
+        data-target="0:58"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">What we just did</p>
+            <h2>
+              A claim no larger than its <span class="key">evidence</span>.
+            </h2>
+            <ol class="steps">
+              <li>a stated observation, not “it works”;</li>
+              <li>an important unknown, not a guessed defect;</li>
+              <li>a claim proportionate to the available evidence.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Why this matters in practice</h3>
+          <p>
+            If a team calls the whole feature ready, someone may release it. If
+            it states precisely what passed and what remains unknown, the team
+            can choose the next check or limit the release.
+          </p>
+          <h3>Carry this forward</h3>
+          <p>
+            This is the move you will use on the Campus Event material for the
+            rest of the session.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>State an observation, an important unknown, and a proportionate claim.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>There are three parts to the move we just made. First, state <strong>an observation</strong>, something the evidence actually records. Second, identify <strong>an important unknown</strong>, something relevant that has not been established. Third, make <strong>a claim proportionate to the evidence</strong>. <em class="pause">[Pause]</em></p>
+            <p>In the password-reset example, “an email arrived in this account” is an observation. Whether intended users can complete recovery remains unknown. The team can report the observation confidently while keeping the wider readiness judgement open.</p>
+            <p>That precision matters because words such as “ready” can lead to action. Someone might release the feature or tell other people they can rely on it. If the statement hides an assumption, the next person may not realise that a useful check is still missing.</p>
+            <p>A bounded statement gives the team more room to act responsibly. It can decide what to check next, what limitation to make explicit, or how far the available evidence supports the immediate decision. <strong>Being precise is useful even when the evidence is incomplete.</strong> <em class="pause">[Pause]</em></p>
+            <p>You will now use that same move on Campus Event. There will be more material than one sentence, and you may reach different judgements. <strong>The task is to make the link between the evidence and your own judgement visible</strong>. We will keep your first position so that you can inspect how your reasoning develops.</p>
+            <h3>Move on · say</h3>
+            <p>Let us form teams and get the first packet and revision sheet in front of everyone.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 17 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Form teams"
+        data-min="2"
+        data-block="Block 1"
+        data-target="1:00"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">Release 1 begins now</p>
+            <h2>Read → write → keep → check.</h2>
+            <p class="lead">
+              Individual judgement first. Team evidence check second.
+            </p>
+            <ol class="chain">
+              <li>read alone</li>
+              <li>write your claim</li>
+              <li>keep it unchanged</li>
+              <li>check as a team</li>
+            </ol>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What you will receive</h3>
+          <p>Campus Event Release 1 and the evidence revision sheet.</p>
+          <h3>The process</h3>
+          <p>
+            Read independently. Write one readiness claim and one important
+            uncertainty in your own words. Keep them unchanged. When time is
+            called, your team agrees on one supporting packet fact and one
+            uncertainty.
+          </p>
+          <h3>If you are working alone</h3>
+          <p>
+            There is an individual route for every team step. Say so and it will
+            be arranged.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Set up teams, distribute only Release 1, and explain the immediate individual task.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Please form your teams. You will each need <strong>Campus Event Release 1 and the evidence revision sheet</strong>. <em class="pause">[Distribute only those materials and confirm access.]</em></p>
+            <p>You will begin by reading and writing <strong>independently</strong>. Write one readiness claim in your own words, and one important uncertainty. Keep those statements as you wrote them. When I call time, your team will check one supporting packet fact and one uncertainty together.</p>
+            <p>You do not need to agree on one individual judgement. The first record belongs to each of you. The team step comes afterwards and helps check what the evidence actually says. <em class="pause">[Pause]</em></p>
+            <p>If you are working alone, there is <strong>an individual route for the team steps</strong>. Let me know so we can arrange it. For now, everyone begins with the same independent reading and writing.</p>
+            <h3>Move on · say</h3>
+            <p>Open Release 1. Read the packet before deciding what you can reasonably claim.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Release 1"
+        data-min="20"
+        data-block="Block 1"
+        data-target="1:20"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>20 min · on your own, in silence</span>
+            </p>
+            <p class="eyebrow">Protected individual work</p>
+            <h2>Read the packet. Record your judgement.</h2>
+            <p class="lead">
+              One readiness claim. One important uncertainty. Keep the original
+              wording.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What to write</h3>
+          <p>
+            One claim about what the available evidence justifies concluding
+            about launch readiness, and one thing that genuinely remains unknown
+            to you. Use your own words.
+          </p>
+          <h3>There is no expected answer</h3>
+          <p>
+            A cautious, a confident, or a sceptical claim can all be defensible.
+            You are not being marked on predicting what comes next.
+          </p>
+          <h3>Two questions to ask yourself</h3>
+          <ul>
+            <li>Where is that supported in the packet?</li>
+            <li>What remains unknown?</li>
+          </ul>
+          <h3>Ask for help with</h3>
+          <p>
+            Vocabulary or how the task works: immediately. Not with what the
+            evidence means; that is the work.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Protect the individual reading and writing window without suggesting a verdict.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Read the packet and record <strong>one claim about launch readiness</strong> that you can justify from it. Then write <strong>one important thing that remains unknown</strong>. Use your own words and make the link to the evidence as clear as you can.</p>
+            <p>A cautious, confident, or sceptical claim can be defensible. You are not trying to predict what I will reveal later. You are making a judgement from <strong>the evidence available now</strong>. <em class="pause">[Pause]</em></p>
+            <p>If vocabulary or access is stopping you, ask straight away. If you are unsure what to conclude, return to the packet and ask what it supports. That judgement is the work I want you to do. Begin on your own; I will call the team check afterwards. <em class="pause">[Protect the 20-minute individual reading and writing window; circulate quietly.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Keep your original statements. We are now going to check one fact and one uncertainty with your team.</p>
+            <h3>While circulating · ask only as needed</h3>
+            <p><strong>Where is that supported in the packet?</strong> <em class="pause">[Pause for the student to locate it.]</em> What still remains unknown to you?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 19 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Team check"
+        data-min="7"
+        data-block="Block 1"
+        data-target="1:27"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>7 min · in your team</span>
+            </p>
+            <p class="eyebrow">Compare evidence, not predictions</p>
+            <h2>
+              Agree on <span class="key">one fact</span> and
+              <span class="key">one uncertainty</span>.
+            </h2>
+            <p class="lead">Your individual claim stays unchanged.</p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Check two things</h3>
+          <ul>
+            <li>Is the fact actually in Release 1?</li>
+            <li>
+              Is the uncertainty genuinely unresolved, rather than a defect you
+              have assumed?
+            </li>
+          </ul>
+          <h3>Not required</h3>
+          <p>
+            You are not asked to predict failure, to reach one class verdict, or
+            to present. Your individual statements stay as written and are not
+            merged.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Check evidence together while preserving every individual judgement.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Compare your work and agree on <strong>one supporting fact from Release 1 and one uncertainty</strong>. Check that the fact is actually recorded in the packet. Check that the uncertainty is genuinely unresolved, rather than a defect you have assumed.</p>
+            <p>Your individual statements <strong>stay as written</strong>. Do not merge them into a new group answer. You are checking the evidence together, and you may still have different judgements about what it supports. <em class="pause">[Pause]</em></p>
+            <p>You do not need to predict a failure or prepare a presentation. Keep this small: one fact you can point to and one thing the packet has not settled. <em class="pause">[Allow the team check; check that individual records remain visible.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Finish the check and keep the first record unchanged. We are about to pause the evidence before the break.</p>
+            <h3>If a brief sample is useful · say</h3>
+            <p>Could you give us <strong>one packet fact and one uncertainty</strong>, without a full report? <em class="pause">[Sample at most two or three teams.]</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 20 -->
+      <section
+        class="slide"
+        data-mode="gate"
+        data-seg="Evidence gate"
+        data-min="3"
+        data-block="Block 1"
+        data-target="1:30"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Pause</b><span>3 min</span></p>
+            <p class="eyebrow">Freeze the record</p>
+            <h2>
+              Keep your first judgement
+              <span class="key">exactly as written</span>.
+            </h2>
+            <p class="lead">
+              Coffee adds conversation, not new packet evidence.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The rule</h3>
+          <p>
+            Your first claim stays unchanged. You may naturally talk during the
+            break, but no new packet evidence arrives during it.
+          </p>
+          <h3>After the break</h3>
+          <p>
+            New evidence will be released, and you will decide whether it
+            changes, qualifies, or reinforces your judgement.
+          </p>
+          <h3>Not a trap</h3>
+          <p>
+            A cautious claim may be sharpened rather than reversed. The learning
+            move is evidence-linked revision, not being caught out.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Freeze the first record and keep Release 2 unavailable until after the break.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Before we break, please check that <strong>your first claim and uncertainty are still visible and unchanged</strong>. If you have been discussing alternatives, keep those separate from the original statement. We need to be able to see what you thought when Release 1 was the evidence available. <em class="pause">[Pause while students check.]</em></p>
+            <p>After the break, you will receive new evidence and decide whether it changes, qualifies, or reinforces your judgement. You may find that you want to reverse a claim, or simply make it more precise. <strong>There is no required direction of change.</strong></p>
+            <p>This is not a trap in which the aim is to catch your first answer being wrong. We are practising making a reasonable judgement at one point and then responding to what becomes known later.</p>
+            <p>You can naturally talk during the break. That conversation is <strong>not new packet evidence</strong>, and Release 2 will remain unavailable until we return. Keep the original record so that the later comparison remains useful. <em class="pause">[Confirm preservation before releasing the class.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Keep your revision sheet with you. We will return at 16:30 for the next evidence release.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 21 -->
+      <section
+        class="slide"
+        data-mode="gate"
+        data-seg="Institutional break"
+        data-min="30"
+        data-block="Break"
+        data-target="16:00 – 16:30"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Pause</b><span>30 min · 16:00 – 16:30</span></p>
+            <p class="eyebrow">The evidence gate</p>
+            <h1 class="break-word">Coffee.</h1>
+            <p class="lead">
+              Release 1 is preserved. Release 2 remains unavailable.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Keep with you</h3>
+          <p>
+            Your revision sheet, with your initial claim and uncertainty on it.
+          </p>
+          <h3>Back at 16:30</h3>
+          <p>
+            Block 2 starts with Release 2. Nothing is required of you during the
+            break.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Protect the break and preserve the staged evidence.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>We are taking the break now. Please <strong>keep your revision sheet</strong>, including your original claim and uncertainty. We will start again at <strong>16:30</strong> with Release 2. Nothing is required of you during the break. <em class="pause">[Keep Release 2 inaccessible; allow the institutional break.]</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ BLOCK 2 ============================ -->
+
+      <!-- 22 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Return"
+        data-min="5"
+        data-block="Block 2"
+        data-target="0:05"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">Your first position remains visible</p>
+            <h2>New evidence may change the judgement.</h2>
+            <p class="lead">
+              Do not overwrite Release 1. Add the revision
+              <span class="key">beside</span> it.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Why the original stays</h3>
+          <p>
+            Your Release 1 position is part of the evidence of your reasoning.
+            Preserving an initial judgement and revising it proportionately when
+            the evidence changes is the skill being practised.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Preserve the original judgement before distributing Release 2.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Welcome back. Please have your revision sheet in front of you, with <strong>your original claim and uncertainty still visible</strong>. We are going to add to that record, not replace it. <em class="pause">[Pause while students settle.]</em></p>
+            <p>Your first position shows what you concluded from Release 1. New evidence may give you a reason to change, narrow, strengthen, or qualify it. The useful thing is to show <strong>which evidence affects which part of your judgement</strong>.</p>
+            <p>I am now making Release 2 available. Keep it separate from the first packet so you can see what became available at each stage. <em class="pause">[Distribute Release 2; use the prepared fallback if necessary.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Begin by reading the new evidence on your own, before discussing it.</p>
+            <h3>For a late arrival · say privately</h3>
+            <p>You need a chance to make <strong>your own first judgement</strong> from Release 1 before seeing the new evidence. I will arrange that first step with you. <em class="pause">[Use the protected Release 1 route before providing Release 2; do not ask the student to copy a neighbour.]</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 23 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Release 2"
+        data-min="15"
+        data-block="Block 2"
+        data-target="0:20"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>15 min · read before discussing</span>
+            </p>
+            <p class="eyebrow">Protected reading</p>
+            <h2>Read the new evidence before discussing it.</h2>
+            <p class="lead">
+              Notice what the packet <span class="key">records</span>, what
+              someone <span class="key">claims</span>, and what is
+              <span class="key">not established</span>.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Read on your own first</h3>
+          <p>Discussion after reading, not during it.</p>
+          <h3>Three separate things</h3>
+          <p>
+            What the packet records; what someone in the packet claims; and what
+            nobody has established. Keeping them apart is most of the work.
+          </p>
+          <h3>One line to carry forward</h3>
+          <p>
+            In your own reasoning, keep visible what you can trace directly to
+            the packet and what you are adding as an inference. An unknown is
+            not itself an inference; it is something the packet leaves open.
+          </p>
+          <h3>A caution</h3>
+          <p>
+            The packet records outcomes, not one technical cause. If you find
+            yourself naming a mechanism, ask what the packet establishes and
+            what is still your hypothesis.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Separate recorded observations, claims, and unknowns before inferring causes.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Read Release 2 <strong>on your own first</strong>, and <strong>read all of it before you write anything</strong>. It is short. As you read, keep three things separate: what the packet records, what someone in the packet claims, and what nobody has established. <em class="pause">[Pause]</em></p>
+            <p>Those categories may be close together in the text, but they do different work in your reasoning. A person's explanation can be worth considering without already being an established fact.</p>
+            <p>If you find yourself naming a technical cause, ask <strong>what evidence establishes that mechanism</strong>. The packet records outcomes. A plausible explanation for them is still a hypothesis unless the supplied evidence supports that further claim.</p>
+            <p>When you begin your own reasoning, carry one boundary forward: <strong>what you can trace directly to the packet, against what you are adding as an inference</strong>. Keep what remains unknown visible too.</p>
+            <p>Read before discussing, and keep track of the evidence that might affect your original judgement. <em class="pause">[Allow the reading window; clarify vocabulary and access without supplying a diagnosis.]</em></p>
+            <h3>Timing · watch for this</h3>
+            <p>Fifteen minutes is the current accessibility and interpretation envelope, not a target students must fill. If the room is visibly ready sooner, begin the individual revision and carry the saved time forward. Record the actual timing after class before changing the schedule permanently.</p>
+            <h3>Move on · say</h3>
+            <p>Now use the new evidence to revise your own judgement, keeping the original beside it.</p>
+            <h3>If a student proposes a technical mechanism · say</h3>
+            <p>That could be a hypothesis. <strong>Which packet evidence establishes that cause?</strong> If the packet does not settle it, how could you label it so a reader sees that it remains an inference? <em class="pause">[Pause]</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 24 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Individual revision"
+        data-min="15"
+        data-block="Block 2"
+        data-target="0:35"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>15 min · on your own</span>
+            </p>
+            <p class="eyebrow">Revise beside the original</p>
+            <h2>What changes, and what is still unknown?</h2>
+            <ol class="steps">
+              <li>identify the new evidence;</li>
+              <li>write a revised claim;</li>
+              <li>retain one important unknown.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Keep the original visible</h3>
+          <p>
+            Add what the new evidence changes or qualifies, your revised claim,
+            and one thing that remains unknown.
+          </p>
+          <h3>Any direction is acceptable</h3>
+          <p>
+            Your revision may reverse, narrow, strengthen, or qualify your first
+            judgement. What matters is a visible link to specific evidence, not
+            a particular verdict.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Make the revision traceable to new evidence without forcing a reversal.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Keep your original statement where it is. Add <strong>what the new evidence changes or qualifies</strong>, your revised claim, and one thing that still remains unknown.</p>
+            <p>Say this plainly, because the staged release makes students assume they were meant to be wrong: <strong>I am not looking for a U-turn.</strong> If part of your first claim still holds, show that.</p>
+            <p>Your judgement may reverse, narrow, become stronger, or gain a qualification. What matters is that another person can see <strong>the specific evidence and the effect it has on your reasoning</strong>. You do not get a better answer simply by changing your mind more dramatically. <em class="pause">[Pause]</em></p>
+            <p>If part of your first statement still holds, make that visible too. We are building a record of a judgement developing, rather than hiding the first version behind a better-looking final answer. Work individually on your revision now. <em class="pause">[Allow individual writing; circulate without steering toward reversal.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Keep both versions. <strong>Any direction is a real revision</strong>: narrowing or qualifying counts, and I am not looking for a U-turn. Next, your team will make one connection in the reasoning easy for someone else to inspect.</p>
+            <h3>While circulating · ask as needed</h3>
+            <p><strong>Which new evidence affects this claim?</strong> How does it change, qualify, strengthen, or narrow what you wrote before? <em class="pause">[Pause]</em></p>
+            <h3>If a student has reversed for effect · ask</h3>
+            <p>Which line made you drop the first claim entirely? If none did, what part of it still holds?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 25 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Causal strip"
+        data-min="15"
+        data-block="Block 2"
+        data-target="0:50"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>15 min · one row per team</span>
+            </p>
+            <p class="eyebrow">Make the judgement inspectable</p>
+            <h2>Another team will read this row and try to disagree with it.</h2>
+            <p class="lead">
+              One row. Point at what the packet
+              <span class="key">records</span>, then label what you
+              <span class="key">infer</span>.
+            </p>
+            <div class="worked-strip" data-cue>
+              <div class="trio strip">
+                <div>
+                  <b>Packet evidence</b
+                  ><span>The reset email arrived in one test account.</span>
+                </div>
+                <div>
+                  <b>Decision or assumption</b
+                  ><span>Inference: treated as delivery working for intended users.</span>
+                </div>
+                <div>
+                  <b>Recorded consequence</b
+                  ><span>Password reset was reported ready.</span>
+                </div>
+                <div>
+                  <b>Evidence needed next</b
+                  ><span
+                    >Do intended users receive it, in time, on their own
+                    accounts?</span
+                  >
+                </div>
+              </div>
+              <p class="strip-note">
+                A worked example from the password-reset claim. It is not the
+                Campus Event answer.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Why this shape</h3>
+          <p>
+            Software teams need reasoning that other people can inspect,
+            question, and revise. Your row shows which packet evidence informed
+            a decision or assumption, what consequence the packet records, and
+            what evidence should come next.
+          </p>
+          <h3>Agreeing on one row</h3>
+          <p>
+            Ninety seconds each: name the one piece of new evidence you used.
+            Then choose one to build on. Not the best one, just one every member
+            can point to in the packet. Write the row together from there.
+          </p>
+          <h3>Stay inside the packet</h3>
+          <p>
+            Use what the packet records. Label anything you infer as an
+            inference. Do not invent a mechanism the packet does not record.
+          </p>
+          <h3>If you stall</h3>
+          <p>
+            Start from one thing the packet records, then ask what decision or
+            assumption it informed.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Make one evidence-to-decision connection inspectable without inventing a root cause.</strong></p>
+            <h3>Before the room starts · prepare</h3>
+            <p>Hand each team one <strong>A3 sheet or flipchart page</strong> for the strip that will be posted. An A4 worksheet cannot be read from across the room, and the stacked fields on the revision sheet are the team's draft, not the posted version. Students keep their opening sheets for the individual exit revision.</p>
+            <h3>Say · rehearsal script</h3>
+            <p>Your team will now make a short row of reasoning, a <strong>causal strip</strong>. Here is the reason for the shape: <strong>another team is going to read this row and try to disagree with it.</strong> Make that possible. It is not a request to diagnose the technical root cause. <em class="pause">[Pause]</em></p>
+            <p><em class="pause">[Let the room read the task first, then press E and point at the worked row.]</em> This example uses the password-reset claim, not Campus Event, so you can see the size of each field without being given today's answer. Notice that the second field is explicitly labelled as an inference and the third repeats the readiness consequence recorded in the original claim.</p>
+            <p>The move is the same one you have used all afternoon. <strong>Point at a line in the packet, then say what you are adding to it.</strong> Use the four fields to connect what the packet records, a decision or assumption, the consequence the packet records, and what evidence should come next.</p>
+            <p><strong>Label an inference as an inference.</strong> If the packet records an outcome but does not establish the mechanism that produced it, your strip should preserve that boundary.</p>
+            <p>Before you write, take ninety seconds each: name the one piece of new evidence you used. Then pick one to build on. Not the best one, just one you can all point to. <em class="pause">[Allow teams to build the strip; circulate.]</em></p>
+            <h3>Move on · say</h3>
+            <p>We will now ask a neighbouring team to check the evidence in your strip.</p>
+            <h3>While circulating · ask as needed</h3>
+            <p><strong>Where is that evidence in the packet?</strong> <em class="pause">[Pause]</em> Is this a consequence the packet records, or a mechanism you are inferring?</p>
+            <h3>If a team names a mechanism · say</h3>
+            <p>Do not delete it. Ask <strong>which line establishes that</strong>, and then how they could write it so a reader sees it is their hypothesis. A labelled hypothesis in the strip is a better outcome than a blank field.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 26 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Peer check"
+        data-min="10"
+        data-block="Block 2"
+        data-target="1:00"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>10 min · with a neighbouring team</span>
+            </p>
+            <p class="eyebrow">Neighbour check</p>
+            <h2>
+              Is it <span class="key">recorded</span> in the packet? Is what is
+              <span class="key">inferred</span> labelled?
+            </h2>
+            <p class="lead">
+              Check only those two things, then revise the row if needed.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Scope</h3>
+          <p>
+            Two checks only: can the evidence be traced to the packet, and is
+            the recorded/inferred boundary visible. This is not a general
+            critique and not a presentation rehearsal.
+          </p>
+          <h3>Working alone</h3>
+          <p>
+            Underline what the packet records in your own row and circle
+            anything you inferred.
+          </p>
+          <h3>Then</h3>
+          <p>Post your strip where it can be seen alongside the others.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Check provenance and the recorded/inferred boundary, then post the strip.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Exchange your strip with a neighbouring team. There are <strong>two checks only</strong>, and this is short. Can you trace the evidence back to the packet? And is the boundary between <strong>what is recorded and what is inferred</strong> clear?</p>
+            <p>You are not doing a general critique or preparing a presentation. Help the other team see where a reader can follow their evidence and where a claim goes further than the packet establishes. <em class="pause">[Pause]</em></p>
+            <p>If you are working alone, underline what the packet records in your own row and circle anything you inferred. Then make any necessary boundary clearer. <em class="pause">[Pair neighbouring teams and allow the peer check.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Post your strip where it can be seen alongside the others, so we can compare two contrasting routes.</p>
+            <h3>At halfway · say</h3>
+            <p>We are <strong>halfway through this check</strong>. Finish the two evidence checks, return the strip, and make any small clarification needed so it can be posted in time.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 27 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Compare and synthesise"
+        data-min="10"
+        data-block="Block 2"
+        data-target="1:10"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">Across the room</p>
+            <h2>Compare two contrasting routes.</h2>
+            <p class="lead">
+              Different judgements can be defensible when their
+              <span class="key">evidence boundaries</span> remain visible.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>The through-line</h3>
+          <p>
+            A passing demonstration supplied bounded evidence; the later
+            operating evidence changes what can defensibly be claimed.
+          </p>
+          <h3>No official answer</h3>
+          <p>
+            No single root cause is announced. The quality of a decision at the
+            time is a separate question from whether an adverse outcome later
+            occurred.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Compare actual reasoning routes without announcing an official verdict or technical cause.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Let us compare <strong>two contrasting routes through the evidence</strong>. As you look at the strips, focus on the connection between what was known and what someone felt able to claim. Different conclusions are worth examining when we can see how the reasoning gets there.</p>
+            <p><em class="pause">[Name two or three patterns actually visible in the posted strips; select at most two contrasting teams.]</em> Could each of these teams explain <strong>one connection</strong> in its strip: the evidence you used, and how it affected the judgement? Keep it to that connection rather than presenting the whole activity. <em class="pause">[Listen to the two contributions.]</em></p>
+            <p><em class="pause">[Refer to the actual strips and responses.]</em> The thing to carry forward is that <strong>a passing demonstration supplies bounded evidence</strong>. Later operating evidence can change what we can defensibly claim. Our explanation should make clear what became known and why it matters.</p>
+            <p>We also need to separate <strong>the quality of a decision at the time</strong> from the fact that an adverse outcome later occurred. An outcome is evidence to examine; it does not by itself tell us that someone should have known everything earlier. Equally, an earlier positive result cannot settle every later question. <em class="pause">[Pause]</em></p>
+            <p>We are not announcing one technical root cause or one official launch verdict. We are making the reasoning available for inspection: what was observed, what was assumed, and what still requires evidence.</p>
+            <h3>Move on · say</h3>
+            <p>Return now to the sentence you wrote at the beginning of the session.</p>
+            <h3>If the room is quiet · say</h3>
+            <p>Let us look at these two strips together. <strong>Where do their evidence boundaries differ?</strong> <em class="pause">[Contrast only what is visible in the strips; do not invent a student position.]</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 28 -->
+      <section
+        class="slide"
+        data-mode="work"
+        data-seg="Exit revision"
+        data-min="10"
+        data-block="Block 2"
+        data-target="1:20"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode">
+              <b>Your turn</b><span>10 min · on your own</span>
+            </p>
+            <p class="eyebrow">Return to your opening sentence</p>
+            <h1>
+              What would you now <span class="key">change or add</span> to your
+              explanation of software engineering?
+            </h1>
+            <p class="instruction">
+              Write one evidence-linked revision. Keep the original.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What to do</h3>
+          <p>
+            Find the sentence you wrote this morning. Do not replace it. Add one
+            sentence showing what today’s evidence makes you change or add.
+          </p>
+          <h3>There is no model answer</h3>
+          <p>
+            Useful revisions often mention evidence limits, explicit
+            uncertainty, responsibility for decisions, or revising when
+            operating conditions change. Yours may say something else and still
+            be good.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Preserve an individual reflection showing what today’s evidence changes.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Find the sentence you wrote at the start. <strong>Keep it unchanged</strong>. Add one sentence showing what today's evidence makes you change or add to your view of software engineering.</p>
+            <p>Use your own words. You do not need to copy the working definition from the slides. I want to see <strong>what the work has made you notice</strong>, and how it connects to what you thought at the beginning. <em class="pause">[Pause]</em></p>
+            <p>If your original sentence still makes sense to you, you can add a qualification or something it left out. A revision can make an idea more precise without replacing it completely.</p>
+            <p>Work individually and give this last sentence your attention. <em class="pause">[Protect the writing window; use contingency if students need more time, rather than opening another whole-class discussion.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Keep both sentences with your evidence revision sheet. Let us connect today’s work to where we go next.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 29 -->
+      <section
+        class="slide"
+        data-mode="teach"
+        data-seg="Week 2 connection"
+        data-min="5"
+        data-block="Block 2"
+        data-target="1:25"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">Next week</p>
+            <h2>
+              How should a team organise change when evidence is
+              <span class="key">incomplete</span>?
+            </h2>
+            <p class="lead">
+              Week 2 follows the project, its decisions, and who needs feedback
+              when.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>Closing the arc</h3>
+          <p>
+            Today you made and revised a claim from evidence. Next week asks how
+            a software team organises work and feedback when the situation is
+            changing and no plan removes uncertainty.
+          </p>
+          <h3>Nothing to prepare</h3>
+          <p>No reading is required before Week 2.</p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Connect revising a claim today with organising work and feedback next week.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>Today you made <strong>a judgement from available evidence</strong>, kept the original visible, and considered what later evidence changed. That is a small but important piece of engineering work: being able to explain both a decision and a reason to revise it.</p>
+            <p>You also made part of that reasoning available to someone else. The packet references and the boundary between what is recorded and what is inferred helped another team inspect it. That brings us back to the opening idea that useful engineering knowledge can be shared, questioned, and improved. <em class="pause">[Pause]</em></p>
+            <p>Next week we will ask how a software team <strong>organises work and feedback while the situation is changing</strong>. A plan can help people coordinate, but it does not remove uncertainty. We will consider how the team learns enough to decide what to do next, and how new information should affect the work.</p>
+            <p>For now, the connection is simple: today you revised a claim from evidence; next week we consider how to organise work so that evidence and feedback can inform decisions as the project develops.</p>
+            <p>There is <strong>no required reading before Week 2</strong>. Before we finish, is there anything unresolved about today's task or where we go next? <em class="pause">[Pause for closing questions; answer confirmed details and record anything that needs checking.]</em></p>
+            <h3>Move on · say</h3>
+            <p>Thank you. Please make sure your opening reflection and evidence revision work are kept together as we finish.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 30 -->
+      <section
+        class="slide"
+        data-mode="gate"
+        data-seg="Contingency"
+        data-min="5"
+        data-block="Block 2"
+        data-target="1:30"
+      >
+        <div class="face">
+          <div class="content">
+            <p class="mode"><b>Pause</b><span>5 min</span></p>
+            <p class="eyebrow">Spare time</p>
+            <h1>See you next week</h1>
+            <p class="lead">
+              Time to finish writing, ask a question, or hand in your sheet.
+            </p>
+          </div>
+        </div>
+        <div class="sn">
+          <h3>What this is</h3>
+          <p>
+            Protected spare time. If the session has run to plan, it ends here
+            rather than being filled with new material.
+          </p>
+          <h3>Use it for</h3>
+          <p>
+            Completing your exit revision, asking anything unresolved, or
+            handing in your evidence revision sheet.
+          </p>
+          <div class="fn">
+            <h3>Anchor · if you lose the thread</h3>
+            <p><strong>Use spare time for completion and finish without adding content.</strong></p>
+            <h3>Say · rehearsal script</h3>
+            <p>If you are still finishing your exit sentence, <strong>use this time to complete it</strong>. If you have finished, check that your original and revised statements are both visible and that your evidence revision sheet is ready to hand in. <em class="pause">[Confirm the collection route and allow completion or an unresolved question.]</em></p>
+            <p>Thank you for your work today. <strong>We will stop here.</strong></p>
+            <h3>If no contingency is needed · say</h3>
+            <p>That completes today’s session. <strong>Thank you, and see you next week.</strong> <em class="pause">[Finish without adding content.]</em></p>
+            <h3>If earlier teaching overruns · act</h3>
+            <p><em class="pause">[Cut optional historical elaboration first. Protect Release 1 reading, individual evidence revision, and the exit sentence. Do not fill unused contingency with another example or discussion cycle.]</em></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside
+      class="notes"
+      id="notes"
+      aria-label="Notes about this slide"
+      aria-hidden="true"
+    >
+      <button class="close" id="close-notes" aria-label="Close notes">×</button>
+      <div class="notes-body">
+        <p class="n-loc" id="n-loc"></p>
+        <h2 id="n-title"></h2>
+        <div id="n-body"></div>
+      </div>
+    </aside>
+
+    <p class="sync-off" id="sync-off" hidden></p>
+
+    <div class="bar-zone">
+      <nav class="bar" aria-label="Deck controls">
+        <button id="prev" aria-label="Previous slide" title="Previous (←)">
+          ←
+        </button>
+        <button id="next" aria-label="Next slide" title="Next (→ or Space)">
+          →
+        </button>
+        <span class="pos" id="pos">1/30</span>
+        <button id="emph" title="Reveal deferred emphasis (E)" hidden>
+          Cue
+        </button>
+        <button id="notes-btn" title="Notes (N)">Notes</button>
+        <button id="open-notes-window" title="Open the notes in a second tab">
+          Notes tab
+        </button>
+      </nav>
+    </div>
+
+    <script>
+      (() => {
+        if ('scrollRestoration' in history)
+          history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+
+        const slides = [...document.querySelectorAll('.slide')];
+        const rail = document.querySelector('#rail');
+        const railSeg = document.querySelector('#rail-seg');
+        const railFill = document.querySelector('#rail-progress');
+        const railCurrent = document.querySelector('#rail-current');
+        const pos = document.querySelector('#pos');
+        const emph = document.querySelector('#emph');
+        const nLoc = document.querySelector('#n-loc');
+        const nTitle = document.querySelector('#n-title');
+        const nBody = document.querySelector('#n-body');
+        const panel = document.querySelector('#notes');
+        const isNotesView =
+          new URLSearchParams(location.search).get('view') === 'notes';
+        let i = 0,
+          lock = 0,
+          seg = null,
+          shownIndex = -1;
+
+        // Facilitator timing is kept out of the student PDF. Every slide receives
+        // a facilitator section even when timing is its only private prompt.
+        slides.forEach((s) => {
+          const sn = s.querySelector('.sn');
+          if (!sn) return;
+          let fn = sn.querySelector(':scope > .fn');
+          if (!fn) {
+            fn = document.createElement('div');
+            fn.className = 'fn';
+            sn.append(fn);
+          }
+          const t = document.createElement('p');
+          t.className = 'n-time';
+          t.innerHTML = `<span>${s.dataset.min} min</span><span>${s.dataset.block} · to ${s.dataset.target}</span>`;
+          fn.append(t);
+        });
+
+        // Each spoken paragraph begins with a deliberately short glance cue.
+        // The full script remains untouched underneath as a safety net.
+        const spokenGists = [
+          ['Welcome and check access', 'Explain staged materials', 'Preview today’s reasoning'],
+          ['Ask for one honest sentence', 'Normalise uncertainty', 'Preserve it for revision'],
+          ['Shared practice begins', 'Knowledge must travel', 'Keep the historical boundary'],
+          ['Reality exposes model limits', 'Avoid the simple diagnosis', 'Tests cover chosen conditions', 'Learn by improving checks'],
+          ['Software became coordinated work', 'Scale creates shared decisions', 'Name the wider questions', 'Own the wider responsibility'],
+          ['Show coordinated team work', 'Overload tested recovery', 'Ask what survives pressure', 'Confidence is sociotechnical', 'Bring the lesson back'],
+          ['Define the wider scope', 'Begin with people and purpose', 'Include agreement and testing', 'Plan for support and change', 'Practise justified decisions'],
+          ['State the course promise', 'Name four reasoning habits', 'Artefacts expose reasoning', 'Expect proportionate judgement'],
+          ['Orient, do not teach the map', 'Purpose shapes the check', 'Missing needs distort evidence', 'Evidence can revise earlier choices', 'Make decisions traceable', 'Focus on bounded claims'],
+          ['Name the three assessments', 'Explain their progression', 'Connect classwork to assessment', 'Promise practice before assessment', 'Invite structural questions'],
+          ['Offer a working formulation', 'Keep their own definition', 'Stress people and constraints', 'Match confidence to evidence', 'Uncertainty guides the next check', 'Begin with a small example'],
+          ['Set the team decision context', 'Give only the supplied statement', 'Do not invent missing evidence', 'Explain why “ready” matters', 'Take evidence before diagnosis'],
+          ['Separate observation from claim', 'Invite one bounded response'],
+          ['Use what the room actually said', 'Name the observation', 'List unanswered outcome questions', 'Keep the narrow evidence', 'Match evidence to claim size', 'Label assumptions honestly', 'Hold result and uncertainty together'],
+          ['Name verification and validation', 'Bound the verification evidence', 'Ask about intended use', 'Match evidence to the question', 'Use the distinction in teams', 'Keep the practical habit'],
+          ['Name the three-part move', 'Apply it to password reset', 'Precision changes action', 'Use bounded claims responsibly', 'Transfer the move to Campus Event'],
+          ['Form teams and distribute safely', 'Start with individual judgement', 'Keep individual answers distinct', 'Offer the solo route'],
+          ['Write one claim and unknown', 'Judge only this evidence', 'Protect quiet individual work'],
+          ['Agree one fact and unknown', 'Preserve individual judgements', 'Keep the team check small'],
+          ['Freeze the first record', 'Explain the later revision', 'No direction of change is required', 'Keep break talk separate'],
+          ['Protect the break and release gate'],
+          ['Reopen the preserved record', 'Show evidence changing judgement', 'Release the second packet'],
+          ['Read everything before writing', 'Separate records, claims, and unknowns', 'Do not invent a mechanism', 'Label inference and uncertainty', 'Protect the reading window'],
+          ['Revise beside the original', 'Say: no U-turn required', 'Value evidence-linked change', 'Protect individual revision'],
+          ['Explain the strip’s audience', 'Reveal the worked example', 'Point to evidence, then add', 'Preserve the evidence–inference boundary', 'Converge on one traceable fact'],
+          ['Give only two checks', 'Keep feedback bounded', 'Offer the solo check'],
+          ['Compare contrasting reasoning routes', 'Invite one connection each', 'Synthesize bounded evidence', 'Judge decisions in context', 'Do not announce a root cause'],
+          ['Return to the opening sentence', 'Ask for an evidence-linked addition', 'Revision can mean precision', 'Protect the final writing'],
+          ['Name the move they practised', 'Reconnect to shared knowledge', 'Preview Week 2’s question', 'Link today to next week', 'Close without new obligations'],
+          ['Let everyone finish', 'End cleanly'],
+        ];
+
+        slides.forEach((s, slideIndex) => {
+          const fn = s.querySelector('.sn > .fn');
+          if (!fn) return;
+          const scriptHeading = [...fn.querySelectorAll(':scope > h3')].find(
+            (heading) => heading.textContent.trim() === 'Say · rehearsal script',
+          );
+          if (!scriptHeading) return;
+
+          let paragraph = scriptHeading.nextElementSibling;
+          let gistIndex = 0;
+          while (
+            paragraph?.tagName === 'P' &&
+            !paragraph.classList.contains('n-time')
+          ) {
+            const gist = spokenGists[slideIndex]?.[gistIndex];
+            if (gist) {
+              const label = document.createElement('span');
+              label.className = 'spoken-gist';
+              label.textContent = gist;
+              paragraph.prepend(label);
+            }
+            gistIndex += 1;
+            paragraph = paragraph.nextElementSibling;
+          }
+        });
+
+        // a slide holding a deferred emphasis says so in its own notes, so the
+        // cue is visible on the lectern screen but remains out of the student PDF
+        slides.forEach((s) => {
+          if (!s.querySelector('[data-cue]')) return;
+          const fn = s.querySelector('.sn > .fn');
+          if (!fn) return;
+          const n = document.createElement('p');
+          n.className = 'n-cue';
+          n.innerHTML =
+            'This slide holds a <b>deferred reveal</b>. It stays hidden until you press <b>E</b>. Let the room understand the base prompt first.';
+          fn.prepend(n);
+        });
+
+        const reduced = () =>
+          matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // ---- cross-tab sync ----------------------------------------------------
+        // Present on one screen, keep the notes open on another. Only the slide
+        // index and the emphasis state travel; each tab renders its own view.
+        const channel =
+          'BroadcastChannel' in self
+            ? new BroadcastChannel('week-01-deck')
+            : null;
+        let quiet = false; // suppress echo while applying a remote message
+        const send = (msg) => {
+          if (channel && !quiet) channel.postMessage(msg);
+        };
+
+        // A smooth scroll across several slides passes over the ones in between,
+        // and the observer would report each of them as the current slide. That
+        // would also wipe an emphasis just set. `scrollend` tells us when the
+        // scroll has actually settled; the timeout is only a fallback.
+        const hasScrollEnd = 'onscrollend' in window;
+        if (hasScrollEnd)
+          addEventListener('scrollend', () => {
+            lock = 0;
+          });
+
+        const go = (n) => {
+          i = Math.max(0, Math.min(slides.length - 1, n));
+          const behavior = reduced() ? 'auto' : 'smooth';
+          lock =
+            performance.now() +
+            (behavior === 'smooth' ? (hasScrollEnd ? 8000 : 900) : 0);
+          if (!isNotesView)
+            slides[i].scrollIntoView({ behavior, block: 'start' });
+          sync();
+          send({ t: 'go', i });
+        };
+
+        const sync = () => {
+          const s = slides[i];
+          // a new slide always starts unemphasised, so the cue can be used again
+          if (i !== shownIndex) {
+            shownIndex = i;
+            if (document.body.classList.contains('cued')) {
+              document.body.classList.remove('cued');
+              send({ t: 'cue', on: false });
+            }
+          }
+          pos.textContent = `${i + 1}/${slides.length}`;
+          emph.hidden = !s.querySelector('[data-cue]');
+          document.body.dataset.mode = s.dataset.mode;
+          railFill.style.strokeDashoffset = (
+            100 -
+            ((i + 1) / slides.length) * 100
+          ).toFixed(1);
+          railCurrent.textContent = String(i + 1);
+
+          // cross-fade the segment only when it actually changes
+          if (s.dataset.seg !== seg) {
+            seg = s.dataset.seg;
+            if (reduced()) {
+              railSeg.textContent = seg;
+            } else {
+              rail.classList.add('swap');
+              setTimeout(() => {
+                railSeg.textContent = seg;
+                rail.classList.remove('swap');
+              }, 180);
+            }
+          }
+
+          const modeWord = {
+            teach: 'Explanation',
+            work: 'Your turn',
+            gate: 'Pause',
+          }[s.dataset.mode];
+          nLoc.textContent = `Week 01 · ${s.dataset.seg} · ${modeWord}`;
+          const h = s.querySelector('h1, h2');
+          nTitle.textContent = h ? h.textContent.trim() : '';
+          const sn = s.querySelector('.sn');
+          nBody.innerHTML = sn
+            ? sn.innerHTML
+            : '<p>No notes for this slide.</p>';
+          document.title = `${i + 1}/${slides.length} · ${s.dataset.seg} · Week 1`;
+        };
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            if (performance.now() < lock) return;
+            const v = entries
+              .filter((e) => e.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (!v) return;
+            i = slides.indexOf(v.target);
+            sync();
+          },
+          { threshold: [0.5, 0.75] },
+        );
+        slides.forEach((s) => io.observe(s));
+
+        const setNotes = (open) => {
+          document.body.classList.toggle('notes-open', open);
+          panel.setAttribute('aria-hidden', String(!open));
+          requestAnimationFrame(() =>
+            slides[i].scrollIntoView({ behavior: 'auto', block: 'start' }),
+          );
+        };
+        const toggleCue = () => {
+          const on = document.body.classList.toggle('cued');
+          send({ t: 'cue', on });
+        };
+        const setCue = (on) => document.body.classList.toggle('cued', on);
+
+        if (channel) {
+          channel.onmessage = ({ data }) => {
+            quiet = true;
+            if (data.t === 'go' && data.i !== i) go(data.i);
+            else if (data.t === 'cue') setCue(data.on);
+            else if (data.t === 'hello')
+              channel.postMessage({
+                t: 'state',
+                i,
+                on: document.body.classList.contains('cued'),
+              });
+            else if (data.t === 'state') {
+              if (data.i !== i) go(data.i);
+              setCue(data.on);
+            }
+            quiet = false;
+          };
+          channel.postMessage({ t: 'hello' }); // ask whoever is already open where we are
+        }
+
+        // the notes tab is a second window on the same origin
+        document.querySelector('#open-notes-window').onclick = () => {
+          const url = new URL(location.href);
+          url.searchParams.set('view', 'notes');
+          window.open(url, 'week-01-notes');
+        };
+
+        if (isNotesView) {
+          document.body.classList.add('view-notes', 'notes-open');
+          panel.setAttribute('aria-hidden', 'false');
+          document.querySelector('#notes-btn').hidden = true;
+          document.querySelector('#open-notes-window').hidden = true;
+          if (!channel) {
+            const warn = document.querySelector('#sync-off');
+            warn.hidden = false;
+            warn.textContent =
+              'This tab cannot follow the presenting tab. Cross-tab sync needs a shared origin. Serve the deck over http rather than opening the file directly.';
+          }
+        }
+
+        document.querySelector('#prev').onclick = () => go(i - 1);
+        document.querySelector('#next').onclick = () => go(i + 1);
+        document.querySelector('#notes-btn').onclick = () =>
+          setNotes(!document.body.classList.contains('notes-open'));
+        document.querySelector('#close-notes').onclick = () => setNotes(false);
+        emph.onclick = toggleCue;
+
+        addEventListener('keydown', (e) => {
+          if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName))
+            return;
+          const k = e.key.toLowerCase();
+          if (e.key === 'Escape') {
+            setNotes(false);
+            return;
+          }
+          if (k === 'n') {
+            e.preventDefault();
+            setNotes(!document.body.classList.contains('notes-open'));
+            return;
+          }
+          if (k === 'e') {
+            e.preventDefault();
+            toggleCue();
+            return;
+          }
+          if (e.key === 'Home') {
+            e.preventDefault();
+            go(0);
+            return;
+          }
+          if (e.key === 'End') {
+            e.preventDefault();
+            go(slides.length - 1);
+            return;
+          }
+          if (
+            ['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key) ||
+            (e.key === ' ' && !e.shiftKey)
+          ) {
+            e.preventDefault();
+            go(i + 1);
+            return;
+          }
+          if (
+            ['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key) ||
+            (e.key === ' ' && e.shiftKey)
+          ) {
+            e.preventDefault();
+            go(i - 1);
+          }
+        });
+
+        sync();
+      })();
+    </script>
+  </body>
+</html>
