@@ -437,6 +437,29 @@
           color-mix(in srgb, var(--accent) 55%, transparent);
         padding: 0 0.12em;
       }
+      .reveal[data-cue] {
+        display: none;
+      }
+      body.cued .slide.current .reveal[data-cue] {
+        display: block;
+        margin-top: clamp(20px, 3vh, 32px);
+        padding: clamp(14px, 2vh, 22px) clamp(18px, 2.2cqi, 28px);
+        border-left: 4px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, transparent);
+      }
+      .reveal-label {
+        margin-bottom: 8px;
+        color: var(--accent);
+        font-size: clamp(12px, 0.95cqi, 15px);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .reveal p:last-child {
+        max-width: 55ch;
+        margin-bottom: 0;
+        font-size: clamp(18px, 1.55cqi, 25px);
+      }
 
       /* --- layouts ---------------------------------------------- */
       .split {
@@ -1009,6 +1032,29 @@
           height: 34vh;
         }
       }
+      @media screen and (max-width: 640px) {
+        .trio {
+          gap: 1px;
+        }
+        .trio > div {
+          padding: 12px 14px;
+        }
+        .trio h3 {
+          margin-bottom: 4px;
+          font-size: 19px;
+        }
+        .trio p {
+          margin-bottom: 0;
+          font-size: 17px;
+        }
+        body.cued .slide.current .reveal[data-cue] {
+          margin-top: 14px;
+          padding: 12px 14px;
+        }
+        .reveal p:last-child {
+          font-size: 17px;
+        }
+      }
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
@@ -1208,6 +1254,9 @@
           font-weight: 600;
           color: #555;
         }
+        .reveal[data-cue] {
+          display: none !important;
+        }
         .sn::before {
           content: 'Review notes';
           display: block;
@@ -1287,7 +1336,7 @@
           <h1>Organising work under uncertainty</h1>
           <p class="lead">Have Part A and somewhere to write ready. Keep the case unread for now.</p>
         </div></div>
-        <div class="sn"><h3>Textbook study</h3><p>§2.3, pp. 61-64. Printed pages in Sommerville (2016), 10th edition, Global Edition. See the <a href="../../reading-guide.md#session-2---organising-work-under-uncertainty">session 2 reading guide</a> for the study question and optional selections.</p>
+        <div class="sn"><h3>Textbook study</h3><p>§2.3, pp. 61-64. Printed pages in Sommerville (2016), 10th edition, Global Edition. See the <a href="https://h-farmcollege.instructure.com/courses/1294/pages/reading-materials">session 2 reading guide</a> for the study question and optional selections.</p>
           <h3>Today’s question</h3><p>Does more planning always reduce risk?</p>
           <h3>Do now</h3><p>Have Part A ready. First revisit Week 1; on slide 4, answer the planning question in the first box on page 01. Read the case only when invited after the first break. Last week’s worksheet is not required.</p>
           <div class="fn">
@@ -1296,7 +1345,7 @@
             <h3>Say · rehearsal script</h3>
 <p><strong>Today we will decide how to organise work when important things are still unknown.</strong> Please take Part A and have somewhere to make a short note. Keep the case unread for now. We will first recall last week, then answer the planning question in the box at the top of page 01.</p>
 <p><strong>After the first break, we will read the case and make a recommendation.</strong> A new request will then test that recommendation. In the final hour, you will compare routes and write your own decision. You do not need last week’s worksheet. <em class="pause">[Check access and settle the room; move on early if everyone is ready.]</em></p>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Up to four minutes for arrival, paper access and orientation. Move on early if ready; keep any saved time for the choice exercise.</p>
+<h3>Delivery guidance · not spoken</h3>
 <h3>Before showing this</h3><p><strong>Name the confirmed distribution route aloud.</strong> Check that the context sheet and writing surface are available. Keep a paper or local-file fallback ready once those routes are chosen.</p>
           </div>
         </div>
@@ -1318,7 +1367,7 @@
 <p><strong>Last week’s demonstration showed a successful reservation under the conditions shown.</strong> That was useful evidence, but it did not establish that every important booking situation worked. Later evidence made us reconsider how much confidence the team should place in the launch. You do not need to remember every incident detail.</p>
 <p><strong>This week we ask when the team could have obtained useful evidence while it could still change its decision.</strong> The organising choices include what to agree early, what to try and revise, and what useful capability to deliver first. Writing a more detailed plan does not by itself answer an unchecked question.</p>
 <p><strong>On the next slide, name one source of earlier feedback and the launch decision it could influence.</strong> This is a short look back at Week 1. The separate question about planning comes afterwards, on Part A page 01. <em class="pause">[Pause for recognition; do not restart the incident investigation.]</em></p>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes for the recap, the shift to feedback timing and the explicit handoff. No separate recall round.</p>
+<h3>Delivery guidance · not spoken</h3>
 <h3>Listen for</h3><p><strong>Students may remember failure details.</strong> Acknowledge them briefly, then return to the timing of feedback rather than replaying the incident.</p>
           </div>
         </div>
@@ -1341,7 +1390,7 @@
 <p><strong>Think back to Week 1 and connect one source of evidence to a decision it could influence.</strong> Use your own notes for this short answer; save the Part A box for the planning question on the next slide. A source might be a user, a technical check, or a rehearsal of how the service would operate.</p>
 <p><strong>Write your example first, then compare it with someone nearby.</strong> Say what the source would help the team learn and what the team could still change. You do not need to prove what would certainly have happened; explain what the feedback could inform. <em class="pause">[Two minutes individually, two in pairs, then two for at most two contributions and synthesis.]</em></p>
 <p><strong>Earlier feedback is useful when it arrives before a decision it can change.</strong> We will use that connection throughout today’s recommendation. Now turn to the first box on Part A page 01 for your initial position on planning.</p>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes writing, two comparing, two for contributions and synthesis.</p>
+<h3>Delivery guidance · not spoken</h3>
 <h3>After attempts · possible response</h3><p>Last week, a student saw no confirmation, pressed Reserve again, and ended up with two reservations. <strong>Before launch, the team could have tested that retry situation and checked the resulting bookings.</strong> If it produced duplicates, that evidence could have led them to postpone launch while they investigated and corrected the behaviour.</p><p><strong>A specific check supplies evidence that can change a decision.</strong> Say “could”: this proposes an earlier check, not a claim that it would certainly have prevented the incident or proved the whole service reliable.</p><h3>Facilitation</h3><p><strong>Take at most two examples.</strong> If answers stop at “test earlier” or “ask users”, use the follow-up below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which decision could that evidence change?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It could change whether we approve Monday’s launch. If a retry creates two reservations, we need to investigate and correct that behaviour before approving it.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>After the successful demonstration, what did the team approve, and which booking situations were still untested in the evidence we had?</strong></p><div class="response-guidance"><span class="response-label">Direct answer · not spoken</span><p><strong>They approved the Monday launch.</strong> The evidence did not establish reliable outcomes when a student retried after no confirmation or when requests competed for the last place.</p></div></div><div class="facilitator-question"><span class="question-label">Follow-up question</span><p class="question-text"><strong>What would you have wanted to find out before approving that?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> Accept a specific retry check, a competing-request check, or clarification of acceptable booking outcomes with the organiser followed by a relevant check. Connect the proposed evidence to the launch decision.</p></div></div><h3>Cut</h3><p><strong>If the opening runs long, take one example and move on.</strong> Protect the context reading and recommendation work.</p>
           </div>
         </div>
@@ -1365,7 +1414,7 @@
             <p><strong>Keep this sentence as it is.</strong> At the end, you can see whether the work has changed your view or simply made it more precise. You do not need a method name yet. <em class="pause">[Give the writing time; do not supply the answer during silence.]</em></p>
 
             <p><strong>After writing, set Part A aside until the case-reading slide after the first break.</strong> Keep your sentence as written; this is a starting position we will revisit, not an answer to correct now.</p></div></div>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute for instructions, two for individual writing, one to preserve the sentence and set Part A aside.</p>
+<h3>Delivery guidance · not spoken</h3>
 <h3>Teach-aloud discipline</h3><p><strong>Do not define the methods first.</strong> Give students time to express a working position in ordinary language.</p><h3>Listen for</h3><p><strong>Planning treated as automatically safe, or agility treated as automatically fast.</strong> Keep both as positions to test rather than correcting them immediately.</p>
           </div>
         </div>
@@ -1390,7 +1439,7 @@
             <p><strong>Uncertainty is something relevant that we do not yet know; risk concerns what could happen and why it would matter.</strong> Think back to Campus Event before launch. An uncertainty was whether pressing Reserve again after no confirmation would create another reservation. A related risk was that a retry could create duplicate bookings, leaving the organiser with an unreliable reservation list. The uncertainty is the unanswered question; the risk is the possible outcome and its consequence.</p>
             <p><strong>Planning can identify the assumption, make someone responsible for investigating it, and reserve time to respond.</strong> But the plan cannot make the assumption true. Think of your Week 1 causal strip: separating evidence from assumptions showed which claims still needed checking. From an assumption, we can plan a useful check, decide what its result would let us conclude, and leave time to respond. We may need to inspect, ask, try something, or run a check. That is how planning and evidence work together.</p>
             <div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Before approving launch, how could we check the assumption that retrying a reservation is safe, and what would we do if the check showed otherwise?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Try reserving again after no confirmation, then inspect the reservation records and remaining-place count. If the retry creates a duplicate, investigate and correct the behaviour before approving launch. A passing result supports the conditions checked, not every possible booking situation.</p></div></div>
-<h3>Delivery guidance · not spoken</h3><h3>If the answer is vague</h3><p>If someone says “test it”, use the first question. If they say “write a better plan”, use the second.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What would you inspect, and which result would change the launch decision?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would inspect the reservation records and remaining-place count after a retry. A duplicate booking would challenge our launch decision.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What new evidence would that plan obtain?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It would obtain evidence about what a retry actually does, rather than assume that a successful single booking proves retrying is safe.”</p></div></div><h3>Time budget</h3><p>Two minutes explaining the example, two for a response and clarification, one for synthesis.</p>
+<h3>Delivery guidance · not spoken</h3><h3>If the answer is vague</h3><p>If someone says “test it”, use the first question. If they say “write a better plan”, use the second.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What would you inspect, and which result would change the launch decision?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would inspect the reservation records and remaining-place count after a retry. A duplicate booking would challenge our launch decision.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What new evidence would that plan obtain?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It would obtain evidence about what a retry actually does, rather than assume that a successful single booking proves retrying is safe.”</p></div></div>
 <h3>Boundary</h3><p><strong>Do not turn this into a formal risk-management taxonomy.</strong> The capability is choosing a proportionate lifecycle, not memorising definitions.</p>
           </div>
         </div>
@@ -1418,9 +1467,7 @@
             <p><strong>An increment adds useful capability.</strong> A connected booking service could be one useful part, with automated reminders added later. A project can plan the commitments, iterate on uncertain behaviour, and deliver useful parts separately. We will look at what makes each choice worthwhile.</p>
 
             <p><strong>These choices answer different questions and can coexist.</strong> Planning asks which commitments and dependencies to agree early. Iteration asks what to revise after learning. Increments ask which useful capability can become available separately. </p><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Which two of these organising choices are easiest to confuse, and what is the difference between them?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Take one response, then resolve the distinction using the next three slides rather than adding more method names.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Iterative and incremental are easy to confuse. Revising the same booking journey after feedback is iteration; adding a useful reminder capability later is an increment. We could iterate within either increment.”</p></div></div>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes introducing the distinctions, two checking the iteration/increment distinction. Develop the examples on the following slides.</p>
-
-          </div>
+</div>
         </div>
       </section>
       <!-- 07 -->
@@ -1443,7 +1490,7 @@
 
             <p><strong>Imagine two teams building opposite sides of a file exchange.</strong> Agreeing the format early lets them work against the same contract; leaving it vague risks incompatible results. A planned sample-file check can still expose a mistake before either team commits to all the implementation. This is an illustration, not an extra Campus Event fact.</p>
 <div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What would you agree early, and what would you still check?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Take a brief pair discussion and one response. Affirm a specific agreement, then check that students have retained a way to challenge it. Planning earns its place through coordination; it does not make uncertain information reliable.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would agree the file format and field meanings early, then check a sample exchange to see whether both teams interpret them the same way.”</p></div></div>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes explaining, two applying the file-exchange example in pairs, two for a response and synthesis.</p>
+<h3>Delivery guidance · not spoken</h3>
 <h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What would make rework especially expensive here?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If both teams build against different interpretations, changing the format later means revising and checking both implementations.”</p></div></div>
           </div>
         </div>
@@ -1468,7 +1515,7 @@
 
             <p><strong>We are improving the same booking journey, not adding a new feature.</strong> If we make the confirmation clearer but it says “booked” when no booking was recorded, we have only made the wrong answer easier to read.</p>
 <div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What would you need to see before changing this journey again?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Give pairs a minute, then hear one answer. Look for something specific: a student misunderstanding the result or a check showing the booking was not recorded. If both the message and the booking work well enough for this decision, another round may not be useful.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If a student still thinks the booking failed when it succeeded, I would look at what the confirmation says and try a clearer version with another student.”</p></div></div>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes for the example, two for pairs to choose what they would check, two for one response and a short synthesis.</p>
+<h3>Delivery guidance · not spoken</h3>
 <h3>Listen for</h3><p>If students think iteration only means fixing bugs:</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Could we improve the journey even if the booking is recorded correctly?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Yes. If a student hesitates because the confirmation is unclear, we can change the wording and see whether that helps.”</p></div></div>
           </div>
         </div>
@@ -1482,19 +1529,20 @@
           <p class="lead">An increment changes what the system can usefully do.</p>
         </div></div>
         <div class="sn">
-          <h3>Conditions that strengthen the case</h3><p>A valuable subset can operate safely, dependencies allow staged delivery, and early use can inform later scope.</p>
-          <h3>What it may leave exposed</h3><p>A thin increment may avoid the hardest integration or operational risk. “Small” does not automatically mean useful or safe.</p>
+          <h3>Conditions that strengthen the case</h3><p>The first part lets someone complete a useful task safely, while another capability can wait. Any work left for later needs a workable arrangement in the meantime.</p>
+          <h3>What it may leave exposed</h3><p>A small release can still leave the difficult connections undone. Check whether the first part actually works for the people meant to use it.</p>
           <div class="fn">
             <h3>Anchor · if you lose the thread</h3>
             <p><strong>A useful increment works as a connected whole.</strong></p>
             <h3>Say · rehearsal script</h3>
-            <p><strong>A useful increment changes what someone can actually do.</strong> Finishing booking code is not enough if a student cannot use the connected journey or the organiser cannot trust its result. Integration and relevant checks belong inside the useful increment.</p>
-            <p><strong>We might make reliable booking available before automating reminders, if the operating arrangement supports that choice.</strong> Smaller delivery still needs a safe, useful boundary. Breaking work into pieces does not help if all the difficult connections remain untested until the end.</p>
+            <p><strong>With an increment, I would ask a practical question: what can someone actually do when this part is finished?</strong> A database table on its own does not let a student book a place. The booking journey has to work, and the organiser needs a result they can trust.</p>
+            <p><strong>Could we make reliable booking available first and add automated reminders later?</strong> Perhaps, if there is a workable way to handle reminders in the meantime. The first part needs to be useful on its own; otherwise we have just left the difficult connections until later.</p>
 
-            <p><strong>Completing a database table alone does not give a student a usable booking service.</strong> A useful increment includes the connected behaviour and operating support its users need. In a separate directory example, a checked read-only directory may be useful before editing exists; the boundary works because users can already find information.</p>
-<div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What can someone now do, and what must already work for that to be useful?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Let pairs answer for the directory, then take one response. Contrast adding editing later with improving the existing search: one extends capability, while the other can refine the same capability. A team may do both.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“People can find information in the directory before editing exists. The read-only route must return usable information and work as a connected service.”</p></div></div>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes explaining, two considering a useful boundary, two for a response and synthesis.</p>
-<h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Could someone use this part meaningfully on its own?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Yes, if people can already find the information they need in the checked directory. A database table by itself would not give them that capability.”</p></div></div>
+            <p><strong>Now take a separate example, outside the booking service: a university staff directory.</strong> It lists names, roles and contact details. If students can search it and find the right person, a read-only version may already be useful. Staff could gain the ability to edit their own entries later; that would be another increment.</p>
+            <p><strong>If we then improve the search because students struggle to find people, we are iterating on the same capability.</strong> That is different from adding the editing capability.</p>
+<div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Can students already find and contact the right person? What needs to be accurate and working for this first version to be useful?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Let pairs consider the staff directory, then take one response. Look for accurate entries and a working way to find the right person. If they suggest improving the search, connect that to iteration; adding staff editing would extend the capability.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Yes, if the names, roles and contact details are accurate and the search helps students find the right person. Students do not need to edit entries to get that value.”</p></div></div>
+<h3>Delivery guidance · not spoken</h3>
+<h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What can a student do with the read-only staff directory today?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“They can find the right member of staff and contact them, if the entries are accurate and the search works.”</p></div></div>
           </div>
         </div>
       </section>
@@ -1504,7 +1552,7 @@
           <p class="mode"><b>Your turn</b><span>12 min · pairs</span></p>
           <p class="eyebrow">Three short situations</p>
           <h2>Which organising choice fits each situation best?</h2>
-          <div class="trio"><div><h3>File exchange</h3><p>Two teams share a stable format. Changing it later means rework for both.</p></div><div><h3>Registration</h3><p>Users misunderstand the screen. The helpful revision is still unknown.</p></div><div><h3>Directory</h3><p>A checked read-only directory is useful before editing is available.</p></div></div>
+          <div class="trio"><div><h3>ID card reader</h3><p>Lab doors use a supplier’s reader. Its card format is fixed; no real card has been tried.</p></div><div><h3>Support dashboard</h3><p>Staff overlook urgent requests. The team does not know which view would help.</p></div><div><h3>Campus map</h3><p>Students can find verified entrances now. Live room occupancy can come later.</p></div></div>
           <p class="instruction">Name the condition behind each choice. A combination is allowed.</p>
         </div></div>
         <div class="sn">
@@ -1515,12 +1563,13 @@
             <p><strong>Choose from the condition, not the method label.</strong></p>
             <h3>Say · rehearsal script</h3>
             <p><strong>I will give you three short situations.</strong> For each, discuss the organising choice that seems most useful and name the condition behind it. A combination is allowed. These are separate examples, not extra facts about Campus Event.</p>
-            <p><strong>First: two teams must exchange files through an agreed, stable format, and changing that format later would require both teams to redo their work.</strong> </p><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>Which part of the work would you settle early?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span>
-            <p><strong>Second: users repeatedly misunderstand a registration screen, but nobody yet knows which wording or interaction will help.</strong> </p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would settle the shared format and what its fields mean, because both teams’ work depends on that agreement.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>What would you want to learn before committing to the final version?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span>
-            <p><strong>Third: a service can provide a useful, checked read-only directory before it adds editing.</strong> Users can benefit from the directory without the editing feature. </p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would find out what users misunderstand, try a revision, and check whether it resolves that misunderstanding before committing to the final design.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>How could the team stage delivery?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> <em class="pause">[Read each situation, allow pairs to discuss, then take one reason per situation within twelve minutes.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Deliver the checked read-only directory first, then add editing as a later useful capability.”</p></div></div>
-<h3>After attempts · possible reasoning</h3><p><strong>Stable format: plan the agreement early.</strong> Unclear interaction: iterate using feedback. Useful directory: deliver an increment. Accept combinations with a reason; these are not exclusive labels.</p>
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute setting up, six in pairs across the three situations, four discussing their reasons, one synthesising. If early, deepen one reason rather than add a case.</p>
-<h3>Listen for</h3><p><strong>Students giving a method name without a condition.</strong> Use the follow-up below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What about the situation makes that choice proportionate?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“For the directory, users can benefit before editing exists, so separate delivery has a useful boundary.”</p></div></div><h3>Cut</h3><p><strong>Use two situations if late.</strong> Do not cut the Campus Event reading.</p>
+            <p><strong>First: students need ID cards to open lab doors.</strong> The supplier specifies the card format its reader expects, but nobody has tried a real card with it yet.</p><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>What would you agree early, and what would you check before building around it?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Plan around the reader’s documented card format, but try a real card early. The specification helps coordinate the work; the trial checks whether our interpretation holds.”</p></div></div>
+            <p><strong>Second: support staff keep overlooking urgent requests in their dashboard.</strong> We do not yet know which view would help them notice and act.</p><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>What would you try with staff before settling the dashboard design?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Watch how staff find urgent requests, try a revised view, and check whether they notice and handle those requests more reliably.”</p></div></div>
+            <p><strong>Third: a campus map could help students find verified building entrances now.</strong> Live room-occupancy information is not available yet.</p><div class="facilitator-question"><span class="question-label">Ask pairs</span><p class="question-text"><strong>Could the map be useful first, and what must work before students rely on it?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Students could find the right entrance before live occupancy exists, if the entrance information is accurate and they can find it in the map.”</p></div></div>
+            <p><em class="pause">[Let pairs discuss each situation, then take one reason per choice. Keep the full exercise within twelve minutes.]</em></p>
+<h3>After attempts · possible reasoning</h3><p><strong>Reader: plan around the specified card format and check it early.</strong> Dashboard: iterate using staff feedback. Map: deliver a useful first version if its entrance information works. Accept combinations with a reason; these are not exclusive labels.</p>
+            <h3>Delivery guidance · not spoken</h3>
+<h3>Listen for</h3><p><strong>Students giving a method name without a condition.</strong> Use the follow-up below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What about the situation makes that choice useful?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“For the map, students can use verified entrance information before live occupancy exists, if the route to that information works.”</p></div></div><h3>Cut</h3><p><strong>Use two situations if late.</strong> Do not cut the Campus Event reading.</p>
           </div>
         </div>
       </section>
@@ -1535,7 +1584,7 @@
         <div class="sn"><h3>Before the break</h3><p>Keep the three organising choices available. The case reading begins after the break; there is no task to complete during it.</p><div class="fn">
           <h3>Anchor · if you lose the thread</h3><p><strong>Close the choice exercise and protect the break.</strong></p>
           <h3>Say · rehearsal script</h3><p><strong>We have compared choices against conditions.</strong> After the break, we will use that judgement on Campus Event. You do not need to decide the case yet. We resume at 11:15. <em class="pause">[Take one final reason from the exercise if useful; stop at 11:00.]</em></p>
-          <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Up to three minutes to resolve one remaining distinction and close the block. This is flexible margin, not another task. Protect the 11:00 break.</p><h3>Time call</h3><p><strong>End the first block at 11:00.</strong> Keep the full 15-minute break.</p>
+          <h3>Delivery guidance · not spoken</h3><h3>Time call</h3><p><strong>End the first block at 11:00.</strong> Keep the full 15-minute break.</p>
         </div></div>
       </section>
       <!-- 12 -->
@@ -1557,27 +1606,35 @@
 
       <!-- 13 -->
       <section id="13" class="slide" data-mode="teach" data-seg="Historical lens" data-min="5" data-block="Block 2" data-target="0:05">
-        <div class="face"><div class="content">
-          <p class="mode"><b>Explanation</b></p>
-          <p class="eyebrow">1970 · large software systems</p>
-          <h2>Late feedback was already recognised as a serious risk</h2>
-          <p class="lead">Winston Royce described a simple sequential process as risky, then added feedback, early modelling, documentation, testing, and customer involvement.</p>
+        <div class="face"><div class="content split">
+          <div>
+            <p class="mode"><b>Explanation</b></p>
+            <p class="eyebrow">1970 · large software systems</p>
+            <h2>Late feedback was already recognised as a serious risk</h2>
+            <p class="lead">Winston Royce described a simple sequential process as risky, then added feedback, early modelling, documentation, testing, and customer involvement.</p>
+          </div>
+          <figure>
+            <img src="assets/winston-royce-1990.jpg" alt="Winston Royce speaking in a 1990 video still" />
+            <figcaption>Winston Royce, 1990. Video still by Winston Royce, public domain, via Wikimedia Commons.</figcaption>
+          </figure>
         </div></div>
         <div class="sn">
           <h3>The historical connection</h3><p>Royce’s paper responded to the difficulty of managing large software systems when problems discovered late forced expensive returns to earlier decisions.</p>
           <h3>Why it matters today</h3><p>The paper does not give us one timeless method. It shows that lifecycle practices respond to concrete coordination and quality problems.</p>
-          <h3>Source</h3><p><a href="https://blog.marsen.me/assets/royce1970.pdf">Winston W. Royce, “Managing the Development of Large Software Systems”, 1970</a>. Open reprint of the original WESCON paper.</p>
+          <h3>Sources</h3><p><a href="https://blog.marsen.me/assets/royce1970.pdf">Winston W. Royce, “Managing the Development of Large Software Systems”, 1970</a> (open reprint); <a href="https://commons.wikimedia.org/wiki/File:WWRoyce.jpg">Royce portrait, 1990</a> (public domain).</p>
           <div class="fn">
             <h3>Anchor · if you lose the thread</h3>
             <p><strong>Use history to explain the problem a practice addresses.</strong></p>
             <h3>Say · rehearsal script</h3>
             <p><strong>In 1970, Winston Royce discussed the development of large software systems.</strong> His concern included discovering practical limitations late, when testing could send a team back to change earlier design decisions.</p>
+            <p><strong>AI might help us write the booking flow quickly.</strong> But if we wait until after launch to learn that students misunderstand the confirmation, we still have to check their bookings, change the message, and explain what happened. Writing the code faster did not bring that feedback forward.</p>
             <p><strong>His response included early modelling and customer involvement alongside planned stages, documentation, and testing.</strong> Feedback and planning were both part of the response. This gives us a historical example of practices addressing a concrete engineering problem.</p>
             <p><strong>For today, remember the connection: seek evidence before a commitment becomes expensive to change.</strong> You do not need to memorise the date or treat the paper as a universal method. We will apply that connection to our own recommendation.</p>
 
             <div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Which commitment in a project would become costly to revisit after a late test?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Take one example and connect it to the paper’s concern. The historical contribution is the problem-to-practice link, not a list of dates or the claim that one method always wins.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If we build both sides of an integration around an untested interface, a late integration test could force changes in both. An early sample exchange could reveal that mismatch before the full implementations.”</p></div></div>
-<h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes explaining the historical problem and response, two for a commitment example, one connecting it to today’s task.</p>
+<h3>Delivery guidance · not spoken</h3>
 <h3>Keep accurate</h3><p><strong>Do not say Royce invented waterfall or advocated a pure one-pass process.</strong> Do not present the paper as the origin of iteration. Use it as one documented response to late discovery and coordination risk.</p>
+<h3>AI evidence · if asked</h3><p><strong>Do not claim that AI doubled code churn or made late design changes more expensive.</strong> GitClear reported a rise in its two-week churn measure from 3.1% of changed lines in 2020 to 5.7% in 2024, but this is an observational trend, not a causal test of AI or a measure of the cost of revisiting an earlier decision. A separate study of 151 open-source repositories with self-admitted GenAI use found no general increase in code churn. See <a href="https://gitclear-public.s3.us-west-2.amazonaws.com/GitClear-AI-Copilot-Code-Quality-2025.pdf">GitClear (2025)</a> and <a href="https://arxiv.org/abs/2507.10422">Xiao et al. (2026)</a>.</p>
           </div>
         </div>
       </section>
@@ -1596,10 +1653,10 @@
             <p><strong>Locate learning before the commitment it should inform.</strong></p>
             <h3>Say · rehearsal script</h3>
             <p><strong>When will the team learn that an important assumption is wrong?</strong> That is a practical question to ask of any lifecycle. The answer should identify a point in the work, some evidence, and something we can still change.</p>
-            <p><strong>More planning may clarify a dependency.</strong> An early trial may resolve a misunderstanding. The useful choice depends on where the uncertainty sits. As you read the case, look for what the team knows, what remains open, and which commitments cannot wait indefinitely.</p>
+            <p><strong>Think back to the booking confirmation from Week 1.</strong> If students misunderstand it before launch, the team can change the message and check the booking behind it. Finding out after launch leaves less room to respond. As you read Part A, look for the decisions the team still has time to change.</p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute framing, one for a student to name a commitment, one handing over to Part A.</p>
-<h3>Check</h3><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>Which commitment should this feedback arrive before?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Accept a practical commitment, not a method slogan.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Feedback about whether users understand the journey should arrive before we commit to implementing the final interaction.”</p></div></div>
+            <h3>Delivery guidance · not spoken</h3>
+<h3>Check</h3><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What could the team still change if it learns before launch that students misunderstand the confirmation?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Accept a change to the message or journey, paired with a check of the actual booking result. The point is that the feedback arrives while the team can still act.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“We could make the confirmation clearer and check that it matches the booking record before approving launch.”</p></div></div>
           </div>
         </div>
       </section>
@@ -1610,6 +1667,7 @@
           <p class="eyebrow">Campus Event · Part A</p>
           <h2>Read the context. Mark conditions that should shape the work.</h2>
           <p class="instruction">Mark one uncertainty, one dependency, and one constraint. Add a question if the evidence is incomplete.</p>
+          <div class="reveal" data-cue><p class="reveal-label">Hint · after your first read</p><p>Start with a decision the team must make. What is still unknown, what limits the choice, and what must happen first?</p></div>
         </div></div>
         <div class="sn">
           <h3>Read before discussing</h3><p>Use only the evidence in Part A. Mark the conditions that matter to how the team should organise the work.</p>
@@ -1621,8 +1679,15 @@
             <p><strong>Now read the Part A case: pages 01 and 02 in the workbook.</strong> Mark one uncertainty, one dependency, and one constraint. Record them on page 03, or in your own notes. Add a question if something relevant is not established.</p>
             <p><strong>Use the facts on the sheet.</strong> You do not need to diagnose the technical fault or invent an estimate. First identify the conditions that should shape the work; then we will decide how to organise it. <em class="pause">[Allow ten minutes for reading and annotation; circulate for access and vocabulary questions.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Ten minutes for reading and annotation, including the brief page instruction. Case reading starts at about 11:23, after the historical lens.</p>
-<h3>Distribution</h3><p><strong>Make Part A available before this slide.</strong> The deck must not reproduce the packet facts.</p><h3>While circulating</h3><p><strong>Clarify vocabulary and the location of evidence.</strong> Do not tell students which lifecycle to choose.</p><h3>Rescue prompts</h3><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>What has to happen before something else can happen?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“We need connected checks of booking, notifications and organiser information before real students rely on the booking outcome, because the separate parts must agree.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Which assumption needs evidence from outside the team?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“We need the organiser and volunteers to help check whether the booking outcome is understandable. Their review would not establish reliability under every condition.”</p></div></div>
+            <h3>Delivery guidance · not spoken</h3>
+<h3>Distribution</h3><p><strong>Make Part A available before this slide.</strong> The deck must not reproduce the packet facts.</p><h3>While circulating</h3><p><strong>Clarify vocabulary and the location of evidence.</strong> Do not tell students which lifecycle to choose.</p>
+<h3>Quick vocabulary · if asked</h3>
+<p><strong>An uncertainty is something that matters to the plan but that we do not yet know.</strong> For example, the team does not yet know how much work the booking repair needs.</p>
+<p><strong>A constraint is a limit the team has to work within.</strong> The event date is fixed, even though the sponsor could reduce scope or postpone online booking.</p>
+<p><strong>A dependency is when one activity or decision needs something from another first.</strong> Before real students rely on a booking outcome, the team needs a connected check that booking, notifications, and organiser information agree.</p>
+<p><strong>A question is what you would ask or check to reduce a particular uncertainty.</strong> For example: “What work is needed to correct the booking behaviour?” The answer could affect what the team promises for this event. Students can write the question without inventing its answer.</p>
+<p>Use an example only when a student needs it after trying to mark the sheet; let students choose their own conditions.</p>
+<h3>Rescue prompts</h3><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>What has to happen before something else can happen?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“We need connected checks of booking, notifications and organiser information before real students rely on the booking outcome, because the separate parts must agree.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Which assumption needs evidence from outside the team?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“We need the organiser and volunteers to help check whether the booking outcome is understandable. Their review would not establish reliability under every condition.”</p></div></div>
           </div>
         </div>
       </section>
@@ -1633,6 +1698,7 @@
           <p class="eyebrow">A provisional recommendation</p>
           <h2>How should the team organise the work in this context?</h2>
           <p class="instruction">Choose a primary approach or combination. Link it to two marked conditions.</p>
+          <div class="reveal" data-cue><p class="reveal-label">One plausible route · after an attempt</p><p>Plan the core booking and capacity checks first, then use weekly reviews to revise the student journey. The fixed event date means the team must decide scope before invitations.</p></div>
         </div></div>
         <div class="sn">
           <h3>Provisional means revisable</h3><p>Use Part A only. Your choice should explain why these conditions call for this approach. You will test it against a controlled change once your first answer is preserved.</p>
@@ -1644,7 +1710,7 @@
             <p><strong>Using Part A, write a provisional approach and two conditions supporting it.</strong> You can choose a primary approach or combine them, but explain what would be planned, revised, or delivered separately.</p>
             <p><strong>Compare your reasons with someone nearby, while preserving your own first route.</strong> A method label by itself does not tell us why the choice fits. Point to a condition on the sheet and explain its consequence for the work. <em class="pause">[Allow writing, then brief comparison; keep the nine-minute window.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Five minutes drafting, three comparing reasons, one preserving the provisional choice.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Listen for</h3><p><strong>Method labels standing alone.</strong> </p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which marked condition makes this choice proportionate?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The organiser and volunteers are available weekly, so I would schedule short reviews at those points and use the findings to revise the journey before committing further work.”</p></div></div><h3>Do not resolve yet</h3><p><strong>Accept more than one defensible choice.</strong> The facilitator reference will later provide contrasting routes, but should not be displayed.</p>
           </div>
         </div>
@@ -1666,7 +1732,7 @@
             <p><strong>Before we open Part B, check that your approach and two supporting conditions are visible.</strong> Do not replace them with a more polished answer. We need to be able to see what your reasoning was before the new request.</p>
             <p><strong>Now you will decide whether to retain or revise that route.</strong> A revision is useful when you can explain its reason. It is also possible to keep a choice and justify why the change does not overturn it. <em class="pause">[Check completion before starting Part B.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes to check the choice and its two reasons, finish a sentence if needed, and prepare the handout.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Handoff</h3><p><strong>Check that students have written a choice and contextual reasons before Part B is introduced.</strong> This is a learning checkpoint, not a protected evidence gate.</p><h3>If behind</h3><p><strong>Use the packet handout time to finish the provisional sentence if needed.</strong> Do not compress the main recommendation activity.</p>
           </div>
         </div>
@@ -1684,11 +1750,9 @@
             <p><strong>Keep the first route visible while considering the new request.</strong></p>
             <h3>Say · rehearsal script</h3>
             <p><strong>Keep your original recommendation visible.</strong> The sponsor has added a request. Your job is to decide how to handle it within the conditions already given, and explain whether it changes your approach.</p>
-            <p><strong>We are considering what the new evidence lets us reconsider.</strong> You may retain the route or revise it. Read Part B first, then identify what needs attention before proposing a solution. <em class="pause">[Make Part B available and move to the reading slide.]</em></p>
+            <p><strong>The new request puts pressure on your first route, but it does not tell us whether the extra work fits.</strong> You may keep your recommendation or revise it. Read Part B first, then identify which decision it affects and what you would need to learn before promising a solution. <em class="pause">[Make Part B available and move to the reading slide.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes to distribute Part B and state the question. Do not give another explanation before students read.</p>
-
-          </div></div>
+            </div></div>
       </section>
       <!-- 19 -->
       <section id="19" class="slide" data-mode="work" data-seg="Controlled change" data-min="8" data-block="Block 2" data-target="0:40">
@@ -1697,6 +1761,7 @@
           <p class="eyebrow">Campus Event · Part B</p>
           <h2>What does the change disrupt?</h2>
           <p class="instruction">Mark one decision, dependency, or assumption that now needs attention.</p>
+          <div class="reveal" data-cue><p class="reveal-label">Hint · after an attempt</p><p>Can the team promise a waiting-list offer before it knows whether a place is truly available?</p></div>
         </div></div>
         <div class="sn"><h3>Stay with the evidence</h3><p>Identify what the change affects. Do not redesign the whole platform or invent missing facts.</p><h3>Then</h3><p>Add one sentence: “This matters to our recommendation because…”</p><div class="fn">
             <h3>Anchor · if you lose the thread</h3>
@@ -1705,7 +1770,7 @@
             <p><strong>Read Part B on page 04.</strong> Mark one decision, dependency, or assumption affected by the waiting-list request. Keep Part A nearby: its deadline, team capacity, and unresolved booking work still matter.</p>
             <p><strong>Write a short note beside the request or in your own notes: “This matters to our recommendation because…” You may defer, explore before deciding, or propose a bounded delivery.</strong> None requires you to invent evidence that the work fits. <em class="pause">[Allow the eight-minute reading and thinking window.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Five minutes reading and marking, three writing what the change affects.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>While circulating</h3><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Which decision, dependency, or assumption does the request affect?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Name the affected element before proposing a response. Keep implementation detail out unless the sheet requires it.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The request affects scope and depends on trustworthy availability. I would make waiting-list delivery conditional on the effort and reliability evidence rather than assume it fits.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which commitment would be hardest to change if the team discovered this late?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The operating scope promised in the invitations would be hard to change. The sponsor needs evidence before the end-of-week-three decision.”</p></div></div>
           </div></div>
       </section>
@@ -1721,10 +1786,10 @@
             <h3>Anchor · if you lose the thread</h3>
             <p><strong>Make the organising decision inspectable.</strong></p>
             <h3>Say · rehearsal script</h3>
-            <p><strong>We will now build one recommendation that someone else can inspect.</strong> It needs a sequence, a feedback point, a plausible alternative you reject, and a remaining risk with someone responsible for responding.</p>
-            <p><strong>The output is a short explanation of how to organise the delivery.</strong> It is not a list of implementation steps for the new feature. Include the decisions that could lead you to defer work, as well as work you would do if the evidence supports it.</p>
+            <p><strong>First state the route you are recommending after Part B.</strong> Then someone reading it should be able to follow why you put the work in this order. Show what one step needs from another, what you will check before a commitment, and which decision that check could change.</p>
+            <p><strong>Then say what you would do, which plausible route you would leave aside, and what risk remains.</strong> Give that risk to someone who can act on it. You can include a decision to defer work if the evidence does not support taking it on; you do not need an implementation plan for the new feature.</p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Three minutes to explain the output and locate pages 05–06. The next slide supplies the sequence instructions; do not explain every field twice.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Boundary</h3><p><strong>Do not ask students to produce a complete project plan.</strong> Five questions organise one lifecycle recommendation.</p>
           </div></div>
       </section>
@@ -1734,18 +1799,20 @@
           <p class="mode"><b>Your turn</b><span>17 min · on your own</span></p>
           <p class="eyebrow">Build the route</p>
           <h2>Place the work in a defensible dependency sequence</h2>
-          <p class="instruction">Use a short chain. For each link, explain why it must come before the next.</p>
+          <p class="instruction">Page 05: first write your Part B approach or combination and one case reason. Then draft 3–5 linked activities or decisions.</p>
+          <div class="reveal" data-cue><p class="reveal-label">One possible link</p><p>Check that booking and capacity information agree before promising students that a waiting-list offer means a place is available.</p></div>
         </div></div>
-        <div class="sn"><h3>Keep it bounded</h3><p>Three to five meaningful steps are enough. Use activities or decisions, not every project task.</p><h3>Check each link</h3><p>Write “A before B because…” If there is no reason, the order may be preference rather than dependency.</p><div class="fn">
+        <div class="sn"><h3>First field on page 05</h3><p>Use your Part A choice and the Part B note to say what you now recommend and why. Keep it to one sentence; you will combine the team answer later.</p><h3>Keep the sequence bounded</h3><p>Three to five meaningful steps are enough. Use activities or decisions, not every project task.</p><h3>Check each link</h3><p>Write “A before B because…” If there is no reason, the order may be preference rather than dependency.</p><div class="fn">
             <h3>Anchor · if you lose the thread</h3>
-            <p><strong>Explain real dependencies and leave conditional work conditional.</strong></p>
+            <p><strong>State the Part B route and its reason before sequencing the work.</strong></p>
             <h3>Say · rehearsal script</h3>
-            <p><strong>Start individually with three to five activities or decisions.</strong> Use page 05 as a draft, or use blank paper. Later, your team will combine the reasoning into one recommendation; you are not producing two separate reports.</p>
+            <p><strong>Start with the first box on page 05: what approach or combination do you now recommend, and why?</strong> Look at your Part A choice on page 03 and what you marked about the waiting list on page 04. In one sentence, say whether you would keep or revise your approach, using one condition from the case. You can defer the waiting list, explore it before deciding, or make delivery conditional on evidence. Do not assume the team has time to build it.</p>
+            <p><strong>Then draft three to five activities or decisions that would make your route work.</strong> Use the rest of page 05 or blank paper. This is your individual draft; on Slide 24 your team will combine the reasoning into one recommendation.</p>
             <p><strong>For the important links, write “A before B because…”.</strong> Explain what B needs from A. Saying an activity is important explains priority, but does not necessarily explain a dependency. Show overlap if two activities can sensibly proceed together.</p>
-            <p><strong>Keep implementation conditional where feasibility is unknown.</strong> The sequence can include a decision to include or defer work. Use the case’s actual commitment point, and leave room for connected checks before anyone relies on the result. <em class="pause">[One minute for instructions, ten to draft, four to explain a link to a neighbour, and two to revise. Circulate without supplying a preferred route.]</em></p>
+            <p><strong>Keep implementation conditional where feasibility is unknown.</strong> The sequence can include a decision to include or defer work. Use the case’s actual commitment point, and leave room for connected checks before anyone relies on the result. <em class="pause">[One minute for instructions, two for the route sentence, eight for the chain, four to explain a link to a neighbour, and two to revise. Circulate without supplying a preferred route.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute instructing, ten drafting, four explaining a dependency to a neighbour, two revising. Keep the 12:15 break.</p>
-<h3>Purpose before fields</h3><p><strong>Say that the chain reveals where the recommendation commits early and where it leaves room to learn.</strong> Then explain the short format.</p><h3>While circulating</h3><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Is that a real dependency or simply your preferred order?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It is a real dependency: a live waiting-list offer needs trustworthy availability before it can promise a place. But we could explore the offer wording before the booking repair is finished.”</p></div></div><h3>Cut</h3><p><strong>Protect at least nine minutes.</strong> If necessary, reduce later whole-class comparison, not this construction time.</p>
+            <h3>Delivery guidance · not spoken</h3>
+<h3>Purpose before fields</h3><p><strong>The approach names the route; the chain shows how it would work.</strong> Keep the first field to one reasoned sentence so most of the time remains for dependencies.</p><h3>While circulating</h3><div class="facilitator-question"><span class="question-label">Ask if the first field is only a method name</span><p class="question-text"><strong>What did Part B change about your Part A choice, and which case condition explains your route?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Accept a justified decision to keep or revise the original approach. Do not require a waiting-list implementation promise.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I would keep core booking checks first and explore the waiting-list rule before promising it, because repair effort is still unknown and the sponsor must decide scope before invitations.”</p></div></div><div class="facilitator-question"><span class="question-label">Ask while circulating</span><p class="question-text"><strong>Is that a real dependency or simply your preferred order?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“It is a real dependency: a live waiting-list offer needs trustworthy availability before it can promise a place. But we could explore the offer wording before the booking repair is finished.”</p></div></div><h3>Cut</h3><p><strong>Protect at least nine minutes.</strong> If necessary, reduce later whole-class comparison, not this construction time.</p>
           </div></div>
       </section>
       <!-- 22 -->
@@ -1772,6 +1839,7 @@
           <p class="eyebrow">Place the learning</p>
           <h2>Where must feedback arrive while it can still change the route?</h2>
           <p class="instruction">Add one feedback point, its source, and the decision it can change.</p>
+          <div class="reveal" data-cue><p class="reveal-label">One possible feedback point</p><p>Let the organiser and volunteers try the offer wording at a weekly review. If they read an offer as a confirmed booking, revise the rule or wording before the sponsor agrees the scope.</p></div>
         </div></div>
         <div class="sn"><h3>Be specific</h3><p>“Get feedback” is incomplete. Name who or what supplies it, when it arrives, and which decision remains open.</p><div class="fn">
             <h3>Anchor · if you lose the thread</h3>
@@ -1780,7 +1848,7 @@
             <p><strong>Add one feedback point before a commitment.</strong> On page 06, name who or what supplies the evidence, what they examine, and what decision could change as a result.</p>
             <div class="facilitator-question"><span class="question-label">Ask individually</span><p class="question-text"><strong>Can this source establish what you need to know? If the evidence contradicts your assumption, what work or scope decision changes?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>A user review and a technical check answer different questions. <em class="pause">[Allow individual work; ask students to point to the still-open decision.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The organiser and volunteers can reveal whether an offer is confused with a confirmed reservation. If it is, I would revise the rule or wording before committing to implementation; technical checks are still needed for reliability.”</p></div></div>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute reconnecting to the sequence, five writing, two checking that feedback precedes the commitment.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Listen for</h3><p><strong>Feedback placed after the decision it should influence.</strong> Use the question below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which commitment can you still revise when this feedback arrives?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“At the first weekly review, we can still revise the offer rule or recommend deferring the waiting list before the sponsor agrees what the invitations will promise.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Who can reveal whether this assumption matches reality?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“The organiser can clarify the offer rule, and volunteers can show whether they understand the offer. Neither source alone establishes reliable booking behaviour.”</p></div></div>
           </div></div>
       </section>
@@ -1791,15 +1859,16 @@
           <p class="eyebrow">One visible recommendation</p>
           <h2>Make the lifecycle choice inspectable</h2>
           <div class="trio"><div><h3>Sequence</h3><p>What depends on what?</p></div><div><h3>Feedback</h3><p>What can it still change?</p></div><div><h3>Trade-off</h3><p>Rejected route and owned risk.</p></div></div>
+          <div class="reveal" data-cue><p class="reveal-label">Hint · if the team is stuck</p><p>Agree which case condition changes your route most. Build the sequence, feedback point, and remaining risk around that condition.</p></div>
         </div></div>
         <div class="sn"><h3>Post one team recommendation</h3><p>Include a primary approach or combination, a dependency sequence, one feedback point, one rejected alternative, and one remaining risk with an owner.</p><h3>Individual alternative</h3><p>If team work is not workable, complete the same five parts on your own sheet.</p><div class="fn">
             <h3>Anchor · if you lose the thread</h3>
             <p><strong>Combine the reasoning into one team recommendation.</strong></p>
             <h3>Say · rehearsal script</h3>
-            <p><strong>Now compare your drafts and produce one team recommendation.</strong> Use one pair of pages 05 and 06, one sheet, or one local document. Everyone keeps their own materials for the individual decision later.</p>
+            <p><strong>Compare the approach and reason you each drafted on page 05, then agree one team route.</strong> Put that shared route in the first box on your team copy before combining the sequence and the rest of the recommendation. Everyone keeps their own materials for the individual decision later.</p>
             <p><strong>Include your approach and reason, the dependency sequence, feedback, rejected alternative, and a risk owner with an action.</strong> A reader should see who monitors the risk, what they do, and when they need to escalate. <em class="pause">[At seven minutes, ask teams to make the recommendation visible; at twelve, check the alternative and owner.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes comparing drafts, eight agreeing and writing one recommendation, four checking the alternative and actionable owner.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Board setup</h3><p><strong>Use one sheet or board area per team.</strong> Keep the five required parts visible without turning the task into a presentation-design exercise.</p><h3>Listen for</h3><p><strong>A risk owner written as “the team” without authority or action.</strong> Use the question below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Who notices the risk, who decides, and who responds?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Support can flag confusing outcomes to the delivery lead. The lead arranges investigation and escalates unresolved concerns; the sponsor decides whether scope or online opening must change.”</p></div></div><h3>Time call</h3><p><strong>At seven minutes, ask teams to move from discussion to a visible recommendation.</strong> At twelve minutes, require the rejected alternative and owner.</p>
           </div></div>
       </section>
@@ -1810,15 +1879,16 @@
           <p class="eyebrow">Test the exposure</p>
           <h2>What does this recommendation still leave exposed?</h2>
           <p class="instruction">Name one credible failure of the route. The team may revise one part.</p>
+          <div class="reveal" data-cue><p class="reveal-label">Hint · after a challenge</p><p>If the first connected check happens after invitations go out, what has the team already promised?</p></div>
         </div></div>
         <div class="sn"><h3>Check the reasoning, not the poster</h3><p>Look for a dependency treated as optional, feedback that arrives too late, a weak risk owner, or an alternative rejected without a contextual reason.</p><h3>Working alone</h3><p>Argue against your own recommendation for two minutes, then strengthen one part.</p><div class="fn">
             <h3>Anchor · if you lose the thread</h3>
             <p><strong>Challenge one assumption and allow a reasoned revision.</strong></p>
             <h3>Say · rehearsal script</h3>
-            <p><strong>Exchange your recommendation with a neighbouring team.</strong> Choose one consequential challenge rather than commenting on everything.</p><div class="facilitator-question"><span class="question-label">Ask the other team</span><p class="question-text"><strong>When would this route discover that its key assumption is wrong, and what would already be expensive to change?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span>
-            <p><strong>Record the challenge and one revision or a reason for retaining your choice on page 07.</strong> If working alone, challenge your own route for two minutes, then revise it. <em class="pause">[Allow the exchange and response; keep movement local.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If our route waits until the final demonstration to check the offer journey, we may already have implemented the wrong interpretation. I would move a short organiser and volunteer review earlier.”</p></div></div>
+            <p><strong>Exchange your recommendation with a neighbouring team.</strong> Choose one consequential challenge rather than commenting on everything.</p><div class="facilitator-question"><span class="question-label">Ask the other team</span><p class="question-text"><strong>When would this route discover that its key assumption is wrong, and what would already be expensive to change?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Look for a named assumption and a commitment that happens before it is checked. Ask for one change to the route or a reason to keep it.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If our route waits until the final demonstration to check the offer journey, we may already have implemented the wrong interpretation. I would move a short organiser and volunteer review earlier.”</p></div></div>
+            <p><strong>Record the challenge and one revision or a reason for retaining your choice on page 07.</strong> If working alone, challenge your own route for two minutes, then revise it. <em class="pause">[Allow the exchange and response; keep movement local.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes reading the other recommendation, three framing one challenge, three responding, two recording a revision or a reason to retain.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Movement</h3><p><strong>Pair neighbouring teams.</strong> Do not reorganise the whole room.</p><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Suppose the key assumption is wrong. When does this route discover it, and what has already become expensive?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“If we only check the connected journey after the invitation decision, we could discover a problem after promising the operating route. I would put that evidence before the sponsor’s decision.”</p></div></div><h3>Boundary</h3><p><strong>Do not turn the check into choosing the one correct method.</strong> The question is what each route exposes.</p>
           </div></div>
       </section>
@@ -1829,6 +1899,7 @@
           <p class="eyebrow">Two defensible routes</p>
           <h2>Different choices can be proportionate for different risks</h2>
           <p class="lead">Compare what each route fixes early, learns early, and leaves exposed.</p>
+          <div class="reveal" data-cue><p class="reveal-label">Fallback comparison · after team attempts</p><p>Deferring the waiting list protects repair capacity but may leave cancelled places unused. Exploring it early may clarify the offer rule, but uses time from the same small team.</p></div>
         </div></div>
         <div class="sn"><h3>How to compare</h3><p>A stronger recommendation makes its assumptions and trade-offs visible. Agreement on a method name is less important than the quality of the contextual reason.</p><div class="fn">
             <h3>Anchor · if you lose the thread</h3>
@@ -1837,7 +1908,7 @@
             <p><strong>Let us examine two different routes and the reasons behind them.</strong> Each team has about a minute to explain one choice: what you commit to, what you learn first, and why that fits a condition in the case. <em class="pause">[Select actual contrasting answers and listen; do not invent a student position.]</em></p>
             <p><strong>A defensible choice still has a cost.</strong> We need to name the risk each route manages and the risk it retains. Agreement on the method name is less useful than understanding why the teams made different commitments. <em class="pause">[Refer to evidence and reasoning actually present in the two answers.]</em></p>
 <h3>Fallback contrast · only after team attempts</h3><p><strong>Immediate deferral protects repair capacity.</strong> Unknown booking effort and a fixed commitment point justify concentrating on the core; cancelled places may remain unused.</p><p><strong>Bounded exploration buys information.</strong> A small organiser walkthrough may reveal a dependency before design commitment, but it consumes the same team’s time. Include delivery only if effort and connected checks fit before the sponsor’s week-three decision; otherwise defer.</p>
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two one-minute team explanations, four minutes comparing evidence and retained risks, two for synthesis.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Choose contrasts</h3><p><strong>Select two visible recommendations with genuinely different placements of commitment or feedback.</strong> Give each team about one minute to explain one choice.</p><h3>Synthesis</h3><p><strong>Name the condition that makes each route defensible and the risk it retains.</strong> Avoid announcing a universal winner.</p><h3>If the room is quiet</h3><p><strong>Compare the recommendations yourself using only their visible sequence, feedback point, and owned risk.</strong></p>
           </div></div>
       </section>
@@ -1848,6 +1919,7 @@
           <p class="eyebrow">Refine after the challenge</p>
           <h2>Does your trade-off still hold after the challenge?</h2>
           <p class="instruction">Revise or retain your rejected alternative and risk owner. Explain why.</p>
+          <div class="reveal" data-cue><p class="reveal-label">Hint · after a first draft</p><p>Why does the rejected route fit this team less well? Who can act if the risk you retain grows?</p></div>
         </div></div>
         <div class="sn"><h3>Rejected alternative</h3><p>State the strongest plausible alternative and why it fits this context less well. Avoid dismissing it with a method stereotype.</p><h3>Risk owner</h3><p>Name a role with enough information and authority to monitor the risk or respond to it.</p><div class="fn">
             <h3>Anchor · if you lose the thread</h3>
@@ -1856,7 +1928,7 @@
             <p><strong>Revisit the trade-off you already wrote, using the peer challenge and comparison.</strong> Do not start a second recommendation. Give the strongest plausible alternative a fair hearing, then explain why your chosen route fits this case better. “That method is slow” is too general; use a condition that affects this team.</p>
             <p><strong>For the remaining risk, match responsibility to authority.</strong> Engineers can investigate and check behaviour; the delivery lead coordinates the work and escalates concerns; the sponsor decides scope. Name the action your owner should take if the risk grows. <em class="pause">[Allow teams to refine the same recommendation.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>One minute identifying the trade-off to revisit, four revising or justifying retention, two checking the owner’s action. This refines the existing answer.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Listen for</h3><p><strong>“Waterfall is slow”, “agile is chaotic”, or other slogans.</strong> Use the question below.</p><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>Which condition in this case makes the alternative less proportionate?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Immediate waiting-list delivery is less proportionate because the same small team still faces unknown core repair effort. I would defer it, while recognising that cancelled places might remain unused.”</p></div></div><h3>Rescue prompt</h3><div class="facilitator-question"><span class="question-label">Ask if needed</span><p class="question-text"><strong>What would make the rejected route attractive in a different context?</strong></p><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“Including the waiting list would be more attractive if reliable core behaviour were established and credible effort evidence showed the work fits. Those conditions are not established in this case.”</p></div></div>
           </div></div>
       </section>
@@ -1873,9 +1945,9 @@
             <p><strong>Protect seven minutes for an individual contextual judgement.</strong></p>
             <h3>Say · rehearsal script</h3>
             <p><strong>Work individually now.</strong> Write four short sentences in your own words: your recommendation, a case condition that supports it, a risk it retains, and how one selected practice addresses the historical problem of late discovery. Use page 07 or your own notes.</p>
-            <p><strong>Your answer may differ from your team’s.</strong> Explain the connection rather than recalling the date.</p><div class="facilitator-question"><span class="question-label">Ask individually</span><p class="question-text"><strong>What does the practice help the team find out while it can still change a decision?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> Keep your notes; I will sample a few answers to see what needs clarifying. <em class="pause">[Protect seven minutes, sample in the room, and give one brief correction if needed.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“An early trial can expose a misunderstood offer before implementation commitment. That addresses the historical problem of discovering a limitation only after it has become expensive to change.”</p></div></div>
+            <p><strong>Your answer may differ from your team’s.</strong> Explain which problem your chosen practice addresses and why it helps at that point in the work. Keep your notes; I will look at a few answers to see what we need to clarify. <em class="pause">[Protect seven minutes, sample in the room, and give one brief correction if needed.]</em></p><div class="facilitator-question"><span class="question-label">Ask individually</span><p class="question-text"><strong>What problem could your chosen practice help the team notice or prevent before changing course becomes expensive?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Accept a specific late-discovery or coordination problem that fits the selected practice. This is a prompt during individual work, not a model answer to announce.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“An early trial can expose a misunderstood offer before implementation commitment. That addresses the historical problem of discovering a limitation only after it has become expensive to change.”</p></div></div>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Seven minutes for individual writing and quiet sampling. Give any whole-class correction in the learning close.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Protect the individual check</h3><p><strong>Do not replace this with more report-back.</strong> Sample answers in the room; students retain their notes.</p><h3>Listen for later</h3><p><strong>Whether the recommendation contains a choice, context, retained risk, and an applied connection between one practice and its purpose.</strong> This is the short understanding check.</p>
           </div></div>
       </section>
@@ -1891,13 +1963,11 @@
             <h3>Anchor · if you lose the thread</h3>
             <p><strong>Return to the north star and carry one assumption into Week 3.</strong></p>
             <h3>Say · rehearsal script</h3>
-            <p><strong>Look back at your planning sentence on Part A page 01.</strong> </p><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What has changed or become more precise in your answer about planning?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p> Planning helps us coordinate, reserve time for learning, and make commitments visible. Feedback helps us test assumptions, provided it arrives while we can still act.</p>
+            <p><strong>Look back at your planning sentence on Part A page 01.</strong> Compare it with the recommendation you just wrote.</p><div class="facilitator-question"><span class="question-label">Ask the room</span><p class="question-text"><strong>What has changed or become more precise in your answer about planning?</strong></p><div class="response-guidance"><span class="response-label">Response guidance · not spoken</span><p>Listen for a concrete condition: a dependency to agree early, an assumption to check, or a commitment that feedback must precede. Do not require everyone to change their original view.</p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I still think planning helps, but now I would plan checks as well as tasks. A detailed schedule does not settle an assumption; we need evidence early enough to change scope or sequence.”</p></div></div>
             <p><strong>That brings us back to our purpose: decide how much to plan, what to deliver first, and when to seek feedback.</strong> You can justify different routes if you explain the conditions, dependencies, and remaining risks.</p>
-            <p><strong>Before Week 3, spend about twenty minutes identifying your recommendation’s riskiest assumption, a stakeholder who could help test it, and one question whose answer might change your decision.</strong> Bring those notes. If you do not have the team sheet, use your individual decision or the case. <em class="pause">[Point to the prompt on page 07; no new report is required.]</em></p></div><div class="response-guidance"><span class="response-label">Example good answer · after an attempt</span><p>“I still think planning helps, but now I would plan checks as well as tasks. A detailed schedule does not settle an assumption; we need evidence early enough to change scope or sequence.”</p></div></div>
+            <p><strong>Before Week 3, spend about twenty minutes identifying your recommendation’s riskiest assumption, a stakeholder who could help test it, and one question whose answer might change your decision.</strong> Bring those notes. If you do not have the team sheet, use your individual decision or the case. <em class="pause">[Point to the prompt on page 07; no new report is required.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Two minutes revisiting the planning position and clarifying sampled reasoning, one synthesising, one setting the Week 3 carry-forward.</p>
-
-          </div></div>
+            </div></div>
       </section>
       <!-- 30 -->
       <section id="30" class="slide" data-mode="gate" data-seg="Contingency" data-min="2" data-block="Block 3" data-target="1:00">
@@ -1914,7 +1984,7 @@
             <p><strong>If you need it, use this time to finish your individual decision.</strong> Keep the opening answer and final recommendation with your notes so you can use them next week. <em class="pause">[Use only remaining contingency; answer one unresolved question if time permits.]</em></p>
             <p><strong>Thank you; we will stop here.</strong> <em class="pause">[Do not add another example. Record actual timing and unresolved delivery issues after the session.]</em></p>
 
-            <h3>Delivery guidance · not spoken</h3><h3>Time budget</h3><p>Use only remaining margin for completion or one question, then explicitly dismiss. No additional teaching.</p>
+            <h3>Delivery guidance · not spoken</h3>
 <h3>Cut order</h3><p><strong>First reduce spoken examples and the historical elaboration.</strong> Next shorten whole-class comparison to one contrast. Protect the context reading, dependency sequence, feedback point, team recommendation, and individual decision.</p><h3>Fallback</h3><p><strong>If the shared board fails, each team uses one sheet of paper or a local document.</strong> If group work cannot proceed, students complete the five-part recommendation individually.</p><h3>Teach-aloud stopping point</h3><p><strong>End here and record actual timings, unclear transitions, prompts you had to invent, and any concept that expanded beyond its budget.</strong> Browser timing metadata is a rehearsal hypothesis, not classroom evidence.</p>
           </div></div>
       </section>
@@ -1946,7 +2016,7 @@
           →
         </button>
         <span class="pos" id="pos">1/30</span>
-        <button id="emph" title="Reveal deferred emphasis (E)" hidden>
+        <button id="emph" title="Show hint or emphasis (E)" hidden>
           Cue
         </button>
         <button id="notes-btn" title="Notes (N)">Notes</button>
@@ -2001,16 +2071,16 @@
           fn.append(t);
         });
 
-        // a slide holding a deferred emphasis says so in its own notes, so the
-        // cue is visible on the lectern screen but remains out of the student PDF
+        // Describe a deferred hint or emphasis in private notes, not the PDF.
         slides.forEach((s) => {
           if (!s.querySelector('[data-cue]')) return;
           const fn = s.querySelector('.sn > .fn');
           if (!fn) return;
           const n = document.createElement('p');
           n.className = 'n-cue';
-          n.innerHTML =
-            'This slide holds a <b>deferred emphasis</b>. It shows plain until you press <b>E</b>. Let the room read the sentence first.';
+          n.innerHTML = s.querySelector('.reveal[data-cue]')
+            ? 'This slide has a <b>hint or example</b>. Let students try first, then press <b>E</b> if it would help.'
+            : 'This slide holds <b>deferred emphasis</b>. Let the room read the sentence first, then press <b>E</b>.';
           fn.prepend(n);
         });
 
@@ -2060,6 +2130,8 @@
           }
           // a new slide always starts unemphasised, so the cue can be used again
           if (i !== shownIndex) {
+            if (shownIndex >= 0) slides[shownIndex].classList.remove('current');
+            s.classList.add('current');
             shownIndex = i;
             if (document.body.classList.contains('cued')) {
               document.body.classList.remove('cued');
@@ -2068,6 +2140,7 @@
           }
           pos.textContent = `${i + 1}/${slides.length}`;
           emph.hidden = !s.querySelector('[data-cue]');
+          emph.textContent = s.querySelector('.reveal[data-cue]') ? 'Hint' : 'Cue';
           document.body.dataset.mode = s.dataset.mode;
           railFill.style.strokeDashoffset = (
             100 -
