@@ -1,0 +1,39 @@
+/* Week 01 student-materials rules beyond the Week 2 base. */
+.opening h1 { max-width: none; font-size: 28pt; }
+.opening .write-space { height: 205mm; margin-top: 13mm; background: rgb(255, 255, 255); border: 1px dashed var(--rule); border-radius: 2mm; }
+.record ol { margin-bottom: 0px; }
+.lines { min-height: 23mm; background: rgb(255, 255, 255); border: 1px dashed var(--rule); border-radius: 2mm; }
+.lines.short { min-height: 17mm; }
+.lines.tall { min-height: 42mm; }
+.strip-stack { display: grid; gap: 2.5mm; margin-top: 3mm; }
+.strip-field { min-height: 20mm; padding: 2.5mm 3mm; border: 1px solid var(--ink); }
+.strip-field h3 { margin: 0px 0px 1.5mm; font-size: 8.5pt; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.check p { padding: 3mm 0px; border-top: 1px solid var(--rule); font-size: 9.5pt; }
+.page:nth-of-type(3) { font-size: 9.5pt; line-height: 1.34; }
+.page:nth-of-type(3) .page-head { margin-bottom: 7mm; }
+.page:nth-of-type(3) h3 { margin-top: 3.5mm; }
+.page:nth-of-type(3) .callout { margin: 3mm 0px; padding: 3mm 4mm; }
+.page:nth-of-type(3) .record { margin: 3mm 0px; padding: 3mm 4mm; }
+.page:nth-of-type(3) .task { margin-top: 4mm; padding-top: 3.5mm; }
+.page:nth-of-type(6) { font-size: 9.5pt; line-height: 1.34; }
+.page:nth-of-type(6) .page-head { margin-bottom: 6mm; }
+.page:nth-of-type(6) h1 { font-size: 25pt; }
+.page:nth-of-type(6) .name-row { margin: 3mm 0px 5mm; }
+.page:nth-of-type(6) .prompt { margin-top: 3.5mm; }
+.page:nth-of-type(6) .lines { min-height: 17mm; }
+.page:nth-of-type(6) .lines.tall { min-height: 31mm; }
+.page:nth-of-type(8) { font-size: 9.5pt; line-height: 1.32; }
+.page:nth-of-type(8) .page-head { margin-bottom: 5mm; }
+.page:nth-of-type(8) h2 { font-size: 20pt; }
+.page:nth-of-type(8) .lead { font-size: 10.5pt; margin-bottom: 2mm; }
+.page:nth-of-type(8) .strip-field { min-height: 31mm; }
+.page:nth-of-type(8) .check { margin-top: 3mm; }
+.page:nth-of-type(8) .exit { margin-top: 4mm; padding-top: 3mm; border-top: 1px solid var(--rule); }
+.page:nth-of-type(8) .exit p { margin-top: 1.5mm; }
+@media print {
+body[data-print="opening"] .page:not([data-set="opening"]), body[data-print="release-1"] .page:not([data-set="release-1"]):not([data-set="release-1-sheet"]), body[data-print="release-2"] .page:not([data-set="release-2"]):not([data-set="release-2-sheet"]) { display: none; }
+}
+@media (max-width: 800px) {
+.page { width: 100%; height: auto; min-height: 100vh; margin: 0px; padding: 8vw 7vw 12vw 13vw; box-shadow: none; }
+.opening .write-space { height: 65vh; }
+}

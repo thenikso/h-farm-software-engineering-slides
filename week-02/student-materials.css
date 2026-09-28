@@ -1,0 +1,27 @@
+/* Week 02 student-materials rules beyond the Week 2 base. */
+.page[data-page="1"] { font-size: 9.7pt; line-height: 1.34; }
+.page[data-page="1"] h1 { font-size: 25pt; }
+.page[data-page="4"] h1 { font-size: 25pt; }
+.page[data-page="4"] { font-size: 9.55pt; line-height: 1.33; }
+.page[data-page="4"] .page-head { margin-bottom: 6mm; }
+.page[data-page="4"] h3 { margin-top: 3.3mm; }
+.page[data-page="4"] .callout { margin: 3mm 0px; padding: 3mm 4mm; }
+.page[data-page="7"] { font-size: 9.7pt; line-height: 1.34; }
+.page[data-page="7"] .page-head { margin-bottom: 6mm; }
+.page[data-page="7"] h2 { font-size: 20pt; }
+.page[data-page="7"] .write { margin-bottom: 3mm; }
+.page[data-page="5"] .write.medium { min-height: 22mm; }
+.page[data-page="5"] .sequence .step { height: 17mm; }
+.page[data-page="5"] .optional .step { height: 12mm; }
+.page[data-page="5"] .write.tall { min-height: 30mm; }
+.page[data-page="6"] .page-head { margin-bottom: 6mm; }
+.page[data-page="6"] h2 { font-size: 20pt; }
+.page[data-page="6"] .prompt { margin-top: 2.5mm; }
+.page[data-page="6"] .write.short { min-height: 10mm; margin-bottom: 3mm; }
+.page[data-page="6"] .write.medium { min-height: 18mm; margin-bottom: 3mm; }
+@media print {
+body[data-print="part-a"] .page:not([data-set="part-a"]), body[data-print="part-b"] .page:not([data-set="part-b"]) { display: none; }
+}
+@media screen and (max-width: 800px) {
+.page { width: 100%; height: auto; min-height: 100vh; margin: 0px; padding: 8vw 7vw 12vw 13vw; box-shadow: none; }
+}

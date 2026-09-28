@@ -1,0 +1,22 @@
+/* Week 03 student-materials rules beyond the Week 2 base. */
+.opening h1 { max-width: none; font-size: 28pt; }
+.opening .lead { margin-top: 5mm; max-width: 30em; }
+.opening .write-space { position: absolute; inset: 82mm 18mm 18mm 27mm; height: auto; margin: 0px; }
+@media print {
+body[data-print="opening"] .page:not([data-set="opening"]), body[data-print="part-a"] .page:not([data-set="part-a"]), body[data-print="part-b"] .page:not([data-set="part-b"]) { display: none; }
+}
+@media screen and (max-width: 800px) {
+.page { width: 100%; height: auto; min-height: 100vh; margin: 0px; padding: 8vw 7vw 12vw 13vw; box-shadow: none; }
+.opening .write-space { height: 65vh; }
+}
+.page { height: auto; min-height: 297mm; overflow: visible; }
+.write { height: 25mm; }
+.source-boundary { padding: 12px 24px; background: rgb(255, 243, 217); max-width: 900px; margin: auto; }
+.sketch { border: 1px solid var(--rule); padding: 8mm; text-align: center; font-size: 15pt; line-height: 2.3; }
+@media print {
+.source-boundary { display: none; }
+body[data-print="practice"] .page:not([data-set="practice"]), body[data-print="attempt"] .page:not([data-set="attempt"]), body[data-print="feedback"] .page:not([data-set="feedback"]) { display: none; }
+}
+@media print {
+.page { height: auto; min-height: 297mm; overflow: visible; }
+}

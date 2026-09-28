@@ -1,0 +1,1270 @@
+/* ============================================================
+   Shared session deck and handout style, based on Week 2.
+
+   The projected slide faces and student review notes are student
+   facing. Facilitator notes remain in this instructor-controlled
+   HTML for rehearsal and delivery, but are excluded from print.
+   Distribute the generated student PDF, not this source file.
+
+   Typeface: Nebula Sans. The @font-face rules resolve through
+   local(), so the family renders where it is installed and
+   falls back cleanly elsewhere. Embed woff2 before teaching
+   from an unfamiliar machine.
+   ============================================================ */
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Light'),
+          local('NebulaSans-Light'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Light.otf)
+            format('opentype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Book'),
+          local('NebulaSans-Book'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Book.otf)
+            format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Medium'),
+          local('NebulaSans-Medium'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Medium.otf)
+            format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Semibold'),
+          local('NebulaSans-Semibold'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Semibold.otf)
+            format('opentype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Nebula Sans';
+        src:
+          local('Nebula Sans Bold'),
+          local('NebulaSans-Bold'),
+          url(https://www.nebulasans.com/fonts/NebulaSans-Bold.otf)
+            format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        color-scheme: light;
+        --font:
+          'Nebula Sans', 'Avenir Next', 'Source Sans 3', 'Source Sans Pro',
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+        --ink: #16263f;
+        --accent: #244d9d;
+        --accent-ink: #eaf0fb;
+
+        /* Three grounds, and only three. */
+        --ground-teach: #f6f8fc; /* cool near-white : explanation */
+        --ground-work: #f0e8da; /* warm sand       : your turn   */
+        --ground-gate: #1b3462; /* deep navy       : pause       */
+        --ground: var(--ground-teach);
+
+        --rule: color-mix(in srgb, var(--ink) 22%, transparent);
+        --quiet: color-mix(in srgb, var(--ink) 58%, transparent);
+
+        /* The rail thickens with the display and disappears when there
+     is no room for it. It is fixed, so viewport units are right. */
+        --rail: clamp(54px, 5vw, 86px);
+        --gutter: clamp(26px, 4.4vw, 80px);
+        --measure: 1240px;
+        --notes-w: 0px;
+      }
+      @media (max-width: 640px) {
+        :root {
+          --rail: 0px;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        background: var(--ground-teach);
+      }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        color: var(--ink);
+        background: var(--ground);
+        display: grid;
+        grid-template-columns: 1fr var(--notes-w);
+        transition:
+          grid-template-columns 220ms ease,
+          background 320ms ease;
+      }
+      body.notes-open {
+        --notes-w: min(31rem, 36vw);
+      }
+      body[data-mode='work'] {
+        --ground: var(--ground-work);
+      }
+      body[data-mode='gate'] {
+        --ground: var(--ground-gate);
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 0.18em;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      /* main is the sizing container: opening the notes reflows and
+   rescales the slide instead of covering it. */
+      main {
+        container-type: inline-size;
+        container-name: deck;
+        min-width: 0;
+      }
+
+      /* ============================================================
+   THE FIXED LOCATION RAIL
+   One element for the whole deck. Only the last field changes,
+   and it cross-fades as you move between segments.
+   ============================================================ */
+      .rail {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: var(--rail);
+        z-index: 15;
+        background: var(--accent);
+        color: var(--accent-ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 320ms ease,
+          color 320ms ease;
+        pointer-events: none;
+      }
+      body[data-mode='gate'] .rail {
+        background: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+      @media (max-width: 640px) {
+        .rail {
+          display: none;
+        }
+      }
+      .rail p {
+        margin: 0;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: clamp(12px, 0.92vw, 16px);
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        max-height: calc(100svh - 4rem);
+        overflow: hidden;
+      }
+      .rail .sep {
+        opacity: 0.55;
+        padding: 0.9em;
+      }
+      .rail .course {
+        opacity: 0.72;
+      }
+      .rail .seg {
+        font-weight: 700;
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease;
+        display: inline-block;
+      }
+      .rail.swap .seg {
+        opacity: 0;
+        transform: translateY(-0.5em);
+      }
+      .rail::before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 28px;
+        height: 28px;
+        background: currentColor;
+        -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ni42MTczNjY1IDI1LjE0MDUxOCI+CiAgICAgICAgPGcgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgICA8ZwogICAgICAgICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDAuMDAwMDAwLCAtODAuMDAwMDAwKSIKICAgICAgICAgICAgZmlsbD0iI0ZGRkZGRiIKICAgICAgICAgICAgZmlsbC1ydWxlPSJub256ZXJvIgogICAgICAgICAgPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MC4wMDAwMDAsIDgwLjAwMDAwMCkiPgogICAgICAgICAgICAgIDxwYXRoCiAgICAgICAgICAgICAgICBkPSJNMzguNzkzNjEwNywxNS4yNTczNjA0IEMzNi4xNTI4NDY3LDE1LjI1NzM2MDQgMzQuMDA0NzYyNiwxNy40MDU0NDQ1IDM0LjAwNDc2MjYsMjAuMDQ2MjA4NCBDMzQuMDA0NzYyNiwyMi42ODY5NzI0IDM2LjE1Mjg0NjcsMjQuODM1MDU2NSAzOC43OTM2MTA3LDI0LjgzNTA1NjUgQzQxLjQzNDM3NDYsMjQuODM1MDU2NSA0My41ODI0NTg3LDIyLjY4Njk3MjQgNDMuNTgyNDU4NywyMC4wNDYyMDg0IEM0My40ODM5MjI4LDE3LjQxNTI5ODEgNDEuMzM1ODM4NywxNS4yNTczNjA0IDM4Ljc5MzYxMDcsMTUuMjU3MzYwNCBaIE0zOC43OTM2MTA3LDIyLjMwMjY4MjEgQzM3LjUyMjQ5NjcsMjIuMzAyNjgyMSAzNi41NDY5OTA2LDIxLjMyNzE3NiAzNi41NDY5OTA2LDIwLjA1NjA2MiBDMzYuNTQ2OTkwNiwxOC43ODQ5NDgxIDM3LjUyMjQ5NjcsMTcuODA5NDQyIDM4Ljc5MzYxMDcsMTcuODA5NDQyIEM0MC4wNjQ3MjQ3LDE3LjgwOTQ0MiA0MS4wNDAyMzA4LDE4Ljc4NDk0ODEgNDEuMDQwMjMwOCwyMC4wNTYwNjIgQzQxLjA0MDIzMDgsMjEuMjE4Nzg2NSAzOS45NjYxODg3LDIyLjMwMjY4MjEgMzguNzkzNjEwNywyMi4zMDI2ODIxIFoiCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8cGF0aAogICAgICAgICAgICAgICAgZD0iTTE0LjgzOTUxNjgsMTMuNzAwNDkyMSBDMTQuODM5NTE2OCwxMS45MzY2OTgzIDEzLjM3MTMzMDksMTAuNDc4MzY1OSAxMS42MTczOTA2LDEwLjQ3ODM2NTkgQzkuNzU1MDYwODUsMTAuNDc4MzY1OSA4LjM5NTI2NDQ5LDExLjk0NjU1MTkgOC4zOTUyNjQ0OSwxMy43MDA0OTIxIEM4LjM5NTI2NDQ5LDE1LjQ1NDQzMjMgOS44NjM0NTA0MiwxNy4wMjExNTQyIDExLjYxNzM5MDYsMTcuMDIxMTU0MiBDMTMuMzcxMzMwOSwxNy4wMjExNTQyIDE0LjgzOTUxNjgsMTUuNTUyOTY4MyAxNC44Mzk1MTY4LDEzLjcwMDQ5MjEiCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8cGF0aAogICAgICAgICAgICAgICAgZD0iTTIyLjc2MTgwODcsMTYuMTQ0MTg0MSBDMjIuOTU4ODgwNiwxNS4zNjU3NSAyMy4wNTc0MTY2LDE0LjU3NzQ2MjIgMjMuMDU3NDE2NiwxMy43MDA0OTIxIEwyMS45ODMzNzQ1LDEzLjEwOTI3NjMgQzIxLjk4MzM3NDUsMTIuNzE1MTMyNCAyMS44ODQ4Mzg1LDEyLjQyOTM3ODEgMjEuODg0ODM4NSwxMi4wMzUyMzQyIEwyMi43NjE4MDg3LDExLjI1NjgwMDEgQzIyLjU2NDczNjcsMTAuNDc4MzY1OSAyMi4zNjc2NjQ4LDkuNjkwMDc4MTkgMjEuOTgzMzc0NSw4LjkxMTY0NDA0IEwyMC44MTA3OTY1LDguODEzMTA4MDcgQzIwLjYxMzcyNDUsOC41MTc1MDAxNyAyMC40MTY2NTI2LDguMTMzMjA5ODkgMjAuMjE5NTgwNyw3LjgzNzYwMTk5IEwyMC43MTIyNjA1LDYuNzYzNTU5OTMgQzIwLjIxOTU4MDcsNi4wODM2NjE3NSAxOS43MzY3NTQ0LDUuNDkyNDQ1OTQgMTkuMTQ1NTM4Niw0Ljk5OTc2NjEgTDE4LjA3MTQ5NjYsNS4zOTM5MDk5OCBDMTcuNzc1ODg4Nyw1LjE5NjgzODA0IDE3LjQ4MDI4MDgsNC45MDEyMzAxMyAxNy4xOTQ1MjY0LDQuNzE0MDExNzkgTDE3LjI5MzA2MjQsMy41NDE0MzM3NyBDMTYuNjEzMTY0MiwzLjE0NzI4OTkgMTUuODI0ODc2NSwyLjc2Mjk5OTYyIDE1LjA0NjQ0MjMsMi41NjU5Mjc2OSBMMTQuMTY5NDcyMiwzLjQ0Mjg5NzgxIEMxMy43NzUzMjg0LDMuMzQ0MzYxODQgMTMuNDg5NTc0LDMuMjQ1ODI1ODcgMTMuMDk1NDMwMiwzLjI0NTgyNTg3IEwxMi43MDEyODYzLDIuMTcxNzgzODIgQzExLjkyMjg1MjIsMi4wNzMyNDc4NSAxMS4xMzQ1NjQ0LDIuMDczMjQ3ODUgMTAuMjU3NTk0MywyLjE3MTc4MzgyIEw5Ljg2MzQ1MDQyLDMuMjQ1ODI1ODcgQzkuNDY5MzA2NTQsMy4zNDQzNjE4NCA5LjE4MzU1MjI0LDMuMzQ0MzYxODQgOC43ODk0MDgzNiwzLjQ0Mjg5NzgxIEw4LjAxMDk3NDIxLDIuNzYyOTk5NjIgQzcuMjMyNTQwMDYsMy4wNTg2MDc1MyA2LjU0Mjc4ODI5LDMuMzU0MjE1NDMgNS43NjQzNTQxNCwzLjczODUwNTcxIEw1Ljg2Mjg5MDExLDQuOTExMDgzNzMgQzUuNTY3MjgyMiw1LjEwODE1NTY3IDUuMjcxNjc0Myw1LjMwNTIyNzYgNC45ODU5MTk5OSw1LjU5MDk4MTkxIEwzLjkxMTg3Nzk0LDUuMTk2ODM4MDQgQzMuMzIwNjYyMTMsNS42ODk1MTc4OCAyLjczOTI5OTkyLDYuMzY5NDE2MDYgMi4yNDY2MjAwNyw2Ljk2MDYzMTg3IEwyLjgzNzgzNTg4LDguMDM0NjczOTIgQzIuNjQwNzYzOTUsOC4zMzAyODE4MyAyLjQ0MzY5MjAxLDguNjI1ODg5NzMgMi4yNDY2MjAwNyw5LjAxMDE4MDAxIEwxLjA3NDA0MjA1LDkuMTA4NzE1OTggQzAuNzc4NDM0MTQ5LDkuNzg4NjE0MTYgMC40ODI4MjYyNDQsMTAuNTc2OTAxOSAwLjI5NTYwNzkwNSwxMS4zNTUzMzYxIEwxLjE3MjU3ODAyLDEyLjEzMzc3MDIgQzEuMDc0MDQyMDUsMTIuNTI3OTE0MSAxLjA3NDA0MjA1LDEyLjgxMzY2ODQgMS4wNzQwNDIwNSwxMy4yMDc4MTIzIEwtMi44MDA1NjA2NmUtMTUsMTMuNzk5MDI4MSBDLTIuODAwNTYwNjZlLTE1LDE0LjU3NzQ2MjIgMC4wOTg1MzU5NjgyLDE1LjM2NTc1IDAuMjk1NjA3OTA1LDE2LjI0MjcyMDEgTDEuNDY4MTg1OTMsMTYuNDM5NzkyIEMxLjU2NjcyMTg5LDE2LjgzMzkzNTkgMS42NjUyNTc4NiwxNy4xMTk2OTAyIDEuNzYzNzkzODMsMTcuNTEzODM0MSBMMC45ODUzNTk2ODIsMTguNDg5MzQwMSBDMS4yODA5Njc1OSwxOS4xNjkyMzgzIDEuNjY1MjU3ODYsMTkuOTU3NTI2MSAyLjE1NzkzNzcsMjAuNTM4ODg4MyBMMy40MjkwNTE2OSwyMC4zNDE4MTYzIEMzLjYyNjEyMzYzLDIwLjYzNzQyNDMgMy45MjE3MzE1MywyMC45MzMwMzIyIDQuMTA4OTQ5ODcsMjEuMTIwMjUwNSBMMy45MTE4Nzc5NCwyMi4yOTI4Mjg1IEM0LjUwMzA5Mzc1LDIyLjc4NTUwODQgNS4xODI5OTE5MywyMy4yNjgzMzQ2IDUuODYyODkwMTEsMjMuNjYyNDc4NSBMNi44MzgzOTYxOSwyMi45ODI1ODAzIEM3LjEzNDAwNDEsMjMuMTc5NjUyMiA3LjUxODI5NDM3LDIzLjI3ODE4ODIgNy44MTM5MDIyOCwyMy40NzUyNjAxIEw4LjAxMDk3NDIxLDI0LjY0NzgzODIgQzguNzg5NDA4MzYsMjQuOTQzNDQ2MSA5LjU3NzY5NjExLDI1LjA0MTk4MiAxMC4zNTYxMzAzLDI1LjE0MDUxOCBMMTEuMDM2MDI4NCwyNC4xNjUwMTE5IEMxMS40MzAxNzIzLDI0LjE2NTAxMTkgMTEuNzE1OTI2NiwyNC4xNjUwMTE5IDEyLjExMDA3MDUsMjQuMTY1MDExOSBMMTIuNzg5OTY4NywyNS4xNDA1MTggQzEzLjU2ODQwMjgsMjUuMDQxOTgyIDE0LjM1NjY5MDYsMjQuODQ0OTEwMSAxNS4xMzUxMjQ3LDI0LjY0NzgzODIgTDE1LjMzMjE5NjYsMjMuNDc1MjYwMSBDMTUuNjI3ODA0NiwyMy4zNzY3MjQyIDE2LjAxMjA5NDgsMjMuMTc5NjUyMiAxNi4zMDc3MDI3LDIyLjk4MjU4MDMgTDE3LjI4MzIwODgsMjMuNjYyNDc4NSBDMTcuOTYzMTA3LDIzLjI2ODMzNDYgMTguNjUyODU4OCwyMi43ODU1MDg0IDE5LjIzNDIyMSwyMi4xOTQyOTI2IEwxOC45Mzg2MTMxLDIxLjAyMTcxNDUgQzE5LjIzNDIyMSwyMC43MjYxMDY2IDE5LjQzMTI5MjksMjAuNTI5MDM0NyAxOS42MTg1MTEzLDIwLjI0MzI4MDQgTDIwLjc5MTA4OTMsMjAuNDQwMzUyMyBDMjEuMjgzNzY5MSwxOS43NjA0NTQxIDIxLjY2ODA1OTQsMTkuMDcwNzAyNCAyMS45NjM2NjczLDE4LjM5MDgwNDIgTDIxLjI4Mzc2OTEsMTcuNTEzODM0MSBDMjEuMzgyMzA1MSwxNy4yMTgyMjYyIDIxLjQ4MDg0MTEsMTYuODMzOTM1OSAyMS41NzkzNzcsMTYuNDM5NzkyIEwyMi43NjE4MDg3LDE2LjE0NDE4NDEgWiBNMTEuNTE4ODU0NywyMC4yNDMyODA0IEM3LjkwMjU4NDY1LDIwLjI0MzI4MDQgNC45NjYyMTI4LDE3LjMwNjkwODUgNC45NjYyMTI4LDEzLjY5MDYzODUgQzQuOTY2MjEyOCwxMC4wNzQzNjg1IDcuOTAyNTg0NjUsNy4xMzc5OTY2MSAxMS41MTg4NTQ3LDcuMTM3OTk2NjEgQzE1LjEzNTEyNDcsNy4xMzc5OTY2MSAxOC4wNzE0OTY2LDEwLjA3NDM2ODUgMTguMDcxNDk2NiwxMy42OTA2Mzg1IEMxOC4wNzE0OTY2LDE3LjMwNjkwODUgMTUuMTM1MTI0NywyMC4yNDMyODA0IDExLjUxODg1NDcsMjAuMjQzMjgwNCBaIgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPHBhdGgKICAgICAgICAgICAgICAgIGQ9Ik0yMi43NjE4MDg3LDMuOTE1ODcwNDUgQzIwLjYxMzcyNDUsNC4wMTQ0MDY0MiAxOS41Mzk2ODI1LDIuMTUyMDc2NjIgMTkuNTM5NjgyNSwyLjE1MjA3NjYyIEMxOS40NDExNDY1LDEuOTU1MDA0NjkgMTkuMDQ3MDAyNywxLjg1NjQ2ODcyIDE4Ljg1OTc4NDMsMS45NTUwMDQ2OSBDMTguNjYyNzEyNCwyLjA1MzU0MDY1IDE4LjU2NDE3NjQsMi40NDc2ODQ1MyAxOC42NjI3MTI0LDIuNjM0OTAyODcgQzE4Ljc2MTI0ODMsMi43MzM0Mzg4MyAyMC4xMzA4OTgzLDUuMDc4NTk0ODggMjIuODcwMTk4Miw0Ljk4MDA1ODkxIEMyMy4xNjU4MDYxLDQuOTgwMDU4OTEgMjMuMzYyODc4MSw0LjY4NDQ1MSAyMy4zNjI4NzgxLDQuNDg3Mzc5MDcgQzIzLjI0NDYzNDksNC4xMTI5NDIzOSAyMy4wNTc0MTY2LDMuOTE1ODcwNDUgMjIuNzYxODA4NywzLjkxNTg3MDQ1IgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPHBhdGgKICAgICAgICAgICAgICAgIGQ9Ik00Ni42MTczNjY1LDE3Ljg5ODEyNDMgTDQ2LjYxNzM2NjUsMTcuODk4MTI0MyBMNDYuNjE3MzY2NSwxMi43MTUxMzI0IEw0Ni42MTczNjY1LDMuMTM3NDM2MyBDNDYuNjE3MzY2NSwyLjQ1NzUzODEyIDQ2LjAyNjE1MDcsMS43Njc3ODYzNSA0NS4yNDc3MTY2LDEuNzY3Nzg2MzUgTDQzLjg3ODA2NjYsMS43Njc3ODYzNSBMNDMuODc4MDY2Niw3LjYzMDY3NjQ1IEM0My44NzgwNjY2LDcuOTI2Mjg0MzYgNDMuNjgwOTk0Nyw4LjEyMzM1NjI5IDQzLjM4NTM4NjgsOC4xMjMzNTYyOSBDNDMuMDg5Nzc4OSw4LjEyMzM1NjI5IDQyLjg5MjcwNyw3LjkyNjI4NDM2IDQyLjg5MjcwNyw3LjYzMDY3NjQ1IEw0Mi44OTI3MDcsMS43Njc3ODYzNSBMNDAuNzQ0NjIyOCwxLjc2Nzc4NjM1IEw0MC43NDQ2MjI4LDcuNjMwNjc2NDUgQzQwLjc0NDYyMjgsNy45MjYyODQzNiA0MC41NDc1NTA5LDguMTIzMzU2MjkgNDAuMjUxOTQzLDguMTIzMzU2MjkgQzM5Ljk1NjMzNTEsOC4xMjMzNTYyOSAzOS43NTkyNjMyLDcuOTI2Mjg0MzYgMzkuNzU5MjYzMiw3LjYzMDY3NjQ1IEwzOS43NTkyNjMyLDEuNzY3Nzg2MzUgTDM3LjYxMTE3OTEsMS43Njc3ODYzNSBMMzcuNjExMTc5MSw3LjYzMDY3NjQ1IEMzNy42MTExNzkxLDcuOTI2Mjg0MzYgMzcuNDE0MTA3MSw4LjEyMzM1NjI5IDM3LjExODQ5OTIsOC4xMjMzNTYyOSBDMzYuODIyODkxMyw4LjEyMzM1NjI5IDM2LjYyNTgxOTQsNy45MjYyODQzNiAzNi42MjU4MTk0LDcuNjMwNjc2NDUgTDM2LjYyNTgxOTQsMS43Njc3ODYzNSBMMzQuNDc3NzM1MywxLjc2Nzc4NjM1IEwzNC40Nzc3MzUzLDcuNjMwNjc2NDUgQzM0LjQ3NzczNTMsNy45MjYyODQzNiAzNC4yODA2NjMzLDguMTIzMzU2MjkgMzMuOTg1MDU1NCw4LjEyMzM1NjI5IEMzMy42ODk0NDc1LDguMTIzMzU2MjkgMzMuNDkyMzc1Niw3LjkyNjI4NDM2IDMzLjQ5MjM3NTYsNy42MzA2NzY0NSBMMzMuNDkyMzc1NiwxLjc2Nzc4NjM1IEwyOC45OTkxMzU0LDEuNzY3Nzg2MzUgQzI4LjMxOTIzNzMsMS43Njc3ODYzNSAyNy42Mjk0ODU1LDIuMzU5MDAyMTYgMjcuNjI5NDg1NSwzLjEzNzQzNjMgTDI3LjYyOTQ4NTUsNS4wODg0NDg0NyBMMjUuODY1NjkxNiwxLjU3MDcxNDQxIEwyNi45Mzk3MzM3LDAuOTc5NDk4NiBDMjcuMjM1MzQxNiwwLjg4MDk2MjYzMiAyNy4zMzM4Nzc2LDAuNTg1MzU0NzI4IDI3LjEzNjgwNTYsMC4yOTk2MDA0MiBDMjcuMDM4MjY5NywwLjAwMzk5MjUxNTMzIDI2Ljc0MjY2MTgsLTAuMDk0NTQzNDUyOSAyNi40NTY5MDc1LDAuMTAyNTI4NDg0IEwyMy4yMzQ3ODEzLDEuNzY3Nzg2MzUgQzIyLjkzOTE3MzQsMS44NjYzMjIzMSAyMi44NDA2Mzc0LDIuMTYxOTMwMjIgMjMuMDM3NzA5NCwyLjQ0NzY4NDUzIEMyMy4xMzYyNDUzLDIuNzQzMjkyNDMgMjMuNDMxODUzMiwyLjg0MTgyODQgMjMuNzE3NjA3NSwyLjY0NDc1NjQ2IEwyNC43OTE2NDk2LDIuMDUzNTQwNjUgTDI2LjkzOTczMzcsNi4xNjI0OTA1MyBMMjEuMTc1Mzc5Niw2LjE2MjQ5MDUzIEwyMS4xNzUzNzk2LDYuMTYyNDkwNTMgQzIxLjE3NTM3OTYsNi4yNjEwMjY1IDIxLjI3MzkxNTUsNi4yNjEwMjY1IDIxLjI3MzkxNTUsNi4zNTk1NjI0NiBMMjEuNjY4MDU5NCw2Ljg1MjI0MjMgQzIxLjY2ODA1OTQsNi44NTIyNDIzIDIxLjI3MzkxNTUsNy42MzA2NzY0NSAyMS4wNzY4NDM2LDcuOTI2Mjg0MzYgTDIxLjA3Njg0MzYsNy45MjYyODQzNiBDMjEuMzcyNDUxNSw3LjkyNjI4NDM2IDIyLjM0Nzk1NzYsOC4wMjQ4MjAzMyAyMi4zNDc5NTc2LDguMDI0ODIwMzMgTDIyLjY0MzU2NTUsOC42MTYwMzYxMyBDMjMuMDM3NzA5NCw5LjQ5MzAwNjI1IDIzLjMyMzQ2MzcsMTAuMjgxMjk0IDIzLjQyMTk5OTYsMTEuMTU4MjY0MSBMMjMuNTIwNTM1NiwxMS43NDk0Nzk5IEMyMy41MjA1MzU2LDExLjc0OTQ3OTkgMjIuNzQyMTAxNSwxMi4zNDA2OTU3IDIyLjU0NTAyOTUsMTIuNTI3OTE0MSBDMjIuODQwNjM3NCwxMi42MjY0NSAyMy43MTc2MDc1LDEzLjExOTEyOTkgMjMuNzE3NjA3NSwxMy4xMTkxMjk5IEwyMy43MTc2MDc1LDEzLjcxMDM0NTcgQzIzLjcxNzYwNzUsMTQuNTg3MzE1OCAyMy42MTkwNzE2LDE1LjQ3NDEzOTUgMjMuNDIxOTk5NiwxNi4zNTExMDk2IEwyMy4zMjM0NjM3LDE2Ljk0MjMyNTQgQzIzLjMyMzQ2MzcsMTYuOTQyMzI1NCAyMi40NDY0OTM2LDE3LjEzOTM5NzQgMjIuMDUyMzQ5NywxNy4yMzc5MzM0IEMyMi4yNDk0MjE2LDE3LjUzMzU0MTMgMjIuODMwNzgzOCwxOC4yMTM0Mzk0IDIyLjgzMDc4MzgsMTguMjEzNDM5NCBMMjIuNTM1MTc1OSwxOC44MDQ2NTUyIEMyMi40MzY2NCwxOC45MDMxOTEyIDIyLjQzNjY0LDE5LjEwMDI2MzIgMjIuNDM2NjQsMTkuMTk4Nzk5MSBMMzMuMTg2OTE0MSwxOS4xOTg3OTkxIEMzMy40ODI1MjIsMTYuNTU4MDM1MiAzNS41MzIwNzAxLDE0LjUwODQ4NyAzOC41NjY5Nzc5LDE0LjUwODQ4NyBDNDEuNTAzMzQ5OCwxNC41MDg0ODcgNDMuNzQ5OTY5OSwxNi40NTk0OTkyIDQ0LjE0NDExMzcsMTkuMTk4Nzk5MSBMNDUuMjE4MTU1OCwxOS4xOTg3OTkxIEw0NS4yMTgxNTU4LDE5LjE5ODc5OTEgQzQ2LjAyNjE1MDcsMTkuMTY5MjM4MyA0Ni42MTczNjY1LDE4LjU4Nzg3NjEgNDYuNjE3MzY2NSwxNy44OTgxMjQzIgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICAgIDwvc3ZnPgo=") center / contain no-repeat;
+        mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ni42MTczNjY1IDI1LjE0MDUxOCI+CiAgICAgICAgPGcgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgICA8ZwogICAgICAgICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDAuMDAwMDAwLCAtODAuMDAwMDAwKSIKICAgICAgICAgICAgZmlsbD0iI0ZGRkZGRiIKICAgICAgICAgICAgZmlsbC1ydWxlPSJub256ZXJvIgogICAgICAgICAgPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MC4wMDAwMDAsIDgwLjAwMDAwMCkiPgogICAgICAgICAgICAgIDxwYXRoCiAgICAgICAgICAgICAgICBkPSJNMzguNzkzNjEwNywxNS4yNTczNjA0IEMzNi4xNTI4NDY3LDE1LjI1NzM2MDQgMzQuMDA0NzYyNiwxNy40MDU0NDQ1IDM0LjAwNDc2MjYsMjAuMDQ2MjA4NCBDMzQuMDA0NzYyNiwyMi42ODY5NzI0IDM2LjE1Mjg0NjcsMjQuODM1MDU2NSAzOC43OTM2MTA3LDI0LjgzNTA1NjUgQzQxLjQzNDM3NDYsMjQuODM1MDU2NSA0My41ODI0NTg3LDIyLjY4Njk3MjQgNDMuNTgyNDU4NywyMC4wNDYyMDg0IEM0My40ODM5MjI4LDE3LjQxNTI5ODEgNDEuMzM1ODM4NywxNS4yNTczNjA0IDM4Ljc5MzYxMDcsMTUuMjU3MzYwNCBaIE0zOC43OTM2MTA3LDIyLjMwMjY4MjEgQzM3LjUyMjQ5NjcsMjIuMzAyNjgyMSAzNi41NDY5OTA2LDIxLjMyNzE3NiAzNi41NDY5OTA2LDIwLjA1NjA2MiBDMzYuNTQ2OTkwNiwxOC43ODQ5NDgxIDM3LjUyMjQ5NjcsMTcuODA5NDQyIDM4Ljc5MzYxMDcsMTcuODA5NDQyIEM0MC4wNjQ3MjQ3LDE3LjgwOTQ0MiA0MS4wNDAyMzA4LDE4Ljc4NDk0ODEgNDEuMDQwMjMwOCwyMC4wNTYwNjIgQzQxLjA0MDIzMDgsMjEuMjE4Nzg2NSAzOS45NjYxODg3LDIyLjMwMjY4MjEgMzguNzkzNjEwNywyMi4zMDI2ODIxIFoiCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8cGF0aAogICAgICAgICAgICAgICAgZD0iTTE0LjgzOTUxNjgsMTMuNzAwNDkyMSBDMTQuODM5NTE2OCwxMS45MzY2OTgzIDEzLjM3MTMzMDksMTAuNDc4MzY1OSAxMS42MTczOTA2LDEwLjQ3ODM2NTkgQzkuNzU1MDYwODUsMTAuNDc4MzY1OSA4LjM5NTI2NDQ5LDExLjk0NjU1MTkgOC4zOTUyNjQ0OSwxMy43MDA0OTIxIEM4LjM5NTI2NDQ5LDE1LjQ1NDQzMjMgOS44NjM0NTA0MiwxNy4wMjExNTQyIDExLjYxNzM5MDYsMTcuMDIxMTU0MiBDMTMuMzcxMzMwOSwxNy4wMjExNTQyIDE0LjgzOTUxNjgsMTUuNTUyOTY4MyAxNC44Mzk1MTY4LDEzLjcwMDQ5MjEiCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8cGF0aAogICAgICAgICAgICAgICAgZD0iTTIyLjc2MTgwODcsMTYuMTQ0MTg0MSBDMjIuOTU4ODgwNiwxNS4zNjU3NSAyMy4wNTc0MTY2LDE0LjU3NzQ2MjIgMjMuMDU3NDE2NiwxMy43MDA0OTIxIEwyMS45ODMzNzQ1LDEzLjEwOTI3NjMgQzIxLjk4MzM3NDUsMTIuNzE1MTMyNCAyMS44ODQ4Mzg1LDEyLjQyOTM3ODEgMjEuODg0ODM4NSwxMi4wMzUyMzQyIEwyMi43NjE4MDg3LDExLjI1NjgwMDEgQzIyLjU2NDczNjcsMTAuNDc4MzY1OSAyMi4zNjc2NjQ4LDkuNjkwMDc4MTkgMjEuOTgzMzc0NSw4LjkxMTY0NDA0IEwyMC44MTA3OTY1LDguODEzMTA4MDcgQzIwLjYxMzcyNDUsOC41MTc1MDAxNyAyMC40MTY2NTI2LDguMTMzMjA5ODkgMjAuMjE5NTgwNyw3LjgzNzYwMTk5IEwyMC43MTIyNjA1LDYuNzYzNTU5OTMgQzIwLjIxOTU4MDcsNi4wODM2NjE3NSAxOS43MzY3NTQ0LDUuNDkyNDQ1OTQgMTkuMTQ1NTM4Niw0Ljk5OTc2NjEgTDE4LjA3MTQ5NjYsNS4zOTM5MDk5OCBDMTcuNzc1ODg4Nyw1LjE5NjgzODA0IDE3LjQ4MDI4MDgsNC45MDEyMzAxMyAxNy4xOTQ1MjY0LDQuNzE0MDExNzkgTDE3LjI5MzA2MjQsMy41NDE0MzM3NyBDMTYuNjEzMTY0MiwzLjE0NzI4OTkgMTUuODI0ODc2NSwyLjc2Mjk5OTYyIDE1LjA0NjQ0MjMsMi41NjU5Mjc2OSBMMTQuMTY5NDcyMiwzLjQ0Mjg5NzgxIEMxMy43NzUzMjg0LDMuMzQ0MzYxODQgMTMuNDg5NTc0LDMuMjQ1ODI1ODcgMTMuMDk1NDMwMiwzLjI0NTgyNTg3IEwxMi43MDEyODYzLDIuMTcxNzgzODIgQzExLjkyMjg1MjIsMi4wNzMyNDc4NSAxMS4xMzQ1NjQ0LDIuMDczMjQ3ODUgMTAuMjU3NTk0MywyLjE3MTc4MzgyIEw5Ljg2MzQ1MDQyLDMuMjQ1ODI1ODcgQzkuNDY5MzA2NTQsMy4zNDQzNjE4NCA5LjE4MzU1MjI0LDMuMzQ0MzYxODQgOC43ODk0MDgzNiwzLjQ0Mjg5NzgxIEw4LjAxMDk3NDIxLDIuNzYyOTk5NjIgQzcuMjMyNTQwMDYsMy4wNTg2MDc1MyA2LjU0Mjc4ODI5LDMuMzU0MjE1NDMgNS43NjQzNTQxNCwzLjczODUwNTcxIEw1Ljg2Mjg5MDExLDQuOTExMDgzNzMgQzUuNTY3MjgyMiw1LjEwODE1NTY3IDUuMjcxNjc0Myw1LjMwNTIyNzYgNC45ODU5MTk5OSw1LjU5MDk4MTkxIEwzLjkxMTg3Nzk0LDUuMTk2ODM4MDQgQzMuMzIwNjYyMTMsNS42ODk1MTc4OCAyLjczOTI5OTkyLDYuMzY5NDE2MDYgMi4yNDY2MjAwNyw2Ljk2MDYzMTg3IEwyLjgzNzgzNTg4LDguMDM0NjczOTIgQzIuNjQwNzYzOTUsOC4zMzAyODE4MyAyLjQ0MzY5MjAxLDguNjI1ODg5NzMgMi4yNDY2MjAwNyw5LjAxMDE4MDAxIEwxLjA3NDA0MjA1LDkuMTA4NzE1OTggQzAuNzc4NDM0MTQ5LDkuNzg4NjE0MTYgMC40ODI4MjYyNDQsMTAuNTc2OTAxOSAwLjI5NTYwNzkwNSwxMS4zNTUzMzYxIEwxLjE3MjU3ODAyLDEyLjEzMzc3MDIgQzEuMDc0MDQyMDUsMTIuNTI3OTE0MSAxLjA3NDA0MjA1LDEyLjgxMzY2ODQgMS4wNzQwNDIwNSwxMy4yMDc4MTIzIEwtMi44MDA1NjA2NmUtMTUsMTMuNzk5MDI4MSBDLTIuODAwNTYwNjZlLTE1LDE0LjU3NzQ2MjIgMC4wOTg1MzU5NjgyLDE1LjM2NTc1IDAuMjk1NjA3OTA1LDE2LjI0MjcyMDEgTDEuNDY4MTg1OTMsMTYuNDM5NzkyIEMxLjU2NjcyMTg5LDE2LjgzMzkzNTkgMS42NjUyNTc4NiwxNy4xMTk2OTAyIDEuNzYzNzkzODMsMTcuNTEzODM0MSBMMC45ODUzNTk2ODIsMTguNDg5MzQwMSBDMS4yODA5Njc1OSwxOS4xNjkyMzgzIDEuNjY1MjU3ODYsMTkuOTU3NTI2MSAyLjE1NzkzNzcsMjAuNTM4ODg4MyBMMy40MjkwNTE2OSwyMC4zNDE4MTYzIEMzLjYyNjEyMzYzLDIwLjYzNzQyNDMgMy45MjE3MzE1MywyMC45MzMwMzIyIDQuMTA4OTQ5ODcsMjEuMTIwMjUwNSBMMy45MTE4Nzc5NCwyMi4yOTI4Mjg1IEM0LjUwMzA5Mzc1LDIyLjc4NTUwODQgNS4xODI5OTE5MywyMy4yNjgzMzQ2IDUuODYyODkwMTEsMjMuNjYyNDc4NSBMNi44MzgzOTYxOSwyMi45ODI1ODAzIEM3LjEzNDAwNDEsMjMuMTc5NjUyMiA3LjUxODI5NDM3LDIzLjI3ODE4ODIgNy44MTM5MDIyOCwyMy40NzUyNjAxIEw4LjAxMDk3NDIxLDI0LjY0NzgzODIgQzguNzg5NDA4MzYsMjQuOTQzNDQ2MSA5LjU3NzY5NjExLDI1LjA0MTk4MiAxMC4zNTYxMzAzLDI1LjE0MDUxOCBMMTEuMDM2MDI4NCwyNC4xNjUwMTE5IEMxMS40MzAxNzIzLDI0LjE2NTAxMTkgMTEuNzE1OTI2NiwyNC4xNjUwMTE5IDEyLjExMDA3MDUsMjQuMTY1MDExOSBMMTIuNzg5OTY4NywyNS4xNDA1MTggQzEzLjU2ODQwMjgsMjUuMDQxOTgyIDE0LjM1NjY5MDYsMjQuODQ0OTEwMSAxNS4xMzUxMjQ3LDI0LjY0NzgzODIgTDE1LjMzMjE5NjYsMjMuNDc1MjYwMSBDMTUuNjI3ODA0NiwyMy4zNzY3MjQyIDE2LjAxMjA5NDgsMjMuMTc5NjUyMiAxNi4zMDc3MDI3LDIyLjk4MjU4MDMgTDE3LjI4MzIwODgsMjMuNjYyNDc4NSBDMTcuOTYzMTA3LDIzLjI2ODMzNDYgMTguNjUyODU4OCwyMi43ODU1MDg0IDE5LjIzNDIyMSwyMi4xOTQyOTI2IEwxOC45Mzg2MTMxLDIxLjAyMTcxNDUgQzE5LjIzNDIyMSwyMC43MjYxMDY2IDE5LjQzMTI5MjksMjAuNTI5MDM0NyAxOS42MTg1MTEzLDIwLjI0MzI4MDQgTDIwLjc5MTA4OTMsMjAuNDQwMzUyMyBDMjEuMjgzNzY5MSwxOS43NjA0NTQxIDIxLjY2ODA1OTQsMTkuMDcwNzAyNCAyMS45NjM2NjczLDE4LjM5MDgwNDIgTDIxLjI4Mzc2OTEsMTcuNTEzODM0MSBDMjEuMzgyMzA1MSwxNy4yMTgyMjYyIDIxLjQ4MDg0MTEsMTYuODMzOTM1OSAyMS41NzkzNzcsMTYuNDM5NzkyIEwyMi43NjE4MDg3LDE2LjE0NDE4NDEgWiBNMTEuNTE4ODU0NywyMC4yNDMyODA0IEM3LjkwMjU4NDY1LDIwLjI0MzI4MDQgNC45NjYyMTI4LDE3LjMwNjkwODUgNC45NjYyMTI4LDEzLjY5MDYzODUgQzQuOTY2MjEyOCwxMC4wNzQzNjg1IDcuOTAyNTg0NjUsNy4xMzc5OTY2MSAxMS41MTg4NTQ3LDcuMTM3OTk2NjEgQzE1LjEzNTEyNDcsNy4xMzc5OTY2MSAxOC4wNzE0OTY2LDEwLjA3NDM2ODUgMTguMDcxNDk2NiwxMy42OTA2Mzg1IEMxOC4wNzE0OTY2LDE3LjMwNjkwODUgMTUuMTM1MTI0NywyMC4yNDMyODA0IDExLjUxODg1NDcsMjAuMjQzMjgwNCBaIgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPHBhdGgKICAgICAgICAgICAgICAgIGQ9Ik0yMi43NjE4MDg3LDMuOTE1ODcwNDUgQzIwLjYxMzcyNDUsNC4wMTQ0MDY0MiAxOS41Mzk2ODI1LDIuMTUyMDc2NjIgMTkuNTM5NjgyNSwyLjE1MjA3NjYyIEMxOS40NDExNDY1LDEuOTU1MDA0NjkgMTkuMDQ3MDAyNywxLjg1NjQ2ODcyIDE4Ljg1OTc4NDMsMS45NTUwMDQ2OSBDMTguNjYyNzEyNCwyLjA1MzU0MDY1IDE4LjU2NDE3NjQsMi40NDc2ODQ1MyAxOC42NjI3MTI0LDIuNjM0OTAyODcgQzE4Ljc2MTI0ODMsMi43MzM0Mzg4MyAyMC4xMzA4OTgzLDUuMDc4NTk0ODggMjIuODcwMTk4Miw0Ljk4MDA1ODkxIEMyMy4xNjU4MDYxLDQuOTgwMDU4OTEgMjMuMzYyODc4MSw0LjY4NDQ1MSAyMy4zNjI4NzgxLDQuNDg3Mzc5MDcgQzIzLjI0NDYzNDksNC4xMTI5NDIzOSAyMy4wNTc0MTY2LDMuOTE1ODcwNDUgMjIuNzYxODA4NywzLjkxNTg3MDQ1IgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgPHBhdGgKICAgICAgICAgICAgICAgIGQ9Ik00Ni42MTczNjY1LDE3Ljg5ODEyNDMgTDQ2LjYxNzM2NjUsMTcuODk4MTI0MyBMNDYuNjE3MzY2NSwxMi43MTUxMzI0IEw0Ni42MTczNjY1LDMuMTM3NDM2MyBDNDYuNjE3MzY2NSwyLjQ1NzUzODEyIDQ2LjAyNjE1MDcsMS43Njc3ODYzNSA0NS4yNDc3MTY2LDEuNzY3Nzg2MzUgTDQzLjg3ODA2NjYsMS43Njc3ODYzNSBMNDMuODc4MDY2Niw3LjYzMDY3NjQ1IEM0My44NzgwNjY2LDcuOTI2Mjg0MzYgNDMuNjgwOTk0Nyw4LjEyMzM1NjI5IDQzLjM4NTM4NjgsOC4xMjMzNTYyOSBDNDMuMDg5Nzc4OSw4LjEyMzM1NjI5IDQyLjg5MjcwNyw3LjkyNjI4NDM2IDQyLjg5MjcwNyw3LjYzMDY3NjQ1IEw0Mi44OTI3MDcsMS43Njc3ODYzNSBMNDAuNzQ0NjIyOCwxLjc2Nzc4NjM1IEw0MC43NDQ2MjI4LDcuNjMwNjc2NDUgQzQwLjc0NDYyMjgsNy45MjYyODQzNiA0MC41NDc1NTA5LDguMTIzMzU2MjkgNDAuMjUxOTQzLDguMTIzMzU2MjkgQzM5Ljk1NjMzNTEsOC4xMjMzNTYyOSAzOS43NTkyNjMyLDcuOTI2Mjg0MzYgMzkuNzU5MjYzMiw3LjYzMDY3NjQ1IEwzOS43NTkyNjMyLDEuNzY3Nzg2MzUgTDM3LjYxMTE3OTEsMS43Njc3ODYzNSBMMzcuNjExMTc5MSw3LjYzMDY3NjQ1IEMzNy42MTExNzkxLDcuOTI2Mjg0MzYgMzcuNDE0MTA3MSw4LjEyMzM1NjI5IDM3LjExODQ5OTIsOC4xMjMzNTYyOSBDMzYuODIyODkxMyw4LjEyMzM1NjI5IDM2LjYyNTgxOTQsNy45MjYyODQzNiAzNi42MjU4MTk0LDcuNjMwNjc2NDUgTDM2LjYyNTgxOTQsMS43Njc3ODYzNSBMMzQuNDc3NzM1MywxLjc2Nzc4NjM1IEwzNC40Nzc3MzUzLDcuNjMwNjc2NDUgQzM0LjQ3NzczNTMsNy45MjYyODQzNiAzNC4yODA2NjMzLDguMTIzMzU2MjkgMzMuOTg1MDU1NCw4LjEyMzM1NjI5IEMzMy42ODk0NDc1LDguMTIzMzU2MjkgMzMuNDkyMzc1Niw3LjkyNjI4NDM2IDMzLjQ5MjM3NTYsNy42MzA2NzY0NSBMMzMuNDkyMzc1NiwxLjc2Nzc4NjM1IEwyOC45OTkxMzU0LDEuNzY3Nzg2MzUgQzI4LjMxOTIzNzMsMS43Njc3ODYzNSAyNy42Mjk0ODU1LDIuMzU5MDAyMTYgMjcuNjI5NDg1NSwzLjEzNzQzNjMgTDI3LjYyOTQ4NTUsNS4wODg0NDg0NyBMMjUuODY1NjkxNiwxLjU3MDcxNDQxIEwyNi45Mzk3MzM3LDAuOTc5NDk4NiBDMjcuMjM1MzQxNiwwLjg4MDk2MjYzMiAyNy4zMzM4Nzc2LDAuNTg1MzU0NzI4IDI3LjEzNjgwNTYsMC4yOTk2MDA0MiBDMjcuMDM4MjY5NywwLjAwMzk5MjUxNTMzIDI2Ljc0MjY2MTgsLTAuMDk0NTQzNDUyOSAyNi40NTY5MDc1LDAuMTAyNTI4NDg0IEwyMy4yMzQ3ODEzLDEuNzY3Nzg2MzUgQzIyLjkzOTE3MzQsMS44NjYzMjIzMSAyMi44NDA2Mzc0LDIuMTYxOTMwMjIgMjMuMDM3NzA5NCwyLjQ0NzY4NDUzIEMyMy4xMzYyNDUzLDIuNzQzMjkyNDMgMjMuNDMxODUzMiwyLjg0MTgyODQgMjMuNzE3NjA3NSwyLjY0NDc1NjQ2IEwyNC43OTE2NDk2LDIuMDUzNTQwNjUgTDI2LjkzOTczMzcsNi4xNjI0OTA1MyBMMjEuMTc1Mzc5Niw2LjE2MjQ5MDUzIEwyMS4xNzUzNzk2LDYuMTYyNDkwNTMgQzIxLjE3NTM3OTYsNi4yNjEwMjY1IDIxLjI3MzkxNTUsNi4yNjEwMjY1IDIxLjI3MzkxNTUsNi4zNTk1NjI0NiBMMjEuNjY4MDU5NCw2Ljg1MjI0MjMgQzIxLjY2ODA1OTQsNi44NTIyNDIzIDIxLjI3MzkxNTUsNy42MzA2NzY0NSAyMS4wNzY4NDM2LDcuOTI2Mjg0MzYgTDIxLjA3Njg0MzYsNy45MjYyODQzNiBDMjEuMzcyNDUxNSw3LjkyNjI4NDM2IDIyLjM0Nzk1NzYsOC4wMjQ4MjAzMyAyMi4zNDc5NTc2LDguMDI0ODIwMzMgTDIyLjY0MzU2NTUsOC42MTYwMzYxMyBDMjMuMDM3NzA5NCw5LjQ5MzAwNjI1IDIzLjMyMzQ2MzcsMTAuMjgxMjk0IDIzLjQyMTk5OTYsMTEuMTU4MjY0MSBMMjMuNTIwNTM1NiwxMS43NDk0Nzk5IEMyMy41MjA1MzU2LDExLjc0OTQ3OTkgMjIuNzQyMTAxNSwxMi4zNDA2OTU3IDIyLjU0NTAyOTUsMTIuNTI3OTE0MSBDMjIuODQwNjM3NCwxMi42MjY0NSAyMy43MTc2MDc1LDEzLjExOTEyOTkgMjMuNzE3NjA3NSwxMy4xMTkxMjk5IEwyMy43MTc2MDc1LDEzLjcxMDM0NTcgQzIzLjcxNzYwNzUsMTQuNTg3MzE1OCAyMy42MTkwNzE2LDE1LjQ3NDEzOTUgMjMuNDIxOTk5NiwxNi4zNTExMDk2IEwyMy4zMjM0NjM3LDE2Ljk0MjMyNTQgQzIzLjMyMzQ2MzcsMTYuOTQyMzI1NCAyMi40NDY0OTM2LDE3LjEzOTM5NzQgMjIuMDUyMzQ5NywxNy4yMzc5MzM0IEMyMi4yNDk0MjE2LDE3LjUzMzU0MTMgMjIuODMwNzgzOCwxOC4yMTM0Mzk0IDIyLjgzMDc4MzgsMTguMjEzNDM5NCBMMjIuNTM1MTc1OSwxOC44MDQ2NTUyIEMyMi40MzY2NCwxOC45MDMxOTEyIDIyLjQzNjY0LDE5LjEwMDI2MzIgMjIuNDM2NjQsMTkuMTk4Nzk5MSBMMzMuMTg2OTE0MSwxOS4xOTg3OTkxIEMzMy40ODI1MjIsMTYuNTU4MDM1MiAzNS41MzIwNzAxLDE0LjUwODQ4NyAzOC41NjY5Nzc5LDE0LjUwODQ4NyBDNDEuNTAzMzQ5OCwxNC41MDg0ODcgNDMuNzQ5OTY5OSwxNi40NTk0OTkyIDQ0LjE0NDExMzcsMTkuMTk4Nzk5MSBMNDUuMjE4MTU1OCwxOS4xOTg3OTkxIEw0NS4yMTgxNTU4LDE5LjE5ODc5OTEgQzQ2LjAyNjE1MDcsMTkuMTY5MjM4MyA0Ni42MTczNjY1LDE4LjU4Nzg3NjEgNDYuNjE3MzY2NSwxNy44OTgxMjQzIgogICAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICAgIDwvc3ZnPgo=") center / contain no-repeat;
+      }
+      /* deck progress: a compact ring with the current slide number */
+      .rail-progress {
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        width: 38px;
+        height: 38px;
+        transform: translateX(-50%);
+        overflow: visible;
+      }
+      .rail-progress .track,
+      .rail-progress .fill {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.5;
+      }
+      .rail-progress .track {
+        opacity: 0.28;
+      }
+      .rail-progress .fill {
+        stroke-linecap: round;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transform: rotate(-90deg);
+        transform-origin: 20px 20px;
+        transition: stroke-dashoffset 320ms ease;
+      }
+      .rail-progress text {
+        fill: currentColor;
+        font-family: var(--font);
+        font-size: 10px;
+        font-weight: 700;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        letter-spacing: 0;
+      }
+
+      /* ============================================================
+   SLIDE
+   ============================================================ */
+      .slide {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        padding: clamp(30px, 5vh, 58px) var(--gutter) clamp(30px, 5vh, 58px)
+          calc(var(--rail) + var(--gutter));
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        background: var(--ground-teach);
+        overflow: hidden;
+      }
+      .slide[data-mode='work'] {
+        background: var(--ground-work);
+      }
+      .slide[data-mode='gate'] {
+        background: var(--ground-gate);
+        color: var(--accent-ink);
+        --rule: color-mix(in srgb, var(--accent-ink) 30%, transparent);
+        --quiet: color-mix(in srgb, var(--accent-ink) 66%, transparent);
+        --accent: #9dbcf2;
+      }
+
+      /* The face holds everything projected. Its column is centred in
+   the usable width, so the slide reads as balanced rather than
+   left-hugging. Text stays left aligned for reading. */
+      .face {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .content,
+      .map {
+        width: 100%;
+        max-width: min(100%, var(--measure));
+        margin-inline: auto;
+      }
+
+      .mode {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        max-width: none;
+        margin: 0 0 clamp(20px, 3.4vh, 40px);
+        font-size: clamp(11px, 0.78cqi, 13px);
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .mode b {
+        padding: 5px 9px;
+        border: 1.5px solid currentColor;
+        font-weight: 700;
+      }
+      .slide[data-mode='teach'] .mode b {
+        color: var(--accent);
+      }
+      .slide[data-mode='work'] .mode b {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+      }
+      .slide[data-mode='gate'] .mode b {
+        background: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+      .mode span {
+        color: var(--quiet);
+        font-weight: 500;
+      }
+
+      /* --- type scale: one family, five sizes -------------------- */
+      .eyebrow {
+        margin: 0 0 clamp(14px, 2.4vh, 26px);
+        font-size: clamp(13px, 1.02cqi, 16px);
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      h1,
+      h2 {
+        margin: 0 0 clamp(18px, 3vh, 34px);
+        font-weight: 500;
+        line-height: 1.02;
+        letter-spacing: -0.032em;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(42px, 5.4cqi, 94px);
+        max-width: 17ch;
+      }
+      h2 {
+        font-size: clamp(34px, 4.2cqi, 70px);
+        max-width: 19ch;
+      }
+      h3 {
+        margin: 0 0 10px;
+        font-size: clamp(20px, 1.95cqi, 32px);
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.015em;
+      }
+      p {
+        margin: 0 0 clamp(12px, 1.8vh, 20px);
+        font-size: clamp(19px, 1.8cqi, 30px);
+        line-height: 1.38;
+        max-width: 46ch;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      .lead {
+        color: var(--quiet);
+      }
+      .instruction {
+        margin-top: clamp(20px, 3.4vh, 38px);
+        padding-top: clamp(14px, 2.2vh, 22px);
+        border-top: 1px solid var(--rule);
+        font-size: clamp(17px, 1.4cqi, 23px);
+        max-width: 52ch;
+      }
+
+      /* --- emphasis: three marks, one of them deferred ----------- */
+      .key {
+        font-weight: 600;
+        box-shadow: inset 0 -0.14em 0
+          color-mix(in srgb, var(--accent) 46%, transparent);
+        transition: box-shadow 180ms ease;
+      }
+      mark {
+        background: color-mix(in srgb, var(--accent) 15%, transparent);
+        color: inherit;
+        box-shadow: inset 0 -0.1em 0
+          color-mix(in srgb, var(--accent) 55%, transparent);
+        padding: 0 0.12em;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        transition:
+          background 180ms ease,
+          box-shadow 180ms ease;
+      }
+      .dim {
+        color: var(--quiet);
+      }
+      /* A deferred mark is completely invisible until cued, not merely unshaded.
+   Weight and padding are neutralised too, or the sentence still points at
+   its own answer before the room has reasoned about it. */
+      [data-cue] {
+        box-shadow: none;
+        background: transparent;
+        font-weight: inherit;
+        padding: 0;
+      }
+      body.cued .key[data-cue] {
+        font-weight: 600;
+        box-shadow: inset 0 -0.14em 0
+          color-mix(in srgb, var(--accent) 46%, transparent);
+      }
+      body.cued mark[data-cue] {
+        background: color-mix(in srgb, var(--accent) 15%, transparent);
+        box-shadow: inset 0 -0.1em 0
+          color-mix(in srgb, var(--accent) 55%, transparent);
+        padding: 0 0.12em;
+      }
+      .reveal[data-cue] {
+        display: none;
+      }
+      body.cued .slide.current .reveal[data-cue] {
+        display: block;
+        margin-top: clamp(20px, 3vh, 32px);
+        padding: clamp(14px, 2vh, 22px) clamp(18px, 2.2cqi, 28px);
+        border-left: 4px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, transparent);
+      }
+      .reveal-label {
+        margin-bottom: 8px;
+        color: var(--accent);
+        font-size: clamp(12px, 0.95cqi, 15px);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .reveal p:last-child {
+        max-width: 55ch;
+        margin-bottom: 0;
+        font-size: clamp(18px, 1.55cqi, 25px);
+      }
+
+      /* --- layouts ---------------------------------------------- */
+      .split {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(24px, 4.2cqi, 72px);
+        align-items: center;
+      }
+      .split h2 {
+        font-size: clamp(32px, 3.8cqi, 60px);
+      }
+      figure {
+        margin: 0;
+      }
+      figure img {
+        display: block;
+        width: 100%;
+        height: min(54vh, 600px);
+        object-fit: contain;
+      }
+      figcaption {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.45;
+        color: var(--quiet);
+        max-width: 52ch;
+      }
+
+      .pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(24px, 4cqi, 68px);
+        margin-top: clamp(16px, 2.6vh, 30px);
+      }
+      .pair > div {
+        padding-top: clamp(12px, 1.8vh, 20px);
+        border-top: 2.5px solid var(--accent);
+      }
+      .pair .label {
+        margin: 0 0 10px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .pair p {
+        font-size: clamp(17px, 1.6cqi, 26px);
+        max-width: 36ch;
+      }
+
+      /* A contrast pair whose two words ARE the teaching: programming vs software
+   engineering, established vs still unknown, verification vs validation.
+   The word is the heading; everything under it is support. */
+      .terms > div {
+        border-top-width: 3.5px;
+      }
+      .term {
+        margin: 0 0 clamp(10px, 1.7vh, 20px);
+        max-width: none;
+        font-size: clamp(26px, 3.1cqi, 52px);
+        font-weight: 400;
+        line-height: 1.06;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .terms h3 {
+        font-size: clamp(19px, 1.75cqi, 29px);
+      }
+      .terms p {
+        font-size: clamp(17px, 1.6cqi, 26px);
+        max-width: 34ch;
+      }
+      .terms h3 + p {
+        font-size: clamp(15px, 1.4cqi, 22px);
+        color: var(--quiet);
+      }
+      /* when the terms carry the weight, the slide's own heading steps back */
+      .slide:has(.terms) h2:not(.term) {
+        font-size: clamp(28px, 3.1cqi, 50px);
+      }
+
+      .trio {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: clamp(16px, 2.6vh, 30px);
+        background: var(--rule);
+        border: 1px solid var(--rule);
+      }
+      .trio > div {
+        padding: clamp(16px, 2.2cqi, 30px);
+        min-height: 10rem;
+        background: var(--ground-teach);
+      }
+      .slide[data-mode='work'] .trio > div {
+        background: var(--ground-work);
+      }
+      .slide[data-mode='gate'] .trio > div {
+        background: var(--ground-gate);
+      }
+      .trio b {
+        display: block;
+        margin-bottom: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .trio span {
+        display: block;
+        font-size: clamp(18px, 1.6cqi, 27px);
+        line-height: 1.16;
+        font-weight: 500;
+      }
+
+      .steps {
+        list-style: none;
+        margin: clamp(16px, 2.6vh, 30px) 0 0;
+        padding: 0;
+        counter-reset: s;
+        max-width: 56ch;
+      }
+      .steps li {
+        counter-increment: s;
+        display: grid;
+        grid-template-columns: 2.4rem 1fr;
+        gap: 14px;
+        align-items: baseline;
+        padding: clamp(8px, 1.3vh, 14px) 0;
+        border-bottom: 1px solid var(--rule);
+        font-size: clamp(18px, 1.6cqi, 27px);
+        line-height: 1.32;
+      }
+      .steps li::before {
+        content: counter(s, decimal-leading-zero);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.07em;
+      }
+
+      .chain {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 10px;
+        margin: clamp(18px, 3vh, 34px) 0 0;
+        padding: 0;
+        font-size: clamp(15px, 1.35cqi, 22px);
+        font-weight: 500;
+      }
+      .chain li:not(:last-child)::after {
+        content: '→';
+        margin-left: 10px;
+        color: var(--accent);
+      }
+
+      .break-word {
+        font-size: clamp(84px, 13.5cqi, 240px);
+        font-weight: 300;
+        letter-spacing: -0.045em;
+        line-height: 0.9;
+        max-width: none;
+      }
+
+      /* ============================================================
+   CONNECTED DECISIONS
+   The sentence is the teaching; the strip is only its picture.
+   One accent, two states. Never an eight-colour code.
+   ============================================================ */
+      .slide:has(.map) .face {
+        padding-bottom: 0;
+      }
+      .map {
+        margin-top: clamp(20px, 3.4vh, 40px);
+        padding-top: clamp(16px, 2.4vh, 26px);
+        border-top: 1px solid var(--rule);
+      }
+      .map-head {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin: 0 0 14px;
+        max-width: none;
+        font-size: clamp(11px, 0.82cqi, 13px);
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--quiet);
+      }
+      .map-claim {
+        margin: 0 0 clamp(14px, 2vh, 22px);
+        max-width: 64ch;
+        font-weight: 500;
+        font-size: clamp(17px, 1.55cqi, 26px);
+        line-height: 1.34;
+        color: var(--accent);
+      }
+      .map ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .map li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        line-height: 1;
+        white-space: nowrap;
+        font-size: clamp(14px, 1.22cqi, 19px);
+        color: var(--quiet);
+      }
+      .map li span {
+        padding: 9px 12px;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+      }
+      .map li:not(:last-child)::after {
+        content: '';
+        width: 16px;
+        height: 1px;
+        background: var(--rule);
+      }
+      .map li.on {
+        color: var(--ink);
+      }
+      .map li.on span {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+        font-weight: 600;
+      }
+      .map li.on::after {
+        background: color-mix(in srgb, var(--accent) 60%, transparent);
+        height: 1.5px;
+      }
+      .slide[data-mode='gate'] .map li.on span {
+        background: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: var(--ground-gate);
+      }
+
+      /* On the slide that introduces it, the map is not a footnote. It is the
+   content, so it is sized as such and every stage reads at full strength. */
+      .map--intro {
+        border-top-width: 2px;
+      }
+      .map--intro .map-head {
+        font-size: clamp(12px, 0.92cqi, 15px);
+        margin-bottom: 20px;
+      }
+      .map--intro ol {
+        gap: 10px 12px;
+      }
+      .map--intro li {
+        font-size: clamp(17px, 1.6cqi, 27px);
+        color: var(--ink);
+      }
+      .map--intro li span {
+        padding: 13px 17px;
+      }
+      .map--intro li:not(:last-child)::after {
+        width: 22px;
+      }
+      .slide:has(.map--intro) h2 {
+        font-size: clamp(30px, 3.4cqi, 54px);
+      }
+
+      /* ============================================================
+   NOTES: a real column that pushes, never an overlay.
+   Student review notes come first. Facilitator notes follow in a
+   visibly separate section and never enter the student PDF.
+   ============================================================ */
+      .sn {
+        display: none;
+      }
+      .notes {
+        grid-column: 2;
+        position: sticky;
+        top: 0;
+        height: 100svh;
+        overflow: auto;
+        background: #fffdf9;
+        border-left: 1px solid var(--rule);
+        color: var(--ink);
+        padding: 26px 26px 40px;
+        min-width: 0;
+      }
+      body:not(.notes-open) .notes {
+        display: none;
+      }
+      .notes h2 {
+        font-size: 19px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.25;
+        margin: 0 0 4px;
+        max-width: none;
+      }
+      .n-loc {
+        margin: 0 0 18px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes h3 {
+        margin: 20px 0 5px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes p,
+      .notes li {
+        font-size: 14.5px;
+        line-height: 1.52;
+        max-width: none;
+        margin: 0 0 8px;
+      }
+      .notes ul {
+        margin: 0 0 8px;
+        padding-left: 1.1rem;
+      }
+      .notes #n-body::before,
+      .notes .fn::before {
+        display: block;
+        margin: 0 0 14px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .notes #n-body::before {
+        content: 'Student review notes';
+      }
+      .notes .fn {
+        margin-top: 28px;
+        padding: 20px 0 0;
+        border-top: 2px solid var(--accent);
+      }
+      .notes .fn::before {
+        content: 'Facilitator notes';
+        color: #8a3f28;
+      }
+      .notes .fn strong { font-weight: 700; color: var(--ink); }
+      .notes .fn .pause { color: var(--muted, #596678); font-size: .9em; }
+      .notes .fn .facilitator-question {
+        padding: 16px 18px;
+        background: var(--ground-work);
+        border-left: 3px solid var(--accent);
+      }
+      .notes .fn .facilitator-question p { margin: 0; }
+      .notes .fn .facilitator-question p + p { margin-top: 10px; }
+      .notes .fn .response-guidance {
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid var(--rule);
+      }
+      .notes .fn .response-label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: #596678;
+      }
+      .notes .fn .question-label {
+        display: block;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 4px 7px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+      .notes .close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--rule);
+        background: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+        line-height: 1;
+      }
+      .notes-body {
+        padding-right: 34px;
+      }
+      .n-cue {
+        margin: 0 0 16px;
+        padding: 10px 13px;
+        border-left: 3px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, transparent);
+        font-size: 13.5px;
+        line-height: 1.45;
+        font-weight: 500;
+      }
+      .n-cue b {
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .sn .n-time,
+      .notes .n-time {
+        margin-top: 26px;
+        padding-top: 12px;
+        border-top: 1px solid var(--rule);
+        font-size: 11.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--quiet);
+      }
+      .n-time span + span::before {
+        content: '·';
+        padding: 0 0.6em;
+        opacity: 0.6;
+      }
+
+      /* ============================================================
+   CONTROLS: present, but out of the way until wanted.
+   ============================================================ */
+      .bar-zone {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 30;
+        padding: 42px 70px 20px 20px;
+        opacity: 0;
+        transition: opacity 180ms ease;
+      }
+      .bar-zone:hover,
+      .bar-zone:focus-within {
+        opacity: 1;
+      }
+      @media (hover: none) {
+        .bar-zone {
+          opacity: 1;
+        }
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        padding: 5px;
+        border-radius: 999px;
+        background: rgba(22, 38, 63, 0.9);
+        color: #fff;
+        box-shadow: 0 12px 40px rgba(22, 38, 63, 0.22);
+        backdrop-filter: blur(10px);
+      }
+      .bar button {
+        min-width: 38px;
+        height: 38px;
+        padding: 0 12px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .bar button:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+      .bar .pos {
+        font-variant-numeric: tabular-nums;
+        font-size: 12px;
+        opacity: 0.72;
+        padding: 0 8px;
+      }
+
+      /* ============================================================
+   NOTES TAB (?view=notes)
+   A second tab showing only the notes. It follows the presenting
+   tab over a BroadcastChannel and can drive it in return.
+   ============================================================ */
+      body.view-notes {
+        grid-template-columns: 1fr;
+      }
+      body.view-notes main,
+      body.view-notes .rail {
+        display: none;
+      }
+      body.view-notes .notes {
+        grid-column: 1;
+        position: static;
+        height: 100svh;
+        border-left: 0;
+        padding: 34px 30px 90px;
+      }
+      body.view-notes .notes .close {
+        display: none;
+      }
+      body.view-notes .notes-body {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding-right: 0;
+      }
+      body.view-notes .notes h2 {
+        font-size: 26px;
+      }
+      body.view-notes .n-loc {
+        font-size: 12px;
+      }
+      body.view-notes .notes h3 {
+        font-size: 12px;
+        margin-top: 26px;
+      }
+      body.view-notes .notes p,
+      body.view-notes .notes li {
+        font-size: 17px;
+        line-height: 1.55;
+      }
+      body.view-notes .n-cue {
+        font-size: 15.5px;
+      }
+      body.view-notes .bar-zone {
+        opacity: 1;
+      }
+      .sync-off {
+        position: fixed;
+        left: 20px;
+        top: 18px;
+        z-index: 31;
+        max-width: 26rem;
+        padding: 11px 14px;
+        border-left: 3px solid #b4552f;
+        background: #fdf1e7;
+        color: #5a3a25;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      @media screen and (max-width: 900px) {
+        body.notes-open {
+          --notes-w: 0px;
+        }
+        body.notes-open .notes {
+          position: fixed;
+          inset: 0 0 0 auto;
+          width: min(31rem, 92vw);
+          z-index: 40;
+          grid-column: 1;
+          box-shadow: -16px 0 50px rgba(22, 38, 63, 0.2);
+        }
+        .split,
+        .pair,
+        .trio {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        figure img {
+          height: 34vh;
+        }
+      }
+      @media screen and (max-width: 640px) {
+        .trio {
+          gap: 1px;
+        }
+        .trio > div {
+          padding: 12px 14px;
+        }
+        .trio h3 {
+          margin-bottom: 4px;
+          font-size: 19px;
+        }
+        .trio p {
+          margin-bottom: 0;
+          font-size: 17px;
+        }
+        body.cued .slide.current .reveal[data-cue] {
+          margin-top: 14px;
+          padding: 12px 14px;
+        }
+        .reveal p:last-child {
+          font-size: 17px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+
+      /* ============================================================
+   PRINT: slide and its notes together on one page.
+   Portrait: slide above, notes below. Landscape: side by side.
+   Grounds are dropped to white; the mode word still names the
+   moment, so nothing is lost and the handout stays readable.
+   ============================================================ */
+      /* One printed form: A4 portrait, slide on the top half and its notes on the
+   bottom half, so plain Cmd-P is the whole story. The page size is declared
+   rather than read from the dialog: Chrome evaluates `orientation` and
+   `width` in print against the viewport, not the page box, so CSS cannot
+   detect it. `vh` does resolve against the page box, so the height is right
+   once the size is named. */
+      @page {
+        size: A4 portrait;
+        margin: 11mm;
+      }
+      @media print {
+        html {
+          scroll-snap-type: none;
+          background: #fff;
+        }
+        body {
+          display: block;
+          background: #fff;
+          color: #000;
+          --notes-w: 0px;
+        }
+        main {
+          container-type: normal;
+        }
+        .rail,
+        .bar-zone,
+        .notes {
+          display: none !important;
+        }
+
+        .slide {
+          display: grid;
+          gap: 7mm;
+          min-height: 0;
+          padding: 0;
+          overflow: visible;
+          background: #fff !important;
+          color: #000;
+          break-after: page;
+          break-inside: avoid;
+        }
+        .slide:last-child {
+          break-after: auto;
+        }
+        .slide[data-mode='gate'] {
+          color: #000;
+          --accent: #244d9d;
+          --quiet: #555;
+          --rule: #bbb;
+        }
+
+        .face {
+          border: 0.5pt solid #9aa4b2;
+          padding: 9mm;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .content,
+        .map {
+          max-width: none;
+        }
+
+        .mode b {
+          color: #000 !important;
+          background: transparent !important;
+          border-color: #000 !important;
+        }
+        .mode span {
+          color: #444;
+        }
+        h1 {
+          font-size: 24pt;
+          max-width: 22ch;
+        }
+        h2 {
+          font-size: 19pt;
+          max-width: 24ch;
+        }
+        h3 {
+          font-size: 12pt;
+        }
+        p {
+          font-size: 10.5pt;
+          max-width: 60ch;
+        }
+        .eyebrow {
+          font-size: 8pt;
+        }
+        .break-word {
+          font-size: 44pt;
+        }
+        .instruction {
+          font-size: 10pt;
+        }
+        .pair p,
+        .trio span,
+        .steps li,
+        .chain {
+          font-size: 10pt;
+        }
+        figure img {
+          height: 52mm;
+        }
+        .map {
+          margin-top: 5mm;
+          padding-top: 3mm;
+        }
+        .map-claim {
+          font-size: 10pt;
+          color: #244d9d;
+        }
+        .map li {
+          font-size: 7.5pt;
+        }
+        .map li.on span {
+          background: #244d9d !important;
+          color: #fff !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        /* Only student review notes print. Facilitator notes stay private in the
+     instructor-controlled HTML used for rehearsal and delivery. */
+        .sn {
+          display: block;
+          font-size: 9pt;
+          line-height: 1.42;
+          overflow: hidden;
+        }
+        .fn {
+          display: none !important;
+        }
+        .sn h3 {
+          margin: 0 0 2mm;
+          font-size: 7.5pt;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #244d9d;
+        }
+        .sn h3 + * {
+          margin-top: 0;
+        }
+        .sn * + h3 {
+          margin-top: 4mm;
+        }
+        .sn p,
+        .sn li {
+          font-size: 9pt;
+          line-height: 1.42;
+          margin: 0 0 2mm;
+          max-width: none;
+        }
+        .sn ul {
+          margin: 0 0 2mm;
+          padding-left: 4mm;
+        }
+        .n-cue {
+          display: none;
+        }
+        .key[data-cue] {
+          font-weight: 600;
+          box-shadow: inset 0 -0.14em 0
+            color-mix(in srgb, var(--accent) 46%, transparent);
+        }
+        mark,
+        mark[data-cue] {
+          background: color-mix(in srgb, var(--accent) 15%, transparent);
+          box-shadow: inset 0 -0.1em 0
+            color-mix(in srgb, var(--accent) 55%, transparent);
+          padding: 0 0.12em;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .sn .n-time {
+          margin-top: 4mm;
+          padding-top: 2mm;
+          border-top: 0.5pt solid #bbb;
+          font-size: 7.5pt;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #555;
+        }
+        .reveal[data-cue] {
+          display: none !important;
+        }
+        .sn::before {
+          content: 'Review notes';
+          display: block;
+          margin-bottom: 3mm;
+          padding-bottom: 1.5mm;
+          border-bottom: 0.5pt solid #9aa4b2;
+          font-size: 7.5pt;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #555;
+        }
+      }
+      @media print {
+        .slide {
+          grid-template-rows: 1fr 1fr;
+          height: 98vh;
+        }
+      }
