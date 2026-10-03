@@ -16,5 +16,44 @@
 .chain strong, .chain span { font-size: 10pt; }
 }
 
-.chain { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: stretch; gap: clamp(12px, 1.5vw, 22px); margin-top: clamp(18px, 3vh, 34px); }
+.chain { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: stretch; gap: clamp(12px, 1.5vw, 22px); margin-top: clamp(18px, 3vh, 34px); }
 @media screen and (max-width: 800px) { .chain { grid-template-columns: 1fr; } }
+
+/* Glanceable facilitator notes (Week 3 pilot; could roll out to other weeks).
+   .dg      delivery guidance as one short line per point
+   .glance  the one delivery sentence to catch at a glance
+   .watch   the misconception to notice and the hint to give
+   .ref     the tutor's reference answer, directly under its question
+   All four sit inside .fn, which never prints. */
+.notes .fn ul.dg { margin: 0 0 8px; padding-left: 1.05rem; }
+.notes .fn ul.dg li { margin: 0 0 5px; }
+.notes .fn ul.dg li::marker { color: var(--quiet); }
+.notes .fn .glance { font-weight: 650; background: #fbe7a6; box-shadow: 0 0 0 2px #fbe7a6; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.notes .fn .watch { margin-top: 12px; padding: 10px 13px; background: #fdf1e7; border-left: 3px solid #b4552f; }
+.notes .fn .watch > strong:first-child { display: block; margin-bottom: 4px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #8a3f28; }
+.notes .fn .ref { margin-top: 12px; padding: 9px 12px; background: #fffdf9; border-left: 3px solid #596678; }
+/* .boxes  per-box schematic for a workbook task: label, then Say / Watch / Hint lines. */
+.notes .fn .boxes { margin: 0 0 4px; border-top: 1px solid var(--rule); }
+.notes .fn .boxes > div { display: grid; grid-template-columns: 3.4rem 1fr; column-gap: 10px; padding: 7px 0 5px; border-bottom: 1px solid var(--rule); }
+.notes .fn .boxes > div > b { grid-row: 1 / span 4; font-size: 13.5px; color: var(--ink); }
+.notes .fn .boxes p { grid-column: 2; display: grid; grid-template-columns: 4.4rem 1fr; margin: 0 0 3px; font-size: 14px; line-height: 1.4; }
+.notes .fn .boxes i { padding-top: 2px; font-style: normal; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--quiet); }
+.notes .fn .boxes .w i { color: #8a3f28; }
+
+/* .moves  three short options in a cued reveal panel (slide 13). */
+.reveal ul.moves { margin: 0; padding-left: 1.1em; max-width: 60ch; }
+.reveal ul.moves li { margin: 0 0 6px; font-size: clamp(17px, 1.4cqi, 23px); line-height: 1.35; }
+.reveal ul.moves li:last-child { margin-bottom: 0; }
+
+/* .must  points the tutor must say aloud, distinct from .watch (notice) and .glance (delivery).
+   Block: <div class="must"><strong>Must say aloud</strong><ul>…</ul></div> at the top of .fn.
+   In .boxes: <p class="must"><i>Must say</i>…</p> marks an essential Say line.
+   Used on slides 12, 14 and 15; other slides can adopt it. */
+.notes .fn .must { margin: 0 0 12px; padding: 9px 12px 8px; background: #e6f2ea; border-left: 3px solid #2f6b45; }
+.notes .fn .must > strong:first-child { display: block; margin-bottom: 4px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #24553a; }
+.notes .fn .must ul { margin: 0; padding-left: 1.35rem; list-style: "☐  "; }
+.notes .fn .must li { margin: 0 0 4px; font-weight: 600; }
+.notes .fn .must li::marker { color: #2f6b45; }
+.notes .fn .watch ul.dg { margin: 0; }
+.notes .fn .boxes p.must { margin: 1px 0 4px; padding: 3px 6px; background: #e6f2ea; border-left: 3px solid #2f6b45; font-weight: 600; }
+.notes .fn .boxes p.must i { color: #24553a; }

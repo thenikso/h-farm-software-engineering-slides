@@ -20,3 +20,73 @@ body[data-print="practice"] .page:not([data-set="practice"]), body[data-print="a
 @media print {
 .page { height: auto; min-height: 297mm; overflow: visible; }
 }
+
+/* A separate anonymous sheet; the existing worksheet stages retain their page sets. */
+.questionnaire h1 { max-width: none; font-size: 25pt; margin-bottom: 4mm; }
+.questionnaire h3 { margin-top: 4mm; line-height: 1.22; }
+.survey-intro { margin-bottom: 5mm; }
+.survey-hint { color: var(--quiet); margin: 2mm 0 3mm; font-size: 9.5pt; }
+.survey-options { list-style: none; padding: 0; margin: 0 0 4mm; }
+.survey-options li { display: flex; align-items: baseline; gap: 3mm; margin-bottom: 1.8mm; }
+.tick-box { display: inline-block; flex: 0 0 3.5mm; width: 3.5mm; height: 3.5mm; border: 1px solid var(--ink); }
+.survey-line { flex: 1; border-bottom: 1px solid var(--rule); }
+.questionnaire .survey-answer { height: 22mm; min-height: 22mm; }
+.survey-return { margin-top: 4mm; font-size: 9pt; color: var(--quiet); }
+@media print {
+body[data-print="questionnaire"] .page:not([data-set="questionnaire"]) { display: none; }
+}
+
+/* Page 1 holds the six statements and the comparison box. */
+.page[data-page="1"] .page-head { margin-bottom: 5mm; }
+.page[data-page="1"] h1 { max-width: none; font-size: 23pt; margin-bottom: 3mm; }
+.page[data-page="1"] h3 { margin-top: 3mm; }
+.page[data-page="1"] .record { margin: 2mm 0; padding: 2mm 3mm; }
+.page[data-page="1"] .prompt { margin: 2mm 0 1mm; }
+.page[data-page="1"] .write { margin: 1mm 0 0; }
+.page[data-page="1"] .label { margin-top: 1mm; }
+
+/* Part B keeps the full response record on one page and writing on two pages. */
+.response-page h1 { max-width: none; font-size: 25pt; margin-bottom: 4mm; }
+.response-page .page-head { margin-bottom: 5mm; }
+.response-card { border-top: 1px solid var(--rule); padding-top: 1.8mm; margin-top: 2mm; }
+.response-card h3 { margin: 0 0 1mm; font-size: 10.5pt; }
+.response-card p { margin-bottom: 0; }
+.response-page .selection { margin-bottom: 3mm; }
+.response-limit { margin-top: 2mm; }
+.field-hint { margin: 0 0 2mm; color: var(--quiet); }
+.page[data-page="4"] h1, .page[data-page="5"] h1 { margin-bottom: 4mm; max-width: none; font-size: 25pt; }
+.page[data-page="4"] .page-head, .page[data-page="5"] .page-head { margin-bottom: 5mm; }
+.page[data-page="4"] .prompt, .page[data-page="5"] .prompt { margin: 2mm 0 1mm; }
+.page[data-page="4"] .field-hint, .page[data-page="5"] .field-hint { margin-bottom: 1mm; }
+.page[data-page="4"] .write, .page[data-page="5"] .write { margin: 1mm 0 2mm; }
+
+/* Named activity packets are returned; the separate questionnaire stays anonymous. */
+.workbook-name { display: flex; align-items: baseline; gap: 3mm; margin: 0 0 4mm; }
+.workbook-name span { flex: 1; min-height: 5mm; border-bottom: 1px solid var(--rule); }
+
+/* Page 2: starting decision, question and committed predictions. */
+.page[data-page="2"] h1 { max-width: none; font-size: 25pt; margin-bottom: 4mm; }
+.page[data-page="2"] .page-head { margin-bottom: 5mm; }
+.page[data-page="2"] .prompt { margin: 2mm 0 1mm; }
+.page[data-page="2"] .write { margin: 1mm 0 3mm; }
+.page[data-page="2"] .write.short { height: 17mm; min-height: 17mm; }
+.commit { margin-top: 2mm; padding: 3mm 4mm; border: 1.5px solid var(--accent); }
+.commit p:last-child { margin-bottom: 0; }
+.commit .tick-box { margin: 0 1mm 0 3mm; vertical-align: -0.4mm; }
+
+/* Numbered boxes let later prompts refer back instead of asking students to copy. */
+.n { display: inline-flex; justify-content: center; align-items: center; min-width: 5.2mm; height: 5.2mm; margin-right: 2mm; padding: 0 1mm; border-radius: 2.6mm; background: var(--accent); color: #fff; font-size: 8.5pt; font-weight: 700; font-variant-numeric: tabular-nums; vertical-align: 0.2mm; }
+.prompt .when { float: right; margin-left: 3mm; font-size: 7.5pt; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); line-height: 1.9; }
+.page[data-page="5"] .write { height: 22mm; min-height: 22mm; }
+
+/* The evidence chain strip; .now marks the steps on the current page. */
+.chain-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5mm; list-style: none; margin: 0 0 4mm; padding: 0; counter-reset: none; }
+.chain-strip li { position: relative; margin: 0; padding: 1.5mm 2mm; border-top: 2px solid var(--rule); color: var(--quiet); font-size: 8.5pt; line-height: 1.2; }
+.chain-strip li:not(:last-child)::after { content: "→"; position: absolute; right: -1.6mm; top: 1.3mm; color: var(--rule); }
+.chain-strip b { display: block; font-weight: 600; }
+.chain-strip span { font-size: 7.5pt; }
+.chain-strip li.now { border-top-color: var(--accent); color: var(--ink); background: var(--pale); }
+.chain-strip li.now b { color: var(--accent); }
+@media screen and (max-width: 800px) { .chain-strip { grid-template-columns: 1fr 1fr; } .chain-strip li::after { display: none; } }
+.page[data-page="4"] .write.short { height: 17mm; min-height: 17mm; }
+.page[data-page="2"] .write.medium { height: 38mm; min-height: 38mm; }
