@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 04 · Student materials</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../styles/student-materials.css" />
+<link rel="stylesheet" href="student-materials.css" />
+</head>
+<body data-print="warmup">
+<nav class="toolbar" aria-label="Print controls">
+  <p>Instructor print master</p>
+  <button type="button" data-choice="warmup">Block 1 · pages 1–2</button>
+  <button type="button" data-choice="case">Practice case · page 3</button>
+  <button type="button" data-choice="attempt">Practice memo · pages 4–5</button>
+  <button type="button" data-choice="feedback">After the memo · pages 6–7</button>
+  <button type="button" data-choice="reference">Take-home memo · page 8</button>
+  <button type="button" data-choice="all">Complete master · pages 1–8</button>
+</nav>
+<aside class="source-boundary"><strong>All-stage print master.</strong> Print each stage separately and hand it out at its slide. The buttons choose pages for printing; they do not hide later pages online. Keep pages 6–8 back until the practice memo has finished.</aside>
+<main>
+
+<!-- ===================== Block 1 · pages 1–2 ===================== -->
+<section class="page" data-page="1" data-set="warmup" aria-labelledby="page-1">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">block 1 · learning workbook</p><p class="page-number">01</p></header>
+  <p class="workbook-name"><strong>Name:</strong> <span></span></p>
+  <h1 id="page-1">Start from the need</h1>
+  <p class="lead">Campus Event again. Tick your answers first; we compare after each box.</p>
+
+  <p class="prompt"><span class="n">A</span>Could anyone answer it, and would the answer change our plan? <span class="when">Slide 2</span></p>
+  <p class="field-hint">Three questions written in Week 3. For each one, tick Yes or No in both columns.</p>
+  <table class="ticks">
+    <thead><tr><th scope="col">Question, and who it was asked to</th><th scope="col">Can they answer?</th><th scope="col">Would it change the plan?</th></tr></thead>
+    <tbody>
+      <tr><td><b>a</b> “Should reminders be automatic or manual?” <em>asked to accessibility support</em></td><td><span class="tick-box"></span> Yes <span class="tick-box"></span> No</td><td><span class="tick-box"></span> Yes <span class="tick-box"></span> No</td></tr>
+      <tr><td><b>b</b> “Do students miss events because they forget the date, or because they don’t know whether their reservation worked?” <em>asked to support</em></td><td><span class="tick-box"></span> Yes <span class="tick-box"></span> No</td><td><span class="tick-box"></span> Yes <span class="tick-box"></span> No</td></tr>
+      <tr><td><b>c</b> “Is a splash screen enough to show the booking worked?” <em>asked to students</em></td><td><span class="tick-box"></span> Yes <span class="tick-box"></span> No</td><td><span class="tick-box"></span> Yes <span class="tick-box"></span> No</td></tr>
+    </tbody>
+  </table>
+  <p class="choice-line tight">Which question would you ask first? &nbsp; <span class="tick-box"></span> a &nbsp; <span class="tick-box"></span> b &nbsp; <span class="tick-box"></span> c &nbsp; </p>
+  <p class="choice-line">Why, in a few words: <span class="line"></span></p>
+
+  <p class="prompt"><span class="n">B</span>Need or feature? <span class="when">Slide 4</span></p>
+  <p class="field-hint">A <strong>need</strong> is a problem or outcome someone has. A <strong>feature</strong> is one proposed way to respond to it. Tick one for each.</p>
+  <table class="ticks">
+    <thead><tr><th scope="col">Statement</th><th scope="col">Need</th><th scope="col">Feature</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b> “Right after I press Reserve, I want to know whether I have a place.”</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>2</b> “Students need a countdown timer on the event page.”</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>3</b> “Send every student an SMS the day before.”</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>4</b> “Organisers need to know who has a confirmed place before they send event information.”</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>5</b> “Show a big green tick when the booking works.”</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>6</b> “Support staff should be able to check a student’s booking without asking for a screenshot.”</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+    </tbody>
+  </table>
+  <p class="prompt">Pick one feature from the list above. Which need might it serve?</p>
+  <div class="write short" aria-label="Blank writing space: the need behind one feature"></div>
+</section>
+
+<section class="page" data-page="2" data-set="warmup" aria-labelledby="page-2">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">block 1 · learning workbook</p><p class="page-number">02</p></header>
+  <h1 id="page-2">Which requirement is better?</h1>
+
+  <p class="prompt"><span class="n">C</span>Tick the better version in each pair, then tick its main reason <span class="when">Slide 9</span></p>
+  <p class="reasons"><strong>Reasons:</strong> ① another team could check it &nbsp; ② it keeps its conditions &nbsp; ③ it does not invent a decision &nbsp; ④ it starts from a need</p>
+  <div class="pairs">
+    <div class="pair"><p class="pair-kind">1 · Functional</p>
+      <p><span class="tick-box"></span> <b>A</b> Right after pressing Reserve, a student can see whether their place is confirmed.</p>
+      <p><span class="tick-box"></span> <b>B</b> After Reserve is pressed, the screen shows a full-width green banner with an animated tick and a 2-second sound.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+    <div class="pair"><p class="pair-kind">2 · Non-functional</p>
+      <p><span class="tick-box"></span> <b>A</b> In 9 of 10 tries, the booking result appears within 3 seconds on a mobile connection. Proposed: to agree with the sponsor.</p>
+      <p><span class="tick-box"></span> <b>B</b> The booking result must always appear within 3 seconds for everyone, using a fast server and a caching layer.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+    <div class="pair"><p class="pair-kind">3 · Acceptance criterion</p>
+      <p><span class="tick-box"></span> <b>A</b> Given the team has tested booking on every browser, when students use it in launch week, then everything works correctly.</p>
+      <p><span class="tick-box"></span> <b>B</b> Given an event with 1 place left, when a student presses Reserve, then the screen shows “Confirmed” and the event shows 0 places left.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+    <div class="pair"><p class="pair-kind">4 · Reminders</p>
+      <p><span class="tick-box"></span> <b>A</b> Every reserving student gets an SMS exactly 24 hours before each event and a second email 2 hours before.</p>
+      <p><span class="tick-box"></span> <b>B</b> Reminders go only to confirmed students. When to send them is not yet agreed: ask the organiser.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+  </div>
+
+  <p class="prompt"><span class="n">D</span>Your turn: rewrite one wish <span class="when">Slide 10</span></p>
+  <p class="quote-line">“Organisers should be able to see who is attending.”</p>
+  <p class="field-hint">Attending, or confirmed? Organiser, Week 3 (A3): “a confirmed place still does not tell me who actually attended.”</p>
+  <p class="starter">FR: An organiser can …………………………………… so that ……………………………………</p>
+  <div class="write short" aria-label="Blank writing space: rewritten requirement"></div>
+  <p class="starter">Tests it: Given …………………… , when …………………… , then ……………………</p>
+  <div class="write short" aria-label="Blank writing space: acceptance criterion"></div>
+</section>
+
+<!-- ===================== Block 2 · pages 3–5 ===================== -->
+<section class="page" data-page="3" data-set="case" aria-labelledby="page-3">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">practice case · keep this page</p><p class="page-number">03</p></header>
+  <h1 id="page-3">Repair Desk</h1>
+  <p class="lead">A fictional practice case. The first midterm uses a different case with the same six boxes.</p>
+  <div class="case">
+    <p>A community repair workshop fixes small household items. Repair requests arrive on paper and by email. Staff sometimes copy the same request twice or lose the note that says an item is ready, so residents travel to the workshop without knowing whether they can collect it.</p>
+    <p>The coordinator wants a browser-based repair register for the two shared desk computers at the workshop’s one site. Desk volunteers create a record with a unique reference, the resident’s name and contact detail, an item description and the date received. Technicians add a short update and set the status: received, being repaired, ready for collection, or collected. Volunteers use the record to answer residents’ enquiries. Only authorised volunteers and technicians may see records; residents do not log in.</p>
+    <p>Public status lookup, payments, parts ordering and technician scheduling are not part of the first release.</p>
+    <p>For the pilot, the coordinator proposes that at least 9 of 10 reference lookups show the matching record within 3 seconds, with 500 records stored and both desk computers in use. Creating and looking up a record must also work by keyboard alone, with labelled fields. Four volunteers will be trained before the pilot.</p>
+    <p>The coordinator wants residents told when an item is ready. Volunteers disagree about who should contact residents and whether the register should send messages automatically. Nobody has decided how long contact details are kept.</p>
+  </div>
+  <div class="callout conditions">
+    <p><strong>Practice conditions · 60 minutes · on your own</strong></p>
+    <ul>
+      <li>Suggested: 5 minutes to read, 10 to plan, 35 to write, 10 to check.</li>
+      <li>Aim for about 300 words in total. Bullets are fine. The printed starters don’t count.</li>
+      <li>Three functional and two non-functional requirements are enough.</li>
+      <li>Use only this case. Not graded: it is practice for the first midterm.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page" data-page="4" data-set="attempt" aria-labelledby="page-4">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">practice memo · learning workbook</p><p class="page-number">04</p></header>
+  <p class="workbook-name"><strong>Name:</strong> <span></span></p>
+  <h1 id="page-4">Practice memo</h1>
+
+  <p class="prompt"><span class="n">1</span>Problem, users and stakeholders <span class="when">about 60 words</span></p>
+  <p class="starter">The problem is that … This matters because …<br>The main users are … They need …<br>Other stakeholders are … , who care about …</p>
+  <div class="write medium" aria-label="Blank writing space: box 1"></div>
+
+  <p class="prompt"><span class="n">2</span>Objective and scope <span class="when">about 40 words</span></p>
+  <p class="starter">The first release aims to … It includes … It does not include … , because …</p>
+  <div class="write" aria-label="Blank writing space: box 2"></div>
+
+  <p class="prompt"><span class="n">3</span>Three functional requirements <span class="when">about 75 words</span></p>
+  <p class="starter">[who] can [do what] so that [which need from box 1]</p>
+  <p class="slot"><b>FR1</b></p><div class="write slot-box" aria-label="Blank writing space: FR1"></div>
+  <p class="slot"><b>FR2</b></p><div class="write slot-box" aria-label="Blank writing space: FR2"></div>
+  <p class="slot"><b>FR3</b></p><div class="write slot-box" aria-label="Blank writing space: FR3"></div>
+</section>
+
+<section class="page" data-page="5" data-set="attempt" aria-labelledby="page-5">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">practice memo · learning workbook</p><p class="page-number">05</p></header>
+  <h1 id="page-5">Practice memo, continued</h1>
+
+  <p class="prompt"><span class="n">4</span>Two non-functional requirements <span class="when">about 50 words</span></p>
+  <p class="starter">([quality]): [what is measured] [acceptable result] when [conditions]. &nbsp; Source: from the case <span class="tick-box"></span> &nbsp; my own proposal <span class="tick-box"></span></p>
+  <p class="slot"><b>NFR1</b></p><div class="write slot-box" aria-label="Blank writing space: NFR1"></div>
+  <p class="slot"><b>NFR2</b></p><div class="write slot-box" aria-label="Blank writing space: NFR2"></div>
+
+  <p class="prompt"><span class="n">5</span>Acceptance criteria <span class="when">about 40 words</span></p>
+  <p class="starter">Tests FR___ : Given … , when … , then …</p>
+  <div class="write" aria-label="Blank writing space: box 5"></div>
+
+  <p class="prompt"><span class="n">6</span>One unresolved question <span class="when">about 40 words</span></p>
+  <p class="starter">Not yet decided: … It matters because … Before development, [who] must decide or check …</p>
+  <div class="write" aria-label="Blank writing space: box 6"></div>
+
+  <div class="preserve">Last 10 minutes: does box 5 test a requirement you wrote in box 3? Does box 6 leave the undecided question open? Then stop. Don’t start again from scratch.</div>
+</section>
+
+<!-- ===================== Block 3 · pages 6–7 ===================== -->
+<section class="page" data-page="6" data-set="feedback" aria-labelledby="page-6">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">after the memo · learning workbook</p><p class="page-number">06</p></header>
+  <h1 id="page-6">Which answer is better, and why?</h1>
+  <p class="field-hint">Typical Repair Desk answers, written for this exercise. Tick the better one and its main reason. Keep your own memo as it is.</p>
+
+  <p class="prompt"><span class="n">E</span>Four pairs <span class="when">Slide 17</span></p>
+  <p class="reasons"><strong>Reasons:</strong> ① another team could check it &nbsp; ② it keeps its conditions &nbsp; ③ it does not invent a decision &nbsp; ④ it starts from a need</p>
+  <div class="pairs">
+    <div class="pair"><p class="pair-kind">1 · Box 3</p>
+      <p><span class="tick-box"></span> <b>A</b> FR1: A volunteer can look up a repair by its reference and see its status, so that they can tell a resident whether it is ready.</p>
+      <p><span class="tick-box"></span> <b>B</b> FR1: When a technician sets the status to ready, the register automatically texts and emails the resident, so nobody travels for nothing.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+    <div class="pair"><p class="pair-kind">2 · Box 4</p>
+      <p><span class="tick-box"></span> <b>A</b> NFR1 (speed): Every lookup must be instant, under 1 second, on any computer and with any number of records.</p>
+      <p><span class="tick-box"></span> <b>B</b> NFR1 (speed): Proposed by the coordinator: 9 of 10 lookups show the record within 3 seconds, with 500 records and both desk computers in use.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+    <div class="pair"><p class="pair-kind">3 · Box 5</p>
+      <p><span class="tick-box"></span> <b>A</b> Tests FR1: Given a new request, when a volunteer saves it, then the record appears with a reference no other record has.</p>
+      <p><span class="tick-box"></span> <b>B</b> Tests FR1: Given both desk computers are set up and four volunteers trained, when they use the register in the pilot, then it works correctly.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+    <div class="pair"><p class="pair-kind">4 · Box 6</p>
+      <p><span class="tick-box"></span> <b>A</b> Not yet decided: messaging. The register will email residents when an item is ready, so contact is solved.</p>
+      <p><span class="tick-box"></span> <b>B</b> Not yet decided: who tells residents an item is ready. The coordinator must choose before anyone builds messaging.</p>
+      <p class="why">Reason: <span class="tick-box"></span> ① <span class="tick-box"></span> ② <span class="tick-box"></span> ③ <span class="tick-box"></span> ④</p></div>
+  </div>
+
+  <p class="prompt"><span class="n">F</span>Now check your own memo <span class="when">Slide 19</span></p>
+  <table class="ticks">
+    <thead><tr><th scope="col">Check</th><th scope="col">Yes</th><th scope="col">Partly</th><th scope="col">No</th></tr></thead>
+    <tbody>
+      <tr><td><b>F1</b> Box 1 describes a need, not a feature.</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>F2</b> Each FR says who does what, and its “so that” links to box 1.</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>F3</b> Each NFR has a measure and its conditions, and says supplied or proposed.</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>F4</b> Box 5 tests a requirement I wrote in box 3, and could pass or fail.</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+      <tr><td><b>F5</b> Box 6 leaves the question open and names who must decide.</td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td><td><span class="tick-box"></span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page" data-page="7" data-set="feedback" aria-labelledby="page-7">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">after the memo · learning workbook</p><p class="page-number">07</p></header>
+  <h1 id="page-7">Fix one box</h1>
+
+  <p class="prompt"><span class="n">G</span>Rewrite your weakest box <span class="when">Slide 20</span></p>
+  <p class="choice-line">The box I am fixing: &nbsp; <span class="tick-box"></span> 1 &nbsp; <span class="tick-box"></span> 2 &nbsp; <span class="tick-box"></span> 3 &nbsp; <span class="tick-box"></span> 4 &nbsp; <span class="tick-box"></span> 5 &nbsp; <span class="tick-box"></span> 6 &nbsp;&nbsp; The check it fails: F <span class="line short-line"></span></p>
+  <p class="field-hint">Leave the original on page 4 or 5 as it is. Write only the new version here.</p>
+  <div class="write tall" aria-label="Blank writing space: revised box"></div>
+
+  <p class="prompt"><span class="n">H</span>Carry into the midterm <span class="when">Slide 22</span></p>
+  <p class="field-hint">Tick the one thing you will do differently in the midterm.</p>
+  <ul class="survey-options">
+    <li><span class="tick-box"></span> Start from the need, not a feature</li>
+    <li><span class="tick-box"></span> Keep the conditions in my non-functional requirements</li>
+    <li><span class="tick-box"></span> Test a requirement I actually wrote</li>
+    <li><span class="tick-box"></span> Leave the undecided question open and say who decides</li>
+    <li><span class="tick-box"></span> Leave 10 minutes to check before the end</li>
+    <li><span class="tick-box"></span> Something else: <span class="survey-line"></span></li>
+  </ul>
+  <p class="choice-line">How ready do I feel for the midterm? &nbsp; <span class="tick-box"></span> Ready &nbsp; <span class="tick-box"></span> Mostly &nbsp; <span class="tick-box"></span> Not yet</p>
+  <p class="prompt">What would help most before the midterm?</p>
+  <div class="write short" aria-label="Blank writing space: what would help"></div>
+  <div class="preserve">Photograph pages 4–7, then hand them in. Keep page 3. Not graded. They come back next class.</div>
+</section>
+
+<!-- ===================== Take-home · page 8 ===================== -->
+<section class="page" data-page="8" data-set="reference" aria-labelledby="page-8">
+  <aside class="rail"><span>Software Engineering · Week 04</span></aside>
+  <header class="page-head"><p class="packet">take-home · learning workbook</p><p class="page-number">08</p></header>
+  <h1 id="page-8">One good Repair Desk memo</h1>
+  <p class="lead">One way to answer, about 300 words. Other answers can be just as good if they link the boxes the same way. Use it to study, not to copy.</p>
+  <div class="reference">
+    <p><span class="n">1</span>The problem is that repair requests are copied twice or lost between paper and email, so residents travel without knowing whether their item is ready. The main users are desk volunteers, who record requests and answer enquiries, and technicians, who update progress. Residents are stakeholders who need accurate collection information; the coordinator sets the rules.</p>
+    <p><span class="n">2</span>The first release aims to give authorised staff one shared, current record of each repair. It includes creating, updating and looking up records on the two desk computers. It does not include public lookup, payments, parts ordering, scheduling or automatic messages to residents, because the contact decision is still open.</p>
+    <p><span class="n">3</span><b>FR1:</b> A desk volunteer can create a repair record with the supplied details and a unique reference, so that each request is recorded once.<br><b>FR2:</b> A technician can set a repair’s status and add a short update, so that the desk sees current progress.<br><b>FR3:</b> A volunteer can look up a record by its reference and see its status, so that they can tell a resident whether the item is ready.</p>
+    <p><span class="n">4</span><b>NFR1 (speed):</b> at least 9 of 10 reference lookups show the matching record within 3 seconds, with 500 records stored and both desk computers in use. Proposed by the coordinator; to confirm in the pilot.<br><b>NFR2 (accessibility):</b> creating and looking up a record can be done by keyboard alone, with labelled fields. Supplied.</p>
+    <p><span class="n">5</span><b>Tests FR3:</b> Given a record RD-104 with status “ready for collection”, when a volunteer looks up RD-104, then the register shows that record with status “ready for collection”.</p>
+    <p><span class="n">6</span>Not yet decided: who tells residents that an item is ready, and whether the register sends messages. It matters because automatic messages would settle a disagreement between volunteers and need rules for contact details. Before development, the coordinator must decide who contacts residents and how long contact details are kept.</p>
+  </div>
+  <p class="callout"><strong>Why it works:</strong> each FR says “so that” and points back to the problem in box 1; the speed target keeps its conditions and says who proposed it; box 5 tests FR3, which is written above; box 6 keeps the contact question open instead of quietly building messaging.</p>
+</section>
+
+</main>
+<script>
+document.querySelectorAll("[data-choice]").forEach(button=>button.addEventListener("click",()=>{document.body.dataset.print=button.dataset.choice;window.print()}));
+</script>
+</body>
+</html>

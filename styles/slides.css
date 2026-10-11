@@ -439,6 +439,17 @@
         border-left: 4px solid var(--accent);
         background: color-mix(in srgb, var(--accent) 9%, transparent);
       }
+      /* Stepped reveals: a cue whose step has not been reached yet stays
+   hidden even while the slide is cued (see lectures/scripts/slides.js). */
+      body.cued [data-cue].cue-pending {
+        box-shadow: none;
+        background: transparent;
+        font-weight: inherit;
+        padding: 0;
+      }
+      body.cued .slide.current .reveal[data-cue].cue-pending {
+        display: none;
+      }
       .reveal-label {
         margin-bottom: 8px;
         color: var(--accent);
@@ -1268,3 +1279,18 @@
           height: 98vh;
         }
       }
+
+/* Stepped reveal for text that must stay hidden (not just unemphasised)
+   until its step: layout is reserved, so nothing jumps when it appears.
+   Used with data-cue="n" (see lectures/scripts/slides.js). */
+.later[data-cue] {
+  visibility: hidden;
+}
+body.cued .slide.current .later[data-cue]:not(.cue-pending) {
+  visibility: visible;
+}
+@media print {
+  .later[data-cue] {
+    visibility: hidden !important;
+  }
+}
